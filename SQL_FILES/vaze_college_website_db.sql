@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 17, 2024 at 11:28 AM
+-- Generation Time: May 17, 2024 at 01:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,14 +43,14 @@ CREATE TABLE `achievements` (
   `achievement_prize` varchar(255) NOT NULL,
   `achievement_description` varchar(1000) DEFAULT NULL,
   `achievement_achiever_names` varchar(1000) NOT NULL,
-  `achievement_date` varchar(20) NOT NULL,
+  `achievement_date` varchar(50) NOT NULL,
   `achievement_event` varchar(255) NOT NULL,
   `achievement_event_location` varchar(255) NOT NULL,
   `achievement_achieved_by_type` varchar(1) NOT NULL,
-  `achievement_type` varchar(1) NOT NULL,
+  `achievement_type` varchar(3) NOT NULL,
   `achievement_dept_id` int(11) DEFAULT NULL,
   `achievement_committee_id` int(11) DEFAULT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `achievements` (
 
 CREATE TABLE `achievement_types` (
   `achievement_type` varchar(3) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -144,7 +144,7 @@ CREATE TABLE `college_personnel` (
 
 CREATE TABLE `college_sections` (
   `college_sec_name` varchar(2) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -158,7 +158,7 @@ CREATE TABLE `college_users` (
   `college_user_email` varchar(255) NOT NULL,
   `college_user_password` varchar(50) NOT NULL,
   `college_user_role` varchar(1) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ CREATE TABLE `college_users` (
 
 CREATE TABLE `committee_and_activity_groups` (
   `committee_id` int(11) NOT NULL,
-  `committtee_name` varchar(1000) NOT NULL
+  `committtee_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -203,7 +203,7 @@ CREATE TABLE `cp_has_tenure` (
   `cp_id` int(11) NOT NULL,
   `tenure_id` int(11) NOT NULL,
   `role` varchar(3) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -280,7 +280,7 @@ CREATE TABLE `dept_has_dept_activities` (
 
 CREATE TABLE `faculty` (
   `faculty_sec_name` varchar(1) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -318,7 +318,7 @@ CREATE TABLE `notices` (
   `all_pdf_upload_date` date NOT NULL,
   `notice_expiry_date` date NOT NULL,
   `notice_type` varchar(2) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -345,7 +345,7 @@ CREATE TABLE `other_pdfs` (
   `all_pdf_upload_date` date NOT NULL,
   `other_pdfs_should_it_be_visible` varchar(1) NOT NULL,
   `other_pdfs_type_name` varchar(20) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -394,7 +394,7 @@ CREATE TABLE `patents` (
   `patent_application_number` varchar(100) NOT NULL,
   `patent_date_of_filing` date NOT NULL,
   `patent_number` bigint(15) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -473,7 +473,7 @@ CREATE TABLE `programmes` (
   `prog_duration` varchar(50) NOT NULL,
   `prog_type` varchar(3) NOT NULL,
   `prog_dept_id` int(11) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -489,7 +489,7 @@ CREATE TABLE `reports` (
   `reports_should_it_be_visible` varchar(1) NOT NULL,
   `reports_type` varchar(4) NOT NULL,
   `reports_academic_year` varchar(10) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -588,7 +588,7 @@ CREATE TABLE `scholarships` (
   `scholarship_type` varchar(2) NOT NULL,
   `scholarship_eligibility` varchar(100) NOT NULL,
   `scholarship_students_awarded` int(3) NOT NULL
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -979,6 +979,12 @@ ALTER TABLE `college_personnel`
 --
 ALTER TABLE `college_users`
   MODIFY `college_user_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `committee_and_activity_groups`
+--
+ALTER TABLE `committee_and_activity_groups`
+  MODIFY `committee_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `departmental_activities`
