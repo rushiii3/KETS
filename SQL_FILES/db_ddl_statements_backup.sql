@@ -85,7 +85,7 @@ CREATE TABLE achievements(
     achievement_event varchar(255) not null,
     achievement_event_location varchar(255) not null,
     achievement_achieved_by_type varchar(1) not null,
-    achievement_type varchar(1) not null,
+    achievement_type varchar(3) not null,
     achievement_dept_id int(11) null, 
     achievement_committee_id int(11) null,
     CONSTRAINT `PK_ACHIEVEMENTS` PRIMARY KEY (achievement_id),
