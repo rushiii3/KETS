@@ -2,6 +2,8 @@
 Order in which tables were created.This order is important as the foreign keys are required and hence the tables are arranged in such a manner so that no foreign key issue occurs. 
 STRICTLY DO NOT CHANGE THIS ORDER IN THE SQL FILE AS WELL OR HERE!!!!
 
+To get the database on your local machine just import the sql file. As new dummy data is added on during the development process, separate SQL files containing only INSERT statements will be uploaded in this directory itself.Just import them and you will be up-to-date.!!
+
 
 tenure
 Honourific
@@ -18,7 +20,7 @@ Notices
     rc - roll-call
     g - general
     p - PRN
-    
+
 Faculty
     Additional Info:- faculty_sec_name values
     a - arts
