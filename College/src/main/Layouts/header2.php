@@ -14,7 +14,7 @@
 
         <div class="flex flex-col items-center justify-end">
         <ul class='flex space-x-8 w-full px-10 py-2 justify-end max-xl:hidden'>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Alumni</a>
+      <li><a href='./About.php' class='hover:text-pink-500 font-bold text-black text-[15px]'>Alumni</a>
       </li>
       <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Faculty</a>
       </li>
@@ -53,9 +53,9 @@
             
         </a>
     </li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./index.php'
         class='hover:text-blue-600 font-bold text-black text-[15px] block'>Home</a></li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./Contact.php'
         class='hover:text-blue-600 font-bold text-black text-[15px] block'>Contact Us</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
         class='hover:text-blue-600 font-bold text-black text-[15px] block'>About us</a></li>
