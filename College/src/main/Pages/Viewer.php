@@ -9,7 +9,7 @@
   <body class="bg-white"> 
 
   
-    <?php include('../Layouts/header.php'); ?> 
+    <?php include('../Layouts/header2.php'); ?> 
     <div class="mt-36">
         <?php
             $link = $_GET['link'];

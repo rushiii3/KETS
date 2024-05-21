@@ -7,7 +7,7 @@
     <?php include('../../library/library.php'); ?>
   </head>
   <body class="bg-white"> 
-    <?php include('../Layouts/header.php'); ?> 
+    <?php include('../Layouts/header2.php'); ?> 
     <?php include('../Components/gallery.php'); ?>
     <?php include('../Layouts/footer.php'); ?> 
   </body>
