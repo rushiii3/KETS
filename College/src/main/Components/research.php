@@ -53,7 +53,7 @@
             $("#2022-23").show(); // Show content for 2020-2021
             $("#dropdown-menu").toggle();
             $("#a_year").text("2022-23");
-        });     
+        });
 
         // Add more event handlers for other years if needed
     });
@@ -309,10 +309,10 @@
             <div class="grid gap-4 grid-cols-1 md:grid-cols-2 ">
 
                 <!--confirm modal-->
-                <div class="flex flex-col p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl text-slate-400 text-justify justify-center" data-aos="fade-right">
+                <div class="flex flex-col p-4 relative  bg-white border border-white shadow-lg  rounded-2xl text-slate-400 text-justify justify-center" data-aos="fade-right">
 
                     <!-- component -->
-                    <h1 class="text-4xl font-bold text-center pb-4 text-white">CATEGORIES</h1>
+                    <h1 class="text-4xl font-bold text-center pb-4 text-blue-400">CATEGORIES</h1>
                     <p class="font-medium  text-lg  pb-3">1. Entrepreneurship </p>
                     <p class="font-medium  text-lg  pb-3">2. Biotechnology </p>
                     <p class="font-medium  text-lg  pb-3">3. Healthcare and Wellness </p>
@@ -328,7 +328,7 @@
                 <!--elements-->
                 <div class="flex flex-col space-y-4" data-aos="fade-left">
                     <!-- elements 1 -->
-                    <div class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
+                    <div class="flex flex-col p-4 bg-white border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
 
                         <div class="flex items-center justify-between">
                             <div class="flex items-center mr-auto">
@@ -336,7 +336,7 @@
 
 
                                 <div class="flex flex-col ml-3">
-                                    <div class="font-medium leading-none text-gray-100">GUIDELINES FOR SUBMITTING ABSTRACT & FULL PAPER MANUSCRIPT</div>
+                                    <div class="font-medium leading-none text-black">GUIDELINES FOR SUBMITTING ABSTRACT & FULL PAPER MANUSCRIPT</div>
                                     <p class="text-sm text-gray-500 leading-none mt-1">All the authors of the abstract are required to register, pay their registration fees, to avail certificate, upload their fee receipt and mandatory to join the whats app group.</p>
                                     <p class="text-sm text-gray-500 leading-none mt-1">Participants presenting must ensure that the abstract should be related to the conference theme.</p>
                                 </div>
@@ -345,7 +345,7 @@
                         </div>
                     </div>
                     <!--elements 2-->
-                    <div class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
+                    <div class="flex flex-col p-4 bg-white border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
 
                         <div class="flex items-center justify-between">
                             <div class="flex items-center mr-auto">
@@ -353,7 +353,7 @@
 
 
                                 <div class="flex flex-col ml-3 min-w-0">
-                                    <div class="font-medium leading-none text-gray-100">Abstract Template</div>
+                                    <div class="font-medium leading-none text-black">Abstract Template</div>
                                     <p class="text-sm text-gray-500 leading-none mt-1 truncate"><a href="https://docs.google.com/document/d/1WCC3HxmRhY135NM16WBVYULEo6sNtn4H/edit">Click here to see abstract template</a></p>
                                 </div>
                             </div>
@@ -362,13 +362,13 @@
                     </div>
 
                     <!--elements 2-->
-                    <div class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
+                    <div class="flex flex-col p-4 bg-white border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center mr-auto">
 
 
                                 <div class="flex flex-col ml-3 min-w-0">
-                                    <div class="font-medium leading-none text-gray-100">Email for submitting Research Abstracts and full paper</div>
+                                    <div class="font-medium leading-none text-black">Email for submitting Research Abstracts and full paper</div>
                                     <p class="text-sm text-gray-500 leading-none mt-1 truncate">
                                     <form action="mailto: imcb.rise@gmail.com">Click here to send the mail </form>
                                     </p>
@@ -379,13 +379,13 @@
                     </div>
 
 
-                    <div class="flex flex-col p-4 bg-gray-800 border border-gray-800 shadow-md hover:text-green-500 text-gray-400 hover:shodow-lg rounded-2xl transition ease-in duration-500  transform hover:scale-105 cursor-pointer">
+                    <div class="flex flex-col p-4 bg-white border border-white shadow-md hover:text-green-500 text-gray-400 hover:shodow-lg rounded-2xl transition ease-in duration-500  transform hover:scale-105 cursor-pointer">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center mr-auto">
 
 
                                 <div class="flex flex-col ml-3 min-w-0">
-                                    <div class="font-medium leading-none text-gray-100"> Registration Link </div>
+                                    <div class="font-medium leading-none text-black"> Registration Link </div>
                                     <p class="text-sm text-gray-500 leading-none mt-1 truncate"><a href="https://forms.gle/DkmtQNUMgcmTi7aJ9">Click here to register</a></p>
                                 </div>
                             </div>
@@ -401,7 +401,7 @@
 
                         <!-- Component starts here -->
                         <h2 class="flex flex-row flex-nowrap items-center my-8 w-full">
-                            <span class="flex-grow block border-t border-white" aria-hidden="true" role="presentation"></span>
+                            <span class="flex-grow block border-t border-black" aria-hidden="true" role="presentation"></span>
                             <span class="flex-none block mx-2   px-2 py-2.5 text-lg  leading-none font-medium uppercase bg-white text-blue-600 ">
                                 PARTICIPATION & PRESENTATION FEES
                             </span>
@@ -416,22 +416,22 @@
                 <!-- component -->
 
 
-                <div class="flex flex-col p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-right">
+                <div class="flex flex-col p-4 relative  border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800  rounded-2xl text-slate-400 text-justify " data-aos="fade-right">
 
-                    <div class="flex pt-2  text-sm text-gray-500">
-                        <div class="flex flex-col justify-center items-center h-fit">
-                            <div class="relative flex max-w-fit h-fit w-full flex-col rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
-                                <div class="flex h-fit w-fit items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
+                    <div class="flex pt-2  text-sm text-gray-500 w-full  ">
+                        <div class="flex flex-col justify-center items-center h-fit  w-full">
+                            <div class="relative flex max-w-fit h-fit w-full flex-col ">
+                                <div class="flex h-fit w-fit rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
                                     <h4 class="text-lg font-bold text-navy-700 dark:text-white">
                                         Indian Delegates
                                     </h4>
 
                                 </div>
-                                <div class="w-fit overflow-x-hidden px-4 md:overflow-x-hidden">
-                                    <table role="table" class="w-fit min-w-fit overflow-hidden">
+                                <div class="w-full overflow-x-hidden px-4 md:overflow-x-hidden bg-white">
+                                    <table role="table" class="w-full min-w-full overflow-hidden">
                                         <thead>
                                             <tr role="row">
-                                                <th colspan="1" role="columnheader" title="Toggle SortBy" style="cursor: pointer">
+                                                <th colspan="1" role="columnheader" title="Indian Delegates" style="cursor: pointer">
                                                     <div class="flex items-center justify-between pb-2 pt-4 text-start uppercase tracking-wide text-gray-600 sm:text-xs lg:text-xs">
                                                         Category
                                                     </div>
@@ -520,11 +520,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-left">
+                <div class="flex flex-col p-4 relative  border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-left">
 
                     <div class="flex pt-2  text-sm text-gray-500">
                         <div class="flex flex-col justify-center items-center h-fit">
-                            <div class="relative flex max-w-fit h-fit w-fit flex-col rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+                            <div class=" flex max-w-fit h-fit w-fit flex-col ">
                                 <div class="flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
                                     <h4 class="text-lg font-bold text-navy-700 dark:text-white">
                                         Foreign Delegates
@@ -609,6 +609,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             <div class='flex flex-col items-center justify-center min-h-full bg-gray-100 p-4'>
                 <div class='w-full max-w-full px-10  mx-auto bg-white rounded-lg shadow-xl'>
@@ -631,11 +632,11 @@
                 <!-- component -->
 
 
-                <div class="flex flex-col p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-right">
+                <div class="flex flex-col p-4 relative  border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-right">
 
                     <div class="flex pt-2  text-sm text-gray-500">
                         <div class="flex flex-col justify-center items-center h-fit">
-                            <div class="relative flex max-w-fit h-fit w-full flex-col rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+                            <div class="relative flex max-w-fit h-fit w-full flex-col dark:text-white dark:shadow-none">
                                 <div class="flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
                                     <h4 class="text-lg font-bold text-navy-700 dark:text-white">
                                         PAYMENT
@@ -720,11 +721,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-left">
+                <!-- <div class="flex flex-col p-4 relative  border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-left">
 
                     <div class="flex pt-2  text-sm text-gray-500">
-                        <div class="flex flex-col justify-center items-center h-fit">
-                            <div class="relative flex max-w-full h-fit w-fit flex-col rounded-[10px] border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800 dark:text-white dark:shadow-none">
+                        <div class="flex flex-col justify-center items-center h-fit "> 
+                            <div class="relative flex max-w-full h-fit w-fit flex-col rounded-[10px]   bg-white dark:text-white dark:shadow-none">
                                 <div class="flex h-fit w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
                                     <h4 class="text-lg font-bold text-navy-700 dark:text-white">
                                         IMPORTANT DATES
@@ -776,7 +777,59 @@
 
                         </div>
                     </div>
+                </div> -->
+
+                <div class="flex flex-col p-4 relative  border-[1px] border-gray-200 bg-white bg-clip-border shadow-md shadow-[#F3F3F3] dark:border-[#ffffff33] dark:!bg-navy-800  rounded-2xl text-slate-400 text-justify items-center justify-center" data-aos="fade-left">
+
+                    <div class="flex pt-2  text-sm text-gray-500">
+                        <div class="flex flex-col  h-fit ">
+                            <div class="relative flex max-w-full w-full h-full flex-col rounded-[10px] bg-white dark:text-white dark:shadow-none">
+                                <div class="flex w-full items-center justify-between rounded-t-2xl bg-white px-4 pb-[20px] pt-4 shadow-2xl shadow-gray-100 dark:!bg-navy-700 dark:shadow-none">
+                                    <h4 class="text-lg font-bold text-navy-700 dark:text-white">
+                                        IMPORTANT DATES
+                                    </h4>
+                                </div>
+                                <div class="w-full overflow-x-hidden px-4 md:overflow-x-hidden">
+                                    <table role="table" class="w-full min-w-fit overflow-hidden">
+                                        <tbody role="rowgroup" class="px-4">
+                                            <tr role="row">
+                                                <td class="py-3 text-sm" role="cell">
+                                                    <div class="flex items-center gap-2">
+                                                        <p class="text-sm font-medium text-navy-700 dark:text-white">
+                                                            Submission of abstract (Last Date)
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 text-sm" role="cell">
+                                                    <p class="text-md font-medium text-gray-600 dark:text-white">
+                                                        10th February 2024
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr role="row">
+                                                <td class="py-3 text-sm" role="cell">
+                                                    <div class="flex items-center gap-2">
+                                                        <p class="text-sm font-medium text-navy-700 dark:text-white">
+                                                            Event Date
+                                                        </p>
+                                                    </div>
+                                                </td>
+                                                <td class="py-3 text-sm" role="cell">
+                                                    <p class="text-md font-medium text-gray-600 dark:text-white">
+                                                        21st February 2024
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                
+
             </div>
             <div class='flex flex-col items-center justify-center min-h-full bg-gray-100 p-4'>
                 <div class='w-full max-w-full px-10  mx-auto bg-white rounded-lg shadow-xl'>
