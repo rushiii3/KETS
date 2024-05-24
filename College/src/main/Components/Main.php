@@ -1,6 +1,6 @@
    
-    <div class="relative isolate">
-      <div id="mediaContainer" class="relative">
+    <div class="">
+      <div id="mediaContainer" class="">
         <video id="myVideo" class="h-screen w-screen object-cover" muted>
           <source id="videoSource" type="video/mp4"> Your browser does not support the video tag.
         </video>
