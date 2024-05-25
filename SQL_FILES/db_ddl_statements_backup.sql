@@ -27,7 +27,7 @@ CREATE TABLE college_personnel(
     cp_personal_website_link varchar(1000) default null,
     cp_image_path varchar(1000) default null,
     cp_honourific varchar(30) not null,
-    cp_dept_id int(11) not null,
+    cp_dept_id int(11)  null,
     Constraint `PK_COLLEGE_PERSONNEL` primary key (cp_id),
     CONSTRAINT `FK_CP_HONOURIFIC` FOREIGN KEY (cp_honourific) references honourific(title) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `FK_CP_DEPARTMENT` FOREIGN KEY (cp_dept_id) references departments(dept_id) ON DELETE CASCADE ON UPDATE CASCADE

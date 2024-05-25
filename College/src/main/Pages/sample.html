@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: red;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding: 2em 3em; */
+      transition: all 0.3s;
+    }
+
+    .site-logo {
+      color: #000;
+    }
+
+    .nav-container {
+      transition: all 0.3s;
+      visibility: hidden;
+    }
+
+    #menu-toggle-btn {
+      transition: all 0.3s;
+      z-index: 100000;
+      cursor: pointer;
+    }
+
+    #menu-buttons {
+      height: 2px;
+      background: #000;
+      width: 24px;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transition: all 0.3s;
+    }
+
+    #menu-buttons::before {
+      content: " ";
+      position: absolute;
+      display: inline-block;
+      height: 2px;
+      background: #000;
+      transform: translateY(-4px);
+      width: 24px;
+      transition: all 0.3s;
+      top: -2px;
+    }
+
+    #menu-buttons::before {
+      content: " ";
+      position: absolute;
+      display: inline-block;
+      height: 2px;
+      background: #000;
+      transform: translateY(-4px);
+      width: 24px;
+      transition: all 0.3s;
+      top: -2px;
+    }
+
+    .active #menu-buttons {
+      transform: rotate(45deg);
+      background: #fff;
+    }
+
+    .active #menu-buttons::before {
+      top: unset;
+      transform: rotate(-90deg);
+      background: #fff;
+    }
+
+    .active:hover #menu-buttons::before {
+      top: unset;
+    }
+
+    .nav-item-wrapper::after {
+      content: "";
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 500px;
+      height: 60px;
+      background: #000;
+      margin: 0 auto;
+      transition: 1s;
+    }
+
+    .nav-link {
+      border: 0 solid transparent;
+      /* Initial state with no visible border */
+    }
+
+    /* @media (max-width:900) {
+    .nav {
+        flex-direction: column-reverse;
+    }
+    .nav-logo {
+        display: none;
+    }
+    .nav-socials {
+        flex-direction: row;
+        margin-top: 4em;
+
+    }
+    .nav-socials a {
+        padding: 0 0 0.4em;
+    }
+    .nav-footer{
+        display: none;
+    }
+} */
+  </style>
+</head>
+
+<body>
+  <div class="w-full bg-white overflow-hidden" id="main">
+    <!-- logo & Humburger  -->
+    <div class="navbar bg-white p-5 pr-20 backdrop-blur-lg bg-opacity-50">
+      <div class="site-logo text-md">
+        THE KELKAR EDUCATION TRUST'S <br />
+        VINAYAK GANESH VAZE COLLEGE OF ARTS, <br />
+        SCIENCE AND COMMERCE (AUTONOMOUS)
+      </div>
+      <div class="menu-toggle">
+        <div id="menu-toggle-btn">
+          <span id="menu-buttons"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header  -->
+    <!-- <div
+        class="absolute w-full top-2/4 left-2/4 translate-x-[-50%] translate-y-[-50%] text-8xl uppercase font-normal text-center "
+      >
+        We Transform <br />
+        Ideas into Digital<br />
+        Outcomes.
+        
+      </div> -->
+    <div class="mt-28">
+      <section class="py-24 flex items-center min-h-[90%] justify-center bg-white">
+        <div class="mx-auto max-w-[43rem]">
+          <button class="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            Click Me
+          </button>
+          <div class="box hidden w-48 h-48 bg-red-500 flex items-center justify-center text-white text-2xl" id="box1">
+            Box 1
+          </div>
+          <div class="box hidden w-48 h-48 bg-green-500 flex items-center justify-center text-white text-2xl" id="box2">
+            Box 2
+          </div>
+          <div class="text-center">
+            <p class="text-lg font-medium leading-8 text-indigo-600/95">
+              Introducing Design Data Platform
+            </p>
+            <h1 class="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">
+              Distribute your brand from&nbsp;design to code
+            </h1>
+            <p class="mt-3 text-lg leading-relaxed text-slate-400">
+              Specify helps you unify your brand identity by collecting,
+              storing and distributing design tokens and assets —
+              automatically.
+            </p>
+          </div>
+
+          <div class="mt-6 flex items-center justify-center gap-4">
+            <a href="#"
+              class="transform rounded-md bg-indigo-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-indigo-700">Get
+              started for free</a>
+            <a href="#"
+              class="transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50">
+              Request a demo
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="py-16 bg-gray-50 overflow-hidden">
+        <div class="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
+          <div>
+            <span class="text-gray-600 text-lg font-semibold">Main features</span>
+            <h2 class="mt-4 text-2xl text-gray-900 font-bold md:text-4xl">
+              A technology-first approach to payments
+              <br class="lg:block" hidden />
+              and finance
+            </h2>
+          </div>
+          <div
+            class="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-4">
+            <div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div class="relative p-8 space-y-8">
+                <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/burger.png" class="w-10"
+                  width="512" height="512" alt="burger illustration" />
+
+                <div class="space-y-2">
+                  <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    First feature
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
+                  <span class="text-sm">Read more</span>
+                  <span
+                    class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
+                </a>
+              </div>
+            </div>
+            <div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div class="relative p-8 space-y-8">
+                <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/trowel.png" class="w-10"
+                  width="512" height="512" alt="burger illustration" />
+
+                <div class="space-y-2">
+                  <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Second feature
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
+                  <span class="text-sm">Read more</span>
+                  <span
+                    class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
+                </a>
+              </div>
+            </div>
+            <div class="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div class="relative p-8 space-y-8">
+                <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/package-delivery.png"
+                  class="w-10" width="512" height="512" alt="burger illustration" />
+
+                <div class="space-y-2">
+                  <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Third feature
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
+                  <span class="text-sm">Read more</span>
+                  <span
+                    class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
+                </a>
+              </div>
+            </div>
+            <div class="relative group bg-gray-100 transition hover:z-[1] hover:shadow-2xl lg:hidden xl:block">
+              <div
+                class="relative p-8 space-y-8 border-dashed rounded-lg transition duration-300 group-hover:bg-white group-hover:border group-hover:scale-90">
+                <img src="https://tailus.io/sources/blocks/stacked/preview/images/avatars/metal.png" class="w-10"
+                  width="512" height="512" alt="burger illustration" />
+
+                <div class="space-y-2">
+                  <h5 class="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    More features
+                  </h5>
+                  <p class="text-sm text-gray-600">
+                    Neque Dolor, fugiat non cum doloribus aperiam voluptates
+                    nostrum.
+                  </p>
+                </div>
+                <a href="#" class="flex justify-between items-center group-hover:text-yellow-600">
+                  <span class="text-sm">Read more</span>
+                  <span
+                    class="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">&RightArrow;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="relative pt-12 bg-blueGray-50">
+        <div class="items-center flex flex-wrap">
+          <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
+            <img alt="..." class="max-w-full rounded-lg shadow-lg"
+              src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80" />
+          </div>
+          <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
+            <div class="md:pr-12">
+              <div
+                class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300 mt-8">
+                <i class="fas fa-rocket text-xl"></i>
+              </div>
+              <h3 class="md:text-3xl text-xl font-semibold">
+                A growing company
+              </h3>
+              <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
+                The extension comes with three pre-built pages to help you get
+                started faster. You can change the text and images and you're
+                good to go.
+              </p>
+              <ul class="list-none mt-6">
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span
+                        class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
+                          class="fas fa-fingerprint"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">
+                        Carefully crafted components
+                      </h4>
+                    </div>
+                  </div>
+                </li>
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span
+                        class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
+                          class="fab fa-html5"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">Amazing page examples</h4>
+                    </div>
+                  </div>
+                </li>
+                <li class="py-2">
+                  <div class="flex items-center">
+                    <div>
+                      <span
+                        class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200 mr-3"><i
+                          class="far fa-paper-plane"></i></span>
+                    </div>
+                    <div>
+                      <h4 class="text-blueGray-500">Dynamic components</h4>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer class="relative pt-8 pb-6 mt-8">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center md:justify-between justify-center">
+              <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+                <div class="text-sm text-blueGray-500 font-semibold py-1">
+                  Made with
+                  <a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800"
+                    target="_blank">Notus JS</a>
+                  by
+                  <a href="https://www.creative-tim.com" class="text-blueGray-500 hover:text-blueGray-800"
+                    target="_blank">
+                    Creative Tim</a>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </section>
+      <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white dark:bg-gray-800">
+        <div class="container xl:max-w-6xl mx-auto px-4">
+          <!-- section header -->
+          <header class="text-center mx-auto mb-12">
+            <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
+              <span class="font-light">Our</span> Team
+            </h2>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+              y="0px" viewBox="0 0 100 60" style="margin: 0 auto; height: 35px" xml:space="preserve">
+              <circle cx="50.1" cy="30.4" r="5" class="stroke-primary" style="
+                    fill: transparent;
+                    stroke-width: 2;
+                    stroke-miterlimit: 10;
+                  "></circle>
+              <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary"
+                style="stroke-width: 2; stroke-miterlimit: 10"></line>
+              <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary"
+                style="stroke-width: 2; stroke-miterlimit: 10"></line>
+            </svg>
+          </header>
+          <!-- end section header -->
+          <!-- row -->
+          <div class="flex flex-wrap flex-row -mx-4 justify-center">
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+              <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp"
+                data-wow-duration="1s" style="
+                    visibility: visible;
+                    animation-duration: 1s;
+                    animation-name: fadeInUp;
+                  ">
+                <!-- team block -->
+                <div class="relative overflow-hidden px-6">
+                  <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png"
+                    class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image" />
+                </div>
+                <div class="pt-6 text-center">
+                  <p class="text-lg leading-normal font-bold mb-1">
+                    Joe Antonio
+                  </p>
+                  <p class="text-gray-500 leading-relaxed font-light">
+                    Founder CEO
+                  </p>
+                  <!-- social icon -->
+                  <div class="mt-2 mb-5 space-x-2">
+                    <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                      <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
+                      <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
+                      <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z">
+                        </path>
+                        <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z">
+                        </path>
+                        <path fill="currentColor"
+                          d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
+                      <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end team block -->
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+              <!-- team block -->
+              <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".1s" style="
+                    visibility: visible;
+                    animation-duration: 1s;
+                    animation-delay: 0.1s;
+                    animation-name: fadeInUp;
+                  ">
+                <div class="relative overflow-hidden px-6">
+                  <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png"
+                    class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image" />
+                </div>
+                <div class="pt-6 text-center">
+                  <p class="text-lg leading-normal font-bold mb-1">
+                    Sarah Daeva
+                  </p>
+                  <p class="text-gray-500 leading-relaxed font-light">
+                    Marketing
+                  </p>
+                  <!-- social icon -->
+                  <div class="mt-2 mb-5 space-x-2">
+                    <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                      <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
+                      <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
+                      <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z">
+                        </path>
+                        <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z">
+                        </path>
+                        <path fill="currentColor"
+                          d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
+                      <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end team block -->
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+              <!-- team block -->
+              <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".3s" style="
+                    visibility: visible;
+                    animation-duration: 1s;
+                    animation-delay: 0.3s;
+                    animation-name: fadeInUp;
+                  ">
+                <div class="relative overflow-hidden px-6">
+                  <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png"
+                    class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image" />
+                </div>
+                <div class="pt-6 text-center">
+                  <p class="text-lg leading-normal font-bold mb-1">
+                    Daniel Emo
+                  </p>
+                  <p class="text-gray-500 leading-relaxed font-light">
+                    Sales manager
+                  </p>
+                  <!-- social icon -->
+                  <div class="mt-2 mb-5 space-x-2">
+                    <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                      <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
+                      <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
+                      <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z">
+                        </path>
+                        <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z">
+                        </path>
+                        <path fill="currentColor"
+                          d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
+                      <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end team block -->
+            </div>
+            <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+              <!-- team block -->
+              <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp"
+                data-wow-duration="1s" data-wow-delay=".5s" style="
+                    visibility: visible;
+                    animation-duration: 1s;
+                    animation-delay: 0.5s;
+                    animation-name: fadeInUp;
+                  ">
+                <div class="relative overflow-hidden px-6">
+                  <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png"
+                    class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image" />
+                </div>
+                <div class="pt-6 text-center">
+                  <p class="text-lg leading-normal font-bold mb-1">
+                    Toni Lana
+                  </p>
+                  <p class="text-gray-500 leading-relaxed font-light">
+                    UI/UX Designer
+                  </p>
+                  <!-- social icon -->
+                  <div class="mt-2 mb-5 space-x-2">
+                    <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                      <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
+                      <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
+                      <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z">
+                        </path>
+                        <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z">
+                        </path>
+                        <path fill="currentColor"
+                          d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z">
+                        </path>
+                      </svg>
+                    </a>
+                    <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
+                      <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                      <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem"
+                        viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z">
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- end team block -->
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="nav-container fixed top-0 w-full min-h-full bg-black text-white flex flex-col justify-center items-center">
+      <div class="justify-start">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-20" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+
+      </div>
+      <!-- w-2/3 -->
+      <div class="d-flex  flex w-3/4 justify-between">
+        <!-- <div class="flex flex-col justify-between items-start">
+            <div class="font-light mt-[-0.2em] uppercase text-xl">
+              KETS <br />
+              VAZE
+            </div>
+            <div class="flex flex-col">
+              <a class="font-normal text-xs" href="">Behance</a>
+              <a class="font-normal text-xs" href="">Facebook</a>
+              <a class="font-normal text-xs" href="">Instagram</a>
+              <a class="font-normal text-xs" href="">Github</a>
+              <a class="font-normal text-xs" href="">Youtube</a>
+            </div>
+          </div> -->
+        <div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
+              href="">Home</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
+              href="">Contact Us</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center justify-between">
+                About us
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                Academics
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                Student Corner
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                Our campus
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Admissions</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Research</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+        </div>
+        <div class="hidden">
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
+              href="">Home</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
+              href="">Contact Us</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center justify-between">
+                About us
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                Academics
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                Student Corner
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                Our campus
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Admissions</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Research</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+        </div>
+        <div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Alumni</a>
+            <!-- <button id="animateButton" class="mb-4 px-4 py-2 bg-blue-500 text-white rounded z-10 hover:bg-blue-600">
+                Click Me
+            </button> -->
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Faculty</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Committees</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Procedures</a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                NAAC
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+          <div class="nav-link py-2 relative">
+            <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
+              <div class="flex flex-row items-center gap-4 justify-between">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+            </a>
+            <div class="nav-item-wrapper"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Nav Footer  -->
+      <div class="nav-footer absolute w-full bottom-0 py-[2em] px-[1em] flex justify-between">
+        <div>
+          <a class="py-0 px-[1em]" href="#">Privacy Policy</a>
+          <a class="py-0 px-[1em]" href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+
+      const t1 = gsap.timeline({ paused: true });
+
+      const animateOpenNav = () => {
+        t1.to(".nav-container", 0.2, {
+          autoAlpha: 1,
+          delay: 0.1,
+        })
+          .to(
+            ".navbar",
+            0.2,
+            {
+              backgroundColor: "#000",
+              autoAlpha: 1,
+            },
+            "-=0.2"
+          )
+          .to(".site-logo", 0.2, { color: "#fff" }, "-=0.2");
+      };
+
+      const openNav = () => {
+        animateOpenNav();
+        const navBtn = document.getElementById("menu-toggle-btn");
+        navBtn.onclick = function (e) {
+          navBtn.classList.toggle("active");
+          t1.reversed(!t1.reversed());
+        };
+      };
+
+      openNav();
+
+      t1.from(".d-flex > div", 0.4, {
+        opacity: 0,
+        y: 10,
+        stagger: {
+          amount: 0.04,
+        },
+      })
+        .to(
+          ".nav-link > a",
+          0.8,
+          {
+            top: 0,
+            ease: "power2.inOut",
+            stagger: { amount: 0.1 },
+          },
+          "-=0.4"
+        )
+        .to(
+          ".nav-link",
+          0.8,
+          {
+            top: 0,
+            ease: "power2.inOut",
+            stagger: { amount: 0.1 },
+            borderBottom: "0.1px solid #fff",
+          },
+          "-=0.4"
+        )
+        .from(".nav-footer", 0.3, { opacity: 0 }, "-=0.5")
+        .reverse();
+      document.getElementById('animateButton').addEventListener('click', function () {
+        console.log("hello");
+        // Select the next div that is currently hidden
+        let nextDiv = document.querySelector('.box.hidden');
+
+        // If there is a next div to show
+        if (nextDiv) {
+          t1.to(".nav-link", 0.8, {
+            top: 10, // Move them out of view
+            ease: "power2.inOut",
+            stagger: { amount: 0.1 },
+            borderBottom: "0.1px solid transparent",
+          })
+            .to(".nav-link > a", 0.8, {
+              top: 10, // Move them out of view
+              ease: "power2.inOut",
+              stagger: { amount: 0.1 },
+            }, "-=0.8") // Overlap with the previous animation
+
+            // Then animate the .d-flex > div elements to disappear
+            .to(".d-flex > div", 0.4, {
+              opacity: 0,
+              y: 10,
+              stagger: { amount: 0.04 },
+            }, "-=0.8"); // Overlap with the previous animation
+          // .reverse();
+          // Remove the hidden class to make it visible
+          nextDiv.classList.remove('hidden');
+
+          // Use GSAP to animate the appearance of the div
+          gsap.from(nextDiv, { duration: 1, opacity: 0, y: -50 });
+        }
+      });
+    </script>
+  </div>
+</body>
+
+</html>
