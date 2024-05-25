@@ -6,7 +6,7 @@
     <title>V. G. VAZE| Course Catalog</title>
     <?php include('../../../library/library.php'); ?>
   </head>
-  <body class="bg-white"> 
+  <body class="bg-white dark:bg-black"> 
     <?php include('../../Layouts/header2.php'); ?> 
     <?php //include('../../Components/contact.php'); ?>
     <?php include('../../Layouts/footer.php'); ?> 

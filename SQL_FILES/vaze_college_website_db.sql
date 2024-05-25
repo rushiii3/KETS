@@ -133,7 +133,7 @@ CREATE TABLE `college_personnel` (
   `cp_personal_website_link` varchar(1000) DEFAULT NULL,
   `cp_image_path` varchar(1000) DEFAULT NULL,
   `cp_honourific` varchar(30) NOT NULL,
-  `cp_dept_id` int(11) NOT NULL
+  `cp_dept_id` int(11) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
