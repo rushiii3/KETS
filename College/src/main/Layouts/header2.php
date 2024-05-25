@@ -1,8 +1,8 @@
 <header id="header" class='border-b  border-gray-200 font-sans tracking-wide  z-50  inset-x-0 top-0  sticky transition-top duration-300 ease-in-out' >
   <section class='flex justify-between border-b	border-gray-200	 items-center gap-4 relative py-3 px-1 min-h-[100px]'>
-    <a href="#" class="flex items-center px-5">
-            <img src="" 
-            class="h-10 mr-3 sm:h-16" alt="Landwind Logo">
+    
+      <a href="#" class="flex items-center px-5">
+            <img src="" class="h-10 mr-3 sm:h-16" ><!--alt="Landwind Logo"-->
             <div class="flex flex-col">
             <span class="self-center sm:text-lg text-xs font-semibold whitespace-nowrap dark:text-white ">THE KELKAR EDUCATION TRUST'S <br> VINAYAK GANESH VAZE COLLEGE OF ARTS, <br> SCIENCE AND COMMERCE (AUTONOMOUS).</span>
             </div>
