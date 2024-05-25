@@ -7,4 +7,12 @@ assignees: ''
 
 ---
 
+*** Describe the new issue ***
 
+
+*** Software Versions you are using ***
+1. *XAMPP* - 
+2. *OS* - 
+3. *BROWSER* - 
+
+*** Steps to replicate it ***
