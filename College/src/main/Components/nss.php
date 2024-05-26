@@ -2854,7 +2854,7 @@
             <div class=" font-bold text-center text-5xl pb-10">Photo Gallery</div>
             <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg" data-carousel="static">
                 <!-- Carousel wrapper -->
-                <div class="relative h-80 md:h-96" data-carousel-inner>
+                <div class="relative h-80 md:h-96 " data-carousel-inner>
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img src="../../assests/nss.jpg" class="object-cover w-full h-full" alt="Slide 1">
@@ -2908,3 +2908,77 @@
 
 
 
+
+
+<!-- https://play.tailwindcss.com/q6uIACp5NI -->
+
+
+<!-- Card1 -->
+<!-- <div class="flex flex-col sm:flex-row sm:max-w-2xl max-w-xs mx-auto overflow-hidden bg-gray-700 rounded-lg shadow-lg dark:bg-gray-800 p-2">
+    <div class="p-2 sm:w-1/2">
+        <img class="rounded object-cover w-full sm:h-80 h-60" src="https://i.pinimg.com/564x/41/c7/52/41c75274ffa14f3222691c0cbe3c1904.jpg" alt="Article" />
+    </div>
+    <div class="sm:p-4 p-2 sm:w-1/2 flex flex-col justify-between">
+        <div>
+            <a href="#" class="block sm:mt-2 text-2xl font-semibold text-gray-50 dark:text-white hover:text-gray-600 hover:underline">Lorem
+                rem facere</a>
+            <p class="mt-2 text-sm text-gray-200 dark:text-gray-400">Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Tenetur labore, cum rem facere obcaecati beatae sunt numquam architecto delectus dignissimos
+                explicabo quod pariatur at consequatur sint esse aut Facere. <br> Numquam architecto delectus dignissimos
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <div class="flex items-center">
+                <div class="flex items-center">
+                    <img class="object-cover h-10 w-10 rounded-full" src="https://i.pinimg.com/564x/1d/1e/16/1d1e16ad5227a9c726b61bd7cc4eca33.jpg" alt="Avatar" />
+                    <a href="#" class="mx-2 font-semibold text-gray-50 dark:text-gray-200">Tocino Code</a>
+                </div>
+                <span class="mx-1 text-xs text-gray-400 dark:text-gray-300">21 SEP 2015</span>
+
+            </div>
+        </div>
+    </div>
+</div>
+        -->
+
+<!-- CARD 2 -->
+<!--
+<div class="min-h-screen flex flex-col p-8 sm:p-16 md:p-24 justify-center bg-white">
+    -->
+
+<!-- Themes: blue, purple and teal -->
+<!--
+    <div class=" bg-teal-400mx-auto max-w-6xl">
+        <h2 class="sr-only">Featured case study</h2>
+        <section class="font-sans text-black">
+            <div class="[ lg:flex lg:items-center ] [ fancy-corners fancy-corners--large fancy-corners--top-left fancy-corners--bottom-right ]">
+                <div class="flex-shrink-0 self-stretch sm:flex-basis-40 md:flex-basis-50 xl:flex-basis-60">
+                    <div class="h-full">
+                        <article class="h-full">
+                            <div class="h-full">
+                                <img class="h-full object-cover" src="https://inviqa.com/sites/default/files/styles/pullout/public/2020-08/XD-1.jpeg?h=f75d236a&itok=PBoXPDmW" width="733" height="412" alt='""' typeof="foaf:Image" />
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="p-6 bg-grey">
+                    <div class="leading-relaxed">
+                        <h2 class="leading-tight text-4xl font-bold">CXcon: Experience Transformation</h2>
+                        <p class="mt-4">Our second CXcon in October was dedicated to experience transformation. The free one-day virtual event&nbsp;brought together 230+ heads of digital, thought leaders, and UX practitioners to discuss all aspects of experience design..</p>
+                        <p class="mt-4">In a jam-packed day filled with keynote sessions, panels, and virtual networking we explored topics including design leadership, UX ethics, designing for emotion and innovation at scale.</p>
+                        <p><a class="mt-4 button button--secondary" href="https://inviqa.com/cxcon-experience-transformation">Explore this event</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    
+
+
+
+
+</div> -->
