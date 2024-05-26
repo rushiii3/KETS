@@ -40,10 +40,6 @@
   </style>
 
 <?php
-
-
-include("../config/connect.php");
-
 /*
 $con = mysqli_connect("localhost","root","","college");
 if(mysqli_connect_errno()){
@@ -52,6 +48,5 @@ if(mysqli_connect_errno()){
    
 }
 */
-
 ?>
  
