@@ -4,7 +4,7 @@
       <a href="#" class="flex items-center px-5">
             <img src="" class="h-10 mr-3 sm:h-16" ><!--alt="Landwind Logo"-->
             <div class="flex flex-col">
-            <span class="self-center sm:text-lg text-xs font-semibold whitespace-nowrap dark:text-white ">THE KELKAR EDUCATION TRUST'S <br> VINAYAK GANESH VAZE COLLEGE OF ARTS, <br> SCIENCE AND COMMERCE (AUTONOMOUS).</span>
+            <span class="self-center sm:text-lg text-xs font-semibold whitespace-nowrap  ">THE KELKAR EDUCATION TRUST'S <br> VINAYAK GANESH VAZE COLLEGE OF ARTS, <br> SCIENCE AND COMMERCE (AUTONOMOUS).</span>
             </div>
             
         </a>
@@ -52,12 +52,14 @@ class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:be
             
         </a>
     </li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Home</a></li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Contact Us</a></li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>About us</a></li>
+
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='index.php'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Home</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./Contact.php'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Contact Us</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./About.php'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block'>About us</a></li>
+
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
         class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Academics</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'

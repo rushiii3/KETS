@@ -7,7 +7,7 @@
     <?php include("../../library/library.php"); ?>
 </head>
 <body>
-    <?php include("../Layouts/header.php"); ?>
+    <?php include("../Layouts/header2.php"); ?>
 
     <div class="text-center p-8 mt-12" >
     <h2 class="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl" data-aos="zoom-in">

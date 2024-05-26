@@ -64,3 +64,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+College/src/main/Pages/NSS_Ru.php
+tailwind.config.js
+College/src/ASSETS.HTML
+College/src/main/Components/backupnss.php
