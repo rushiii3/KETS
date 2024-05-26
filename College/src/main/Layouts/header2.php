@@ -1,8 +1,8 @@
 <header id="header" class='border-b  border-gray-200 font-sans tracking-wide  z-50  inset-x-0 top-0  sticky transition-top duration-300 ease-in-out' >
   <section class='flex justify-between border-b	border-gray-200	 items-center gap-4 relative py-3 px-1 min-h-[100px]'>
-    <a href="#" class="flex items-center px-5">
-            <img src="" 
-            class="h-10 mr-3 sm:h-16" alt="Landwind Logo">
+    
+      <a href="#" class="flex items-center px-5">
+            <img src="" class="h-10 mr-3 sm:h-16" ><!--alt="Landwind Logo"-->
             <div class="flex flex-col">
             <span class="self-center sm:text-lg text-xs font-semibold whitespace-nowrap  ">THE KELKAR EDUCATION TRUST'S <br> VINAYAK GANESH VAZE COLLEGE OF ARTS, <br> SCIENCE AND COMMERCE (AUTONOMOUS).</span>
             </div>
@@ -11,15 +11,15 @@
 
         <div class="flex flex-col items-center justify-end">
         <ul class='flex space-x-8 w-full px-10 py-2 justify-end max-xl:hidden'>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Alumni</a>
+      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Alumni</a>
       </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Faculty</a>
+      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Faculty</a>
       </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Committees</a>
+      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Committees</a>
       </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Report and surveys</a>
+      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Report and surveys</a>
       </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Avail Documents</a>
+      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Avail Documents</a>
       </li>
     </ul>
     <div class='flex flex-wrap items-start gap-4 px-10 py-2 relative '>
@@ -52,23 +52,25 @@ class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:be
             
         </a>
     </li>
+
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='index.php'
         class='hover:text-blue-600 font-bold text-black text-[15px] block'>Home</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./Contact.php'
         class='hover:text-blue-600 font-bold text-black text-[15px] block'>Contact Us</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./About.php'
         class='hover:text-blue-600 font-bold text-black text-[15px] block'>About us</a></li>
+
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Academics</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Academics</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Student Corner</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Student Corner</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Admissions</a>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Admissions</a>
     </li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Our campus</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Our campus</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>More</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>More</a></li>
   </ul>
 </div>
 
