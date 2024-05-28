@@ -468,3 +468,11 @@ CREATE TABLE reports_belong_to_aqar_criteria(
     aqar_criteria(aqar_criteria_number) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+alter table programmes add column faculty_sec_name varchar(1) not null;
+-- alter table programmes ADD CONSTRAINT `FK_PROGRAMMES_FACULTY_SEC_NAME` FOREIGN KEY(faculty_sec_name) REFERENCES faculty(faculty_sec_name);
+alter table programmes ADD CONSTRAINT `FK_PROGRAMMES_FACULTY_SEC_NAME` FOREIGN KEY(faculty_sec_name) REFERENCES faculty(faculty_sec_name) ON UPDATE CASCADE ON DELETE CASCADE;
+
+alter table college_personnel drop constraint `FK_CP_DEPARTMENT`;
+alter table college_personnel add column college_sec_name varchar(2) not null;
+alter table dept_belongs_to_clg_section add PRIMARY KEY (dept_id, college_sec_name);
+ADD CONSTRAINT `FK_CP_BELONGS_TO_DEPT_IN_COLLEGE_SECTION` FOREIGN KEY (cp_dept_id, cp_college_sec_name) REFERENCES dept_belongs_to_clg_section(dept_id, college_sec_name) ON UPDATE CASCADE ON DELETE CASCADE;

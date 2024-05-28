@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 17, 2024 at 01:34 PM
+-- Generation Time: May 28, 2024 at 07:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -133,7 +133,8 @@ CREATE TABLE `college_personnel` (
   `cp_personal_website_link` varchar(1000) DEFAULT NULL,
   `cp_image_path` varchar(1000) DEFAULT NULL,
   `cp_honourific` varchar(30) NOT NULL,
-  `cp_dept_id` int(11) NULL
+  `cp_dept_id` int(11) DEFAULT NULL,
+  `cp_college_sec_name` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -472,7 +473,8 @@ CREATE TABLE `programmes` (
   `prog_intake_capacity` int(3) NOT NULL,
   `prog_duration` varchar(50) NOT NULL,
   `prog_type` varchar(3) NOT NULL,
-  `prog_dept_id` int(11) NOT NULL
+  `prog_dept_id` int(11) NOT NULL,
+  `faculty_sec_name` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -678,7 +680,7 @@ ALTER TABLE `clg_events`
 ALTER TABLE `college_personnel`
   ADD PRIMARY KEY (`cp_id`),
   ADD KEY `FK_CP_HONOURIFIC` (`cp_honourific`),
-  ADD KEY `FK_CP_DEPARTMENT` (`cp_dept_id`);
+  ADD KEY `FK_CP_BELONGS_TO_DEPT_IN_COLLEGE_SECTION` (`cp_dept_id`,`cp_college_sec_name`);
 
 --
 -- Indexes for table `college_sections`
@@ -748,6 +750,7 @@ ALTER TABLE `departments`
 -- Indexes for table `dept_belongs_to_clg_section`
 --
 ALTER TABLE `dept_belongs_to_clg_section`
+  ADD PRIMARY KEY (`dept_id`,`college_sec_name`),
   ADD KEY `FK_DEPT_BELONGS_TO_CLG_SECTION_DEPT_ID` (`dept_id`),
   ADD KEY `FK_DEPT_BELONGS_TO_CLG_SECTION_CLG_SECTION` (`college_sec_name`);
 
@@ -868,7 +871,8 @@ ALTER TABLE `photos_of_faculty_academic_year`
 --
 ALTER TABLE `programmes`
   ADD PRIMARY KEY (`prog_id`),
-  ADD KEY `FK_PROG_DEPT_ID` (`prog_dept_id`);
+  ADD KEY `FK_PROG_DEPT_ID` (`prog_dept_id`),
+  ADD KEY `FK_PROGRAMMES_FACULTY_SEC_NAME` (`faculty_sec_name`);
 
 --
 -- Indexes for table `reports`
@@ -1100,8 +1104,8 @@ ALTER TABLE `clg_events`
 -- Constraints for table `college_personnel`
 --
 ALTER TABLE `college_personnel`
-  ADD CONSTRAINT `FK_CP_DEPARTMENT` FOREIGN KEY (`cp_dept_id`) REFERENCES `departments` (`dept_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_CP_HONOURIFIC` FOREIGN KEY (`cp_honourific`) REFERENCES `honourific` (`title`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_CP_HONOURIFIC` FOREIGN KEY (`cp_honourific`) REFERENCES `honourific` (`title`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_CP_BELONGS_TO_DEPT_IN_COLLEGE_SECTION` FOREIGN KEY (`cp_dept_id`,`cp_college_sec_name`) REFERENCES `dept_belongs_to_clg_section` (`dept_id`,`college_sec_name`) ON UPDATE CASCADE ON DELETE CASCADE;
 
 --
 -- Constraints for table `committee_belongs_to_clg_section`
@@ -1217,6 +1221,7 @@ ALTER TABLE `photos_of_faculty_academic_year`
 -- Constraints for table `programmes`
 --
 ALTER TABLE `programmes`
+  ADD CONSTRAINT `FK_PROGRAMMES_FACULTY_SEC_NAME` FOREIGN KEY (`faculty_sec_name`) REFERENCES `faculty` (`faculty_sec_name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_PROG_DEPT_ID` FOREIGN KEY (`prog_dept_id`) REFERENCES `departments` (`dept_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -1256,3 +1261,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
