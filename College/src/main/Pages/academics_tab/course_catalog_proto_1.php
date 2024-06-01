@@ -12,10 +12,34 @@ define("BG_BLUE_COLOR", "#001b53");
   <title>V. G. VAZE| Course Catalog</title>
   <?php include('../../../library/library.php'); ?>
   <style>
-    .custom_bg_blue {
-      background: #001b53;
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    @layer components {
+      .degree_filter_mobile {
+        @apply -bottom-fit fixed
+      }
+
+      .degree_filter_sm {
+        @apply sm:flex sm:relative sm:w-1/5
+      }
+    }
+
+    @layer utitlities {
+      .custom_bg_blue {
+        background: #001b53;
+      }
+
+      .custom_font_blue {
+        color: #001b53;
+      }
+
+
     }
   </style>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -52,7 +76,7 @@ define("BG_BLUE_COLOR", "#001b53");
      BREADCRUMBS - to show where the user is currently
     ****************/
     -->
-  <nav aria-label="Breadcrumb" class="pl-16 mt-10" id="Breadcrumb">
+  <nav aria-label="Breadcrumb" class="pl-2 mt-2" id="Breadcrumb">
     <ol class="flex items-stretch gap-2 list-none">
       <li class="flex items-center gap-2"> <a href="#" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
@@ -88,45 +112,33 @@ define("BG_BLUE_COLOR", "#001b53");
   <!-- Search bar-->
 
   <div class='flex items-center justify-center w-full my-4'>
-    <button class="self-center flex p-1 cursor-pointer "> <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-
-        <g id="SVGRepo_iconCarrier">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.567 9.8895C12.2495 8.90124 12.114 7.5637 11.247 6.7325C10.3679 5.88806 9.02339 5.75928 7.99998 6.4215C7.57983 6.69308 7.25013 7.0837 7.05298 7.5435C6.85867 7.99881 6.80774 8.50252 6.90698 8.9875C7.00665 9.47472 7.25054 9.92071 7.60698 10.2675C7.97021 10.6186 8.42786 10.8563 8.92398 10.9515C9.42353 11.049 9.94062 11.0001 10.413 10.8105C10.8798 10.6237 11.2812 10.3033 11.567 9.8895Z" stroke="#001b53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.433 17.8895C11.7504 16.9012 11.886 15.5637 12.753 14.7325C13.6321 13.8881 14.9766 13.7593 16 14.4215C16.4202 14.6931 16.7498 15.0837 16.947 15.5435C17.1413 15.9988 17.1922 16.5025 17.093 16.9875C16.9933 17.4747 16.7494 17.9207 16.393 18.2675C16.0298 18.6186 15.5721 18.8563 15.076 18.9515C14.5773 19.0481 14.0614 18.9988 13.59 18.8095C13.1222 18.6234 12.7197 18.3034 12.433 17.8895V17.8895Z" stroke="#001b53" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M12 7.75049C11.5858 7.75049 11.25 8.08627 11.25 8.50049C11.25 8.9147 11.5858 9.25049 12 9.25049V7.75049ZM19 9.25049C19.4142 9.25049 19.75 8.9147 19.75 8.50049C19.75 8.08627 19.4142 7.75049 19 7.75049V9.25049ZM6.857 9.25049C7.27121 9.25049 7.607 8.9147 7.607 8.50049C7.607 8.08627 7.27121 7.75049 6.857 7.75049V9.25049ZM5 7.75049C4.58579 7.75049 4.25 8.08627 4.25 8.50049C4.25 8.9147 4.58579 9.25049 5 9.25049V7.75049ZM12 17.2505C12.4142 17.2505 12.75 16.9147 12.75 16.5005C12.75 16.0863 12.4142 15.7505 12 15.7505V17.2505ZM5 15.7505C4.58579 15.7505 4.25 16.0863 4.25 16.5005C4.25 16.9147 4.58579 17.2505 5 17.2505V15.7505ZM17.143 15.7505C16.7288 15.7505 16.393 16.0863 16.393 16.5005C16.393 16.9147 16.7288 17.2505 17.143 17.2505V15.7505ZM19 17.2505C19.4142 17.2505 19.75 16.9147 19.75 16.5005C19.75 16.0863 19.4142 15.7505 19 15.7505V17.2505ZM12 9.25049H19V7.75049H12V9.25049ZM6.857 7.75049H5V9.25049H6.857V7.75049ZM12 15.7505H5V17.2505H12V15.7505ZM17.143 17.2505H19V15.7505H17.143V17.2505Z" fill="#001b53" />
-        </g>
-
-      </svg></button>
+    <button class="self-center flex p-1 cursor-pointer dark:text-white" id="filter_toggle_btn">
+      <span class="material-symbols-outlined">
+        filter_list
+      </span>
+    </button>
 
 
 
-    <div class=" bg-transparent w-full flex items-center border rounded-full focus-within:ring ">
+    <form class=" bg-transparent w-3/4 flex items-center border p-2 rounded-full dark:ring-white focus-within:ring ">
+      <input type="text" class=<?php echo '"w-full bg-transparent border-0 focus:border-transparent  focus:ring-0  pl-2 text-[#001b53] dark:text-white dark:placeholder:text-white placeholder:text-[' . BG_BLUE_COLOR . ']"'; ?> placeholder="Search programs" />
 
-      <input type="text" class=<?php echo '"w-full bg-transparent border-0 focus:border-transparent focus:ring-0  pl-2 text-[#001b53] dark:text-white placeholder:text-[' . BG_BLUE_COLOR . ']"'; ?> placeholder="Search programs" />
+      <button type="reset" id="btn_clear_search" class="cursor-pointer mr-2">
+        <span class="material-symbols-outlined dark:text-white">
+          close
+        </span>
+      </button>
 
-      <button type="reset" id="btn_clear_search" class="cursor-pointer"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=<?php echo BG_BLUE_COLOR; ?>>
-          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-        </svg> </button>
+    </form>
 
-    </div>
 
     <!--search button-->
-    <button type="submit" class="relative  mx-2 p-2 custom_bg_blue rounded-full text-white cursor-pointer">
-      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <button type="submit" class="relative mx-2 p-2 custom_bg_blue rounded-full sm:rounded-xl text-white cursor-pointer dark:bg-white dark:text-[#001b53]">
+      <p class=" hidden sm:block font-bold  font-2xl p-2">Search</p>
+      <span class="material-symbols-outlined sm:hidden">
+        search
+      </span>
 
-        <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-
-        <g id="SVGRepo_iconCarrier">
-          <path d="M14.9536 14.9458L21 21M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </g>
-
-      </svg>
     </button>
 
   </div>
@@ -134,19 +146,201 @@ define("BG_BLUE_COLOR", "#001b53");
 
   <!-- Degree,Junior Tabs-->
 
-
-
-<div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
-    <ul class="flex flex-wrap -mb-px">
-        <li class="me-2">
-            <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Degree</a>
-        </li>
-        <li class="me-2">
-            <a href="#" class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500" aria-current="page">Junior</a>
-        </li>
-       
+  <div class="mx-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+      <li class="me-2" role="presentation">
+        <button class="inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold" id="degree_tab" data-tabs-target="#degree_tab_contents" type="button" role="tab" aria-controls="degree" aria-selected="false">Degree</button>
+      </li>
+      <li class="me-2" role="presentation">
+        <button class="inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold  hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="junior_tab" data-tabs-target="#junior_tab_contents" type="button" role="tab" aria-controls="junior" aria-selected="false">Junior</button>
+      </li>
     </ul>
-</div>
+  </div>
+
+
+  <!--Degree and Junior tab contents-->
+  <div id="default-tab-content">
+
+    <!--DEGREE TAB CONTENTS-->
+    <div class="hidden flex sm:p-4 w-full justify-between" id="degree_tab_contents" role="tabpanel" aria-labelledby="degree_tab">
+
+      <!-- Filter section-->
+      <div class=" -bottom-[100rem] sm:top-0 z-10 fixed sm:flex sm:relative sm:w-1/5 transition-transform transition-width duration-[750ms] ease-in-out" id="filter_div">
+
+        <!--Sticky inner filter section-->
+        <div class="sm:sticky h-fit flex flex-col items-end p-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600/10  dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 text-black top-2">
+          <button class="sm:hidden" id="filter_mobile_close_btn">
+            <span class="material-symbols-outlined dark:text-white">
+              close
+            </span>
+          </button>
+
+
+          <form id="filter_form" class="w-full">
+            <!-- Filter heading-->
+            <div class="flex justify-between">
+              <h2 class="font-bold text-2xl dark:text-white">Filter</h2>
+              
+            </div>
+
+            <!--"Level" subheading div -->
+            <div class="flex-col ">
+              <h4 class="font-bold text-lg dark:text-white">Level</h4>
+
+              <div class="flex  mt-2">
+                <input type="checkbox" id="ug_chkbox" name="level" />
+                <label for="ug_chkbox" class=" mx-2 dark:text-white ">Under-Graduate</label>
+              </div>
+
+              <div class="flex">
+                <input type="checkbox" id="pg_chkbox" name="level" />
+                <label for="pg_chkbox" class=" mx-2 dark:text-white ">Post-Graduate</label>
+              </div>
+
+              <div class="flex">
+                <input type="checkbox" id="phd_chkbox" name="level" />
+                <label for="phd_chkbox" class=" mx-2 dark:text-white">PhD</label>
+              </div>
+
+
+              <div class="flex">
+                <input type="checkbox" id="certificate_chkbox" name="level" />
+                <label for="certificate_chkbox" class=" mx-2 dark:text-white">Certificate courses</label>
+              </div>
+
+            </div>
+            <!--"Level" subheading end-->
+
+
+            <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+            <!--"Section" subheading div -->
+            <div class="flex-col mt-2">
+              <h4 class="font-bold text-lg dark:text-white">Section</h4>
+
+              <div class="flex mt-2">
+                <input type="checkbox" id="sfc_chkbox" name="section" />
+                <label for="sfc_chkbox" class=" mx-2 dark:text-white">Self-Financing Courses (SFC)</label>
+              </div>
+
+              <div class="flex">
+                <input type="checkbox" id=regular_chkbox" name="section" />
+                <label for="regular_chkbox" class=" mx-2 dark:text-white">Regular </label>
+              </div>
+
+            </div>
+            <!--"Section" subheading end-->
+
+            <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+
+
+            <!--"Faculty" subheading div -->
+            <div class="flex-col mt-2">
+              <h4 class="font-bold text-lg dark:text-white">Faculty</h4>
+
+              <div class="flex mt-2">
+                <input type="checkbox" id="arts_chkbox" name="faculty" />
+                <label for="arts_chkbox" class=" mx-2 dark:text-white">Arts</label>
+              </div>
+
+              <div class="flex">
+                <input type="checkbox" id=commerce_chkbox" name="faculty" />
+                <label for="commerce_chkbox" class=" mx-2 dark:text-white">Commerce</label>
+              </div>
+
+              <div class="flex">
+                <input type="checkbox" id="science_chkbox" name="faculty" />
+                <label for="science_chkbox" class=" mx-2 dark:text-white">Science</label>
+              </div>
+
+            </div>
+            <!--"Faculty" section Ends here-->
+
+            <!--Show results and clear-->
+            <div class="flex justify-between items-center flex-wrap mt-8">
+
+            <button class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white" type="button">Apply</button>
+
+           
+            <button class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700" type="reset">Clear</button>
+            </div>
+          </form>
+        </div>
+        <!--sticky inner section end-->
+
+
+      </div>
+      <!--Filter section end-->
+
+
+      <!-- Main contents-->
+      <div class="flex-1 relative mx-4 sm:ml-4">
+
+        <!-- No of courses-->
+        <p class="text-2xl text-black font-bold dark:text-white">
+          50 courses available
+        </p>
+
+        <!-- Courses-->
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2  w-full">
+
+          <!--Card 1 start-->
+          <?php
+          for ($i = 1; $i <= 9; $i++) {
+          ?>
+
+            <div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+              <div class="relative flex-1 overflow-hidden rounded-t-xl">
+                <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+              </div>
+              <div class=" flex-1 relative px-4 py-4">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+                  Bachelor of Science (Information Technology)
+                </h3>
+
+                <p class="text-slate-500 dark:text-white">Undergraduate course</p>
+
+                <ul class="list-none mt-4">
+                  <li>
+                    <p class="font-bold dark:text-white">Duration</p>
+                  </li>
+                  <li>
+                    <p class="text-slate-500 dark:text-white">3 years</p>
+                  </li>
+
+                  <li class="mt-2">
+                    <p class="font-bold dark:text-white">Falls under</p>
+                  </li>
+                  <li>
+                    <p class="text-slate-500 dark:text-white truncate">Self-financing courses section</p>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <!--Card 1 end-->
+
+          <?php
+          }
+          ?>
+        </div>
+        <!--Courses Grid end-->
+
+      </div>
+      <!--Main contents end-->
+
+    </div>
+    <!--DEGREE TAB CONTENTS END-->
+
+    <!--JUNIOR TABS CONTENTS START-->
+
+    <div class="hidden p-4" id="junior_tab_contents" role="tabpanel" aria-labelledby="junior_tab">
+      <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+    </div>
+    <!--JUNIOR TABS CONTENTS END-->
+
+
+  </div>
+  <!--DEFAULT TAB CONTENTS END-->
 
 
 
@@ -158,6 +352,8 @@ define("BG_BLUE_COLOR", "#001b53");
     ****************/
     -->
   <?php include('../../Layouts/footer.php'); ?>
+  <script src="../../../js/academics_tab/course_catalog.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
 
