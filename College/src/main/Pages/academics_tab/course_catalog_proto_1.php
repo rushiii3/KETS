@@ -39,7 +39,7 @@ define("BG_BLUE_COLOR", "#001b53");
     }
   </style>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+ 
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -58,8 +58,7 @@ define("BG_BLUE_COLOR", "#001b53");
   <div class="relative isolate flex flex-col justify-end overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center">
     <!--
     <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
-  -->
-
+    -->
     <div class="absolute inset-0 -z-10 h-full w-full object-cover custom_bg_blue"></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
@@ -180,7 +179,7 @@ define("BG_BLUE_COLOR", "#001b53");
             <!-- Filter heading-->
             <div class="flex justify-between">
               <h2 class="font-bold text-2xl dark:text-white">Filter</h2>
-              
+
             </div>
 
             <!--"Level" subheading div -->
@@ -258,10 +257,10 @@ define("BG_BLUE_COLOR", "#001b53");
             <!--Show results and clear-->
             <div class="flex justify-between items-center flex-wrap mt-8">
 
-            <button class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white" type="button">Apply</button>
+              <button class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white" type="button">Apply</button>
 
-           
-            <button class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700" type="reset">Clear</button>
+
+              <button class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700" type="reset">Clear</button>
             </div>
           </form>
         </div>
@@ -270,7 +269,6 @@ define("BG_BLUE_COLOR", "#001b53");
 
       </div>
       <!--Filter section end-->
-
 
       <!-- Main contents-->
       <div class="flex-1 relative mx-4 sm:ml-4">
@@ -281,14 +279,15 @@ define("BG_BLUE_COLOR", "#001b53");
         </p>
 
         <!-- Courses-->
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2  w-full">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 w-full">
 
           <!--Card 1 start-->
           <?php
           for ($i = 1; $i <= 9; $i++) {
           ?>
 
-            <div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+            <div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer course_card">
+              <p class="p_hidden" hidden><?php echo "course_".$i;?></p>
               <div class="relative flex-1 overflow-hidden rounded-t-xl">
                 <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
               </div>
@@ -332,18 +331,125 @@ define("BG_BLUE_COLOR", "#001b53");
     <!--DEGREE TAB CONTENTS END-->
 
     <!--JUNIOR TABS CONTENTS START-->
+    <div class="hidden flex p-4" id="junior_tab_contents" role="tabpanel" aria-labelledby="junior_tab">
 
-    <div class="hidden p-4" id="junior_tab_contents" role="tabpanel" aria-labelledby="junior_tab">
-      <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+      <!-- Grid layout div start-->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
+
+        <!--Card 1start-->
+        <div class="group  flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+          <div class="relative flex-1 overflow-hidden rounded-t-xl">
+            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class=" flex-1 relative px-4 py-4">
+            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+              Science
+            </h3>
+
+            <p class="text-slate-500 dark:text-white">Junior College</p>
+
+            <ul class="list-none mt-4">
+              <li>
+                <p class="font-bold dark:text-white">Duration</p>
+              </li>
+              <li>
+                <p class="text-slate-500 dark:text-white">2 years</p>
+              </li>
+
+
+              <li class="mt-2">
+                <p class="font-bold dark:text-white">Additional Information</p>
+              </li>
+              <li>
+                <p class="text-slate-500 dark:text-white overflow-ellipsis">Science has been one of the most popular streams of study amongst students in 11th and 12th for reasons such as these : It is the stream leading up to popular careers such as Engineering and Medicine Science students can pursue further studies in Pure Sciences or Applied Sciences at Post Graduate levels.</p>
+              </li>
+
+
+            </ul>
+
+          </div>
+        </div>
+        <!--Card 1 end-->
+
+        <!--Card 2 start-->
+        <div class="group  flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+          <div class="relative flex-1 overflow-hidden rounded-t-xl">
+            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class=" flex-1 relative px-4 py-4">
+            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+              Commerce
+            </h3>
+
+            <p class="text-slate-500 dark:text-white">Junior College</p>
+
+            <ul class="list-none mt-4">
+              <li>
+                <p class="font-bold dark:text-white">Duration</p>
+              </li>
+              <li>
+                <p class="text-slate-500 dark:text-white">2 years</p>
+              </li>
+
+
+              <li class="mt-2">
+                <p class="font-bold dark:text-white">Additional Information</p>
+              </li>
+              <li>
+                <p class="text-slate-500 dark:text-white overflow-ellipsis">Commerce as a stream of education can be defined as a study of trade and business activities such as the exchange of goods and services from producer to final consumer. The main subjects that are taught in the Commerce stream in Class 11 and 12 include Economics, Accountancy and Business Studies. Choose this field if you have a genuine interest in these subjects and have an affinity for numbers, the economy and business!</p>
+              </li>
+
+
+            </ul>
+
+          </div>
+        </div>
+        <!--Card 2 end-->
+
+        <!--Card 3 start-->
+        <div class="group  flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+          <div class="relative flex-1 overflow-hidden rounded-t-xl">
+            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class=" flex-1 relative px-4 py-4">
+            <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
+              Arts
+            </h3>
+
+            <p class="text-slate-500 dark:text-white">Junior College</p>
+
+            <ul class="list-none mt-4">
+              <li>
+                <p class="font-bold dark:text-white">Duration</p>
+              </li>
+              <li>
+                <p class="text-slate-500 dark:text-white">2 years</p>
+              </li>
+
+
+              <li class="mt-2">
+                <p class="font-bold dark:text-white">Additional Information</p>
+              </li>
+              <li>
+                <p class="text-slate-500 dark:text-white overflow-ellipsis">Humanities encourage students to respect and understand the world around them, and to provide a skills-base to facilitate further study. This is achieved through the study of individuals, societies and environments in a wide context: historical, contemporary, geographical, political, social, economic, religious and much more</p>
+              </li>
+
+
+            </ul>
+
+          </div>
+        </div>
+        <!--Card 3 end-->
+
+      </div>
+      <!--Grid layout div end-->
+
     </div>
     <!--JUNIOR TABS CONTENTS END-->
 
 
   </div>
   <!--DEFAULT TAB CONTENTS END-->
-
-
-
 
 
   <!--

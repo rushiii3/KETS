@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -10,37 +9,38 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.js" integrity="sha512-fkD+ERYA/LvkGF5GiipDr7myGZH3m8OPbYw62KE6qalbgykahcpfNjWe/RZmsY12qraS+wYUo2e51Zl2hShgVQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-@keyframes marquee {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateY(0%);
+    }
 
-@keyframes marquee2 {
-  0% {
-    transform: translateY(100%);
+    100% {
+      transform: translateY(-100%);
+    }
   }
-  100% {
-    transform: translateY(0%);
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
   }
-}
 
-.animate-marquee {
-  animation: marquee 15s linear infinite, marquee2 15s linear infinite;
-}
+  .animate-marquee {
+    animation: marquee 15s linear infinite, marquee2 15s linear infinite;
+  }
 
-.animate-marquee2 {
-  animation: marquee 15s linear infinite, marquee2 15s linear infinite;
-}
-
-  </style>
+  .animate-marquee2 {
+    animation: marquee 15s linear infinite, marquee2 15s linear infinite;
+  }
+</style>
 
 <?php
 
 include("../config/connect.php");
 ?>
- 

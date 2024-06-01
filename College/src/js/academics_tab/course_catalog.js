@@ -5,6 +5,8 @@ const filter_mobile_close_btn = document.getElementById(
   "filter_mobile_close_btn"
 );
 
+const all_course_cards=document.querySelectorAll(".course_card");
+
 let is_filter_visible = false;
 if (window.innerWidth >= 640) {
   is_filter_visible = true;
@@ -78,6 +80,15 @@ window.addEventListener("resize", () => {
     is_filter_visible = false;
   }
 });
+
+
+all_course_cards.forEach((course_card)=>{
+  course_card.addEventListener('click',()=>{
+    let course_id= document.querySelector(".p_hidden").innerText;
+    //the link is respective to the php file where this js file will be linked
+    window.location.href="../../Pages/academics_tab/specific_course_details.php?id="+course_id;
+  })
+})
 //////////////////////////FUNCTIONS///////////////////////
 function getScreenHeight() {
   return document.documentElement.clientWidth;
