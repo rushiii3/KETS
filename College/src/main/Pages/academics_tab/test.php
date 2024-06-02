@@ -17,7 +17,12 @@
 </head>
 <body>
     
-<div class=" fixed w-full h-[100px] bg-blue-500 -bottom-40 hover:-translate-y-[10rem] transition-transform" >
+<div class="flex">
+    <div class="h-10 w-10 bg-blue-500"></div>
+    <div class="h-20 w-10 bg-red-500"></div>
+    <div class="h-40 w-10 bg-yellow-500"></div>
+
+
    
 </div>
 
