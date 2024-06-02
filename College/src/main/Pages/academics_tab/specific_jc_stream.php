@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V. G. VAZE|BSC(I.T)</title>
+    <title>V. G. VAZE| HSC Science</title>
     <?php include('../../../library/library.php'); ?>
 </head>
 
@@ -17,6 +17,11 @@
     <?php include('../../Layouts/header2.php'); 
     ?>
 
+    <!--
+    /***************
+    MAIN CONTENTS 
+    ****************/
+    -->
     <!--
     /***************
     HEADING SECTION
@@ -47,7 +52,7 @@
     <nav aria-label="Breadcrumb" class="pl-2 mt-2" id="Breadcrumb">
         <ol class="flex items-stretch gap-2 list-none">
             <li class="flex items-center gap-2">
-                <a href="../index.php" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+                <a href="../index.php" class="flex max-w-[20ch] items-center gap-1 truncate  text-slate-700 transition-colors hover:text-emerald-500">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
                         <title id="title-01">Home</title>
                         <desc id="description-01"> Home button indicating the homepage of the website. </desc>
@@ -62,7 +67,7 @@
                 </svg>
             </li>
             <li>
-                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500">Academics</a>
+                <a href="#" aria-current="page" class=" max-w-[20ch] truncate  text-slate-400 hover:text-emerald-500">Academics</a>
             </li>
             <!-- Arrow 2-->
             <li>
@@ -74,7 +79,7 @@
             </li>
 
             <li>
-                <a href="./course_catalog_proto_1.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500">Course Catalog</a>
+                <a href="./course_catalog_proto_1.php" aria-current="page" class=" max-w-[20ch] truncate  text-slate-400 hover:text-emerald-500">Course Catalog</a>
             </li>
 
             <!-- Arrow 3-->
@@ -87,7 +92,7 @@
             </li>
 
             <li>
-                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500">BSC(IT)</a>
+                <a href="#" aria-current="page" class=" max-w-[20ch] truncate  text-slate-400 hover:text-emerald-500">HSC Science</a>
             </li>
 
         </ol>
@@ -99,18 +104,16 @@
     -->
 
     <!-- Overview section-->
-
-
     <section class="pt-12">
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="mb-12 space-y-2 text-center">
                 <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Overview </h2>
-                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">Brief Information about the course</p>
+                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">Brief information about the course</p>
             </div>
         </div>
     </section>
 
-    <!--Overview body-->
+    <!--Overview Body-->
     <div class=" flex flex-wrap mt-4 px-20">
         <!--<p class="text-xl dark:text-white text-justify px-40">Bachelor of Science in Information Technology (BSc IT) is an undergraduate degree program typically spanning three to four years, focusing on various aspects of computer science and information technology. The curriculum covers subjects like programming, database management, networking, cybersecurity, web development, and systems analysis. Graduates of BSc IT programs have diverse career opportunities, including roles as software developers, systems analysts, network administrators, cybersecurity specialists, and IT consultants. Throughout the program, students develop technical skills in programming languages like Java, Python, or C++, along with problem-solving, critical thinking, communication, and project management abilities. With a curriculum tailored to industry demands and opportunities for internships or practical projects, BSc IT equips students with the knowledge and skills necessary for success in the dynamic field of information technology.</p>
         -->
@@ -170,6 +173,7 @@
                 </div>
             </div>
 
+
         </div>
 
     </div>
@@ -193,7 +197,7 @@
 
     <div class=" mx-12 flex flex-col lg:flex-row h-fit p-12 justify-between rounded-2xl shadow-2xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-300">
         <div class="flex flex-col justify-around items-center flex-2">
-            <p class="text-[2rem] md:text-[4rem] flex-2 dark:text-white font-bold">UG</p>
+            <p class="text-[2rem] md:text-[4rem] flex-2 text-center dark:text-white font-bold">Junior College</p>
             <p class="dark:text-white flex-1 font-bold">Level</p>
         </div>
 
@@ -202,21 +206,6 @@
             </div>
         </div>
 
-
-        <div class="flex flex-col mt-8 lg:mt-0 flex-wrap items-center justify-around flex-2">
-            <a href="#" class="text-[1.5rem] text-center font-bold sm:text-[2rem] hover:text-[2.05rem] transition-font duration-500 hover:underline transition-text-decoration dark:text-white">
-                Information Technology
-                <span class="material-symbols-outlined">
-                    open_in_new
-                </span>
-            </a>
-            <p class="dark:text-white text-center mt-1 md:mt-0 font-bold">Overlooking Department</p>
-        </div>
-
-        <div class="hidden flex-1 lg:flex justify-center">
-            <div class="bg-gray-400 border-0 w-px">
-            </div>
-        </div>
 
         <div class="flex mt-8 lg:mt-0 flex-col justify-around items-center flex-2">
             <p class="text-[2rem] md:text-[3rem] lg:text-[4rem] dark:text-white font-bold">60</p>
@@ -235,38 +224,218 @@
         </div>
 
     </div>
+    <!--More information div ends-->
 
 
-    <!-- Eligibilty about the course-->
+
+    <!-- Subject Combinations about the course-->
     <section class="pt-12">
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="mb-12 space-y-2 text-center">
-                <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Eligibilty</h2>
-                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">Requirements for enrolling in the course </p>
+                <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Subject Combinations</h2>
+                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">Take a look at the various subjects that you can choose from </p>
             </div>
         </div>
     </section>
 
-    <div class="dark:text-white px-20">
-        <p class="text-2xl dark:text-white">Please refer the Mumbai University website for further details <a href="#" class="transition-font hover:text-[1.6rem] duration-500 ease-in-out text-blue-500 dark:text-emerald-500">Click here</a> </p>
+    <!--Subject Combinations Offered-->
+    <div class="flex hide-scroll-bar justify-center gap-6 flex-nowrap overflow-x-auto mx-auto" id="subject_combinations_buttons_div">
+        <button class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider  text-blue-100 rounded-full hover:shadow-2xl hover:bg-blue-600">FYJC</button>
+        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">SYJC</button>
 
     </div>
 
 
-    <!-- Fees structure about the course-->
-    <section class="pt-12">
-        <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-            <div class="mb-12 space-y-2 text-center">
-                <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Fees structure</h2>
-                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">How does your investment look like </p>
-            </div>
-        </div>
-    </section>
+    <div id="fyjc_subject_combinations" class="w-full flex sm:px-12 px-8 mx-auto rounded-2xl mb-12  mt-12 " style="transition: all 2s ease">
+        <!-- all content come inside this -->
+        <table class="w-full text-sm bordertext-lefttext-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 border dark:border-gray-500 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="border-e dark:border-gray-500 w-1/2 px-6 py-3">
+                        Regular
+                    </th>
+                    <th scope="col" class="w-1/2 px-6 py-3">
+                        Information Technology(Bifocal)
+                    </th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr class="bg-white border dark:bg-gray-800 dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900 sm: dark:text-white">
+                        English
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 sm: dark:text-white">
+                        English
+                    </td>
+
+                </tr>
+
+                <tr class="bg-white  dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4  font-medium border-e dark:border-gray-500 text-gray-900 sm: dark:text-white">
+                        Marathi / Hindi/ Sanskrit/ French
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 sm: dark:text-white">
+                        Information Technology(IT)
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Physics
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Physics
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Chemistry
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Chemistry
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Mathematics
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Mathematics
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Biology
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Biology
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        EVE
+                    </td>
+                    <td scope="row" class="px-6 py-4 dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        EVE
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Health and Physical Education
+                    </td>
+                    <td scope="row" class="px-6 py-4 dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Health and Physical Education
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
 
 
-    <div class="dark:text-white px-20">
-        <p class="text-2xl dark:text-white">Please refer the College prospectus for the latest updates <a href="#" class="transition-font hover:text-[1.6rem] duration-500 ease-in-out text-blue-500 dark:text-emerald-500">Take me to the prospectus</a> </p>
+    </div>
 
+    <div id="syjc_subject_combinations" class="hidden sm:px-12 px-8 mx-auto rounded-2xl mb-12  mt-12" style="transition: all 2s ease">
+        <!-- all content come inside this -->
+        <table class="w-full text-sm bordertext-lefttext-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 border dark:border-gray-500 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="border-e dark:border-gray-500 w-1/2 px-6 py-3">
+                        Regular
+                    </th>
+                    <th scope="col" class="w-1/2 px-6 py-3">
+                        Information Technology(SYJC-Bifocal)
+                    </th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr class="bg-white border dark:bg-gray-800 dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900 sm: dark:text-white">
+                        English
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 sm: dark:text-white">
+                        English
+                    </td>
+
+                </tr>
+
+                <tr class="bg-white  dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4  font-medium border-e dark:border-gray-500 text-gray-900 sm: dark:text-white">
+                        Marathi / Hindi/ Sanskrit/ French
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900 sm: dark:text-white">
+                        Information Technology(IT)
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Physics
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Physics
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Chemistry
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Chemistry
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Mathematics
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Mathematics
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Biology
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
+                        Biology
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        EVE
+                    </td>
+                    <td scope="row" class="px-6 py-4 dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        EVE
+                    </td>
+                </tr>
+
+                <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
+                    <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Health and Physical Education
+                    </td>
+                    <td scope="row" class="px-6 py-4 dark:border-gray-500 font-medium text-gray-900  dark:text-white">
+                        Health and Physical Education
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
     </div>
 
     <!--
@@ -274,10 +443,10 @@
     FOOTER
     ****************/
     -->
-    <?php include('../../Layouts/footer.php'); ?>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="../../../js/academics_tab/specific_jc_stream_js.js"></script>
+    <?php include('../../Layouts/footer.php'); ?>
 </body>
-<?php include('../../../library/AOS.php'); ?>
+<?php include('../..../../library/AOS.php'); ?>
 
 </html>

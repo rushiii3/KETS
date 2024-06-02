@@ -6,6 +6,7 @@ const filter_mobile_close_btn = document.getElementById(
 );
 
 const all_course_cards=document.querySelectorAll(".course_card");
+const all_jc_course_cards=document.querySelectorAll(".jc_stream_card");
 
 let is_filter_visible = false;
 if (window.innerWidth >= 640) {
@@ -81,12 +82,21 @@ window.addEventListener("resize", () => {
   }
 });
 
-
+//redirect to specific course page
 all_course_cards.forEach((course_card)=>{
   course_card.addEventListener('click',()=>{
     let course_id= document.querySelector(".p_hidden").innerText;
     //the link is respective to the php file where this js file will be linked
     window.location.href="../../Pages/academics_tab/specific_course_details.php?id="+course_id;
+  })
+})
+
+//redirect to specific jc stream page
+all_jc_course_cards.forEach((course_card)=>{
+  course_card.addEventListener('click',()=>{
+    let stream= course_card.querySelector("h3").innerText;
+    //the link is respective to the php file where this js file will be linked
+    window.location.href="../../Pages/academics_tab/specific_jc_stream.php?stream="+stream;
   })
 })
 //////////////////////////FUNCTIONS///////////////////////
