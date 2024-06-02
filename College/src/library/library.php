@@ -42,7 +42,7 @@
 <?php
 
 
-include("../config/connect.php");
+//include("../config/connect.php");
 
 /*
 $con = mysqli_connect("localhost","root","","college");
