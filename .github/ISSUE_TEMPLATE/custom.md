@@ -7,10 +7,13 @@ assignees: ''
 
 ---
 
-*** Describe the new issue ***
+# ***Describe the new issue***
 
 
-*** Software Versions you are using ***
+# ***Images related to the issue***
+
+
+# ***Software Versions you are using***
 1. *XAMPP* - 
 2. *OS* - 
 3. *BROWSER* - (Name of browser) *Are you using dark mode?* - yes/no
