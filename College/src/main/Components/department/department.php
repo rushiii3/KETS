@@ -10,6 +10,7 @@
                     if (isset($_GET['d_id']) || !empty($_GET['d_id'])) {
                         $encoded_id = $_GET['d_id'];
                         $d_id = base64_decode($encoded_id);
+                        $dept_sect_id=$_GET['dept_sec_id'];
                         $query = "SELECT dept_name FROM `departments` WHERE dept_id='$d_id'";
                         $result = $conn->query($query);
                         if ($result->num_rows > 0) {
@@ -148,7 +149,7 @@
             }
         }
 
-        $query2 = "SELECT * FROM `college_personnel` WHERE cp_dept_id='$d_id'";
+        $query2 = "SELECT * FROM `college_personnel` WHERE cp_department_section='$dept_sect_id'";
         $result2 = $conn->query($query2);
         $count = $result2->num_rows;
         if ($result2->num_rows) {
