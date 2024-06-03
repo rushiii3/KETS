@@ -273,27 +273,91 @@ if ($notices_result_junior->num_rows > 0) {
                         </div>
                     </div>
                 </div>
-                <!-- <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="dashboard-example" role="tabpanel" aria-labelledby="dashboard-tab-example">
-                    <div class="mb-12 space-y-2 text-center">
+                 <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="dashboard-example" role="tabpanel" aria-labelledby="dashboard-tab-example">
+<!-- old -->
+<div class="bg-gray-100 dark:bg-black">
+
+<div class="container mx-auto py-12">
+    <div class="text-center">
+        <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">Pre Registration Number</h2>
+        <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300 mt-4">Stay informed with the latest updates and essential information on pre-registration number notices. Ensure you don't miss any important announcements regarding your pre-registration process.</p>
+    </div>
+
+    <div class="flex justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5 mt-10">
+        <?php
+        $first = true;
+        foreach ($academic_years as $year) {
+            $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
+            echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(\'' . $year . '\', this)">' . $year . '</button>';
+            $first = false;
+        }
+        ?>
+    </div>
+
+    <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 mt-10">
+        <div class="p-4 md:p-5">
+            <h3 class="text-lg font-bold text-gray-800 dark:text-white">Notices</h3>
+            <div class="marquee mt-2 text-gray-500 dark:text-neutral-400" id="notices">
+                <?php
+                foreach ($default_notices as $notice) {
+                    echo '<p>' . $notice['date'] . ': ' . $notice['content'] . '</p>';
+                }
+                ?>
+            </div>
+            <a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" href="#">
+                View
+                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function fetchNotices(year, button) {
+        document.querySelectorAll('.academic-year-button').forEach(btn => btn.classList.remove('bg-blue-500'));
+        button.classList.add('bg-blue-500');
+
+        fetch(`fetch_notices.php?year=${year}`)
+            .then(response => response.json())
+            .then(data => {
+                const noticesContainer = document.getElementById('notices');
+                noticesContainer.innerHTML = '';
+                data.forEach(notice => {
+                    const noticeP = document.createElement('p');
+                    noticeP.textContent = `${notice.date}: ${notice.content}`;
+                    noticesContainer.appendChild(noticeP);
+                });
+            });
+    }
+</script>
+
+</div>
+
+
+
+                 <!-- new -->
+                    <!-- <div class="mb-12 space-y-2 text-center">
                         <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
                             Pre Registration Number
                         </h2>
                         <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300">
                             Stay informed with the latest updates and essential information on pre-registration number notices. Ensure you don't miss any important announcements regarding your pre-registration process </p>
-                    </div>
-                    <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5" id="academic-years">
+                    </div> -->
+                    <!-- <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5" id="academic-years">
 
                         <?php
-                        $first = true;
-                        foreach ($academic_years as $year) {
-                            $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
-                            echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(' . $year . ', this)">' . $year . '</button>';
-                            $first = false;
-                        }
+                        // $first = true;
+                        // foreach ($academic_years as $year) {
+                        //     $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
+                        //     echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(' . $year . ', this)">' . $year . '</button>';
+                        //     $first = false;
+                        // }
                         ?>
 
-                    </div>
-                    <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70">
+                    </div> -->
+                    <!-- <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70">
                                         <div class="p-4 md:p-5">
                                             <h3 class="text-lg font-bold text-gray-800 dark:text-white">
                                                 Card title
@@ -311,7 +375,7 @@ if ($notices_result_junior->num_rows > 0) {
                                         </div>
                                     </div>
 
-                </div> -->
+                </div>  -->
                 <style>
                     .marquee {
                         overflow: hidden;
@@ -347,7 +411,9 @@ if ($notices_result_junior->num_rows > 0) {
                 // Fetch notices for the most recent academic year by default
                 $default_year = $academic_years[0] ?? null;
                 $default_notices = [];
-                if ($default_year) {
+                if ($default_year) {}
+                //here the else part will we removed and content of else goes in if part
+                else{
                     $query = "SELECT * FROM `notices` WHERE `academic_year` = ? ORDER BY `date` DESC";
                     $stmt = $con->prepare($query);
                     $stmt->bind_param("s", $default_year);
@@ -362,65 +428,7 @@ if ($notices_result_junior->num_rows > 0) {
 
 
 
-                <div class="bg-gray-100 dark:bg-black">
-
-                    <div class="container mx-auto py-12">
-                        <div class="text-center">
-                            <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">Pre Registration Number</h2>
-                            <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300 mt-4">Stay informed with the latest updates and essential information on pre-registration number notices. Ensure you don't miss any important announcements regarding your pre-registration process.</p>
-                        </div>
-
-                        <div class="flex justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5 mt-10">
-                            <?php
-                            $first = true;
-                            foreach ($academic_years as $year) {
-                                $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
-                                echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(\'' . $year . '\', this)">' . $year . '</button>';
-                                $first = false;
-                            }
-                            ?>
-                        </div>
-
-                        <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 mt-10">
-                            <div class="p-4 md:p-5">
-                                <h3 class="text-lg font-bold text-gray-800 dark:text-white">Notices</h3>
-                                <div class="marquee mt-2 text-gray-500 dark:text-neutral-400" id="notices">
-                                    <?php
-                                    foreach ($default_notices as $notice) {
-                                        echo '<p>' . $notice['date'] . ': ' . $notice['content'] . '</p>';
-                                    }
-                                    ?>
-                                </div>
-                                <a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" href="#">
-                                    View
-                                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m9 18 6-6-6-6"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <script>
-                        function fetchNotices(year, button) {
-                            document.querySelectorAll('.academic-year-button').forEach(btn => btn.classList.remove('bg-blue-500'));
-                            button.classList.add('bg-blue-500');
-
-                            fetch(`fetch_notices.php?year=${year}`)
-                                .then(response => response.json())
-                                .then(data => {
-                                    const noticesContainer = document.getElementById('notices');
-                                    noticesContainer.innerHTML = '';
-                                    data.forEach(notice => {
-                                        const noticeP = document.createElement('p');
-                                        noticeP.textContent = `${notice.date}: ${notice.content}`;
-                                        noticesContainer.appendChild(noticeP);
-                                    });
-                                });
-                        }
-                    </script>
-
-                </div>
+               
             </div>
         </div>
 </div>
