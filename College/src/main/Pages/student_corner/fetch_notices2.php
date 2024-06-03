@@ -2,16 +2,17 @@
 include("../../../config/connect.php");
 
 
-if (isset($_POST['year']) && isset($_POST['section'])) {
-    $year = $_POST['year'];
-    $section = $_POST['section'];
+if (isset($_POST['a_year']) && isset($_POST['clg_section']) ) {
+    $year = $_POST['a_year'];
+    $section = $_POST['clg_section'];
+    
 
-    $query = "SELECT  n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section' ORDER BY all_pdf_upload_date DESC ";
+    $query = "SELECT  n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section' and n.notice_type='e' ORDER BY all_pdf_upload_date DESC ";
     $result = $con->query($query);
     if ($result->num_rows > 0) {
         echo '
-<div class="flex w-full bg-gray-500 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="degree_exam">
-';
+    <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
+    ';
         while ($row = $result->fetch_assoc()) {
             $date = $row['all_pdf_upload_date'];
             $title = $row['all_pdf_title'];
@@ -26,13 +27,34 @@ if (isset($_POST['year']) && isset($_POST['section'])) {
         }
         echo "</div>";
     }
-} else {
-    echo "
-    <script>
-    alert('no!!!!');
-    </script>
-    ";
-}
+} 
+
+if (isset($_POST['year']) && isset($_POST['section'])  ) {
+    $year = $_POST['year'];
+    $section = $_POST['section'];
+   
+
+    $query = "SELECT  n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section' and n.notice_type='e' ORDER BY all_pdf_upload_date DESC ";
+    $result = $con->query($query);
+    if ($result->num_rows > 0) {
+        echo '
+    <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
+    ';
+        while ($row = $result->fetch_assoc()) {
+            $date = $row['all_pdf_upload_date'];
+            $title = $row['all_pdf_title'];
+            echo '<a href="#">
+                   <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2 p-3 ">
+                   <p class="text-base  px-2 my-5  cursor-pointer">
+                  <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ': </span>' . $title . '</a>
+                 </p>
+                </div>
+                </a>
+            ';
+        }
+        echo "</div>";
+    }
+} 
 ?>
 <style>
     @keyframes marquee {
@@ -85,5 +107,3 @@ if (isset($_POST['year']) && isset($_POST['section'])) {
         $mq.marquee('resume');
     });
 </script>
-
-

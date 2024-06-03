@@ -42,7 +42,8 @@
   });
 </script>
 <script>
-  function fetchNotices(year, value) {
+   function fetchNotices1(year, value) {
+    alert("year, value");
     $(document).ready(function() {
 
       $.ajax({
@@ -51,10 +52,13 @@
         cache: false,
         data: {
           year: year,
-          section: value
+          section: value,
+          
+          
         },
+          
         success: function(data) {
-          $("#degree_exam").html(data);
+          $("#"+ value +"_exam").html(data);
         }
       });
 
@@ -62,4 +66,31 @@
 
 
   }
+
+  function fetchNotices(year, value) {
+    alert("year, value 2");
+    $(document).ready(function() {
+
+      $.ajax({
+        url: "fetch_notices2.php",
+        type: "POST",
+        cache: false,
+        data: {
+          a_year: year,
+          clg_section: value,
+          
+          
+        },
+          
+        success: function(data) {
+          $("#"+value+"_result").html(data);
+        }
+      });
+
+    });
+
+
+  }
+
+  
 </script>
