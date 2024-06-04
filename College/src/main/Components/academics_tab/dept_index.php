@@ -45,16 +45,16 @@
 
 
  <div class=" mx-auto">
-     <div class="mb-2 border-b border-gray-200 dark:border-gray-700 mt-4 bg-slate-300" data-aos="fade-left">
+     <div class="mb-2 border-b border-gray-200  mt-4 bg-slate-300 overflow-hidden p-1" data-aos="fade-left">
          <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content">
              <li class="me-2" role="presentation">
-                 <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700" id="test1" data-tabs-target="#junior" type="button" role="tab" aria-controls="profile" aria-selected="false">Junior</button>
+                 <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700 hover:translate-y-[-0.1rem] hover:scale-105 transition-all ease-linear" id="test1" data-tabs-target="#junior" type="button" role="tab" aria-controls="profile" aria-selected="false">Junior</button>
              </li>
              <li class="me-2" role="presentation">
-                 <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700 hover:border-blue-950 " id="test2" data-tabs-target="#degree" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Degree</button>
+                 <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700  hover:border-b-2 hover:translate-y-[-0.1rem] hover:scale-105 transition-all ease-linear" id="test2" data-tabs-target="#degree" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Degree</button>
              </li>
              <li class="me-2" role="presentation">
-                 <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700 hover:border-blue-950 " id="test3" data-tabs-target="#sfc" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Self Finance</button>
+                 <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700 hover:border-blue-950 hover:translate-y-[-0.1rem] hover:scale-105 transition-all ease-linear" id="test3" data-tabs-target="#sfc" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Self Finance</button>
              </li>
          </ul>
      </div>
@@ -70,10 +70,10 @@
                         while ($row1 = $result1->fetch_assoc()) {
                             $dept_id = $row1['dept_id'];
                             $dept_name = $row1['dept_name'];
-                            $dept_sect_id = $row1['dept_sect_id'];
+                            $dept_sect_id = base64_encode($row1['dept_sect_id']);
                             $encoded_id = base64_encode($row1['dept_id']);
                             echo '
-                            <div class="min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70" >
+                            <div class="min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70 hover:shadow-xl " >
                      <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center"> Department of ' . $dept_name . '</h5>
                      </a>
@@ -92,7 +92,7 @@
                     }
                     ?>
                  <!-- section 1-->
-                 
+
                  <!-- <div class="min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70">
                      <a href="#">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Department of IT</h5>
@@ -131,7 +131,7 @@
                          </svg>
                      </a>
                  </div> -->
-               
+
 
                  <!-- section 2-->
 
@@ -205,10 +205,10 @@
                         while ($row2 = $result2->fetch_assoc()) {
                             $dept_id = $row2['dept_id'];
                             $dept_name = $row2['dept_name'];
-                            $dept_sect_id = $row2['dept_sect_id'];
+                            $dept_sect_id = base64_encode($row2['dept_sect_id']);
                             $encoded_id = base64_encode($row2['dept_id']);
                             echo '
-                            <div class=" min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70" >
+                            <div class=" min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70 hover:shadow-xl " >
                      <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center"> Department of ' . $dept_name . '</h5>
                      </a>
@@ -295,16 +295,16 @@
                  <!-- section 1-->
                  <!-- Card1 -->
                  <?php
-                      $query3 = "SELECT d.dept_name,d.dept_id,ds.dept_sect_id FROM `departments` as d ,dept_belongs_to_clg_section as ds  WHERE d.dept_id=ds.dept_id and ds.college_sec_name='s'";
+                    $query3 = "SELECT d.dept_name,d.dept_id,ds.dept_sect_id FROM `departments` as d ,dept_belongs_to_clg_section as ds  WHERE d.dept_id=ds.dept_id and ds.college_sec_name='s'";
                     $result3 = $conn->query($query3);
                     if ($result3->num_rows > 0) {
                         while ($row3 = $result3->fetch_assoc()) {
                             $dept_id = $row3['dept_id'];
                             $dept_name = $row3['dept_name'];
-                            $dept_sect_id = $row3['dept_sect_id'];
+                            $dept_sect_id = base64_encode($row3['dept_sect_id']);
                             $encoded_id = base64_encode($row3['dept_id']);
                             echo '
-                            <div class=" min-w-xl md:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70">
+                            <div class=" min-w-xl md:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70 hover:shadow-xl ">
                      <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center"> Department of ' . $dept_name . '</h5>
                      </a>
@@ -327,7 +327,7 @@
 
                  <!-- section 2-->
                  <!-- <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70"> -->
-<!-- 
+                 <!-- 
                  <div class="min-w-xl md:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70">
                      <a href="#">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Department of IT</h5>

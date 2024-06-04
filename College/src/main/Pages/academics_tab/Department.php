@@ -17,6 +17,14 @@
             color: #3d3d3d !important;
 
         }
+        .hbi{
+animation: fade-out linear;
+animation-timeline: view();
+animation-range: exit -200px;
+        }
+        @keyframes fade-out{
+            to{opacity: 0;}
+        }
     </style>
 </head>
 <?php include('../../../library/library.php'); ?>

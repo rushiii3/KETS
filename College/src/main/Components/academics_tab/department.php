@@ -10,7 +10,7 @@
                     if (isset($_GET['d_id']) || !empty($_GET['d_id']) || isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
                         $encoded_id = $_GET['d_id'];
                         $d_id = base64_decode($encoded_id);
-                        $dept_sect_id = $_GET['dept_sec_id'];
+                        $dept_sect_id = base64_decode($_GET['dept_sec_id']);
                         $query = "SELECT dept_name FROM `departments` WHERE dept_id='$d_id'";
                         $result = $conn->query($query);
                         if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@
                         echo "
                      <script>
                      alert('Select A Department');
-                     document.location.href='../../academics_tab/Dept_Index.php';
+                     document.location.href='../../Pages/academics_tab/Dept_Index.php';
                      </script>
                         ";
                     }
@@ -43,7 +43,7 @@
  <nav aria-label="Breadcrumb" class="pl-3 mt-10" id="Breadcrumb" data-aos="fade-right">
      <ol class="flex items-stretch gap-2 list-none">
          <li class="flex items-center gap-2">
-             <a href="../../Pages/index.php" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+             <a href="../../Pages/index.php" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 hover:text-emerald-500  hover:scale-105 transition-all ease-linear">
                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
                      <title id="title-01">Home</title>
                      <desc id="description-01">
@@ -63,7 +63,7 @@
              </svg>
          </li>
          <li class="flex items-center flex-1 gap-2">
-             <a href="../../Pages/academics_tab/Dept_Index.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-600">Departments</a>
+             <a href="../../Pages/academics_tab/Dept_Index.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-600 hover:text-emerald-500 hover:scale-105 scale- transition-all ease-linear">Departments</a>
              <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
                  <title id="title-02">Arrow</title>
                  <desc id="description-02">
@@ -72,7 +72,7 @@
                  </desc>
                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
              </svg>
-             <a href="#" aria-current="page" class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-400"><?php echo $d_name; ?></a>
+             <a href="#" aria-current="page" class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-400 "><?php echo $d_name; ?></a>
 
          </li>
      </ol>
@@ -128,7 +128,7 @@
                 //Card Population
                 echo '
                    
-                   <div class="group space-y-4 pb-9 text-center border-y-4 border-x-4 rounded-2xl" data-aos="fade-up">
+                   <div class="group space-y-4 pb-9 text-center border-y-4 border-x-4 rounded-2xl hover:translate-y-[-0.5rem] transition-all duration-300 hover:scale-[100%] hover:border-cyan-600 hover:bg-gray-100 hover:shadow-2xl">
                    <div class="mx-auto h-56 w-56 rotate-45 overflow-hidden rounded-[4rem] md:h-40 md:w-40 lg:h-56 lg:w-56">
                    <img class="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]" src="' . $cp_img . '" alt="woman" loading="lazy" width="640" height="805" />
                    </div>
@@ -136,13 +136,13 @@
                    <h4 class="text-2xl text-gray-700">' . $cp_hon . ' ' . $cp_name . '</h4>
                    ';
                 if ($cp_desig == 'Head') {
-                    echo '<span class="block text-xl text-gray-700 font-bold">' . $cp_desig . '</span>';
-                    echo '<span class="block text-base text-purple-700 hover:underline p-1 font-medium"><a href="' . $cp_web . '">know more</a></span>
+                    echo '<span class="block text-xl  text-gray-700 font-bold">' . $cp_desig . '</span>';
+                    echo '<span class="block text-lg text-purple-700 hover:underline p-1 font-medium"><a href="' . $cp_web . '">know more</a></span>
                          </div>
                          </div>';
                 } else {
-                    echo '<span class="block text-sm text-gray-500">' . $cp_desig . '</span>';
-                    echo '<span class="block text-base text-purple-700 hover:underline p-2 font-medium""><a href="' . $cp_web . '">know more</a></span>
+                    echo '<span class="block text-xl text-gray-500">' . $cp_desig . '</span>';
+                    echo '<span class="block text-lg text-purple-700 tracking-wider capitalize hover:underline p-2 font-medium""><a href="' . $cp_web . '">know more</a></span>
                            </div>
                          </div>';
                 }
@@ -258,7 +258,7 @@
  </div>
 
 
- <div class="max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto" style="" data-aos="zoom-in" data-aos-duration="1000">
+ <div class="max-w-[95dvw] rounded-2xl mb-8 bg-white mx-auto" style="" data-aos="zoom-in" data-aos-duration="1000">
      <section class="py-12 border-b">
          <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
              <!--Undegrad syllabus-->
@@ -273,7 +273,7 @@
              <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  pb-5" data-aos="fade-left" data-aos-duration="2000">
 
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
+                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">FYBSCIT NEP</h5>
@@ -283,7 +283,7 @@
                          </svg>
                      </div>
                  </a>
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
+                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">SYBSCIT NEP</h5>
@@ -294,7 +294,7 @@
                      </div>
                  </a>
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
+                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">TYBSCIT NEP</h5>
@@ -305,7 +305,7 @@
                      </div>
                  </a>
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
+                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">FYBSCIT</h5>
@@ -315,7 +315,7 @@
                          </svg>
                      </div>
                  </a>
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
+                 <a href="#" class="flex flex-row items-center bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">SYBSCIT</h5>
@@ -326,7 +326,7 @@
                      </div>
                  </a>
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
+                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">TYBSCIT</h5>
@@ -350,10 +350,10 @@
 
                  </p>
              </div>
-             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 border-b pb-3 mx-auto overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
+             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 border-b pb-3 mx-auto overflow-hidden p-2" data-aos="fade-right" data-aos-duration="1000">
 
 
-                 <a href="#" class="flex flex-row bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 ">
+                 <a href="#" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">MSCIT Part I</h5>
@@ -363,7 +363,7 @@
                          </svg>
                      </div>
                  </a>
-                 <a href="#" class="flex flex-row bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4">
+                 <a href="#" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">MSCIT Part II</h5>
@@ -431,7 +431,7 @@
 
 
         ?>
-             <section class=" px-2 md:px-[50px] my-4 py-4 grid items-start justify-items-center md:grid-cols-2 gap-4 bg-grey-200 pb-6 max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto overflow-hidden" id="<?php echo "_" . $x; ?>">
+             <section class=" px-2 md:px-[50px] my-4 py-4 grid items-start justify-items-center md:grid-cols-1 gap-4 bg-grey-200 pb-6 max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto overflow-hidden" id="<?php echo "_" . $x; ?>">
                  <?php
                     while ($row3 = $result3->fetch_assoc()) {
                         echo '
@@ -440,7 +440,7 @@
                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
              </svg>
              <div class="space-y-2">
-                 <p class=" text-lg  leading-snug capitalize">' . $row3['act'] . ' Nam erat risus, sodales sit amet lobortis ut, finibus eget metus. Cras aliquam ante ut tortor posuere feugiat. Duis sodales nisi id porta lacinia.
+                 <p class="  leading-snug capitalize text-xl">' . $row3['act'] . ' Nam erat risus, sodales sit amet lobortis ut, finibus eget metus. Cras aliquam ante ut tortor posuere feugiat. Duis sodales nisi id porta lacinia.
            </p>
              </div>
          </div>
@@ -462,14 +462,14 @@
 
  <?php
     } else {
-        echo "<H1> NO ACTIVITY</H1>";
+        //echo "<H1 class=' text-center text-2xl'> NO ACTIVITY</H1>";
     }
     ?>
- <section class="relative overflow-hidden py-4 px-4 bg-gray-900 md:px-8">
-     <div class="w-full h-full rounded-full bg-gradient-to-r from-[#58AEF1] to-pink-500 absolute -top-12 -right-14 blur-2xl opacity-10"></div>
+ <section class="relative overflow-hidden py-4 px-4 bg-gray-900 md:px-8 hover:text-2xl transition-all duration-600">
+     <div class="w-full h-full rounded-full bg-gradient-to-r from-[#58AEF1] to-pink-500 absolute -top-12 -right-14 blur-2xl opacity-15"></div>
      <div class="max-w-xl mx-auto text-center relative">
          <div class="py-2">
-             <h3 class="text-3xl text-gray-200 font-bold md:text-4xl">
+             <h3 class="text-3xl text-gray-200 font-bold md:text-4xl hover:scale-105 ease-linear transition-all">
                  Departmental Website
              </h3>
          </div>
