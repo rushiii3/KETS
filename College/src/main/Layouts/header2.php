@@ -1,43 +1,51 @@
-<header id="header" class='border-b  border-gray-200 font-sans tracking-wide  z-50  inset-x-0 top-0  sticky transition-top duration-300 ease-in-out' >
+<header id="header" class='border-b  border-gray-200 font-sans tracking-wide  z-50  inset-x-0 top-0  sticky transition-top duration-300 ease-in-out'>
   <section class='flex justify-between border-b	border-gray-200	 items-center gap-4 relative py-3 px-1 min-h-[100px]'>
     
       <a href="#" class="flex items-center px-5">
             <img src="" class="h-10 mr-3 sm:h-16" ><!--alt="Landwind Logo"-->
             <div class="flex flex-col">
-            <span class="self-center sm:text-lg text-xs font-semibold whitespace-nowrap  ">THE KELKAR EDUCATION TRUST'S <br> VINAYAK GANESH VAZE COLLEGE OF ARTS, <br> SCIENCE AND COMMERCE (AUTONOMOUS).</span>
+            <span class="self-center sm:text-lg text-xs font-semibold whitespace-nowrap dark:text-white ">THE KELKAR EDUCATION TRUST'S <br> VINAYAK GANESH VAZE COLLEGE OF ARTS, <br> SCIENCE AND COMMERCE (AUTONOMOUS).</span>
             </div>
             
         </a>
 
-        <div class="flex flex-col items-center justify-end">
-        <ul class='flex space-x-8 w-full px-10 py-2 justify-end max-xl:hidden'>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] '>Alumni</a>
-      </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Faculty</a>
-      </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Committees</a>
-      </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Report and surveys</a>
-      </li>
-      <li><a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px]'>Avail Documents</a>
-      </li>
-    </ul>
-    <div class='flex flex-wrap items-start gap-4 px-10 py-2 relative '>
-<!--   class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:before:bg-black max-xl:before:opacity-50 max-xl:before:inset-0 max-xl:before:z-50'
+    <div class="flex flex-col items-center justify-end">
+      <ul class='flex space-x-8 w-full px-10 py-2 justify-end max-xl:hidden'>
+        <li>
+          <a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Alumni
+          </a>
+        </li>
+
+        <li>
+          <a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Faculty
+          </a>
+        </li>
+
+        <li>
+          <a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Committees
+          </a>
+        </li>
+
+        <li>
+          <a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Report and surveys
+          </a>
+        </li>
+
+        <li>
+          <a href='javascript:void(0)' class='hover:text-pink-500 font-bold text-black text-[15px] dark:text-white'>Avail Documents
+          </a>
+        </li>
+      </ul>
+      <div class='flex flex-wrap items-start gap-4 px-10 py-2 relative '>
+        <!--   class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:before:bg-black max-xl:before:opacity-50 max-xl:before:inset-0 max-xl:before:z-50'
  -->
-<div id="collapseMenu"
-class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:before:bg-black max-xl:before:opacity-50 max-xl:before:inset-0 max-xl:before:z-50'
->
-  <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
-      <path
-        d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
-        data-original="#000000"></path>
-      <path
-        d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
-        data-original="#000000"></path>
-    </svg>
-  </button>
+        <div id="collapseMenu" class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:before:bg-black max-xl:before:opacity-50 max-xl:before:inset-0 max-xl:before:z-50'>
+          <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+              <path d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z" data-original="#000000"></path>
+              <path d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z" data-original="#000000"></path>
+            </svg>
+          </button>
 
 
 
@@ -52,40 +60,36 @@ class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:be
             
         </a>
     </li>
-
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='index.php'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Home</a></li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./Contact.php'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Contact Us</a></li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./About.php'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block'>About us</a></li>
-
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>Academics</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Home</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>Student Corner</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Contact Us</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>Admissions</a>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>About us</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Academics</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Student Corner</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Admissions</a>
     </li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>Our campus</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>Our campus</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>More</a></li>
+        class='hover:text-blue-600 font-bold text-black text-[15px] block dark:text-white'>More</a></li>
   </ul>
 </div>
 
-<div class='flex ml-auto xl:hidden'>
-  <button id="toggleOpen">
-    <svg class="w-7 h-7 fill-pink-500" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd"
-        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-        clip-rule="evenodd"></path>
-    </svg>
-  </button>
-</div>
-</div>
+        <div class='flex ml-auto xl:hidden'>
+          <button id="toggleOpen">
+            <svg class="w-7 h-7 fill-pink-500" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </div>
-    
+      </div>
+    </div>
+
 
     <!-- <div class="lg:absolute lg:right-10 flex items-center ml-auto">
       <button
@@ -155,7 +159,6 @@ class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:be
 </header>
 
 <script>
-
   var toggleOpen = document.getElementById('toggleOpen');
   var toggleClose = document.getElementById('toggleClose');
   var collapseMenu = document.getElementById('collapseMenu');
@@ -172,28 +175,28 @@ class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:be
   toggleClose.addEventListener('click', handleClick);
 
 
-var lastScrollTop; // This Varibale will store the top position
-navbar = document.getElementById('header'); // Get The NavBar
-console.log(navbar);
-window.addEventListener('scroll',function(){
- //on every scroll this funtion will be called
-  
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  console.log(scrollTop);
-  //This line will get the location on scroll
-  if (scrollTop < 10) { // If scrollTop is 0, make navbar transparent
-    navbar.classList.add('bg-transparent');
-    navbar.classList.remove('bg-white');
-  } else if (scrollTop > lastScrollTop) { // If scrolling down
-    navbar.style.top = '-150px';
-    navbar.classList.remove('bg-transparent');
-    navbar.classList.add('bg-white');
-  } else { // If scrolling up
-    navbar.style.top = '0';
-    navbar.classList.remove('bg-transparent');
-    navbar.classList.add('bg-white');
-  }
-  
-  lastScrollTop = scrollTop; //New Position Stored
-});
+  var lastScrollTop; // This Varibale will store the top position
+  navbar = document.getElementById('header'); // Get The NavBar
+  console.log(navbar);
+  window.addEventListener('scroll', function() {
+    //on every scroll this funtion will be called
+
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    console.log(scrollTop);
+    //This line will get the location on scroll
+    if (scrollTop < 10) { // If scrollTop is 0, make navbar transparent
+      navbar.classList.add('bg-transparent');
+      navbar.classList.remove('bg-white');
+    } else if (scrollTop > lastScrollTop) { // If scrolling down
+      navbar.style.top = '-150px';
+      navbar.classList.remove('bg-transparent');
+      navbar.classList.add('bg-white');
+    } else { // If scrolling up
+      navbar.style.top = '0';
+      navbar.classList.remove('bg-transparent');
+      navbar.classList.add('bg-white');
+    }
+
+    lastScrollTop = scrollTop; //New Position Stored
+  });
 </script>
