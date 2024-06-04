@@ -18,7 +18,7 @@
 
 <body class="bg-gray-100 overflow-x-hidden mx-auto " style="transition: all 2s ease">
     <?php include('../../Layouts/header2.php'); ?>
-    <?php include('../../Components/department/dept_index.php'); ?>
+    <?php include('../../Components/academics_tab/dept_index.php'); ?>
     <?php include('../../Layouts/footer.php'); ?>
 
 </body>

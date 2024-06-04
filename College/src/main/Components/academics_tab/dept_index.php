@@ -74,10 +74,10 @@
                             $encoded_id = base64_encode($row1['dept_id']);
                             echo '
                             <div class="min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70" >
-                     <a href="../../Pages/department/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
+                     <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center"> Department of ' . $dept_name . '</h5>
                      </a>
-                     <a href="../../Pages/department/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                     <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                          Read more
                          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -209,10 +209,10 @@
                             $encoded_id = base64_encode($row2['dept_id']);
                             echo '
                             <div class=" min-w-fit sm:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70" >
-                     <a href="../../Pages/department/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
+                     <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center"> Department of ' . $dept_name . '</h5>
                      </a>
-                     <a href="../../Pages/department/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                     <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                          Read more
                          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -305,10 +305,10 @@
                             $encoded_id = base64_encode($row3['dept_id']);
                             echo '
                             <div class=" min-w-xl md:min-w-xs p-6 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 text-center border-t-4 border-t-blue-600 hover:translate-y-[-0.5rem] transition-all duration-300 shadow-neutral-800/70">
-                     <a href="../../Pages/department/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
+                     <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '">
                          <h5 class=" py-3 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center"> Department of ' . $dept_name . '</h5>
                      </a>
-                     <a href="../../Pages/department/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                     <a href="../../Pages/academics_tab/Department.php?d_id=' . $encoded_id . '&dept_sec_id=' . $dept_sect_id . '" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                          Read more
                          <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
