@@ -69,6 +69,7 @@
 
   function fetchNotices(year, value) {
     alert("year, value 2");
+    fetchNotices1(year, value);
     $(document).ready(function() {
 
       $.ajax({
