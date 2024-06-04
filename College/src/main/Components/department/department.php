@@ -7,10 +7,10 @@
          <div class="text-center z-1" data-aos="fade-up">
              <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">
                  <?php
-                    if (isset($_GET['d_id']) || !empty($_GET['d_id'])) {
+                    if (isset($_GET['d_id']) || !empty($_GET['d_id']) || isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
                         $encoded_id = $_GET['d_id'];
                         $d_id = base64_decode($encoded_id);
-                        $dept_sect_id=$_GET['dept_sec_id'];
+                        $dept_sect_id = $_GET['dept_sec_id'];
                         $query = "SELECT dept_name FROM `departments` WHERE dept_id='$d_id'";
                         $result = $conn->query($query);
                         if ($result->num_rows > 0) {
@@ -128,7 +128,7 @@
                 //Card Population
                 echo '
                    
-                   <div class="group space-y-4 pb-9 text-center border-y-4 border-x-4" data-aos="fade-up">
+                   <div class="group space-y-4 pb-9 text-center border-y-4 border-x-4 rounded-2xl" data-aos="fade-up">
                    <div class="mx-auto h-56 w-56 rotate-45 overflow-hidden rounded-[4rem] md:h-40 md:w-40 lg:h-56 lg:w-56">
                    <img class="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]" src="' . $cp_img . '" alt="woman" loading="lazy" width="640" height="805" />
                    </div>
@@ -273,7 +273,7 @@
              <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  pb-5" data-aos="fade-left" data-aos-duration="2000">
 
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4">
+                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">FYBSCIT NEP</h5>
@@ -283,7 +283,7 @@
                          </svg>
                      </div>
                  </a>
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4">
+                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">SYBSCIT NEP</h5>
@@ -294,7 +294,7 @@
                      </div>
                  </a>
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4">
+                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">TYBSCIT NEP</h5>
@@ -305,7 +305,7 @@
                      </div>
                  </a>
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4">
+                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">FYBSCIT</h5>
@@ -315,7 +315,7 @@
                          </svg>
                      </div>
                  </a>
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4">
+                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">SYBSCIT</h5>
@@ -326,7 +326,7 @@
                      </div>
                  </a>
 
-                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4">
+                 <a href="#" class="flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">TYBSCIT</h5>
@@ -388,16 +388,16 @@
 
  <!-- Department acativities-->
  <?php
-    $query2 = "SELECT DISTINCT dy.academic_year FROM dept_has_dept_activities as dc INNER JOIN departmental_activities_in_academic_year as dy on dc.dept_act_id=dy.dept_act_id and dc.dept_id=$d_id ORDER by dy.academic_year desc";
+    $query2 = "SELECT DISTINCT dy.academic_year FROM dept_has_dept_activities as dc INNER JOIN departmental_activities_in_academic_year as dy on dc.dept_act_id=dy.dept_act_id and dc.dept_sect_id=$dept_sect_id ORDER by dy.academic_year desc";
     $result2 = $conn->query($query2);
     if ($result2->num_rows > 0) {
         $year = array();
     ?>
 
      <!--year selection-->
-     <div class="py-12 border-b" data-aos="zoom-in-up">
+     <div class="py-12 border-b " data-aos="zoom-in-up">
          <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-             <div class="mb-12 space-y-2 text-center">
+             <div class="mb-8 space-y-2 text-center">
                  <h2 class="text-5xl font-bold text-gray-800 md:text-6xl ">
                      Departmental Activities
                  </h2>
@@ -405,15 +405,16 @@
                      List of the activities Conducted
                  </p>
              </div>
-             <div class="flex hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-aos="fade-left" data-aos-duration="1500">
+             <div class="flex hide-scroll-bar p-2 justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-aos="fade-left" data-aos-duration="1500">
                  <?php
                     while ($row = $result2->fetch_assoc()) {
                         $year[] = $row['academic_year'];
                         echo '
         
-        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100 bg  bg border-2" data-tabs-target="#_' . $row['academic_year'] . '" type="button" role="tab" aria-controls="profile" aria-selected="false">' . $row['academic_year'] . '</button>
+        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100 bg border-2 hover:scale-[110%] duration-150" data-tabs-target="#_' . $row['academic_year'] . '" type="button" role="tab" aria-controls="profile" aria-selected="false">' . $row['academic_year'] . '</button>
         ';
                     }
+
                     ?>
              </div>
 
@@ -424,22 +425,23 @@
      <!--Activities-->
      <?php
         foreach ($year as $x) {
-            $query3 = "SELECT dept_act_name as act FROM departmental_activities where dept_act_id in(SELECT dc.dept_act_id FROM dept_has_dept_activities as dc INNER JOIN departmental_activities_in_academic_year as dy on dc.dept_act_id=dy.dept_act_id and dc.dept_id=$d_id and dy.academic_year='$x')";
+            $query3 = "SELECT dept_act_name as act FROM departmental_activities where dept_act_id in(SELECT dc.dept_act_id FROM dept_has_dept_activities as dc INNER JOIN departmental_activities_in_academic_year as dy on dc.dept_act_id=dy.dept_act_id and dc.dept_sect_id=$dept_sect_id and dy.academic_year='$x')";
             $result3 = $conn->query($query3);
             if ($result3->num_rows > 0) {
 
 
         ?>
-             <section class=" px-[50px] my-4 py-4 grid items-start justify-start md:grid-cols-2 gap-4 bg-grey-200 pb-6 max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto" id="<?php echo "_" . $x; ?>">
+             <section class=" px-2 md:px-[50px] my-4 py-4 grid items-start justify-items-center md:grid-cols-2 gap-4 bg-grey-200 pb-6 max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto overflow-hidden" id="<?php echo "_" . $x; ?>">
                  <?php
                     while ($row3 = $result3->fetch_assoc()) {
                         echo '
-         <div class="flex space-x-4 sm:space-x-4  p-4  rounded-lg  bg-white border border-gray-200 shadow hover:bg-gray-100 justify-start h-full" data-aos="fade-right" >
+         <div class="flex space-x-4 sm:space-x-4p-4  rounded-lg min-w-full  bg-white border border-gray-200 shadow hover:bg-gray-100 justify-start p-4" data-aos="fade-right" >
              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 w-6 h-6">
                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
              </svg>
              <div class="space-y-2">
-                 <p class=" text-lg  leading-snug capitalize">' . $row3['act'] . '</p>
+                 <p class=" text-lg  leading-snug capitalize">' . $row3['act'] . ' Nam erat risus, sodales sit amet lobortis ut, finibus eget metus. Cras aliquam ante ut tortor posuere feugiat. Duis sodales nisi id porta lacinia.
+           </p>
              </div>
          </div>
                ';
@@ -448,7 +450,7 @@
 
 
              </section>
-
+             <!-- <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70"> -->
      <?php
             } else {
                 echo
@@ -463,8 +465,20 @@
         echo "<H1> NO ACTIVITY</H1>";
     }
     ?>
- <div class=" rounded-2xl mb-4  mx-auto text-center justify-items-center">
-    <div class="w-[100%] md:w-[30%] mx-auto bg-blue-600 rounded-full flex flex-shrink-0 inline-flex">
-     <h1 class=" font-normal tracking-tight text-3xl text-center p-4 hover:underline hover:text-purple-200 text-gray-200">Visit Departmental Website</h1>
-   </div>
- </div>
+ <section class="relative overflow-hidden py-4 px-4 bg-gray-900 md:px-8">
+     <div class="w-full h-full rounded-full bg-gradient-to-r from-[#58AEF1] to-pink-500 absolute -top-12 -right-14 blur-2xl opacity-10"></div>
+     <div class="max-w-xl mx-auto text-center relative">
+         <div class="py-2">
+             <h3 class="text-3xl text-gray-200 font-bold md:text-4xl">
+                 Departmental Website
+             </h3>
+         </div>
+         <div class="m-5 items-center justify-center gap-3 sm:flex">
+             <a href="javascript:void()" class="block w-full mt-2 py-2.5 px-8 text-gray-700 bg-white rounded-md font-medium duration-150 hover:bg-gray-300 hover:text-gray-900 hover:scale-[110%] sm:w-auto">
+                 Visit
+             </a>
+         </div>
+     </div>
+ </section>
+
+ <!-- select* from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name=''); -->
