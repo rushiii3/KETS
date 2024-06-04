@@ -27,7 +27,7 @@
                         echo "
                      <script>
                      alert('Select A Department');
-                     document.location.href='../../Pages/department/Dept_Index.php';
+                     document.location.href='../../academics_tab/Dept_Index.php';
                      </script>
                         ";
                     }
@@ -63,7 +63,7 @@
              </svg>
          </li>
          <li class="flex items-center flex-1 gap-2">
-             <a href="../../Pages/department/Dept_Index.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-600">Departments</a>
+             <a href="../../Pages/academics_tab/Dept_Index.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-600">Departments</a>
              <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
                  <title id="title-02">Arrow</title>
                  <desc id="description-02">
