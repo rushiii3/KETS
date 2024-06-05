@@ -127,10 +127,6 @@
 
 
                                         </div>
-
-
-
-
                                         <div class="grid gap-8 sm:grid-cols-1  lg:grid-cols-2 md:px-10 mt-10">
                                             <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70">
                                                 <div class="p-4 md:p-5">
