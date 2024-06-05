@@ -17,17 +17,21 @@
             color: #3d3d3d !important;
 
         }
-        .hbi{
-animation: fade-out linear;
-animation-timeline: view();
-animation-range: exit -200px;
+
+        .hbi {
+            animation: fade-out linear;
+            animation-timeline: view();
+            animation-range: exit -200px;
         }
-        @keyframes fade-out{
-            to{opacity: 0;}
+
+        @keyframes fade-out {
+            to {
+                opacity: 0;
+            }
         }
     </style>
-</head>
 <?php include('../../../library/library.php'); ?>
+</head>
 <?php include('../../../config/connect.php'); ?>
 
 <body class="bg-gray-100 overflow-x-hidden mx-auto " style="transition: all 2s ease">
@@ -35,8 +39,10 @@ animation-range: exit -200px;
     <?php include('../../Components/academics_tab/department.php'); ?>
     <?php include('../../Layouts/footer.php'); ?>
 
+    <script src="../../../js/showMoreItems.min.js"></script>
+    <script src="../../Layouts/header2.php"></script>
+
+    <?php include('../../../library/AOS.php'); ?>
 </body>
-<?php include('../../../library/AOS.php'); ?>
 
 </html>
-<script src="../../../js/showMoreItems.min.js"></script>
