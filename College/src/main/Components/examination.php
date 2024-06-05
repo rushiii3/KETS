@@ -194,17 +194,17 @@
                                                                     <!-- Modal body -->
                                                                     <div class="p-4 md:p-5 space-y-4">
 
-                                                                    <?php
-                                                            echo $default_year;
-                                                            echo 'sndjnd';
-                                                            $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                            $result = $con->query($query);
-                                                            if ($result->num_rows > 0) {
+                                                                        <?php
+                                                                        echo $default_year;
+                                                                        echo 'sndjnd';
+                                                                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                                        $result = $con->query($query);
+                                                                        if ($result->num_rows > 0) {
 
-                                                                while ($row = $result->fetch_assoc()) {
-                                                                    $date = $row['all_pdf_upload_date'];
-                                                                    $title = $row['all_pdf_title'];
-                                                                    echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                            while ($row = $result->fetch_assoc()) {
+                                                                                $date = $row['all_pdf_upload_date'];
+                                                                                $title = $row['all_pdf_title'];
+                                                                                echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
                                                                     <p class="text-base  px-2 my-5  cursor-pointer">
                                                                         <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
@@ -213,10 +213,10 @@
                                                                 </div>
                                                                    
                                                                 ';
-                                                                }
-                                                            }
+                                                                            }
+                                                                        }
 
-                                                            ?>
+                                                                        ?>
 
 
                                                                         <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
@@ -284,7 +284,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -357,17 +357,17 @@
                                                                     <!-- Modal body -->
                                                                     <div class="p-4 md:p-5 space-y-4">
 
-                                                                    <?php
-                                                            echo $default_year;
-                                                            echo 'sndjnd';
-                                                            $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                            $result = $con->query($query);
-                                                            if ($result->num_rows > 0) {
+                                                                        <?php
+                                                                        echo $default_year;
+                                                                        echo 'sndjnd';
+                                                                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                                        $result = $con->query($query);
+                                                                        if ($result->num_rows > 0) {
 
-                                                                while ($row = $result->fetch_assoc()) {
-                                                                    $date = $row['all_pdf_upload_date'];
-                                                                    $title = $row['all_pdf_title'];
-                                                                    echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                            while ($row = $result->fetch_assoc()) {
+                                                                                $date = $row['all_pdf_upload_date'];
+                                                                                $title = $row['all_pdf_title'];
+                                                                                echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
                                                                     <p class="text-base  px-2 my-5  cursor-pointer">
                                                                         <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
@@ -376,10 +376,10 @@
                                                                 </div>
                                                                    
                                                                 ';
-                                                                }
-                                                            }
+                                                                            }
+                                                                        }
 
-                                                            ?>
+                                                                        ?>
 
 
                                                                         <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
@@ -447,7 +447,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -565,17 +565,17 @@
                                                                     <!-- Modal body -->
                                                                     <div class="p-4 md:p-5 space-y-4">
 
-                                                                    <?php
-                                                            echo $default_year;
-                                                            echo 'sndjnd';
-                                                            $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                            $result = $con->query($query);
-                                                            if ($result->num_rows > 0) {
+                                                                        <?php
+                                                                        echo $default_year;
+                                                                        echo 'sndjnd';
+                                                                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                                        $result = $con->query($query);
+                                                                        if ($result->num_rows > 0) {
 
-                                                                while ($row = $result->fetch_assoc()) {
-                                                                    $date = $row['all_pdf_upload_date'];
-                                                                    $title = $row['all_pdf_title'];
-                                                                    echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                            while ($row = $result->fetch_assoc()) {
+                                                                                $date = $row['all_pdf_upload_date'];
+                                                                                $title = $row['all_pdf_title'];
+                                                                                echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
                                                                     <p class="text-base  px-2 my-5  cursor-pointer">
                                                                         <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
@@ -584,10 +584,10 @@
                                                                 </div>
                                                                    
                                                                 ';
-                                                                }
-                                                            }
+                                                                            }
+                                                                        }
 
-                                                            ?>
+                                                                        ?>
 
 
                                                                         <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
@@ -655,7 +655,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -724,17 +724,17 @@
                                                                     <!-- Modal body -->
                                                                     <div class="p-4 md:p-5 space-y-4">
 
-                                                                    <?php
-                                                            echo $default_year;
-                                                            echo 'sndjnd';
-                                                            $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                            $result = $con->query($query);
-                                                            if ($result->num_rows > 0) {
+                                                                        <?php
+                                                                        echo $default_year;
+                                                                        echo 'sndjnd';
+                                                                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                                        $result = $con->query($query);
+                                                                        if ($result->num_rows > 0) {
 
-                                                                while ($row = $result->fetch_assoc()) {
-                                                                    $date = $row['all_pdf_upload_date'];
-                                                                    $title = $row['all_pdf_title'];
-                                                                    echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                            while ($row = $result->fetch_assoc()) {
+                                                                                $date = $row['all_pdf_upload_date'];
+                                                                                $title = $row['all_pdf_title'];
+                                                                                echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
                                                                     <p class="text-base  px-2 my-5  cursor-pointer">
                                                                         <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
@@ -743,10 +743,10 @@
                                                                 </div>
                                                                    
                                                                 ';
-                                                                }
-                                                            }
+                                                                            }
+                                                                        }
 
-                                                            ?>
+                                                                        ?>
 
 
                                                                         <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
@@ -814,7 +814,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                
+
                                                             </div>
                                                         </div>
                                                     </div>

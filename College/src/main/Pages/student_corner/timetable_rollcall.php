@@ -9,8 +9,9 @@
   </head>
   <body class=" dark:bg-black mx-auto overflow-x-hidden"> 
   <?php include('../../Layouts/header2.php'); ?> 
-    <?php include('../../Components/rollcall_timetable.php'); ?>
+  <?php include('../../Components/Student_Corner/rollCall.php'); ?>
     <?php include('../../Layouts/footer.php'); ?> 
+    <script src="../../../js/Student_Corner/rollCall.js"></script>
  
   </body>
   <?php include('../../../library/AOS.php'); ?>

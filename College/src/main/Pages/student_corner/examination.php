@@ -12,8 +12,10 @@
 
 <body class=" mx-auto overflow-x-hidden">
   <?php include('../../Layouts/header2.php'); ?>
-  <?php include('../../Components/examination.php'); ?>
+  <?php include('../../Components/Student_Corner/examination.php'); ?>
   <?php include('../../Layouts/footer.php'); ?>
+  <script src="../../../js/Student_Corner/examination.js"></script>
+    
 
 
 </body>
@@ -41,7 +43,7 @@
     $mq.marquee('resume');
   });
 </script>
-<script>
+<!-- <script>
    function fetchNotices1(year, value) {
     alert("year, value");
     $(document).ready(function() {
@@ -94,4 +96,4 @@
   }
 
   
-</script>
+</script> -->

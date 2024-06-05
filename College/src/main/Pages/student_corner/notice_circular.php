@@ -10,8 +10,9 @@
   </head>
   <body class=" mx-auto overflow-x-hidden"> 
   <?php include('../../Layouts/header2.php'); ?> 
-    <?php include('../../Components/notice2.php'); ?>
+    <?php include('../../Components/Student_Corner/notice.php'); ?>
     <?php include('../../Layouts/footer.php'); ?> 
+    <script src="../../../js/Student_Corner/notice.js"></script>
     
  
   </body>
