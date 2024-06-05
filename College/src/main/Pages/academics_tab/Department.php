@@ -26,11 +26,9 @@
     <?php include('../../Layouts/header2.php'); ?>
     <?php include('../../Components/academics_tab/department.php'); ?>
     <?php include('../../Layouts/footer.php'); ?>
-
-    <script src="../../../js/showMoreItems.min.js"></script>
-    <script src="../../Layouts/header2.php"></script>
-
     <?php include('../../../library/AOS.php'); ?>
+    <script src="../../../js/showMoreItems.min.js"></script>
 </body>
+<?php include('../../../library/AOS.php'); ?>
 
 </html>
