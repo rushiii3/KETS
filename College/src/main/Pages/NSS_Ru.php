@@ -7,10 +7,8 @@
     <title>V. G. VAZE</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,-25" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,-25" />
     <!-- <link rel="stylesheet" href="../../js/showMoreItems-theme.min.css"> -->
     <link rel="stylesheet" href="demo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -262,9 +260,8 @@
         <!-- logo & Humburger  -->
         <div class="navbar p-5 pr-20  z-50 " id="header">
             <div class="site-logo  flex flex-row">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqmQgjQk1D7mvZUTC1ge9JFD8AFuM7ydyV_Ne0J3jsOQ&s"
-                    class="h-14 mr-3 sm:h-20" alt="Landwind Logo">
-                <span class="sm:text-lg text-white self-center text-xs font-semibold whitespace-nowrap dark:text-white">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqmQgjQk1D7mvZUTC1ge9JFD8AFuM7ydyV_Ne0J3jsOQ&s" class="h-14 mr-3 sm:h-20" alt="Landwind Logo">
+                <span class="sm:text-lg  self-center text-xs font-semibold whitespace-nowrap dark:text-white">
                     THE KELKAR EDUCATION TRUST'S <br />
                     VINAYAK GANESH VAZE COLLEGE OF ARTS, <br />
                     SCIENCE AND COMMERCE (AUTONOMOUS)
@@ -289,18 +286,16 @@
           </div> -->
         <div>
             <div>
-                <div
-                    class=" bg-gradient-to-l from-blue-100 to-blue-500 relative isolate flex flex-col justify-end overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full justify-center">
-                    <!-- <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" /> -->
-                    <!-- <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
-                    <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div> -->
-                    <div class="text-left ms-10 z-1" data-aos="fade-up">
-                        <h1
-                            class="md:text-6xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-left px-[20px]">
+                <div class="relative isolate flex flex-col justify-end overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center">
+                    <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+                    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
+                    <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
+                    <div class="text-center z-1" data-aos="fade-up">
+                        <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">
                             NSS
                         </h1>
                     </div>
-                    <div class="text-left z-1 ms-10" data-aos="fade-up">
+                    <div class="text-center z-1" data-aos="fade-up">
                         <p class="mt-6 text-3xl leading-8 text-white">
                             National Service Scheme.
                         </p>
@@ -313,24 +308,17 @@
             <nav aria-label="Breadcrumb" class="pl-16 mt-10" id="Breadcrumb">
                 <ol class="flex items-stretch gap-2 list-none">
                     <li class="flex items-center gap-2">
-                        <a href="#"
-                            class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="1.5" aria-hidden="true"
-                                aria-labelledby="title-01 description-01" role="link">
+                        <a href="#" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
                                 <title id="title-01">Home</title>
                                 <desc id="description-01">
                                     Home button indicating the homepage of the website.
                                 </desc>
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                             </svg>
                             <span class="hidden md:block">Home</span>
                         </a>
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
-                            aria-labelledby="title-02 description-02" role="graphics-symbol">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
                             <title id="title-02">Arrow</title>
                             <desc id="description-02">
                                 Arrow icon that points to the next page in big screen resolution sizes
@@ -340,8 +328,7 @@
                         </svg>
                     </li>
                     <li class="flex items-center flex-1 gap-2">
-                        <a href="#" aria-current="page"
-                            class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-400">NSS</a>
+                        <a href="#" aria-current="page" class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-400">NSS</a>
                     </li>
                 </ol>
             </nav>
@@ -358,10 +345,8 @@
                         </p>
 
                     </div>
-                    <div
-                        class=" grid grid-cols-1 items-center justify-center mx-auto md:grid-cols-3 gap-2 md:mx-10 overflow-hidden about">
-                        <div class="order-last md:order-1 md:text-left lg:text-left text-center mx-auto p-10 col-span-2"
-                            data-aos="fade-right">
+                    <div class=" grid grid-cols-1 items-center justify-center mx-auto md:grid-cols-3 gap-2 md:mx-10 overflow-hidden about">
+                        <div class="order-last md:order-1 md:text-left lg:text-left text-center mx-auto p-10 col-span-2" data-aos="fade-right">
                             <p class="text-justify">
                                 In India, the idea of involving students in the task of national
                                 service dates back to the times of Mahatma Gandhi, the father of the
@@ -377,38 +362,27 @@
                             </p>
                         </div>
                         <div class="md:order-2 mx-auto" data-aos="fade-left">
-                            <image alt="NextUI hero Image with delay"
-                                class="rounded md:max-h-[200px] lg:max-h-[300px] max-h-60"
-                                src="https://www.pngkey.com/png/full/247-2479287_nss-logo-national-service-scheme-logo-png.png" />
+                            <image alt="NextUI hero Image with delay" class="rounded md:max-h-[200px] lg:max-h-[300px] max-h-60" src="https://www.pngkey.com/png/full/247-2479287_nss-logo-national-service-scheme-logo-png.png" />
                         </div>
                     </div>
                 </div>
             </section>
             <!-- MOTTO SECTION -->
-            <section class="h-[350px] max-h-[400px] bg-gray-100 flex flex-col items-center justify-center mx-auto  rounded-3xl  my-5"
-                data-aos="zoom-in">
+            <section class="h-[350px] max-h-[400px] bg-gray-100 flex flex-col items-center justify-center mx-auto  rounded-3xl  my-5" data-aos="zoom-in">
                 <div class="relative max-w-xl mx-auto group card">
                     <!-- Quotes -->
-                    <svg class="absolute transform -left-12 -top-12" width="100" height="78" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M100 0H86.588L59.034 40.478v37.065h37.064V40.478H82.2L100 0zM40.966 0H27.554L0 40.478v37.065h37.064V40.478H23.165L40.965 0z"
-                            fill="#871EFF" />
+                    <svg class="absolute transform -left-12 -top-12" width="100" height="78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M100 0H86.588L59.034 40.478v37.065h37.064V40.478H82.2L100 0zM40.966 0H27.554L0 40.478v37.065h37.064V40.478H23.165L40.965 0z" fill="#871EFF" />
                     </svg>
-                    <svg class="absolute transform -right-12 -bottom-6 flip" width="101" height="78" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M14.2916 77.9999H0.880127L18.6808 37.5217H4.78164V0.457275H41.846V37.5217L14.2916 77.9999Z"
-                            fill="#871EFF" />
-                        <path d="M73.4115 78H60L77.8007 37.5218H63.9015V0.457397H100.966V37.5219L73.4115 78Z"
-                            fill="#871EFF" />
+                    <svg class="absolute transform -right-12 -bottom-6 flip" width="101" height="78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.2916 77.9999H0.880127L18.6808 37.5217H4.78164V0.457275H41.846V37.5217L14.2916 77.9999Z" fill="#871EFF" />
+                        <path d="M73.4115 78H60L77.8007 37.5218H63.9015V0.457397H100.966V37.5219L73.4115 78Z" fill="#871EFF" />
                     </svg>
                     <!-- Card -->
                     <div class="flex flex-row relative bg-white shadow-xl rounded-2xl">
                         <div class="relative px-4 py-6 p-10 md:p-14 w-3/2 flex flex-wrap content-center">
                             <div class="space-y-1">
-                                <p
-                                    class="italic text-gray-800 text-4xl font-extrabold leading-none md:text-4xl lg:text-5xl">
+                                <p class="italic text-gray-800 text-4xl font-extrabold leading-none md:text-4xl lg:text-5xl">
                                     Not Me But You.
                                 </p>
                             </div>
@@ -429,22 +403,16 @@
                         </p>
                     </div>
                     <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
-                        <div
-                            class=" dark:lg:bg-darker  rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
+                        <div class=" dark:lg:bg-darker  rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
                             <div class="md:5/12 lg:w-1/2">
                                 <img src="../../assests/Capa 1.png" alt="image" loading="lazy" class="" />
                             </div>
                             <div class="md:7/12 lg:w-1/2">
                                 <div class="divide-y space-y-8 divide-gray-300 dark:divide-gray-800">
                                     <div class="mt-8 flex gap-4 md:items-center">
-                                        <div
-                                            class="w-12 h-12 flex gap-4 rounded-full bg-indigo-100 dark:bg-indigo-900/20">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor"
-                                                class="w-6 h-6 m-auto text-indigo-500 dark:text-indigo-400">
-                                                <path fill-rule="evenodd"
-                                                    d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z"
-                                                    clip-rule="evenodd" />
+                                        <div class="w-12 h-12 flex gap-4 rounded-full bg-indigo-100 dark:bg-indigo-900/20">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-indigo-500 dark:text-indigo-400">
+                                                <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
                                         <div class="w-5/6">
@@ -459,12 +427,8 @@
                                     </div>
                                     <div class="pt-4 flex gap-4 md:items-center">
                                         <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor"
-                                                class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
-                                                <path fill-rule="evenodd"
-                                                    d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                    clip-rule="evenodd" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
+                                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
                                         <div class="w-5/6">
@@ -482,12 +446,8 @@
                                     </div>
                                     <div class="pt-4 flex gap-4 md:items-center">
                                         <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor"
-                                                class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
-                                                <path fill-rule="evenodd"
-                                                    d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                    clip-rule="evenodd" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
+                                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
                                         <div class="w-5/6">
@@ -502,12 +462,8 @@
                                     </div>
                                     <div class="pt-4 flex gap-4 md:items-center">
                                         <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor"
-                                                class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
-                                                <path fill-rule="evenodd"
-                                                    d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                    clip-rule="evenodd" />
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
+                                                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
                                         <div class="w-5/6">
@@ -562,29 +518,20 @@
                             Browse our past events and select the year range you're interested in.
                         </p>
                     </div>
-                    <div
-                        class="flex hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto">
-                        <button
-                            class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider  text-blue-100 rounded-full hover:shadow-2xl hover:bg-blue-600">2023-2024</button>
-                        <button
-                            class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2022-2023</button>
-                        <button
-                            class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2021-2022</button>
-                        <button
-                            class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2020-2021</button>
-                        <button
-                            class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2019-2020</button>
-                        <button
-                            class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2018-2019</button>
-                        <button
-                            class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2017-2018</button>
+                    <div class="flex hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto">
+                        <button class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider  text-blue-100 rounded-full hover:shadow-2xl hover:bg-blue-600">2023-2024</button>
+                        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2022-2023</button>
+                        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2021-2022</button>
+                        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2020-2021</button>
+                        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2019-2020</button>
+                        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2018-2019</button>
+                        <button class="bg-gray-50 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider  text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">2017-2018</button>
                     </div>
 
                 </div>
             </div>
             <!--yearly activities-->
-            <div id="2019_2020" class="max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto"
-                style="transition: all 2s ease">
+            <div id="2019_2020" class="max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto" style="transition: all 2s ease">
                 <!--Achivements-->
                 <section class="py-12 border-b">
                     <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
@@ -599,30 +546,19 @@
 
 
                         <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-                            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab"
-                                data-tabs-toggle="#default-styled-tab-content"
-                                data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500"
-                                data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300"
-                                role="tablist">
+                            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content" data-tabs-active-classes="text-purple-600 hover:text-purple-600 dark:text-purple-500 dark:hover:text-purple-500 border-purple-600 dark:border-purple-500" data-tabs-inactive-classes="dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tablist">
                                 <li class="me-2" role="presentation">
-                                    <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-styled-tab"
-                                        data-tabs-target="#styled-profile" type="button" role="tab"
-                                        aria-controls="profile" aria-selected="false">Degree Unit</button>
+                                    <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-styled-tab" data-tabs-target="#styled-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Degree Unit</button>
                                 </li>
                                 <li class="me-2" role="presentation">
-                                    <button
-                                        class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                                        id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button"
-                                        role="tab" aria-controls="dashboard" aria-selected="false">Junior Unit</button>
+                                    <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-styled-tab" data-tabs-target="#styled-dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Junior Unit</button>
                                 </li>
                             </ul>
                         </div>
                         <div id="default-styled-tab-content">
-                            <div class="hidden p-4 overflow-hidden rounded-lg  dark:bg-gray-800" id="styled-profile"
-                                role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="hidden p-4 overflow-hidden rounded-lg  dark:bg-gray-800" id="styled-profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <script>
-
-                                    $(document).ready(function () {
+                                    $(document).ready(function() {
 
                                         $('.list1').showMoreItems({
                                             startNum: 6,
@@ -633,18 +569,14 @@
                                     })
                                 </script>
                                 <div class=" grid gap-8 sm:grid-cols-2 md:-mx-8 lg:grid-cols-3 md:px-10 list1">
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 2nd Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -677,18 +609,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 1st Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -721,18 +649,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 1st Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -765,18 +689,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 1st Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -809,18 +729,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 2nd Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -853,18 +769,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Participated
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -889,8 +801,7 @@
                                                     <span class="material-symbols-outlined font-medium text-2xl">
                                                         star
                                                     </span>
-                                                    <span
-                                                        class="w-max block font-normal text-gray-700 sm:mt-0">Participated</span>
+                                                    <span class="w-max block font-normal text-gray-700 sm:mt-0">Participated</span>
                                                 </div>
                                                 <div class="flex gap-2 items-center text-gray-500 line-clamp-3">
                                                     <span class="material-symbols-outlined">
@@ -903,18 +814,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Selected
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -932,8 +839,7 @@
                                                     <span class="material-symbols-outlined font-medium text-2xl">
                                                         event
                                                     </span>
-                                                    <span
-                                                        class="w-max block font-normal text-gray-700 sm:mt-0">Selected</span>
+                                                    <span class="w-max block font-normal text-gray-700 sm:mt-0">Selected</span>
                                                 </div>
                                                 <div class="flex gap-2 items-center text-gray-500 line-clamp-3">
                                                     <span class="material-symbols-outlined">
@@ -946,18 +852,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Participated
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -977,8 +879,7 @@
                                                     <span class="material-symbols-outlined font-medium text-2xl">
                                                         star
                                                     </span>
-                                                    <span
-                                                        class="w-max block font-normal text-gray-700 sm:mt-0">Participated</span>
+                                                    <span class="w-max block font-normal text-gray-700 sm:mt-0">Participated</span>
                                                 </div>
                                                 <div class="flex gap-2 items-center text-gray-500 line-clamp-3">
                                                     <span class="material-symbols-outlined">
@@ -991,18 +892,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 1st Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -1036,18 +933,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 1st Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -1089,18 +982,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Selected
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -1118,8 +1007,7 @@
                                                     <span class="material-symbols-outlined font-medium text-2xl">
                                                         event
                                                     </span>
-                                                    <span
-                                                        class="w-max block font-normal text-gray-700 sm:mt-0">Selected</span>
+                                                    <span class="w-max block font-normal text-gray-700 sm:mt-0">Selected</span>
                                                 </div>
                                                 <div class="flex gap-2 items-center text-gray-500 line-clamp-3">
                                                     <span class="material-symbols-outlined">
@@ -1132,18 +1020,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 2nd Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -1189,18 +1073,14 @@
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-10">
                                             <div class="flex items-center space-x-4">
-                                                <div aria-hidden="true"
-                                                    class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
-                                                    <span
-                                                        class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
+                                                <div aria-hidden="true" class="flex size-16 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                                    <span class="font-bold text-4xl text-pink-600 dark:text-pink-300 material-symbols-outlined">emoji_events</span>
                                                 </div>
                                                 <div>
-                                                    <h3
-                                                        class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                    <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                         Won 1st Prize
                                                     </h3>
                                                     <p class="text-gray-500 dark:text-gray-400 text-sm">
@@ -1235,19 +1115,15 @@
 
                                 </div>
                             </div>
-                            <div class="hidden p-4 rounded-lg  dark:bg-gray-800" id="styled-dashboard" role="tabpanel"
-                                aria-labelledby="dashboard-tab">
+                            <div class="hidden p-4 rounded-lg  dark:bg-gray-800" id="styled-dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                                 <div class=" grid gap-8 sm:grid-cols-2 md:-mx-8 lg:grid-cols-3">
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-16">
-                                            <div aria-hidden="true"
-                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                            <div aria-hidden="true" class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
                                                 <span class="font-bold text-pink-600 dark:text-pink-300">1</span>
                                             </div>
                                             <div class="space-y-4">
-                                                <h3
-                                                    class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                     First feature
                                                 </h3>
                                                 <p class="text-gray-600 dark:text-gray-300">
@@ -1257,20 +1133,16 @@
                                                     voluptates nostrum.
                                                 </p>
                                             </div>
-                                            <img src="https://cdn-icons-png.flaticon.com/512/7983/7983132.png"
-                                                class="w-16" width="512" height="512" alt="burger illustration" />
+                                            <img src="https://cdn-icons-png.flaticon.com/512/7983/7983132.png" class="w-16" width="512" height="512" alt="burger illustration" />
                                         </div>
                                     </div>
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-16">
-                                            <div aria-hidden="true"
-                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
+                                            <div aria-hidden="true" class="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 dark:bg-gray-700">
                                                 <span class="font-bold text-pink-600 dark:text-pink-300">2</span>
                                             </div>
                                             <div class="space-y-4">
-                                                <h3
-                                                    class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                     Second feature
                                                 </h3>
                                                 <p class="text-gray-600 dark:text-gray-300">
@@ -1280,20 +1152,16 @@
                                                     voluptates nostrum.
                                                 </p>
                                             </div>
-                                            <img src="https://cdn-icons-png.flaticon.com/512/7983/7983306.png"
-                                                class="w-16" width="512" height="512" alt="burger illustration" />
+                                            <img src="https://cdn-icons-png.flaticon.com/512/7983/7983306.png" class="w-16" width="512" height="512" alt="burger illustration" />
                                         </div>
                                     </div>
-                                    <div
-                                        class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                                    <div class="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                         <div class="space-y-16">
-                                            <div aria-hidden="true"
-                                                class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-50 dark:bg-gray-700">
+                                            <div aria-hidden="true" class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-50 dark:bg-gray-700">
                                                 <span class="font-bold text-purple-600 dark:text-purple-300">3</span>
                                             </div>
                                             <div class="space-y-4">
-                                                <h3
-                                                    class="text-2xl font-semibold text-gray-800 transition dark:text-white">
+                                                <h3 class="text-2xl font-semibold text-gray-800 transition dark:text-white">
                                                     Third feature
                                                 </h3>
                                                 <p class="text-gray-600 dark:text-gray-300">
@@ -1303,8 +1171,7 @@
                                                     voluptates nostrum.
                                                 </p>
                                             </div>
-                                            <img src="https://cdn-icons-png.flaticon.com/512/7983/7983333.png"
-                                                class="w-16" width="512" height="512" alt="burger illustration" />
+                                            <img src="https://cdn-icons-png.flaticon.com/512/7983/7983333.png" class="w-16" width="512" height="512" alt="burger illustration" />
                                         </div>
                                     </div>
                                 </div>
@@ -1328,9 +1195,7 @@
                         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                             <div class="grid gap-12 md:gap-6 md:grid-cols-2 lg:gap-12">
                                 <div class="group space-y-6">
-                                    <img src="../../assests/nss_yogaday.jpg" alt="art cover" loading="lazy" width="1000"
-                                        height="667"
-                                        class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="../../assests/nss_yogaday.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         Yoga Day
                                     </h3>
@@ -1359,9 +1224,7 @@
                                     </div>
                                 </div>
                                 <div class="group space-y-6">
-                                    <img src="../../assests/no_to_tabaco.jpg" alt="art cover" loading="lazy"
-                                        width="1000" height="667"
-                                        class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="../../assests/no_to_tabaco.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         No To Tobacco
                                     </h3>
@@ -1389,9 +1252,7 @@
                                     </div>
                                 </div>
                                 <div class="group space-y-6">
-                                    <img src="../../assests/swatch_bharat.jpg" alt="art cover" loading="lazy"
-                                        width="1000" height="667"
-                                        class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="../../assests/swatch_bharat.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         Swachh Bharat Abhiyan
                                     </h3>
@@ -1422,9 +1283,7 @@
                                     </div>
                                 </div>
                                 <div class="group space-y-6">
-                                    <img src="https://borgenproject.org/wp-content/uploads/Online-Education-in-India-1030x687.jpg"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="https://borgenproject.org/wp-content/uploads/Online-Education-in-India-1030x687.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         Encourage Education
                                     </h3>
@@ -1455,9 +1314,7 @@
                                     </div>
                                 </div>
                                 <div class="group space-y-6">
-                                    <img src="https://c.ndtvimg.com/eq99n43_kerala-floods-afp-650_625x300_24_August_18.jpg"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="https://c.ndtvimg.com/eq99n43_kerala-floods-afp-650_625x300_24_August_18.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         Flood Relief
                                     </h3>
@@ -1505,12 +1362,9 @@
                             </p>
                         </div>
                         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                            <div
-                                class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                            <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="../../assests/nss.jpg" alt="art cover" loading="lazy" width="1000"
-                                        height="667"
-                                        class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="../../assests/nss.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1522,12 +1376,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                            <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1539,12 +1390,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                            <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1556,12 +1404,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                            <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1573,12 +1418,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                            <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1590,12 +1432,9 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+                            <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
-                                        alt="art cover" loading="lazy" width="1000" height="667"
-                                        class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1625,11 +1464,9 @@
 
                         <div class="space-y-10">
                             <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
-                                <div
-                                    class="lg:bg-gray-50 dark:lg:bg-darker lg:p-16 rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
+                                <div class="lg:bg-gray-50 dark:lg:bg-darker lg:p-16 rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
                                     <div class="md:5/12 lg:w-1/2">
-                                        <img src="../../assests/nssspecial_camp.jpg" alt="image" loading="lazy"
-                                            class="rounded-2xl h-96 w-full object-cover	" />
+                                        <img src="../../assests/nssspecial_camp.jpg" alt="image" loading="lazy" class="rounded-2xl h-96 w-full object-cover	" />
                                     </div>
                                     <div class="md:7/12 lg:w-1/2">
                                         <h2 class="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white">
@@ -1637,31 +1474,20 @@
                                         </h2>
                                         <div class="divide-y space-y-4 divide-gray-200 dark:divide-gray-800">
                                             <div class="mt-8 flex gap-4 md:items-center">
-                                                <div
-                                                    class="w-12 h-12 flex gap-4 rounded-full bg-indigo-100 dark:bg-indigo-900/20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                        class="w-6 h-6 m-auto text-indigo-500 dark:text-indigo-400">
-                                                        <path fill-rule="evenodd"
-                                                            d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z"
-                                                            clip-rule="evenodd" />
+                                                <div class="w-12 h-12 flex gap-4 rounded-full bg-indigo-100 dark:bg-indigo-900/20">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-indigo-500 dark:text-indigo-400">
+                                                        <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
                                                     </svg>
                                                 </div>
                                                 <div class="w-5/6">
-                                                    <h4
-                                                        class="font-semibold text-lg text-gray-700 dark:text-indigo-300">
+                                                    <h4 class="font-semibold text-lg text-gray-700 dark:text-indigo-300">
                                                         Construction of 2 Solid Vanrai Bandhara.</h3>
                                                 </div>
                                             </div>
                                             <div class="pt-4 flex gap-4 md:items-center">
-                                                <div
-                                                    class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                        class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
-                                                        <path fill-rule="evenodd"
-                                                            d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                            clip-rule="evenodd" />
+                                                <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
+                                                        <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                                     </svg>
                                                 </div>
                                                 <div class="w-5/6">
@@ -1670,14 +1496,9 @@
                                                 </div>
                                             </div>
                                             <div class="pt-4 flex gap-4 md:items-center">
-                                                <div
-                                                    class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                        class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
-                                                        <path fill-rule="evenodd"
-                                                            d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                            clip-rule="evenodd" />
+                                                <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
+                                                        <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                                     </svg>
                                                 </div>
                                                 <div class="w-5/6">
@@ -1688,14 +1509,9 @@
                                                 </div>
                                             </div>
                                             <div class="pt-4 flex gap-4 md:items-center">
-                                                <div
-                                                    class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                        fill="currentColor"
-                                                        class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
-                                                        <path fill-rule="evenodd"
-                                                            d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                                                            clip-rule="evenodd" />
+                                                <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 dark:bg-teal-900/20">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
+                                                        <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                                                     </svg>
                                                 </div>
                                                 <div class="w-5/6">
@@ -1750,11 +1566,8 @@
                     </div>
                     <div class="grid gap-10 md:grid-cols-2  mx-auto">
                         <div class="group space-y-4 text-center">
-                            <div
-                                class="mx-auto h-56 w-56 rotate-45 overflow-hidden rounded-[4rem] md:h-40 md:w-40 lg:h-56 lg:w-56">
-                                <img class="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
-                                    src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
-                                    alt="woman" loading="lazy" width="640" height="805" />
+                            <div class="mx-auto h-56 w-56 rotate-45 overflow-hidden rounded-[4rem] md:h-40 md:w-40 lg:h-56 lg:w-56">
+                                <img class="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww" alt="woman" loading="lazy" width="640" height="805" />
                             </div>
                             <div class="pt-4">
                                 <h4 class="text-2xl text-gray-700 dark:text-white">Mr. Nikesh Kumar</h4>
@@ -1762,11 +1575,8 @@
                             </div>
                         </div>
                         <div class="group space-y-4 text-center">
-                            <div
-                                class="mx-auto h-56 w-56 rotate-45 overflow-hidden rounded-[4rem] md:h-40 md:w-40 lg:h-56 lg:w-56">
-                                <img class="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]"
-                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww"
-                                    alt="man" loading="lazy" width="1000" height="667" />
+                            <div class="mx-auto h-56 w-56 rotate-45 overflow-hidden rounded-[4rem] md:h-40 md:w-40 lg:h-56 lg:w-56">
+                                <img class="mx-auto h-full w-full -rotate-45 scale-125 object-cover transition duration-300 group-hover:scale-[1.4]" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww" alt="man" loading="lazy" width="1000" height="667" />
                             </div>
                             <div class="pt-4">
                                 <h4 class="text-2xl text-gray-700 dark:text-white">Mr. Naresh Mehta</h4>
@@ -1787,69 +1597,48 @@
                             </p>
 
                         </div>
-                        <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg w-full"
-                            data-carousel="static">
+                        <div id="default-carousel" class="relative rounded-lg overflow-hidden shadow-lg w-full" data-carousel="static">
                             <!-- Carousel wrapper -->
                             <div class="relative h-80 md:h-[40rem]" data-carousel-inner>
                                 <!-- Item 1 -->
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                     <img src="../../assests/nss.jpg" class="object-cover w-full h-full" alt="Slide 1" />
-                                    <span
-                                        class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
+                                    <span class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
                                         Photo</span>
                                 </div>
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                    <img src="https://assets.thehansindia.com/h-upload/2021/07/25/1091268-nss-volunteers.webp"
-                                        class="object-cover w-full h-full" alt="Slide 1" />
-                                    <span
-                                        class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
+                                    <img src="https://assets.thehansindia.com/h-upload/2021/07/25/1091268-nss-volunteers.webp" class="object-cover w-full h-full" alt="Slide 1" />
+                                    <span class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
                                         Photo</span>
                                 </div>
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/The_National_Service_Scheme_%28NSS%29_Marching_Contingent_passes_through_the_Rajpath%2C_on_the_occasion_of_the_68th_Republic_Day_Parade_2017%2C_in_New_Delhi_on_January_26%2C_2017.jpg"
-                                        class="object-cover w-full h-full" alt="Slide 1" />
-                                    <span
-                                        class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/The_National_Service_Scheme_%28NSS%29_Marching_Contingent_passes_through_the_Rajpath%2C_on_the_occasion_of_the_68th_Republic_Day_Parade_2017%2C_in_New_Delhi_on_January_26%2C_2017.jpg" class="object-cover w-full h-full" alt="Slide 1" />
+                                    <span class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
                                         Photo</span>
                                 </div>
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                    <img src="https://ramanujancollege.ac.in/media/images/NSS-1.original.jpg"
-                                        class="object-cover w-full h-full" alt="Slide 1" />
-                                    <span
-                                        class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
+                                    <img src="https://ramanujancollege.ac.in/media/images/NSS-1.original.jpg" class="object-cover w-full h-full" alt="Slide 1" />
+                                    <span class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
                                         Photo</span>
                                 </div>
                             </div>
                             <!-- Slider indicators -->
-                            <div class="flex absolute bottom-5 left-1/2 z-30 -translate-x-1/2 space-x-2"
-                                data-carousel-indicators>
-                                <button type="button"
-                                    class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                <button type="button"
-                                    class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                <button type="button"
-                                    class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
-                                <button type="button"
-                                    class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
+                            <div class="flex absolute bottom-5 left-1/2 z-30 -translate-x-1/2 space-x-2" data-carousel-indicators>
+                                <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
+                                <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
+                                <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
+                                <button type="button" class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 focus:outline-none focus:bg-gray-400 transition"></button>
                             </div>
                             <!-- Slider controls -->
-                            <button type="button"
-                                class="flex absolute top-1/2 left-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition"
-                                data-carousel-prev>
-                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 19l-7-7 7-7">
+                            <button type="button" class="flex absolute top-1/2 left-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition" data-carousel-prev>
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
                                     </path>
                                 </svg>
                             </button>
-                            <button type="button"
-                                class="flex absolute top-1/2 right-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition"
-                                data-carousel-next>
-                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 5l7 7-7 7">
+                            <button type="button" class="flex absolute top-1/2 right-3 z-40 items-center justify-center w-10 h-10 bg-gray-200/50 rounded-full hover:bg-gray-300 focus:outline-none transition" data-carousel-next>
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                                     </path>
                                 </svg>
                             </button>
@@ -1859,14 +1648,12 @@
                 </section>
 
             </div>
-            
+
             <footer class="">
                 <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-10 sm:px-6 lg:space-y-16 lg:px-8">
                     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
                         <div>
-                            <img class="h-16 w-auto"
-                                src="data:image/png;base64,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"
-                                alt="">
+                            <img class="h-16 w-auto" src="data:image/png;base64,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" alt="">
 
                             <!-- <div class="text-teal-600">
                 <svg
@@ -1925,76 +1712,55 @@
 
                             <ul class="mt-8 flex gap-6">
                                 <li>
-                                    <a href="https://www.facebook.com/profile.php?id=100064226286644&ti=as"
-                                        rel="noreferrer" target="_blank"
-                                        class="text-gray-700 transition hover:opacity-75">
+                                    <a href="https://www.facebook.com/profile.php?id=100064226286644&ti=as" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
                                         <span class="sr-only">Facebook</span>
 
-                                        <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none">
-                                            <path fill="#1877F2"
-                                                d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z" />
-                                            <path fill="#ffffff"
-                                                d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z" />
+                                        <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                            <path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z" />
+                                            <path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z" />
                                         </svg>
 
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="https://www.instagram.com/" rel="noreferrer" target="_blank"
-                                        class="text-gray-700 transition hover:opacity-75">
+                                    <a href="https://www.instagram.com/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
                                         <span class="sr-only">Instagram</span>
 
-                                        <svg class="h-8 w-8" viewBox="0 0 3364.7 3364.7"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="h-8 w-8" viewBox="0 0 3364.7 3364.7" xmlns="http://www.w3.org/2000/svg">
                                             <defs>
-                                                <radialGradient id="0" cx="217.76" cy="3290.99" r="4271.92"
-                                                    gradientUnits="userSpaceOnUse">
+                                                <radialGradient id="0" cx="217.76" cy="3290.99" r="4271.92" gradientUnits="userSpaceOnUse">
                                                     <stop offset=".09" stop-color="#fa8f21" />
                                                     <stop offset=".78" stop-color="#d82d7e" />
                                                 </radialGradient>
-                                                <radialGradient id="1" cx="2330.61" cy="3182.95" r="3759.33"
-                                                    gradientUnits="userSpaceOnUse">
+                                                <radialGradient id="1" cx="2330.61" cy="3182.95" r="3759.33" gradientUnits="userSpaceOnUse">
                                                     <stop offset=".64" stop-color="#8c3aaa" stop-opacity="0" />
                                                     <stop offset="1" stop-color="#8c3aaa" />
                                                 </radialGradient>
                                             </defs>
-                                            <path
-                                                d="M853.2,3352.8c-200.1-9.1-308.8-42.4-381.1-70.6-95.8-37.3-164.1-81.7-236-153.5S119.7,2988.6,82.6,2892.8c-28.2-72.3-61.5-181-70.6-381.1C2,2295.4,0,2230.5,0,1682.5s2.2-612.8,11.9-829.3C21,653.1,54.5,544.6,82.5,472.1,119.8,376.3,164.3,308,236,236c71.8-71.8,140.1-116.4,236-153.5C544.3,54.3,653,21,853.1,11.9,1069.5,2,1134.5,0,1682.3,0c548,0,612.8,2.2,829.3,11.9,200.1,9.1,308.6,42.6,381.1,70.6,95.8,37.1,164.1,81.7,236,153.5s116.2,140.2,153.5,236c28.2,72.3,61.5,181,70.6,381.1,9.9,216.5,11.9,281.3,11.9,829.3,0,547.8-2,612.8-11.9,829.3-9.1,200.1-42.6,308.8-70.6,381.1-37.3,95.8-81.7,164.1-153.5,235.9s-140.2,116.2-236,153.5c-72.3,28.2-181,61.5-381.1,70.6-216.3,9.9-281.3,11.9-829.3,11.9-547.8,0-612.8-1.9-829.1-11.9"
-                                                fill="url(#0)" />
-                                            <path
-                                                d="M853.2,3352.8c-200.1-9.1-308.8-42.4-381.1-70.6-95.8-37.3-164.1-81.7-236-153.5S119.7,2988.6,82.6,2892.8c-28.2-72.3-61.5-181-70.6-381.1C2,2295.4,0,2230.5,0,1682.5s2.2-612.8,11.9-829.3C21,653.1,54.5,544.6,82.5,472.1,119.8,376.3,164.3,308,236,236c71.8-71.8,140.1-116.4,236-153.5C544.3,54.3,653,21,853.1,11.9,1069.5,2,1134.5,0,1682.3,0c548,0,612.8,2.2,829.3,11.9,200.1,9.1,308.6,42.6,381.1,70.6,95.8,37.1,164.1,81.7,236,153.5s116.2,140.2,153.5,236c28.2,72.3,61.5,181,70.6,381.1,9.9,216.5,11.9,281.3,11.9,829.3,0,547.8-2,612.8-11.9,829.3-9.1,200.1-42.6,308.8-70.6,381.1-37.3,95.8-81.7,164.1-153.5,235.9s-140.2,116.2-236,153.5c-72.3,28.2-181,61.5-381.1,70.6-216.3,9.9-281.3,11.9-829.3,11.9-547.8,0-612.8-1.9-829.1-11.9"
-                                                fill="url(#1)" />
-                                            <path
-                                                d="M1269.25,1689.52c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7-416.6-186.59-416.6-416.7m-225.26,0c0,354.5,287.36,641.86,641.86,641.86s641.86-287.36,641.86-641.86-287.36-641.86-641.86-641.86S1044,1335,1044,1689.52m1159.13-667.31a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M1180.85,2707c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27S2059.13,666,2191,672c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M1170.5,447.09c-133.07,6.06-224,27.16-303.41,58.06-82.19,31.91-151.86,74.72-221.43,144.18S533.39,788.47,501.48,870.76c-30.9,79.46-52,170.34-58.06,303.41-6.16,133.28-7.57,175.89-7.57,515.35s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43s139.14,112.18,221.43,144.18c79.56,30.9,170.34,52,303.41,58.06,133.35,6.06,175.89,7.57,515.35,7.57s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2586.8,537.06,2504.71,505.15c-79.56-30.9-170.44-52.1-303.41-58.06C2068,441,2025.41,439.52,1686,439.52s-382.1,1.41-515.45,7.57"
-                                                fill="#ffffff" />
+                                            <path d="M853.2,3352.8c-200.1-9.1-308.8-42.4-381.1-70.6-95.8-37.3-164.1-81.7-236-153.5S119.7,2988.6,82.6,2892.8c-28.2-72.3-61.5-181-70.6-381.1C2,2295.4,0,2230.5,0,1682.5s2.2-612.8,11.9-829.3C21,653.1,54.5,544.6,82.5,472.1,119.8,376.3,164.3,308,236,236c71.8-71.8,140.1-116.4,236-153.5C544.3,54.3,653,21,853.1,11.9,1069.5,2,1134.5,0,1682.3,0c548,0,612.8,2.2,829.3,11.9,200.1,9.1,308.6,42.6,381.1,70.6,95.8,37.1,164.1,81.7,236,153.5s116.2,140.2,153.5,236c28.2,72.3,61.5,181,70.6,381.1,9.9,216.5,11.9,281.3,11.9,829.3,0,547.8-2,612.8-11.9,829.3-9.1,200.1-42.6,308.8-70.6,381.1-37.3,95.8-81.7,164.1-153.5,235.9s-140.2,116.2-236,153.5c-72.3,28.2-181,61.5-381.1,70.6-216.3,9.9-281.3,11.9-829.3,11.9-547.8,0-612.8-1.9-829.1-11.9" fill="url(#0)" />
+                                            <path d="M853.2,3352.8c-200.1-9.1-308.8-42.4-381.1-70.6-95.8-37.3-164.1-81.7-236-153.5S119.7,2988.6,82.6,2892.8c-28.2-72.3-61.5-181-70.6-381.1C2,2295.4,0,2230.5,0,1682.5s2.2-612.8,11.9-829.3C21,653.1,54.5,544.6,82.5,472.1,119.8,376.3,164.3,308,236,236c71.8-71.8,140.1-116.4,236-153.5C544.3,54.3,653,21,853.1,11.9,1069.5,2,1134.5,0,1682.3,0c548,0,612.8,2.2,829.3,11.9,200.1,9.1,308.6,42.6,381.1,70.6,95.8,37.1,164.1,81.7,236,153.5s116.2,140.2,153.5,236c28.2,72.3,61.5,181,70.6,381.1,9.9,216.5,11.9,281.3,11.9,829.3,0,547.8-2,612.8-11.9,829.3-9.1,200.1-42.6,308.8-70.6,381.1-37.3,95.8-81.7,164.1-153.5,235.9s-140.2,116.2-236,153.5c-72.3,28.2-181,61.5-381.1,70.6-216.3,9.9-281.3,11.9-829.3,11.9-547.8,0-612.8-1.9-829.1-11.9" fill="url(#1)" />
+                                            <path d="M1269.25,1689.52c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7-416.6-186.59-416.6-416.7m-225.26,0c0,354.5,287.36,641.86,641.86,641.86s641.86-287.36,641.86-641.86-287.36-641.86-641.86-641.86S1044,1335,1044,1689.52m1159.13-667.31a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M1180.85,2707c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27S2059.13,666,2191,672c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M1170.5,447.09c-133.07,6.06-224,27.16-303.41,58.06-82.19,31.91-151.86,74.72-221.43,144.18S533.39,788.47,501.48,870.76c-30.9,79.46-52,170.34-58.06,303.41-6.16,133.28-7.57,175.89-7.57,515.35s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43s139.14,112.18,221.43,144.18c79.56,30.9,170.34,52,303.41,58.06,133.35,6.06,175.89,7.57,515.35,7.57s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2586.8,537.06,2504.71,505.15c-79.56-30.9-170.44-52.1-303.41-58.06C2068,441,2025.41,439.52,1686,439.52s-382.1,1.41-515.45,7.57" fill="#ffffff" />
                                         </svg>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="https://www.linkedin.com/school/vazecollegeautonomous/" rel="noreferrer"
-                                        target="_blank" class="text-gray-700 transition hover:opacity-75">
+                                    <a href="https://www.linkedin.com/school/vazecollegeautonomous/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
                                         <span class="sr-only">Linkedin</span>
 
-                                        <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none">
-                                            <path fill="#0A66C2"
-                                                d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z" />
+                                        <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                            <path fill="#0A66C2" d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z" />
                                         </svg>
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="https://www.youtube.com/channel/UC8lT0q9Defrg5pKA2-BhVPQ" rel="noreferrer"
-                                        target="_blank" class="text-gray-700 transition hover:opacity-75">
+                                    <a href="https://www.youtube.com/channel/UC8lT0q9Defrg5pKA2-BhVPQ" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
                                         <span class="sr-only">Youtube</span>
 
-                                        <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none">
-                                            <path fill="red"
-                                                d="M14.712 4.633a1.754 1.754 0 00-1.234-1.234C12.382 3.11 8 3.11 8 3.11s-4.382 0-5.478.289c-.6.161-1.072.634-1.234 1.234C1 5.728 1 8 1 8s0 2.283.288 3.367c.162.6.635 1.073 1.234 1.234C3.618 12.89 8 12.89 8 12.89s4.382 0 5.478-.289a1.754 1.754 0 001.234-1.234C15 10.272 15 8 15 8s0-2.272-.288-3.367z" />
+                                        <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                            <path fill="red" d="M14.712 4.633a1.754 1.754 0 00-1.234-1.234C12.382 3.11 8 3.11 8 3.11s-4.382 0-5.478.289c-.6.161-1.072.634-1.234 1.234C1 5.728 1 8 1 8s0 2.283.288 3.367c.162.6.635 1.073 1.234 1.234C3.618 12.89 8 12.89 8 12.89s4.382 0 5.478-.289a1.754 1.754 0 001.234-1.234C15 10.272 15 8 15 8s0-2.272-.288-3.367z" />
                                             <path fill="#ffffff" d="M6.593 10.11l3.644-2.098-3.644-2.11v4.208z" />
                                         </svg>
                                     </a>
@@ -2128,13 +1894,10 @@
             </footer>
         </div>
 
-        <div
-            class="nav-container fixed top-0 w-full min-h-full bg-black text-white flex flex-col justify-center items-center">
+        <div class="nav-container fixed top-0 w-full min-h-full bg-black text-white flex flex-col justify-center items-center">
             <div class="justify-start">
-                <svg xmlns="http://www.w3.org/2000/svg" class="size-20" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-20" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
 
             </div>
@@ -2155,14 +1918,12 @@
               </div> -->
                 <div>
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
-                            href="">Home</a>
+                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400" href="">Home</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
-                            href="">Contact Us</a>
+                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400" href="">Contact Us</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
@@ -2170,10 +1931,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center justify-between">
                                 About us
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2185,10 +1944,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 Academics
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2198,10 +1955,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 Student Corner
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2212,37 +1967,31 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 Our campus
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
                         <div class="nav-item-wrapper"></div>
                     </div>
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Admissions</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Admissions</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Research</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Research</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
                 </div>
                 <div class="hidden">
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
-                            href="">Home</a>
+                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400" href="">Home</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400"
-                            href="">Contact Us</a>
+                        <a class="relative top-[60px] md:md:text-3xl text-xl text-xl font-light hover:text-slate-400" href="">Contact Us</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
@@ -2250,10 +1999,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center justify-between">
                                 About us
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2265,10 +2012,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 Academics
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2278,10 +2023,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 Student Corner
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2292,24 +2035,20 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 Our campus
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
                         <div class="nav-item-wrapper"></div>
                     </div>
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Admissions</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Admissions</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Research</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Research</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
@@ -2317,10 +2056,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 More
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2329,8 +2066,7 @@
                 </div>
                 <div>
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Alumni</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Alumni</a>
                         <!-- <button id="animateButton" class="mb-4 px-4 py-2 bg-blue-500 text-white rounded z-10 hover:bg-blue-600">
                     Click Me
                 </button> -->
@@ -2338,20 +2074,17 @@
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Faculty</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Faculty</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Committees</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Committees</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
                     <div class="nav-link py-2 relative">
-                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400"
-                            href="">Procedures</a>
+                        <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">Procedures</a>
                         <div class="nav-item-wrapper"></div>
                     </div>
 
@@ -2359,10 +2092,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 NAAC
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2372,10 +2103,8 @@
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400" href="">
                             <div class="flex flex-row items-center gap-4 justify-between">
                                 More
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                                 </svg>
                             </div>
                         </a>
@@ -2395,11 +2124,10 @@
         </div>
 
         <script>
-
             var lastScrollTop; // This Varibale will store the top position
             navbar = document.getElementById('header'); // Get The NavBar
             console.log(navbar);
-            window.addEventListener('scroll', function () {
+            window.addEventListener('scroll', function() {
                 //on every scroll this funtion will be called
 
                 var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -2421,29 +2149,32 @@
                 lastScrollTop = scrollTop; //New Position Stored
             });
 
-            const t1 = gsap.timeline({ paused: true });
+            const t1 = gsap.timeline({
+                paused: true
+            });
 
             const animateOpenNav = () => {
                 t1.to(".nav-container", 0.2, {
-                    autoAlpha: 1,
-                    delay: 0.1,
-                })
+                        autoAlpha: 1,
+                        delay: 0.1,
+                    })
                     .to(
                         ".navbar",
-                        0.2,
-                        {
+                        0.2, {
                             backgroundColor: "#000",
                             autoAlpha: 1,
                         },
                         "-=0.2"
                     )
-                    .to(".site-logo", 0.2, { color: "#fff" }, "-=0.2");
+                    .to(".site-logo", 0.2, {
+                        color: "#fff"
+                    }, "-=0.2");
             };
 
             const openNav = () => {
                 animateOpenNav();
                 const navBtn = document.getElementById("menu-toggle-btn");
-                navBtn.onclick = function (e) {
+                navBtn.onclick = function(e) {
                     navBtn.classList.toggle("active");
                     t1.reversed(!t1.reversed());
                 };
@@ -2452,36 +2183,40 @@
             openNav();
 
             t1.from(".d-flex > div", 0.4, {
-                opacity: 0,
-                y: 10,
-                stagger: {
-                    amount: 0.04,
-                },
-            })
+                    opacity: 0,
+                    y: 10,
+                    stagger: {
+                        amount: 0.04,
+                    },
+                })
                 .to(
                     ".nav-link > a",
-                    0.8,
-                    {
+                    0.8, {
                         top: 0,
                         ease: "power2.inOut",
-                        stagger: { amount: 0.1 },
+                        stagger: {
+                            amount: 0.1
+                        },
                     },
                     "-=0.4"
                 )
                 .to(
                     ".nav-link",
-                    0.8,
-                    {
+                    0.8, {
                         top: 0,
                         ease: "power2.inOut",
-                        stagger: { amount: 0.1 },
+                        stagger: {
+                            amount: 0.1
+                        },
                         borderBottom: "0.1px solid #fff",
                     },
                     "-=0.4"
                 )
-                .from(".nav-footer", 0.3, { opacity: 0 }, "-=0.5")
+                .from(".nav-footer", 0.3, {
+                    opacity: 0
+                }, "-=0.5")
                 .reverse();
-            document.getElementById('animateButton').addEventListener('click', function () {
+            document.getElementById('animateButton').addEventListener('click', function() {
                 console.log("hello");
                 // Select the next div that is currently hidden
                 let nextDiv = document.querySelector('.box.hidden');
@@ -2489,29 +2224,39 @@
                 // If there is a next div to show
                 if (nextDiv) {
                     t1.to(".nav-link", 0.8, {
-                        top: 10, // Move them out of view
-                        ease: "power2.inOut",
-                        stagger: { amount: 0.1 },
-                        borderBottom: "0.1px solid transparent",
-                    })
+                            top: 10, // Move them out of view
+                            ease: "power2.inOut",
+                            stagger: {
+                                amount: 0.1
+                            },
+                            borderBottom: "0.1px solid transparent",
+                        })
                         .to(".nav-link > a", 0.8, {
                             top: 10, // Move them out of view
                             ease: "power2.inOut",
-                            stagger: { amount: 0.1 },
+                            stagger: {
+                                amount: 0.1
+                            },
                         }, "-=0.8") // Overlap with the previous animation
 
                         // Then animate the .d-flex > div elements to disappear
                         .to(".d-flex > div", 0.4, {
                             opacity: 0,
                             y: 10,
-                            stagger: { amount: 0.04 },
+                            stagger: {
+                                amount: 0.04
+                            },
                         }, "-=0.8"); // Overlap with the previous animation
                     // .reverse();
                     // Remove the hidden class to make it visible
                     nextDiv.classList.remove('hidden');
 
                     // Use GSAP to animate the appearance of the div
-                    gsap.from(nextDiv, { duration: 1, opacity: 0, y: -50 });
+                    gsap.from(nextDiv, {
+                        duration: 1,
+                        opacity: 0,
+                        y: -50
+                    });
                 }
             });
         </script>
@@ -2534,7 +2279,7 @@
 </html>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const options = {
             root: null,
             rootMargin: "0px",
