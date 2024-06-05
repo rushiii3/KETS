@@ -124,15 +124,160 @@ if ($notices_result_junior->num_rows > 0) {
 
                                     </div>
 
-                                    <div class="min-h-60 mt-10 flex flex-col bg-gray-50 border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-                                        <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
+                                    <div class="max-w-full flex flex-col bg-white mt-10 border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden">
+                                        <div class="p-4 md:p-5">
 
-                                            <?php
-                                            echo '<div>  notice section </div>';
-                                            foreach ($notices_junior as $notice) {
-                                                echo '<div class="notice">' . $notice['content'] . '</div>';
-                                            }
-                                            ?>
+                                            <div class="w-full bg-gray-50 flex-col overflow-hidden overflow-y-hidden h-80 mt-5 text-left" id="d_result">
+                                                <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
+
+                                                    <?php
+                                                    echo $default_year;
+                                                    echo 'sndjnd';
+                                                    $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                    $result = $con->query($query);
+                                                    if ($result->num_rows > 0) {
+
+                                                        while ($row = $result->fetch_assoc()) {
+                                                            $date = $row['all_pdf_upload_date'];
+                                                            $title = $row['all_pdf_title'];
+                                                            echo '<a href="#">
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2 p-3 ">
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ': </span>' . $title . '</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                                ';
+                                                        }
+                                                    }
+
+                                                    ?>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class=" flex  mt-2 ">
+                                                <button data-modal-target="extralarge-modal1" data-modal-toggle="extralarge-modal1" class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" type="button">
+                                                    View More
+                                                    <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="m9 18 6-6-6-6"></path>
+                                                    </svg>
+                                                </button>
+
+                                                <div id="extralarge-modal1" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full    ">
+                                                    <div class="relative w-full max-w-7xl max-h-full   flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden">
+                                                        <!-- Modal content -->
+                                                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700   ">
+                                                            <!-- Modal header -->
+                                                            <div class="w-full flex items-center mt-4">
+                                                                <h3 class="text-4xl ml-4  font-bold text-gray-800 dark:text-white">
+                                                                    Junior College Notices
+                                                                </h3>
+                                                                <button type="button" class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white mr-6" data-modal-hide="extralarge-modal1">
+                                                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                                    </svg>
+                                                                    <span class="sr-only">Close modal</span>
+                                                                </button>
+                                                            </div>
+                                                            <!-- Modal body -->
+                                                            <div class="p-4 md:p-5 space-y-4">
+
+                                                                <?php
+                                                                echo $default_year;
+                                                                echo 'sndjnd';
+                                                                $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                                $result = $con->query($query);
+                                                                if ($result->num_rows > 0) {
+
+                                                                    while ($row = $result->fetch_assoc()) {
+                                                                        $date = $row['all_pdf_upload_date'];
+                                                                        $title = $row['all_pdf_title'];
+                                                                        echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                   
+                                                                ';
+                                                                    }
+                                                                }
+
+                                                                ?>
+
+
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 5,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 3,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -147,197 +292,598 @@ if ($notices_result_junior->num_rows > 0) {
                                     </p>
                                 </div>
 
-                                <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5">
-                                    <button class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider text-white rounded-full hover:shadow-2xl hover:bg-blue-600">
+                                <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-hidden mx-auto px-5">
+                                    <ul class="flex flex-wrap   text-center" id="default-tab1" data-tabs-toggle="#default-tab-content1" role="tablist">
+                                        <li class="me-2" role="presentation">
+                                            <button class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider text-white rounded-full hover:shadow-2xl hover:bg-blue-600" id="profile-tab1" data-tabs-target="#profile1" type="button" role="tab" aria-controls="profile1" aria-selected="false">Degree Aided</button>
+                                        </li>
+                                        <li class="me-2" role="presentation">
+                                            <button class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider text-white rounded-full hover:shadow-2xl hover:bg-blue-600" id="dashboard-tab1" data-tabs-target="#dashboard1" type="button" role="tab" aria-controls="dashboard1" aria-selected="false">Degree SFC</button>
+                                        </li>
+                                    </ul>
+                                    <!-- <button class="bg-blue-500 text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider text-white rounded-full hover:shadow-2xl hover:bg-blue-600">
                                         Degree Aided
                                     </button>
                                     <button class="bg-gray-100 text-nowrap px-5 py-3 text-sm shadow-sm font-medium tracking-wider text-gray-600 rounded-full hover:shadow-2xl hover:bg-gray-100">
                                         Degree SFC
-                                    </button>
-                                </div>
-                                <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5" id="academic-years">
-
-                                    <?php
-                                    $first = true;
-                                    foreach ($academic_years as $year) {
-                                        $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
-                                        echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(' . $year . ', this)">' . $year . '</button>';
-                                        $first = false;
-                                    }
-                                    ?>
-
+                                    </button> -->
                                 </div>
 
-                                <div class="grid gap-8  md:px-10 mt-10">
-                                    <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70">
-                                        <div style="height: 60vh;" class="p-4 md:p-5">
-                                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">
-                                                Card title
-                                            </h3>
 
 
-                                            <div class="flex w-full   flex-col marquee overflow-hidden   mt-5 text-left p-4 space-y-2 gap-6 " id="notices">
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                <!-- <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                                    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                                        <li class="me-2" role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                                        </li>
+                                        <li class="me-2" role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
+                                        </li>
+                                        <li class="me-2" role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+                                        </li>
+                                        <li role="presentation">
+                                            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <div id="default-tab-content1">
+                                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile1" role="tabpanel" aria-labelledby="profile-tab1">
+                                        <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5" id="academic-years">
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
+                                            <?php
+                                            $first = true;
+                                            foreach ($academic_years as $year) {
+                                                $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
+                                                echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(' . $year . ', this)">' . $year . '</button>';
+                                                $first = false;
+                                            }
+                                            ?>
+
+                                        </div>
+
+                                        <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden mt-10">
+                                            <div class="p-4 md:p-5">
+
+                                                <div class="w-full bg-gray-50 flex-col overflow-hidden overflow-y-hidden h-80 mt-5 text-left" id="d_result">
+                                                    <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
+
+                                                        <?php
+                                                        echo $default_year;
+                                                        echo 'sndjnd';
+                                                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                        $result = $con->query($query);
+                                                        if ($result->num_rows > 0) {
+
+                                                            while ($row = $result->fetch_assoc()) {
+                                                                $date = $row['all_pdf_upload_date'];
+                                                                $title = $row['all_pdf_title'];
+                                                                echo '<a href="#">
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2 p-3 ">
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ': </span>' . $title . '</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                                ';
+                                                            }
+                                                        }
+
+                                                        ?>
+
+
+
+                                                    </div>
                                                 </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                <div class=" flex  mt-2 ">
+                                                    <button data-modal-target="extralarge-modal2" data-modal-toggle="extralarge-modal2" class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" type="button">
+                                                        View More
+                                                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="m9 18 6-6-6-6"></path>
+                                                        </svg>
+                                                    </button>
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                    <div id="extralarge-modal2" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full    ">
+                                                        <div class="relative w-full max-w-7xl max-h-full   flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden">
+                                                            <!-- Modal content -->
+                                                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700   ">
+                                                                <!-- Modal header -->
+                                                                <div class="w-full flex items-center mt-4">
+                                                                    <h3 class="text-4xl ml-4  font-bold text-gray-800 dark:text-white">
+                                                                        Degreed Aided Notices
+                                                                    </h3>
+                                                                    <button type="button" class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white mr-6" data-modal-hide="extralarge-modal2">
+                                                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                                        </svg>
+                                                                        <span class="sr-only">Close modal</span>
+                                                                    </button>
+                                                                </div>
+                                                                <!-- Modal body -->
+                                                                <div class="p-4 md:p-5 space-y-4">
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                    <?php
+                                                                    echo $default_year;
+                                                                    echo 'sndjnd';
+                                                                    $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                                    $result = $con->query($query);
+                                                                    if ($result->num_rows > 0) {
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                        while ($row = $result->fetch_assoc()) {
+                                                                            $date = $row['all_pdf_upload_date'];
+                                                                            $title = $row['all_pdf_title'];
+                                                                            echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                   
+                                                                ';
+                                                                        }
+                                                                    }
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                    ?>
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 5,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
-                                                </div>
-                                                <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
 
-                                                    <p class="text-base  px-2 my-5  cursor-pointer">
-                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 3,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
-                                                    </p>
-                                                    </Link>
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 5,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 3,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                                        </p>
+                                                                        </Link>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
-                                            <a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" href="#">
-                                                View
-                                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="m9 18 6-6-6-6"></path>
-                                                </svg>
-                                            </a>
                                         </div>
                                     </div>
-                                    <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70">
-                                        <div class="p-4 md:p-5">
-                                            <h3 class="text-lg font-bold text-gray-800 dark:text-white">
-                                                Card title
-                                            </h3>
-                                            <p class="mt-2 text-gray-500 dark:text-neutral-400">
-                                                With supporting text below as a natural lead-in to additional
-                                                content.
-                                            </p>
-                                            <a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" href="#">
-                                                View
-                                                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="m9 18 6-6-6-6"></path>
-                                                </svg>
-                                            </a>
+                                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard1" role="tabpanel" aria-labelledby="dashboard-tab1">
+                                    <div class="flex mt-10 hide-scroll-bar lg:justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5" id="academic-years">
+
+<?php
+$first = true;
+foreach ($academic_years as $year) {
+    $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
+    echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(' . $year . ', this)">' . $year . '</button>';
+    $first = false;
+}
+?>
+
+</div>
+
+<div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden mt-10">
+<div class="p-4 md:p-5">
+
+    <div class="w-full bg-gray-50 flex-col overflow-hidden overflow-y-hidden h-80 mt-5 text-left" id="d_result">
+        <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
+
+            <?php
+            echo $default_year;
+            echo 'sndjnd';
+            $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+            $result = $con->query($query);
+            if ($result->num_rows > 0) {
+
+                while ($row = $result->fetch_assoc()) {
+                    $date = $row['all_pdf_upload_date'];
+                    $title = $row['all_pdf_title'];
+                    echo '<a href="#">
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2 p-3 ">
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ': </span>' . $title . '</a>
+                            </p>
+                        </div>
+                    </a>
+                    ';
+                }
+            }
+
+            ?>
+
+
+
+        </div>
+    </div>
+    <div class=" flex  mt-2 ">
+        <button data-modal-target="extralarge-modal3" data-modal-toggle="extralarge-modal3" class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" type="button">
+            View More
+            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6"></path>
+            </svg>
+        </button>
+
+        <div id="extralarge-modal3" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full    ">
+            <div class="relative w-full max-w-7xl max-h-full   flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700   ">
+                    <!-- Modal header -->
+                    <div class="w-full flex items-center mt-4">
+                        <h3 class="text-4xl ml-4  font-bold text-gray-800 dark:text-white">
+                            Degreed SFC Notices
+                        </h3>
+                        <button type="button" class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white mr-6" data-modal-hide="extralarge-modal3">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5 space-y-4">
+
+                        <?php
+                        echo $default_year;
+                        echo 'sndjnd';
+                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                        $result = $con->query($query);
+                        if ($result->num_rows > 0) {
+
+                            while ($row = $result->fetch_assoc()) {
+                                $date = $row['all_pdf_upload_date'];
+                                $title = $row['all_pdf_title'];
+                                echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                        <p class="text-base  px-2 my-5  cursor-pointer">
+                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
+                        </p>
+                        </Link>
+                    </div>
+                       
+                    ';
+                            }
+                        }
+
+                        ?>
+
+
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 5,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 3,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                            </p>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+                                    </div>
+
+                                </div>
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="dashboard-example" role="tabpanel" aria-labelledby="dashboard-tab-example">
+                    <!-- old -->
+                    <div class="bg-gray-100 dark:bg-black">
+
+                        <div class="container mx-auto py-12">
+                            <div class="text-center">
+                                <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">Pre Registration Number</h2>
+                                <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300 mt-4">Stay informed with the latest updates and essential information on pre-registration number notices. Ensure you don't miss any important announcements regarding your pre-registration process.</p>
+                            </div>
+
+                            <div class="flex justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5 mt-10">
+                                <?php
+                                $first = true;
+                                foreach ($academic_years as $year) {
+                                    $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
+                                    echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(\'' . $year . '\', this)">' . $year . '</button>';
+                                    $first = false;
+                                }
+                                ?>
+                            </div>
+
+                            <div class="max-w-full flex flex-col bg-white mt-10 border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden">
+                                <div class="p-4 md:p-5">
+
+                                    <div class="w-full bg-gray-50 flex-col overflow-hidden overflow-y-hidden h-80 mt-5 text-left" id="d_result">
+                                        <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
+
+                                            <?php
+                                            echo $default_year;
+                                            echo 'sndjnd';
+                                            $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                            $result = $con->query($query);
+                                            if ($result->num_rows > 0) {
+
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $date = $row['all_pdf_upload_date'];
+                                                    $title = $row['all_pdf_title'];
+                                                    echo '<a href="#">
+                                                                    <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2 p-3 ">
+                                                                        <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                            <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ': </span>' . $title . '</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </a>
+                                                                ';
+                                                }
+                                            }
+
+                                            ?>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class=" flex  mt-2 ">
+                                        <button data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal" class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" type="button">
+                                            View More
+                                            <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="m9 18 6-6-6-6"></path>
+                                            </svg>
+                                        </button>
+
+                                        <div id="extralarge-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full    ">
+                                            <div class="relative w-full max-w-7xl max-h-full   flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 overflow-hidden">
+                                                <!-- Modal content -->
+                                                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700   ">
+                                                    <!-- Modal header -->
+                                                    <div class="w-full flex items-center mt-4">
+                                                        <h3 class="text-4xl ml-4  font-bold text-gray-800 dark:text-white">
+                                                            Pre-Registration Number Notices
+                                                        </h3>
+                                                        <button type="button" class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white mr-6" data-modal-hide="extralarge-modal">
+                                                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                                            </svg>
+                                                            <span class="sr-only">Close modal</span>
+                                                        </button>
+                                                    </div>
+                                                    <!-- Modal body -->
+                                                    <div class="p-4 md:p-5 space-y-4">
+
+                                                        <?php
+                                                        echo $default_year;
+                                                        echo 'sndjnd';
+                                                        $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
+                                                        $result = $con->query($query);
+                                                        if ($result->num_rows > 0) {
+
+                                                            while ($row = $result->fetch_assoc()) {
+                                                                $date = $row['all_pdf_upload_date'];
+                                                                $title = $row['all_pdf_title'];
+                                                                echo '<div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                                    <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                        <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">' . $date . ':' . $title . ' </span>.</a>
+                                                                    </p>
+                                                                    </Link>
+                                                                </div>
+                                                                   
+                                                                ';
+                                                            }
+                                                        }
+
+                                                        ?>
+
+
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 1,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 5,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                        <div class="bg-white dark:bg-gray-500 rounded-lg shadow-sm group hover:shadow-lg hover:translate-y-[-0.25rem] transition-all duration-300  mb-2   ">
+
+                                                            <p class="text-base  px-2 my-5  cursor-pointer">
+                                                                <a href="../Pages/Viewer.php?link=http://vazecollege.net/wp-content/uploads/2023/10/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" target="_blank"><span class=" font-semibold  ">May 3,2024 : </span>KET's V.G. Vaze College (Autonomous) was felicitated by the Honorable Governor of Maharashtra for an initiative towards social inclusivity and welfare of the visually challenged through a special program undertaken by the Institution.</a>
+                                                            </p>
+                                                            </Link>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            >
                         </div>
+
+                        <script>
+                            function fetchNotices(year, button) {
+                                document.querySelectorAll('.academic-year-button').forEach(btn => btn.classList.remove('bg-blue-500'));
+                                button.classList.add('bg-blue-500');
+
+                                fetch(`fetch_notices.php?year=${year}`)
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const noticesContainer = document.getElementById('notices');
+                                        noticesContainer.innerHTML = '';
+                                        data.forEach(notice => {
+                                            const noticeP = document.createElement('p');
+                                            noticeP.textContent = `${notice.date}: ${notice.content}`;
+                                            noticesContainer.appendChild(noticeP);
+                                        });
+                                    });
+                            }
+                        </script>
+
                     </div>
-                </div>
-                 <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="dashboard-example" role="tabpanel" aria-labelledby="dashboard-tab-example">
-<!-- old -->
-<div class="bg-gray-100 dark:bg-black">
-
-<div class="container mx-auto py-12">
-    <div class="text-center">
-        <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">Pre Registration Number</h2>
-        <p class="lg:mx-auto lg:w-6/12 text-gray-600 dark:text-gray-300 mt-4">Stay informed with the latest updates and essential information on pre-registration number notices. Ensure you don't miss any important announcements regarding your pre-registration process.</p>
-    </div>
-
-    <div class="flex justify-center items-center gap-6 flex-nowrap overflow-x-auto mx-auto px-5 mt-10">
-        <?php
-        $first = true;
-        foreach ($academic_years as $year) {
-            $buttonClass = $first ? 'bg-blue-500' : 'bg-gray-500';
-            echo '<button class="academic-year-button ' . $buttonClass . ' text-nowrap px-5 py-3 text-sm shadow-sm font-bold tracking-wider rounded-full hover:shadow-2xl hover:bg-blue-600 text-white" onclick="fetchNotices(\'' . $year . '\', this)">' . $year . '</button>';
-            $first = false;
-        }
-        ?>
-    </div>
-
-    <div class="max-w-full flex flex-col bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 mt-10">
-        <div class="p-4 md:p-5">
-            <h3 class="text-lg font-bold text-gray-800 dark:text-white">Notices</h3>
-            <div class="marquee mt-2 text-gray-500 dark:text-neutral-400" id="notices">
-                <?php
-                foreach ($default_notices as $notice) {
-                    echo '<p>' . $notice['date'] . ': ' . $notice['content'] . '</p>';
-                }
-                ?>
-            </div>
-            <a class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400" href="#">
-                View
-                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m9 18 6-6-6-6"></path>
-                </svg>
-            </a>
-        </div>
-    </div>
-</div>
-
-<script>
-    function fetchNotices(year, button) {
-        document.querySelectorAll('.academic-year-button').forEach(btn => btn.classList.remove('bg-blue-500'));
-        button.classList.add('bg-blue-500');
-
-        fetch(`fetch_notices.php?year=${year}`)
-            .then(response => response.json())
-            .then(data => {
-                const noticesContainer = document.getElementById('notices');
-                noticesContainer.innerHTML = '';
-                data.forEach(notice => {
-                    const noticeP = document.createElement('p');
-                    noticeP.textContent = `${notice.date}: ${notice.content}`;
-                    noticesContainer.appendChild(noticeP);
-                });
-            });
-    }
-</script>
-
-</div>
 
 
 
-                 <!-- new -->
+                    <!-- new -->
                     <!-- <div class="mb-12 space-y-2 text-center">
                         <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
                             Pre Registration Number
@@ -376,96 +922,97 @@ if ($notices_result_junior->num_rows > 0) {
                                     </div>
 
                 </div>  -->
-                <style>
-                    .marquee {
-                        overflow: hidden;
-                        white-space: nowrap;
-                        animation: marquee 10s linear infinite;
-                    }
-
-                    @keyframes marquee {
-                        0% {
-                            transform: translateY(100%);
+                    <style>
+                        .marquee {
+                            overflow: hidden;
+                            white-space: nowrap;
+                            animation: marquee 10s linear infinite;
                         }
 
-                        100% {
-                            transform: translateY(-100%);
+                        @keyframes marquee {
+                            0% {
+                                transform: translateY(100%);
+                            }
+
+                            100% {
+                                transform: translateY(-100%);
+                            }
+                        }
+                    </style>
+
+                    <?php
+
+
+                    // Fetch academic years
+                    $query = "SELECT DISTINCT academic_year FROM `academic_years` ORDER BY academic_year DESC LIMIT 5";
+                    $result = $con->query($query);
+
+                    $academic_years = [];
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $academic_years[] = $row['academic_year'];
                         }
                     }
-                </style>
 
-                <?php
-                
-
-                // Fetch academic years
-                $query = "SELECT DISTINCT academic_year FROM `academic_years` ORDER BY academic_year DESC LIMIT 5";
-                $result = $con->query($query);
-
-                $academic_years = [];
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $academic_years[] = $row['academic_year'];
+                    // Fetch notices for the most recent academic year by default
+                    $default_year = $academic_years[0] ?? null;
+                    $default_notices = [];
+                    if ($default_year) {
                     }
-                }
+                    //here the else part will we removed and content of else goes in if part
+                    else {
+                        $query = "SELECT * FROM `notices` WHERE `academic_year` = ? ORDER BY `date` DESC";
+                        $stmt = $con->prepare($query);
+                        $stmt->bind_param("s", $default_year);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
 
-                // Fetch notices for the most recent academic year by default
-                $default_year = $academic_years[0] ?? null;
-                $default_notices = [];
-                if ($default_year) {}
-                //here the else part will we removed and content of else goes in if part
-                else{
-                    $query = "SELECT * FROM `notices` WHERE `academic_year` = ? ORDER BY `date` DESC";
-                    $stmt = $con->prepare($query);
-                    $stmt->bind_param("s", $default_year);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
-
-                    while ($row = $result->fetch_assoc()) {
-                        $default_notices[] = $row;
+                        while ($row = $result->fetch_assoc()) {
+                            $default_notices[] = $row;
+                        }
                     }
-                }
-                ?>
+                    ?>
 
 
 
-               
+
+                </div>
             </div>
         </div>
-</div>
-</section>
-<script>
-    const tabsElement = document.getElementById("tabs-example");
-    const tabElements = [{
-            id: "profile",
-            triggerEl: document.querySelector("#profile-tab-example"),
-            targetEl: document.querySelector("#profile-example"),
-        },
-        {
-            id: "dashboard",
-            triggerEl: document.querySelector("#dashboard-tab-example"),
-            targetEl: document.querySelector("#dashboard-example"),
-        },
-    ];
-    // options with default values
-    const options = {
-        defaultTabId: "profile",
-        activeClasses: "text-white bg-blue-700 hover:text-blue-100 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500",
-        inactiveClasses: "text-gray-500 bg-white hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300",
-        onShow: () => {
-            console.log("tab is shown");
-        },
-    };
+    </section>
+    <script>
+        const tabsElement = document.getElementById("tabs-example");
+        const tabElements = [{
+                id: "profile",
+                triggerEl: document.querySelector("#profile-tab-example"),
+                targetEl: document.querySelector("#profile-example"),
+            },
+            {
+                id: "dashboard",
+                triggerEl: document.querySelector("#dashboard-tab-example"),
+                targetEl: document.querySelector("#dashboard-example"),
+            },
+        ];
+        // options with default values
+        const options = {
+            defaultTabId: "profile",
+            activeClasses: "text-white bg-blue-700 hover:text-blue-100 dark:text-blue-500 dark:hover:text-blue-400 border-blue-600 dark:border-blue-500",
+            inactiveClasses: "text-gray-500 bg-white hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300",
+            onShow: () => {
+                console.log("tab is shown");
+            },
+        };
 
-    // instance options with default values
-    const instanceOptions = {
-        id: "tabs-example",
-        override: true,
-    };
-    const tabs = new Tabs(tabsElement, tabElements, options, instanceOptions);
-    tabs.show("profile");
+        // instance options with default values
+        const instanceOptions = {
+            id: "tabs-example",
+            override: true,
+        };
+        const tabs = new Tabs(tabsElement, tabElements, options, instanceOptions);
+        tabs.show("profile");
 
-    console.log(options);
-</script>
+        console.log(options);
+    </script>
 </div>
 <script>
     function fetchNotices(year, button) {

@@ -10,7 +10,7 @@
   </head>
   <body class=" mx-auto overflow-x-hidden"> 
   <?php include('../../Layouts/header2.php'); ?> 
-    <?php include('../../Components/notice.php'); ?>
+    <?php include('../../Components/notice2.php'); ?>
     <?php include('../../Layouts/footer.php'); ?> 
     
  
