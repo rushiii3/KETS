@@ -1,4 +1,5 @@
 <?php
+/*
 define("DB_HOST","localhost");
 define("DB_PASSWORD","");
 define("DB_USERNAME","root");
@@ -10,17 +11,26 @@ if(mysqli_connect_errno()){
 }else{
    
 }
+*/
 
+// Connecting to the Database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "vaze_clg";
 
+// Create a connection
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-
-
-
-
-
-
-
-
-
-
+// Die if connection was not successful
+if (!$conn) {
+    die("Sorry we failed to connect: " . mysqli_connect_error());
+} else {
+    // echo "
+    // <script>
+    // alert('succesfull!');
+    // </script>
+    // ";
+}
+?>
 
