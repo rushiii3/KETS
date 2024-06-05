@@ -1,5 +1,5 @@
  <div>
-     <div class="relative isolate flex flex-col overflow-hidden py-2 md:h-[20rem] h-[15rem] mx-auto w-full items-center justify-center">
+     <div class="relative isolate flex flex-col overflow-hidden py-2 md:h-[25rem] h-[15rem] mx-auto w-full items-center justify-center">
          <img src="../../../assests/college.png" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
          <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
@@ -46,7 +46,7 @@
 
  <div class=" mx-auto">
      <div class="mb-2 border-b border-gray-200  mt-4 bg-slate-300 overflow-hidden p-1" data-aos="fade-left">
-         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content">
+         <ul class="flex flex-wrap -mb-px text-lg font-medium text-center" id="default-styled-tab" data-tabs-toggle="#default-styled-tab-content">
              <li class="me-2" role="presentation">
                  <button class="inline-block p-4 bg border-b-2 rounded-t-lg hover:bg-blue-700 hover:translate-y-[-0.1rem] hover:scale-105 transition-all ease-linear" id="test1" data-tabs-target="#junior" type="button" role="tab" aria-controls="profile" aria-selected="false">Junior</button>
              </li>
