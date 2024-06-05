@@ -11,6 +11,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../../css/hide-scroll-bar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 </head>
 
 <body class="bg-gray-100 overflow-x-hidden mx-auto dark:bg-black" style="transition: all 2s ease">
@@ -69,6 +71,8 @@
             </li>
         </ol>
     </nav>
+    <button id="fetchData">Fetch Data</button>
+    <div id="response"></div>
     <section class="py-12">
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="">
@@ -497,6 +501,7 @@
             </div>
         </div>
     </section>
+
     <script>
         const tabsElement = document.getElementById("tabs-example");
         const tabElements = [
@@ -532,6 +537,23 @@
         tabs.show("profile");
 
         console.log(options);
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#fetchData').click(function() {
+                $.ajax({
+                    url: '../../../api/users', // Change to the correct path
+                    method: 'GET',
+                    success: function(data) {
+                        $('#response').html('<pre>' + JSON.stringify(data, null, 2) + '</pre>');
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error('Error: ' + textStatus, errorThrown);
+                        $('#response').text('Error: ' + textStatus);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 

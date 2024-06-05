@@ -172,7 +172,6 @@ class='w-full max-xl:hidden xl:!block max-xl:fixed max-xl:before:fixed max-xl:be
 
 var lastScrollTop; // This Varibale will store the top position
 navbar = document.getElementById('header'); // Get The NavBar
-console.log(navbar);
 window.addEventListener('scroll',function(){
  //on every scroll this funtion will be called
   
