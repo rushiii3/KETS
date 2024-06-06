@@ -21,10 +21,10 @@
         </button>
         <div id="dropdown-menu" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
             <div class="py-2 p-2" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-button">
-                <a id="2023" class="flex block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer" role="menuitem">
+                <a id="2023" class=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer" role="menuitem">
                     2023-24
                 </a>
-                <a id="2022" class="flex block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer" role="menuitem">
+                <a id="2022" class=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer" role="menuitem">
                     2022-23
                 </a>
                 <!-- Add more options for other years if needed -->
