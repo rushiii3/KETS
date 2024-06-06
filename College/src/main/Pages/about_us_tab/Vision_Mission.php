@@ -40,7 +40,7 @@
 <body class="bg-white overflow-x-hidden mx-auto">
 
     <?php include('../../Layouts/header2.php'); ?>
-    <?php include('../../Components/vision_mission.php'); ?>
+    <?php include('../../Components/about_us_tab/vision_mission.php'); ?>
     <?php include('../../Layouts/footer.php'); ?>
 </body>
 <?php include('../../../library/AOS.php'); ?>
