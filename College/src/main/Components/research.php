@@ -1,5 +1,6 @@
-<!-- component -->
-<div class="relative top-1 grid h-40  w-full max-w-full flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700 mx-auto  ">
+
+<!-- <div class="relative top-1 grid h-40  w-full max-w-full flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+
     <div class="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('../../assests/research.jpg')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
         <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-t from-black/80 via-black/50"></div>
     </div>
@@ -10,8 +11,6 @@
 
 
     </div>
-</div>
-<!-- component -->
 <div class="bg-gray-100 min-h-fit  flex items-center  justify-end relative right-2 top-2">
     <div class="relative inline-block text-left z-50">
         <button id="dropdown-button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500">
@@ -73,6 +72,7 @@
                 <!-- profile card -->
                 <div class="flex flex-col ">
                     <div class="bg-white  border border-gray-800 shadow-lg  rounded-2xl p-4 top">
+
                         <div class="flex-none sm:flex">
 
 
@@ -80,7 +80,9 @@
                                 <div class="flex items-center justify-between sm:mt-2">
                                     <div class="flex items-center">
                                         <div class="flex flex-col">
-                                            <div class="w-full flex-none text-lg text-blue-600 font-bold text-center leading-none ">SFC DEPARTMENTS UNDER THE AEGIS OF IQAC ORGANISES ONE DAY INTERNATIONAL MULTIDISCIPLINARY CONFERENCE ON
+
+                                            <div class="w-full flex-none text-lg text-gray-200 font-bold text-center leading-none ">SFC DEPARTMENTS UNDER THE AEGIS OF IQAC ORGANISES ONE DAY INTERNATIONAL MULTIDISCIPLINARY CONFERENCE ON
+
                                                 “SETTING BENCHMARKS : RESEARCH, INNOVATION, SUSTAINABILITY, ENTREPRENEURSHIP ”
                                                 (ICMB-RISE-2024)
                                             </div>
@@ -114,15 +116,18 @@
                                     <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
                                         <i class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Director- Planning, BMC
                                     </div>
+
                                     <div class="text-xl mt-0 mb-2 text-blue-500 font-bold uppercase">
                                         <i class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Opening Address Presenter
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class='flex flex-col items-center justify-center min-h-full bg-gray-100 p-4'>
                 <div class='w-full max-w-full px-10  mx-auto bg-white rounded-lg shadow-xl'>
                     <div class=' mx-auto space-y-6'>
@@ -143,6 +148,7 @@
             <!-- INVITED TALKS BY -->
             <div class="grid grid-cols-12 gap-4 ">
                 <div class="col-span-12 sm:col-span-4 relative  mx-auto max-w-sm  min-w-0 break-words md:max-w-xl bg-white w-full mb-6 shadow-lg rounded-xl mt-28" data-aos="fade-right">
+
                     <div class="px-6">
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full flex justify-center">
@@ -163,7 +169,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-span-12 sm:col-span-4 relative  mx-auto max-w-sm  min-w-0 break-words md:max-w-xl bg-white w-full mb-6 shadow-lg rounded-xl mt-28" data-aos="fade-right">
+
                     <div class="px-6">
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full flex justify-center">
@@ -185,7 +193,9 @@
                     </div>
                 </div>
                 <div class=" col-span-12 sm:col-span-4 relative  mx-auto max-w-sm  min-w-0 break-words md:max-w-xl bg-white w-full mb-6 shadow-lg rounded-xl mt-28">
+
                     <div class="px-6" data-aos="fade-right">
+
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full flex justify-center">
                                 <div class="relative">
@@ -206,6 +216,7 @@
                     </div>
                 </div>
             </div>
+
             <div class='flex flex-col items-center justify-center min-h-full bg-gray-100 p-4'>
                 <div class='w-full max-w-full px-10  mx-auto bg-white rounded-lg shadow-xl'>
                     <div class=' mx-auto space-y-6'>
@@ -226,6 +237,7 @@
             <!-- key fiagures  -->
             <div class="grid grid-cols-12 gap-4 ">
                 <div class="col-span-12 sm:col-span-4 relative  mx-auto max-w-sm  min-w-0 break-words md:max-w-xl bg-white w-full mb-6 shadow-lg rounded-xl mt-28" data-aos="fade-left">
+
                     <div class="px-6">
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full flex justify-center">
@@ -246,7 +258,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-span-12 sm:col-span-4 relative  mx-auto max-w-sm  min-w-0 break-words md:max-w-xl bg-white w-full mb-6 shadow-lg rounded-xl mt-28" data-aos="fade-left">
+
                     <div class="px-6">
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full flex justify-center">
@@ -268,7 +282,10 @@
                     </div>
                 </div>
                 <div class=" col-span-12 sm:col-span-4 relative  mx-auto max-w-sm  min-w-0 break-words md:max-w-xl bg-white w-full mb-6 shadow-lg rounded-xl mt-28">
+
                     <div class="px-6" data-aos="fade-left">
+
+
                         <div class="flex flex-wrap justify-center">
                             <div class="w-full flex justify-center">
                                 <div class="relative">
@@ -289,6 +306,7 @@
                     </div>
                 </div>
             </div>
+
             <div class='flex flex-col items-center justify-center min-h-full bg-gray-100 p-4'>
                 <div class='w-full max-w-full px-10  mx-auto bg-white rounded-lg shadow-xl'>
                     <div class=' mx-auto space-y-6'>
@@ -335,12 +353,15 @@
 
 
 
+
                                 <div class="flex flex-col ml-3">
                                     <div class="font-medium leading-none text-black">GUIDELINES FOR SUBMITTING ABSTRACT & FULL PAPER MANUSCRIPT</div>
+
                                     <p class="text-sm text-gray-500 leading-none mt-1">All the authors of the abstract are required to register, pay their registration fees, to avail certificate, upload their fee receipt and mandatory to join the whats app group.</p>
                                     <p class="text-sm text-gray-500 leading-none mt-1">Participants presenting must ensure that the abstract should be related to the conference theme.</p>
                                 </div>
                             </div>
+
 
                         </div>
                     </div>
@@ -1202,6 +1223,7 @@
 
 
 
+
                                 <div class="flex flex-col ml-3 min-w-0">
                                     <div class="font-medium leading-none text-gray-100">Abstract Template</div>
                                     <p class="text-sm text-gray-500 leading-none mt-1 truncate"><a href="http://abstract%20template_icrasthm-2023.docx/">Click here to see abstract template</a></p>
@@ -1227,10 +1249,12 @@
                         </div>
                     </div>
 
+
                     <!--elements 2-->
                     <div class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center mr-auto">
+
 
 
                                 <div class="flex flex-col ml-3 min-w-0">
@@ -1453,6 +1477,7 @@
                     </div>
                 </div>
             </div>
+
             <div class='flex flex-col items-center justify-center min-h-full bg-gray-100 p-4'>
                 <div class='w-full max-w-full px-10  mx-auto bg-white rounded-lg shadow-xl'>
                     <div class=' mx-auto space-y-6'>
@@ -1719,10 +1744,12 @@
                                     <img src="../../assests/15-August-2022.png">
                                 </div>
                             </div>
+
                         </div>
                         <div class="flex-auto lg:ml-3 justify-evenly py-2">
                             <div class="flex flex-col ">
                                 <div class="flex items-center mr-auto text-sm">
+
                                     <!-- component -->
 
                                     <script>
@@ -1762,9 +1789,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </div>
     </div>
+
 
 </div>

@@ -5,6 +5,7 @@
     <meta name="description" content="The college website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V. G. </title>
+    <link rel="stylesheet" href="./output.css">
     <?php include('../../library/library.php'); ?>
   </head>
 
