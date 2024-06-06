@@ -1,4 +1,4 @@
-
+alert("tabs-example");
         const tabsElement = document.getElementById("tabs-example");
         const tabElements = [{
                 id: "profile",
