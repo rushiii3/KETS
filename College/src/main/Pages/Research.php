@@ -10,9 +10,11 @@
      <?php include('../Layouts/header2.php'); ?> 
      <?php include('../Layouts/research_nav.php'); ?> 
      <?php include('../Components/research_home.php'); ?>
+     <?php include('../Components/academic_research.php'); ?> 
      <?php include('../Layouts/footer.php'); ?>
 
     
+     <!-- include('../Components/research_home.php'); -->
     
   </body>
   <?php include('../../library/AOS.php'); ?>
