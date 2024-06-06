@@ -97,7 +97,7 @@
 <body class="bg-white overflow-x-hidden mx-auto">
 
     <?php include('../../Layouts/header2.php'); ?>
-    <?php include('../../Components/nss.php'); ?>
+    <?php include('../../Components/more_tab/nss.php'); ?>
     <?php include('../../Layouts/footer.php'); ?>
 </body>
 <?php include('../../../library/AOS.php'); ?>
