@@ -26,12 +26,12 @@
                 </a>
                 <a id="2022" class=" block rounded-md px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active:bg-blue-100 cursor-pointer" role="menuitem">
                     2022-23
-                </a>
+                </a>-->
                 <!-- Add more options for other years if needed -->
-            </div>
+           <!--  </div>
         </div>
     </div>
-</div>
+</div>-->
 <script>
     $(document).ready(function() {
         $(".year-content").hide(); // Hide all content divs initially
