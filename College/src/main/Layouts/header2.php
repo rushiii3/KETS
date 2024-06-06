@@ -60,10 +60,10 @@
             
         </a>
     </li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>Home</a></li>
-    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
-        class='hover:text-blue-600 font-bold text-black text-[15px] block '>Contact Us</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./index.php'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Home</a></li>
+    <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='./Contact.php'
+        class='hover:text-blue-600 font-bold text-black text-[15px] block'>Contact Us</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
         class='hover:text-blue-600 font-bold text-black text-[15px] block '>About us</a></li>
     <li class='max-xl:border-b border-pink-200 max-xl:py-3'><a href='javascript:void(0)'
