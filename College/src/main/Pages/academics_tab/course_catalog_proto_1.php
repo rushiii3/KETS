@@ -1,5 +1,51 @@
 <?php
 define("BG_BLUE_COLOR", "#001b53");
+include("../../../config/connect.php");
+
+
+
+$programmes_array = [];
+
+
+//Functions
+function fetchProgrammesFromDB($conn, &$programmes_array)
+{
+  $limit = 50;
+  $offset = 0;
+
+
+  $fetch_query = $conn->prepare("SELECT * FROM programmes LIMIT ? OFFSET ?"); // 
+
+  $fetch_query->bind_param("ii", $limit, $offset);
+
+
+  $fetch_query->execute();
+
+  $result = $fetch_query->get_result();
+  if ($result) {
+    while ($row = $result->fetch_assoc()) {
+      //echo $row["prog_name"];
+      //showAlert($row["prog_name"]);
+      array_push($programmes_array, $row);
+    }
+  } else {
+    //echo "<script> alert('".$conn->error."')</script>";
+    showAlert($conn->error);
+  }
+}
+
+
+//create an alert
+function showAlert($alertMessage)
+{
+  echo "<script> alert('" . $alertMessage . "')</script>";
+}
+
+
+
+///////////////////EXECUTE FUNCTIONS
+
+fetchProgrammesFromDB($conn, $programmes_array);
 
 ?>
 
@@ -26,10 +72,11 @@ define("BG_BLUE_COLOR", "#001b53");
       }
     }
     */
-    
+
     .custom_bg_blue {
       background: #001b53;
     }
+
     /*
     @layer utitlities {
 
@@ -42,7 +89,7 @@ define("BG_BLUE_COLOR", "#001b53");
     */
   </style>
 
- 
+
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -171,7 +218,7 @@ define("BG_BLUE_COLOR", "#001b53");
 
         <!--Sticky inner filter section-->
         <div class="sm:sticky h-fit flex flex-col items-end p-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600/10  dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black top-2">
-        
+
           <button class="sm:hidden" id="filter_mobile_close_btn">
             <span class="material-symbols-outlined dark:text-white">
               close
@@ -279,7 +326,7 @@ define("BG_BLUE_COLOR", "#001b53");
 
         <!-- No of courses-->
         <p class="text-2xl text-black font-bold dark:text-white">
-          50 courses available
+          <?php echo count($programmes_array); ?> courses available
         </p>
 
         <!-- Courses-->
@@ -287,27 +334,45 @@ define("BG_BLUE_COLOR", "#001b53");
 
           <!--Card 1 start-->
           <?php
-          for ($i = 1; $i <= 9; $i++) {
+          foreach ($programmes_array as $programme) {
           ?>
 
             <div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer course_card">
-              <p class="p_hidden" hidden><?php echo "course_".$i;?></p>
+              <p class="p_hidden" hidden><?php echo "course_" . $programme["prog_id"]; ?></p>
               <div class="relative flex-1 overflow-hidden rounded-t-xl">
-                <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                <img src=<?php echo $programme["prog_bg_image_link"] ?> alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
               </div>
               <div class=" flex-1 relative px-4 py-4">
                 <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
-                  Bachelor of Science (Information Technology)
+                  <?php echo $programme["prog_name"] ?>
                 </h3>
 
-                <p class="text-slate-500 dark:text-white">Undergraduate course</p>
+                <p class="text-slate-500 dark:text-white">
+                  <?php
+                  switch($programme["prog_type"]){
+                    case "ug":
+                      echo "Undergraduate Course";
+                      break;
+                    case "pg":
+                      echo "Postgraduate Course";
+                      break;
+                    case "phd":
+                      echo "PhD course";
+                      break;
+                    case "gd":
+                      echo "G.D. Kelkar Skill Developement and Finishing School Course";
+                      break;
+                    
+                  }
+                  ?>
+                </p>
 
                 <ul class="list-none mt-4">
                   <li>
                     <p class="font-bold dark:text-white">Duration</p>
                   </li>
                   <li>
-                    <p class="text-slate-500 dark:text-white">3 years</p>
+                    <p class="text-slate-500 dark:text-white"><?php echo $programme["prog_duration"] ?></p>
                   </li>
 
                   <li class="mt-2">
