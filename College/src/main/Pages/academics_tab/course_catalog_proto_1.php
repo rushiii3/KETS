@@ -1,5 +1,51 @@
 <?php
 define("BG_BLUE_COLOR", "#001b53");
+include("../../../config/connect.php");
+
+
+
+$programmes_array = [];
+
+
+//Functions
+function fetchProgrammesFromDB($conn, &$programmes_array)
+{
+  $limit = 50;
+  $offset = 0;
+
+
+  $fetch_query = $conn->prepare("SELECT * FROM programmes LIMIT ? OFFSET ?"); // 
+
+  $fetch_query->bind_param("ii", $limit, $offset);
+
+
+  $fetch_query->execute();
+
+  $result = $fetch_query->get_result();
+  if ($result) {
+    while ($row = $result->fetch_assoc()) {
+      //echo $row["prog_name"];
+      //showAlert($row["prog_name"]);
+      array_push($programmes_array, $row);
+    }
+  } else {
+    //echo "<script> alert('".$conn->error."')</script>";
+    showAlert($conn->error);
+  }
+}
+
+
+//create an alert
+function showAlert($alertMessage)
+{
+  echo "<script> alert('" . $alertMessage . "')</script>";
+}
+
+
+
+///////////////////EXECUTE FUNCTIONS
+
+fetchProgrammesFromDB($conn, $programmes_array);
 
 
 
@@ -14,11 +60,10 @@ define("BG_BLUE_COLOR", "#001b53");
   <title>V. G. VAZE| Course Catalog</title>
   <?php include('../../../library/library.php'); ?>
   <style>
-    .custom_bg_blue {
+   .custom_bg_blue {
       background: #001b53;
     }
-  </style>
-
+  </style>  
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -507,7 +552,6 @@ define("BG_BLUE_COLOR", "#001b53");
     ****************/
     -->
   <?php include('../../Layouts/footer.php'); ?>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="../../../js/academics_tab/course_catalog.js" ></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
