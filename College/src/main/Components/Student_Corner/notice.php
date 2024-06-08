@@ -1,3 +1,4 @@
+<script> console.log('script working..');</script>
 <div class="bg-gray-100 overflow-x-hidden mx-auto dark:bg-black" style="transition: all 2s ease">
     <!-- header -->
     <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../../assests/college.png" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
@@ -24,6 +25,8 @@
         </ol>
     </nav>
     <section class="py-12">
+        
+   
         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
             <div class="">
                 <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400" id="tabs-example" role="tablist">
@@ -35,9 +38,12 @@
                         <a href="#" id="dashboard-tab-example" type="button" role="tab" aria-controls="dashboard-example" aria-selected="false" class="inline-block p-4 rounded-lg">PRN</a>
                     </li>
                 </ul>
+            
                 <div id="tabContentExample" class="w-full">
+                
                     <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="profile-example" role="tabpanel" aria-labelledby="profile-tab-example">
                         <div>
+                        
                             <div class="mb-12 space-y-2 text-center">
                                 <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
                                     Academic Notices

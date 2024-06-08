@@ -52,7 +52,7 @@
                     </li>
                 </ul>
                 <div id="tabContentExample" class="w-full">
-                    <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="profile-example" role="tabpanel" aria-labelledby="profile-tab-example">
+                <div class="mt-10 hidden bg-gray-100 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full" id="profile-example" role="tabpanel" aria-labelledby="profile-tab-example">
                         <div>
                             <div class="mb-12 space-y-2 text-center">
                                 <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
