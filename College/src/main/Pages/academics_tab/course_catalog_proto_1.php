@@ -99,7 +99,7 @@ define("BG_BLUE_COLOR", "#001b53");
 
 
     <form class=" bg-transparent w-3/4 flex items-center border p-2 rounded-full dark:ring-white focus-within:ring " id="search_form">
-      <input type="text" id="search_input_field" class=<?php echo '"w-full bg-transparent border-0 focus:border-transparent  focus:ring-0  pl-2 text-[#001b53] dark:text-white dark:placeholder:text-white placeholder:text-[' . BG_BLUE_COLOR . ']"'; ?> placeholder="Search programs" />
+      <input type="text" id="search_input_field" class=<?php echo '"w-full bg-transparent border-0 focus:border-transparent  focus:ring-0  pl-2 text-[#001b53] dark:text-white dark:placeholder:text-white placeholder:text-[' . BG_BLUE_COLOR . ']"'; ?> placeholder="Search Programs" />
 
       <button type="reset" id="btn_clear_search" class="cursor-pointer mr-2">
         <span class="material-symbols-outlined dark:text-white">
@@ -256,13 +256,16 @@ define("BG_BLUE_COLOR", "#001b53");
       <!--Filter section end-->
 
       <!-- Main contents-->
-      <div class="flex-1 relative mx-4 sm:ml-4">
+      <div class="flex-1 flex flex-col relative mx-4 sm:ml-4">
 
         <!-- No of courses-->
         <p class="text-2xl text-black font-bold dark:text-white" id="no_of_courses_para">
           <?php //echo count($programmes_array)." courses available";
           ?>
         </p>
+
+        <!--Div to show loading animation and not found-->
+        <div class="hidden flex-1" id="degree_loading_animation_div"></div>
 
         <!-- Courses-->
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 w-full" id="course_cards_grid_div">
@@ -468,6 +471,8 @@ define("BG_BLUE_COLOR", "#001b53");
       <p class="text-2xl text-black font-bold dark:text-white" id="cc_no_of_courses_para">
       </p>
 
+      <!--Div to show loading animation and not found-->
+      <div class="hidden flex-1" id="cc_loading_animation_div"></div>
       <!-- Grid layout div start-->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mt-4" id="cc_course_cards_grid_div">
 

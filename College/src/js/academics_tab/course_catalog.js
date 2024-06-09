@@ -8,7 +8,7 @@ const filter_mobile_close_btn = document.getElementById(
 //Search varibles
 const search_button = document.getElementById("search_button");
 const search_input_field = document.getElementById("search_input_field");
-const search_form=document.getElementById("search_form")
+const search_form = document.getElementById("search_form");
 
 const all_jc_course_cards = document.querySelectorAll(".jc_stream_card");
 
@@ -17,6 +17,10 @@ if (window.innerWidth >= 640) {
   is_filter_visible = true;
 }
 
+const loading_animation = `<div class="w-full h-full flex justify-center items-center"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+
+    <dotlottie-player src="https://lottie.host/05cd14a8-5dbd-46bf-9c8f-d53989023063/S2BPC9SDzq.json" background="transparent" speed="1" style="width: 50%; height: 50%;" loop autoplay></dotlottie-player></div>`;
+
 //////////////////////////////////////////////////////////////////////////////////////////
 let degree_tab_search_query_state = "";
 let limit_state = 50;
@@ -24,12 +28,17 @@ let offset_state = 0;
 let level_filter_state = [];
 let faculty_filter_state = [];
 let college_section_filter_state = [];
-const selected_tab_states={degree:"d",junior:"j",certificate_course:"cc"}
-let selected_tab_state=selected_tab_states.degree;
+const selected_tab_states = {
+  degree: "d",
+  junior: "j",
+  certificate_course: "cc",
+};
+let selected_tab_state = selected_tab_states.degree;
 
+let certificate_courses_tab_search_query_state = "";
 
-
-let certificate_courses_tab_search_query_state="";
+let degree_courses_loading_state = false;
+let certificate_courses_loading_state = false;
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -120,7 +129,10 @@ all_jc_course_cards.forEach((course_card) => {
 //When search button is clicked
 search_button.addEventListener("click", (e) => {
   e.preventDefault();
-  if (selected_tab_state==selected_tab_states.degree && search_input_field.value != "") {
+  if (
+    selected_tab_state == selected_tab_states.degree &&
+    search_input_field.value != ""
+  ) {
     degree_tab_search_query_state = search_input_field.value;
     fetchProgrammesFromDB(
       50,
@@ -130,11 +142,12 @@ search_button.addEventListener("click", (e) => {
       college_section_filter_state,
       faculty_filter_state
     );
-  }
-  else if(selected_tab_state==selected_tab_states.certificate_course && search_input_field.value!=""){
-    certificate_courses_tab_search_query_state=search_input_field.value;
+  } else if (
+    selected_tab_state == selected_tab_states.certificate_course &&
+    search_input_field.value != ""
+  ) {
+    certificate_courses_tab_search_query_state = search_input_field.value;
     fetchCertificateCoursesFromDB(certificate_courses_tab_search_query_state);
-
   }
 });
 
@@ -145,8 +158,10 @@ document.getElementById("search_form").addEventListener("submit", (e) => {
 
 $("#btn_clear_search").click(function () {
   //alert("here");
-  if (selected_tab_state==selected_tab_states.degree && search_input_field.value != "") {
-
+  if (
+    selected_tab_state == selected_tab_states.degree &&
+    search_input_field.value != ""
+  ) {
     degree_tab_search_query_state = "";
     fetchProgrammesFromDB(
       50,
@@ -156,11 +171,13 @@ $("#btn_clear_search").click(function () {
       college_section_filter_state,
       faculty_filter_state
     );
-  
-}else if(selected_tab_state==selected_tab_states.certificate_course && search_input_field.value!=""){
-  certificate_courses_tab_search_query_state = "";
+  } else if (
+    selected_tab_state == selected_tab_states.certificate_course &&
+    search_input_field.value != ""
+  ) {
+    certificate_courses_tab_search_query_state = "";
     fetchCertificateCoursesFromDB();
-}
+  }
 });
 
 //when filter clear button is clicked
@@ -220,39 +237,47 @@ $("#apply_filter_button").click(function (e) {
   );
 });
 
-$("#degree_tab").click(function(){
-  selected_tab_state=selected_tab_states.degree;
-   search_input_field.disabled=false
-    search_input_field.setAttribute("placeholder","Search Programs")
-   search_input_field.value=degree_tab_search_query_state;
-   search_form.classList.replace("bg-gray-200","bg-transparent")
+$("#degree_tab").click(function () {
+  selected_tab_state = selected_tab_states.degree;
+  search_input_field.disabled = false;
+  search_input_field.setAttribute("placeholder", "Search Programs");
+  search_input_field.value = degree_tab_search_query_state;
+  search_form.classList.replace("bg-gray-200", "bg-transparent");
   //search_input_field.classList.replace("dark:placeholder:text-slate-700","dark:placeholder:text-white")
-  search_input_field.classList.replace("placeholder:text-slate-200","placeholder:text-[#001b53]")
-  search_form.classList.remove("dark:bg-gray-700")
-})
+  search_input_field.classList.replace(
+    "placeholder:text-slate-200",
+    "placeholder:text-[#001b53]"
+  );
+  search_form.classList.remove("dark:bg-gray-700");
+});
 
-$("#junior_tab").click(function(){
-  selected_tab_state=selected_tab_states.junior;
-  search_input_field.disabled=true;
-  search_input_field.setAttribute("placeholder","")
-  search_input_field.value=""
-  search_form.classList.replace("bg-transparent","bg-gray-200")
+$("#junior_tab").click(function () {
+  selected_tab_state = selected_tab_states.junior;
+  search_input_field.disabled = true;
+  search_input_field.setAttribute("placeholder", "");
+  search_input_field.value = "";
+  search_form.classList.replace("bg-transparent", "bg-gray-200");
   search_form.classList.add("dark:bg-gray-700");
- // search_input_field.classList.replace("dark:placeholder:text-white","dark:placeholder:text-slate-700")
-  search_input_field.classList.replace("placeholder:text-[#001b53]","placeholder:text-slate-200")
-})
+  // search_input_field.classList.replace("dark:placeholder:text-white","dark:placeholder:text-slate-700")
+  search_input_field.classList.replace(
+    "placeholder:text-[#001b53]",
+    "placeholder:text-slate-200"
+  );
+});
 
-$("#certificate_course_tab").click(function(){
-  selected_tab_state=selected_tab_states.certificate_course;
-   search_input_field.disabled=false
-   search_input_field.setAttribute("placeholder","Search Programs")
-   search_input_field.value=certificate_courses_tab_search_query_state;
-   search_form.classList.replace("bg-gray-200","bg-transparent")
-   search_form.classList.remove("dark:bg-gray-700")
- // search_input_field.classList.replace("dark:placeholder:text-slate-700","dark:placeholder:text-white")
-  search_input_field.classList.replace("placeholder:text-slate-200","placeholder:text-[#001b53]")
-   
-})
+$("#certificate_course_tab").click(function () {
+  selected_tab_state = selected_tab_states.certificate_course;
+  search_input_field.disabled = false;
+  search_input_field.setAttribute("placeholder", "Search Programs");
+  search_input_field.value = certificate_courses_tab_search_query_state;
+  search_form.classList.replace("bg-gray-200", "bg-transparent");
+  search_form.classList.remove("dark:bg-gray-700");
+  // search_input_field.classList.replace("dark:placeholder:text-slate-700","dark:placeholder:text-white")
+  search_input_field.classList.replace(
+    "placeholder:text-slate-200",
+    "placeholder:text-[#001b53]"
+  );
+});
 
 //////////////////////////FUNCTIONS///////////////////////
 function getScreenHeight() {
@@ -408,12 +433,22 @@ function fetchProgrammesFromDB(
 
   console.log(ajax_url);
 
-  makeAJAXRequest(
+  degree_courses_loading_state = true;
+
+  if (degree_courses_loading_state) {
+    document
+      .getElementById("degree_loading_animation_div")
+      .classList.remove("hidden");
+    $("#degree_loading_animation_div").html(loading_animation);
+  }
+
+  setTimeout(()=>{ makeAJAXRequest(
     ajax_url,
     "GET",
     "json",
     null,
     function (response) {
+
       if (response.msg == "success") {
         let programmes_array = response.programmes_array;
         let total_fetched_programmes = programmes_array.length;
@@ -462,29 +497,74 @@ function fetchProgrammesFromDB(
           $("#no_of_courses_para").text(
             `${total_fetched_programmes} course(s) available`
           );
+          degree_courses_loading_state = false;
+          if (
+            !document
+              .getElementById("degree_loading_animation_div")
+              .classList.contains("hidden")
+          ) {
+            document
+              .getElementById("degree_loading_animation_div")
+              .classList.add("hidden");
+          }
 
           attachClickListenerOnCourseCards();
         } else {
           //alert("zero fetched results");
+          degree_courses_loading_state = false;
           $("#no_of_courses_para").text(
             `${total_fetched_programmes} course(s) available`
           );
 
-          var no_programmes_available_div = `<div class="absolute flex flex-col items-center top-1/3 left-1/5 dark:text-white text-lg">
+          var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
         <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
-          $("#course_cards_grid_div").html(no_programmes_available_div);
+          document
+            .getElementById("degree_loading_animation_div")
+            .classList.remove("hidden");
+          $("#degree_loading_animation_div").html(no_programmes_available_div);
+
         }
       } else {
         console.log(response);
+        //alert("zero fetched results");
+        degree_courses_loading_state = false;
+        $("#no_of_courses_para").text(`0 course(s) available`);
+
+        var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
+          </div>`;
+
+        document
+          .getElementById("degree_loading_animation_div")
+          .classList.remove("hidden");
+        $("#degree_loading_animation_div").html(no_programmes_available_div);
       }
     },
     function (status, xhr, error) {
       console.log(error);
+      //alert("zero fetched results");
+      degree_courses_loading_state = false;
+      $("#no_of_courses_para").text(
+        `${total_fetched_programmes} course(s) available`
+      );
+
+      var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
+          </div>`;
+
+      document
+        .getElementById("degree_loading_animation_div")
+        .classList.remove("hidden");
+      $("#degree_loading_animation_div").html(no_programmes_available_div);
+
     }
-  );
+  );},5000)
+ 
 }
 
 function attachClickListenerOnCourseCards() {
@@ -501,11 +581,21 @@ function attachClickListenerOnCourseCards() {
 }
 
 function fetchCertificateCoursesFromDB(search_query) {
-
-  let ajax_url="./AJAX/fetch_certificate_courses.php";
-  if(search_query){
-    ajax_url+=`?search=${search_query}`
+  let ajax_url = "./AJAX/fetch_certificate_courses.php";
+  if (search_query) {
+    ajax_url += `?search=${search_query}`;
   }
+  console.log(ajax_url);
+
+  certificate_courses_loading_state = true;
+
+  if (certificate_courses_loading_state) {
+    document
+      .getElementById("cc_loading_animation_div")
+      .classList.remove("hidden");
+    $("#cc_loading_animation_div").html(loading_animation);
+  }
+
   makeAJAXRequest(
     ajax_url,
     "GET",
@@ -518,9 +608,9 @@ function fetchCertificateCoursesFromDB(search_query) {
         //console.log("here"+ total_fetched_cc)
 
         $("#cc_course_cards_grid_div").html("");
-
-        cc_array.forEach((cc) => {
-          var certificate_course_card = `<div class="group  rounded-xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer hover:scale-[1.015] transition-transform duration-500 cc_course_card">
+        if (total_fetched_cc > 0) {
+          cc_array.forEach((cc) => {
+            var certificate_course_card = `<div class="group  rounded-xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer hover:scale-[1.015] transition-transform duration-500 cc_course_card">
           <div class=" flex w-full items-center justify-between  relative px-4 py-4">
           <div class="flex flex-col">
             <h3 class="text-xl font-semibold text-gray-800 dark:text-white text-ellipsis">
@@ -535,28 +625,87 @@ function fetchCertificateCoursesFromDB(search_query) {
             </span>
           </div>`;
 
-          $("#cc_course_cards_grid_div").append(certificate_course_card);
+            $("#cc_course_cards_grid_div").append(certificate_course_card);
+          });
 
-        });
+          $("#cc_no_of_courses_para").text(
+            `${total_fetched_cc} course(s) available`
+          );
 
-        $("#cc_no_of_courses_para").text(`${total_fetched_cc} course(s) available`)
+          attachClickListenerOnCertificateCourseCards();
+          certificate_courses_loading_state = false;
+          if (
+            !document
+              .getElementById("cc_loading_animation_div")
+              .classList.contains("hidden")
+          ) {
+            document
+              .getElementById("cc_loading_animation_div")
+              .classList.add("hidden");
+          }
+        } else {
+          //alert("here");
+          //alert("zero fetched results");
+          $("#cc_no_of_courses_para").text(
+            `${total_fetched_cc} course(s) available`
+          );
 
-        attachClickListenerOnCertificateCourseCards()
+          certificate_courses_loading_state = false;
+
+          var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
+          </div>`;
+
+          document
+            .getElementById("cc_loading_animation_div")
+            .classList.remove("hidden");
+          $("#cc_loading_animation_div").html(no_cc_available_div);
+        }
       } else {
         console.log(response);
+        //alert("here");
+        //alert("zero fetched results");
+        certificate_courses_loading_state = false;
+        $("#cc_no_of_courses_para").text(
+          `${total_fetched_cc} course(s) available`
+        );
+
+        var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
+          </div>`;
+
+        document
+          .getElementById("cc_loading_animation_div")
+          .classList.remove("hidden");
+        $("#cc_loading_animation_div").html(no_cc_available_div);
       }
     },
-    function (error, xhr, status) {}
+    function (status, xhr, error) {
+      //alert("zero fetched results");
+      certificate_courses_loading_state = false;
+      $("#cc_no_of_courses_para").text(`0 course(s) available`);
+
+      var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
+          </div>`;
+
+      document
+        .getElementById("cc_loading_animation_div")
+        .classList.remove("hidden");
+      $("#cc_loading_animation_div").html(no_cc_available_div);
+
+      console.log(error);
+    }
   );
 }
 
-function attachClickListenerOnCertificateCourseCards(){
-
-  $(".cc_course_card").each(function(index){
-    $(this).click(function(){
+function attachClickListenerOnCertificateCourseCards() {
+  $(".cc_course_card").each(function (index) {
+    $(this).click(function () {
       alert("show pdf of certificate course");
-    })
-
-  })
-
+    });
+  });
 }

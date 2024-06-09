@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $result = $fetch_query->get_result();
 
-    $returned_json = ["msg" => "", "programmes_array" => []];
+    $returned_json = ["msg" => "", "cc_array" => []];
     if ($result) {
         while ($row = $result->fetch_assoc()) {
             //echo "here";
