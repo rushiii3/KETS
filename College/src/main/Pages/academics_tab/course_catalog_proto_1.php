@@ -1,51 +1,7 @@
 <?php
 define("BG_BLUE_COLOR", "#001b53");
-include("../../../config/connect.php");
 
 
-
-$programmes_array = [];
-
-
-//Functions
-function fetchProgrammesFromDB($conn, &$programmes_array)
-{
-  $limit = 50;
-  $offset = 0;
-
-
-  $fetch_query = $conn->prepare("SELECT * FROM programmes LIMIT ? OFFSET ?"); // 
-
-  $fetch_query->bind_param("ii", $limit, $offset);
-
-
-  $fetch_query->execute();
-
-  $result = $fetch_query->get_result();
-  if ($result) {
-    while ($row = $result->fetch_assoc()) {
-      //echo $row["prog_name"];
-      //showAlert($row["prog_name"]);
-      array_push($programmes_array, $row);
-    }
-  } else {
-    //echo "<script> alert('".$conn->error."')</script>";
-    showAlert($conn->error);
-  }
-}
-
-
-//create an alert
-function showAlert($alertMessage)
-{
-  echo "<script> alert('" . $alertMessage . "')</script>";
-}
-
-
-
-///////////////////EXECUTE FUNCTIONS
-
-fetchProgrammesFromDB($conn, $programmes_array);
 
 ?>
 
@@ -58,37 +14,10 @@ fetchProgrammesFromDB($conn, $programmes_array);
   <title>V. G. VAZE| Course Catalog</title>
   <?php include('../../../library/library.php'); ?>
   <style>
-    /*@tailwind base;
-    @tailwind components;
-    @tailwind utilities;
-
-    @layer components {
-      .degree_filter_mobile {
-        @apply -bottom-fit fixed
-      }
-
-      .degree_filter_sm {
-        @apply sm:flex sm:relative sm:w-1/5
-      }
-    }
-    */
-
     .custom_bg_blue {
       background: #001b53;
     }
-
-    /*
-    @layer utitlities {
-
-      .custom_font_blue {
-        color: #001b53;
-      }
-
-
-    }
-    */
   </style>
-
 
 </head>
 
@@ -169,8 +98,8 @@ fetchProgrammesFromDB($conn, $programmes_array);
 
 
 
-    <form class=" bg-transparent w-3/4 flex items-center border p-2 rounded-full dark:ring-white focus-within:ring ">
-      <input type="text" class=<?php echo '"w-full bg-transparent border-0 focus:border-transparent  focus:ring-0  pl-2 text-[#001b53] dark:text-white dark:placeholder:text-white placeholder:text-[' . BG_BLUE_COLOR . ']"'; ?> placeholder="Search programs" />
+    <form class=" bg-transparent w-3/4 flex items-center border p-2 rounded-full dark:ring-white focus-within:ring " id="search_form">
+      <input type="text" id="search_input_field" class=<?php echo '"w-full bg-transparent border-0 focus:border-transparent  focus:ring-0  pl-2 text-[#001b53] dark:text-white dark:placeholder:text-white placeholder:text-[' . BG_BLUE_COLOR . ']"'; ?> placeholder="Search programs" />
 
       <button type="reset" id="btn_clear_search" class="cursor-pointer mr-2">
         <span class="material-symbols-outlined dark:text-white">
@@ -182,7 +111,7 @@ fetchProgrammesFromDB($conn, $programmes_array);
 
 
     <!--search button-->
-    <button type="submit" class="relative mx-2 p-2 custom_bg_blue rounded-full sm:rounded-xl text-white cursor-pointer dark:bg-white dark:text-[#001b53]">
+    <button type="button" class="relative mx-2 p-2 custom_bg_blue rounded-full sm:rounded-xl text-white cursor-pointer dark:bg-white dark:text-[#001b53]" id="search_button">
       <p class=" hidden sm:block font-bold  font-2xl p-2">Search</p>
       <span class="material-symbols-outlined sm:hidden">
         search
@@ -202,6 +131,9 @@ fetchProgrammesFromDB($conn, $programmes_array);
       </li>
       <li class="me-2" role="presentation">
         <button class="inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold  hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="junior_tab" data-tabs-target="#junior_tab_contents" type="button" role="tab" aria-controls="junior" aria-selected="false">Junior</button>
+      </li>
+      <li class="me-2" role="presentation">
+        <button class="inline-block p-4 border-b-2 rounded-t-lg text-xl font-bold  hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="certificate_course_tab" data-tabs-target="#certificate_courses_tab_contents" type="button" role="tab" aria-controls="certificate_course" aria-selected="false">Certificate Courses</button>
       </li>
     </ul>
   </div>
@@ -238,25 +170,27 @@ fetchProgrammesFromDB($conn, $programmes_array);
               <h4 class="font-bold text-lg dark:text-white">Level</h4>
 
               <div class="flex  mt-2">
-                <input type="checkbox" id="ug_chkbox" name="level" />
+                <input type="checkbox" id="ug_chkbox" name="level" value="ug" />
                 <label for="ug_chkbox" class=" mx-2 dark:text-white ">Under-Graduate</label>
               </div>
 
               <div class="flex">
-                <input type="checkbox" id="pg_chkbox" name="level" />
+                <input type="checkbox" id="pg_chkbox" name="level" value="pg" />
                 <label for="pg_chkbox" class=" mx-2 dark:text-white ">Post-Graduate</label>
               </div>
 
               <div class="flex">
-                <input type="checkbox" id="phd_chkbox" name="level" />
+                <input type="checkbox" id="phd_chkbox" name="level" value="phd" />
                 <label for="phd_chkbox" class=" mx-2 dark:text-white">PhD</label>
+
               </div>
 
-
+              <!--
               <div class="flex">
-                <input type="checkbox" id="certificate_chkbox" name="level" />
+                <input type="checkbox" id="certificate_chkbox" name="level" value="gd" />
                 <label for="certificate_chkbox" class=" mx-2 dark:text-white">Certificate courses</label>
               </div>
+              -->
 
             </div>
             <!--"Level" subheading end-->
@@ -268,12 +202,12 @@ fetchProgrammesFromDB($conn, $programmes_array);
               <h4 class="font-bold text-lg dark:text-white">Section</h4>
 
               <div class="flex mt-2">
-                <input type="checkbox" id="sfc_chkbox" name="section" />
+                <input type="checkbox" id="sfc_chkbox" name="section" value="s" />
                 <label for="sfc_chkbox" class=" mx-2 dark:text-white">Self-Financing Courses (SFC)</label>
               </div>
 
               <div class="flex">
-                <input type="checkbox" id=regular_chkbox" name="section" />
+                <input type="checkbox" id=regular_chkbox" name="section" value="d" />
                 <label for="regular_chkbox" class=" mx-2 dark:text-white">Regular </label>
               </div>
 
@@ -288,17 +222,17 @@ fetchProgrammesFromDB($conn, $programmes_array);
               <h4 class="font-bold text-lg dark:text-white">Faculty</h4>
 
               <div class="flex mt-2">
-                <input type="checkbox" id="arts_chkbox" name="faculty" />
+                <input type="checkbox" id="arts_chkbox" name="faculty" value="a" />
                 <label for="arts_chkbox" class=" mx-2 dark:text-white">Arts</label>
               </div>
 
               <div class="flex">
-                <input type="checkbox" id=commerce_chkbox" name="faculty" />
+                <input type="checkbox" id=commerce_chkbox" name="faculty" value="c" />
                 <label for="commerce_chkbox" class=" mx-2 dark:text-white">Commerce</label>
               </div>
 
               <div class="flex">
-                <input type="checkbox" id="science_chkbox" name="faculty" />
+                <input type="checkbox" id="science_chkbox" name="faculty" value="s" />
                 <label for="science_chkbox" class=" mx-2 dark:text-white">Science</label>
               </div>
 
@@ -308,10 +242,10 @@ fetchProgrammesFromDB($conn, $programmes_array);
             <!--Show results and clear-->
             <div class="flex justify-between items-center flex-wrap mt-8">
 
-              <button class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white" type="button">Apply</button>
+              <button id="apply_filter_button" class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white" type="button">Apply</button>
 
 
-              <button class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700" type="reset">Clear</button>
+              <button id="filter_clear_button" class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700" type="reset">Clear</button>
             </div>
           </form>
         </div>
@@ -325,30 +259,38 @@ fetchProgrammesFromDB($conn, $programmes_array);
       <div class="flex-1 relative mx-4 sm:ml-4">
 
         <!-- No of courses-->
-        <p class="text-2xl text-black font-bold dark:text-white">
-          <?php echo count($programmes_array); ?> courses available
+        <p class="text-2xl text-black font-bold dark:text-white" id="no_of_courses_para">
+          <?php //echo count($programmes_array)." courses available";
+          ?>
         </p>
 
         <!-- Courses-->
-        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 w-full">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 w-full" id="course_cards_grid_div">
 
           <!--Card 1 start-->
+
           <?php
-          foreach ($programmes_array as $programme) {
+          //foreach ($programmes_array as $programme) {
           ?>
 
+
+          <!--
             <div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer course_card">
-              <p class="p_hidden" hidden><?php echo "course_" . $programme["prog_id"]; ?></p>
+              <p class="p_hidden" hidden><?php //echo "course_" . $programme["prog_id"]; 
+                                          ?></p>
               <div class="relative flex-1 overflow-hidden rounded-t-xl">
-                <img src=<?php echo $programme["prog_bg_image_link"] ?> alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                <img src=<?php //echo $programme["prog_bg_image_link"] 
+                          ?> alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
               </div>
               <div class=" flex-1 relative px-4 py-4">
                 <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
-                  <?php echo $programme["prog_name"] ?>
+                  <?php //echo $programme["prog_name"] 
+                  ?>
                 </h3>
 
                 <p class="text-slate-500 dark:text-white">
                   <?php
+                  /*
                   switch($programme["prog_type"]){
                     case "ug":
                       echo "Undergraduate Course";
@@ -364,6 +306,7 @@ fetchProgrammesFromDB($conn, $programmes_array);
                       break;
                     
                   }
+                  */
                   ?>
                 </p>
 
@@ -372,7 +315,8 @@ fetchProgrammesFromDB($conn, $programmes_array);
                     <p class="font-bold dark:text-white">Duration</p>
                   </li>
                   <li>
-                    <p class="text-slate-500 dark:text-white"><?php echo $programme["prog_duration"] ?></p>
+                    <p class="text-slate-500 dark:text-white"><?php //echo $programme["prog_duration"] 
+                                                              ?></p>
                   </li>
 
                   <li class="mt-2">
@@ -385,10 +329,11 @@ fetchProgrammesFromDB($conn, $programmes_array);
                 </ul>
               </div>
             </div>
-            <!--Card 1 end-->
+                -->
+          <!--Card 1 end-->
 
           <?php
-          }
+          // }
           ?>
         </div>
         <!--Courses Grid end-->
@@ -515,6 +460,36 @@ fetchProgrammesFromDB($conn, $programmes_array);
 
     </div>
     <!--JUNIOR TABS CONTENTS END-->
+
+    <!--CERTIFICATE COURSES CONTENTS START-->
+    <div class="hidden flex flex-col p-4" id="certificate_courses_tab_contents" role="tabpanel" aria-labelledby="certificate_course_tab">
+
+      <!-- No of courses-->
+      <p class="text-2xl text-black font-bold dark:text-white" id="cc_no_of_courses_para">
+      </p>
+
+      <!-- Grid layout div start-->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mt-4" id="cc_course_cards_grid_div">
+
+        <!--Card 1start-->
+        <!--
+        <div class="group  rounded-xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer hover:scale-[1.025] transition-transform duration-500">
+          <div class=" flex w-full items-center justify-between  relative px-4 py-4">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white text-ellipsis">
+              Acting Workshop
+            </h3>
+            <span class="material-symbols-outlined dark:text-white">
+              arrow_forward_ios
+            </span>
+          </div>
+                -->
+        <!--Card 1 end-->
+
+      </div>
+      <!--Grid layout div end-->
+
+    </div>
+    <!--CERTIFICATE COURSES CONTENTS END-->
 
 
   </div>

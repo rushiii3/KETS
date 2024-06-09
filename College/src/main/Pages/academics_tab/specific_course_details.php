@@ -1,10 +1,18 @@
+<?php
+//$json_url="./AJAX/fetch_specific_course_info.php"
+include("../../../config/connect.php");
+include("./AJAX/fetch_specific_course_info.php");
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V. G. VAZE|BSC(I.T)</title>
+    <title>V. G. VAZE|<?php echo $data["prog_name"];?></title>
     <?php include('../../../library/library.php'); ?>
 </head>
 
@@ -14,7 +22,7 @@
     NAVBAR 
     ****************/
     -->
-    <?php include('../../Layouts/header2.php'); 
+    <?php include('../../Layouts/header2.php');
     ?>
 
     <!--
@@ -24,13 +32,13 @@
     -->
     <div class="relative isolate flex flex-col justify-end overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center">
 
-        <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <img src=<?php echo $data["prog_bg_image_link"]; ?> alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
 
         <div class="absolute inset-0 -z-10 h-full w-full object-cover"></div>
         <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
         <div class="text-center z-1" data-aos="fade-up">
-            <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]"> Bachelor of Science (Information Technology)</h1>
+            <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]"> <?php echo $data["prog_name"]; ?></h1>
         </div>
         <!--
         <div class="text-center z-1" data-aos="fade-up">
@@ -87,7 +95,7 @@
             </li>
 
             <li>
-                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500">BSC(IT)</a>
+                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500"><?php echo $data["prog_name"];?></a>
             </li>
 
         </ol>
@@ -126,7 +134,7 @@
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-indigo-300">What will you learn?</h4>
-                    <p class="text-gray-500 dark:text-gray-400">BSc IT programs typically cover a wide range of subjects related to information technology, including computer programming, database management, networking, web development, software engineering, cybersecurity, and systems analysis. <span class="text-blue-500">See the syllabus section to know more</span></p>
+                    <p class="text-gray-500 dark:text-gray-400"><?php echo $data["prog_overview_learning_section"]; ?><span class="text-blue-500">See the syllabus section to know more</span></p>
                 </div>
             </div>
 
@@ -140,7 +148,7 @@
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-blue-500"> Career Opportunities</h4>
-                    <p class="text-gray-500 dark:text-gray-400">Graduates of BSc IT programs have a variety of career opportunities in the field of information technology. They can work as software developers, systems analysts, database administrators, network administrators, web developers, IT consultants, cybersecurity specialists, and more. BSc IT programs are designed to keep pace with advancements in technology and industry trends. Therefore, the curriculum is often updated regularly to ensure that students are equipped with the latest knowledge and skills demanded by employers in the IT sector.</p>
+                    <p class="text-gray-500 dark:text-gray-400"><?php echo $data["prog_overview_career_section"]?></p>
                 </div>
             </div>
 
@@ -154,7 +162,7 @@
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-yellow-500">Skills Development</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Throughout the course of their studies, students develop a range of technical and soft skills. These include programming skills in languages like Java, Python, C++, or others, problem-solving abilities, critical thinking skills, communication skills, teamwork, and project management skills.</p>
+                        <p class="text-gray-500 dark:text-gray-400"><?php echo $data["prog_overview_skills_section"]?></p>
                 </div>
             </div>
             <div class="pt-4 flex gap-4 md:items-center">
@@ -165,8 +173,8 @@
                     <img src="../../../assests/webp/learning_by_doing_webp.webp" class="h-fit" />
                 </div>
                 <div class="w-5/6">
-                    <h4 class="font-semibold text-lg text-gray-700 dark:text-red-500">Learn by doing</h4>
-                    <p class="text-gray-500 dark:text-gray-400">Many BSc IT programs includes practical projects as part of the curriculum. These experiences allow students to apply their theoretical knowledge in real-world settings, gain hands-on experience, and build professional networks.</p>
+                    <h4 class="font-semibold text-lg text-gray-700 dark:text-red-500">What's more?</h4>
+                    <p class="text-gray-500 dark:text-gray-400"> <?php echo $data["prog_overview_other_section"];  ?></p>
                 </div>
             </div>
 
@@ -176,7 +184,7 @@
 
     <!--Take me to admissions div-->
     <div class="flex justify-center mt-8">
-        <button class="p-4  font-bold rounded-full bg-blue-500 text-white  shadow-2xl  sm:text-[1.5rem] hover:scale-[1.02] transition-transform duration-500  shadow-gray-400 dark:shadow-none border border-gray-500">
+        <button class="p-4  font-bold rounded-full bg-blue-500 text-white  shadow-2xl  sm:text-[1.5rem] hover:scale-[1.02] transition-transform duration-500  shadow-gray-400 dark:shadow-none border border-gray-500" id="take_to_admissions_button">
             Take me to Admissions
         </button>
     </div>
@@ -193,7 +201,22 @@
 
     <div class=" mx-12 flex flex-col lg:flex-row h-fit p-12 justify-between rounded-2xl shadow-2xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 shadow-2xl shadow-gray-300">
         <div class="flex flex-col justify-around items-center flex-2">
-            <p class="text-[2rem] md:text-[4rem] flex-2 dark:text-white font-bold">UG</p>
+            <p class="text-[2rem] md:text-[4rem] flex-2 dark:text-white font-bold">
+                <?php
+                 switch($data["prog_type"]){
+                    case "ug":
+                      echo "UG";
+                      break;
+                    case "pg":
+                      echo "PG";
+                      break;
+                    case "phd":
+                      echo "PhD";
+                      break;
+             
+                  }
+                ?>
+            </p>
             <p class="dark:text-white flex-1 font-bold">Level</p>
         </div>
 
@@ -205,7 +228,7 @@
 
         <div class="flex flex-col mt-8 lg:mt-0 flex-wrap items-center justify-around flex-2">
             <a href="#" class="text-[1.5rem] text-center font-bold sm:text-[2rem] hover:text-[2.05rem] transition-font duration-500 hover:underline transition-text-decoration dark:text-white">
-                Information Technology
+                <?php echo $data["dept_name"];?>
                 <span class="material-symbols-outlined">
                     open_in_new
                 </span>
@@ -219,7 +242,9 @@
         </div>
 
         <div class="flex mt-8 lg:mt-0 flex-col justify-around items-center flex-2">
-            <p class="text-[2rem] md:text-[3rem] lg:text-[4rem] dark:text-white font-bold">60</p>
+            <p class="text-[2rem] md:text-[3rem] lg:text-[4rem] dark:text-white font-bold">
+                <?php echo $data["prog_intake_capacity"]; ?>
+            </p>
             <p class="dark:text-white font-bold">Intake Capacity</p>
         </div>
 
@@ -230,7 +255,11 @@
         </div>
 
         <div class="flex flex-col mt-8 md:mt-0 flex-wrap justify-around items-center flex-2">
-            <p class="text-[2rem] md:text-[3rem] lg:text-[4rem] dark:text-white font-bold">3 years</p>
+            <p class="text-[2rem] md:text-[3rem] lg:text-[4rem] dark:text-white font-bold">
+                <?php
+                echo $data["prog_duration"];
+                ?>
+            </p>
             <p class="dark:text-white font-bold">Duration</p>
         </div>
 
@@ -247,8 +276,18 @@
         </div>
     </section>
 
-    <div class="dark:text-white px-20">
-        <p class="text-2xl dark:text-white">Please refer the Mumbai University website for further details <a href="#" class="transition-font hover:text-[1.6rem] duration-500 ease-in-out text-blue-500 dark:text-emerald-500">Click here</a> </p>
+    <div class="dark:text-white px-20 text-center">
+        <p class="text-2xl dark:text-white">
+            <?php 
+            if(str_contains(strtolower($data["prog_eligibility"]),"as per mumbai university")){
+                echo 'Please refer the Mumbai University website for further details <a href="#" class="transition-font hover:text-[1.6rem] duration-500 ease-in-out text-blue-500 dark:text-emerald-500">Click here</a> ';
+            }
+            else{
+                echo $data["prog_eligibility"];
+
+            }
+            ?>
+        </p>
 
     </div>
 
@@ -264,7 +303,7 @@
     </section>
 
 
-    <div class="dark:text-white px-20">
+    <div class="dark:text-white px-20 text-center">
         <p class="text-2xl dark:text-white">Please refer the College prospectus for the latest updates <a href="#" class="transition-font hover:text-[1.6rem] duration-500 ease-in-out text-blue-500 dark:text-emerald-500">Take me to the prospectus</a> </p>
 
     </div>
@@ -276,7 +315,14 @@
     -->
     <?php include('../../Layouts/footer.php'); ?>
 
+    <script>
+        $("#take_to_admissions_button").click(function(){
+            window.location.href="../admissions_tab/admissions.html";
+        });
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    
 </body>
 <?php include('../../../library/AOS.php'); ?>
 

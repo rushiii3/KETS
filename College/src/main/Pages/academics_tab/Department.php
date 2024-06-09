@@ -30,7 +30,7 @@
             }
         }
     </style>
-<?php include('../../../library/library.php'); ?>
+    <?php include('../../../library/library.php'); ?>
 </head>
 <?php include('../../../config/connect.php'); ?>
 
