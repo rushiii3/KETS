@@ -122,7 +122,7 @@ all_jc_course_cards.forEach((course_card) => {
     let stream = course_card.querySelector("h3").innerText;
     //the link is respective to the php file where this js file will be linked
     window.location.href =
-      "../../Pages/academics_tab/specific_jc_stream.php?stream=" + stream;
+      "../../Pages/academics_tab/specific_jc_stream.php?stream=" + stream.toLowerCase();
   });
 });
 

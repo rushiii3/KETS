@@ -356,7 +356,7 @@ define("BG_BLUE_COLOR", "#001b53");
         <!--Card 1start-->
         <div class="group jc_stream_card flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
           <div class="relative flex-1 overflow-hidden rounded-t-xl">
-            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            <img src="https://plus.unsplash.com/premium_vector-1682303874205-6048309c3d7e?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
           </div>
           <div class=" flex-1 relative px-4 py-4">
             <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -389,9 +389,9 @@ define("BG_BLUE_COLOR", "#001b53");
         <!--Card 1 end-->
 
         <!--Card 2 start-->
-        <div class="group  flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+        <div class="group jc_stream_card flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
           <div class="relative flex-1 overflow-hidden rounded-t-xl">
-            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            <img src="https://plus.unsplash.com/premium_vector-1713364407288-bdef037b212c?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
           </div>
           <div class=" flex-1 relative px-4 py-4">
             <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -424,9 +424,9 @@ define("BG_BLUE_COLOR", "#001b53");
         <!--Card 2 end-->
 
         <!--Card 3 start-->
-        <div class="group  flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
+        <div class="group  jc_stream_card flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer">
           <div class="relative flex-1 overflow-hidden rounded-t-xl">
-            <img src="https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+            <img src="https://plus.unsplash.com/premium_vector-1683121884518-2e8290ff0dee?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
           </div>
           <div class=" flex-1 relative px-4 py-4">
             <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
