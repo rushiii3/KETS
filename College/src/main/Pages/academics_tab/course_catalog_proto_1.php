@@ -507,8 +507,8 @@ define("BG_BLUE_COLOR", "#001b53");
     ****************/
     -->
   <?php include('../../Layouts/footer.php'); ?>
-  <script src="../../../js/academics_tab/course_catalog.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="../../../js/academics_tab/course_catalog.js" ></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
 

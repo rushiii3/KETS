@@ -1,3 +1,5 @@
+
+
 const filter_div = document.getElementById("filter_div");
 const filter_toggle_btn = document.getElementById("filter_toggle_btn");
 const filter_parent_div = document.getElementById("degree_tab_contents");
@@ -33,17 +35,29 @@ const selected_tab_states = {
   junior: "j",
   certificate_course: "cc",
 };
-let selected_tab_state = selected_tab_states.degree;
+
+let selected_tab_state =
+  sessionStorage.getItem("selected_tab_state") ?? selected_tab_states.degree;
+
+   
+
+  console.log("initially the selected tab state is:"+selected_tab_state);
 
 let certificate_courses_tab_search_query_state = "";
 
 let degree_courses_loading_state = false;
 let certificate_courses_loading_state = false;
 
-//////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////////////
+//let i=sessionStorage.getItem("times_loaded")??"1";
+
+//if(i=="1"){
 fetchProgrammesFromDB(limit_state, offset_state);
 fetchCertificateCoursesFromDB();
+//i="2";
+//sessionStorage.setItem("times_loaded",i);
+//}
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,7 +136,8 @@ all_jc_course_cards.forEach((course_card) => {
     let stream = course_card.querySelector("h3").innerText;
     //the link is respective to the php file where this js file will be linked
     window.location.href =
-      "../../Pages/academics_tab/specific_jc_stream.php?stream=" + stream.toLowerCase();
+      "../../Pages/academics_tab/specific_jc_stream.php?stream=" +
+      stream.toLowerCase();
   });
 });
 
@@ -249,7 +264,10 @@ $("#degree_tab").click(function () {
     "placeholder:text-[#001b53]"
   );
   search_form.classList.remove("dark:bg-gray-700");
+
+  sessionStorage.setItem("selected_tab_state", selected_tab_state);
 });
+
 
 $("#junior_tab").click(function () {
   selected_tab_state = selected_tab_states.junior;
@@ -263,7 +281,10 @@ $("#junior_tab").click(function () {
     "placeholder:text-[#001b53]",
     "placeholder:text-slate-200"
   );
+
+  sessionStorage.setItem("selected_tab_state", selected_tab_state);
 });
+
 
 $("#certificate_course_tab").click(function () {
   selected_tab_state = selected_tab_states.certificate_course;
@@ -277,8 +298,28 @@ $("#certificate_course_tab").click(function () {
     "placeholder:text-slate-200",
     "placeholder:text-[#001b53]"
   );
+
+  sessionStorage.setItem("selected_tab_state", selected_tab_state);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  
+  switch (selected_tab_state) {
+    case selected_tab_states.junior:
+      console.log("going to junior tab")
+      $("#junior_tab").attr("aria-selected","true");
+      
+      break;
+    case selected_tab_states.degree:
+      $("#degree_tab").attr("aria-selected","true");
+        console.log("going to degree tab")
+      break;
+    case selected_tab_states.certificate_course:
+    $("#certificate_course_tab").attr("aria-selected","true");
+        console.log("going to cc tab")
+      break;
+  }
+});
 //////////////////////////FUNCTIONS///////////////////////
 function getScreenHeight() {
   return document.documentElement.clientWidth;
@@ -442,79 +483,97 @@ function fetchProgrammesFromDB(
     $("#degree_loading_animation_div").html(loading_animation);
   }
 
-  setTimeout(()=>{ makeAJAXRequest(
-    ajax_url,
-    "GET",
-    "json",
-    null,
-    function (response) {
+  setTimeout(() => {
+    makeAJAXRequest(
+      ajax_url,
+      "GET",
+      "json",
+      null,
+      function (response) {
+        if (response.msg == "success") {
+          let programmes_array = response.programmes_array;
+          let total_fetched_programmes = programmes_array.length;
 
-      if (response.msg == "success") {
-        let programmes_array = response.programmes_array;
-        let total_fetched_programmes = programmes_array.length;
+          $("#course_cards_grid_div").html("");
+          if (total_fetched_programmes > 0) {
+            programmes_array.forEach((programme_object) => {
+              let prog_clg_section;
+              switch (programme_object.college_sec_name) {
+                case "s":
+                  prog_clg_section = "Self Financing Courses(SFC) section";
+                  break;
+                case "d":
+                  prog_clg_section = "Regular section";
+                  break;
+              }
 
-        $("#course_cards_grid_div").html("");
-        if (total_fetched_programmes > 0) {
-          programmes_array.forEach((programme_object) => {
-            let prog_clg_section;
-            switch (programme_object.college_sec_name) {
-              case "s":
-                prog_clg_section = "Self Financing Courses(SFC) section";
-                break;
-              case "d":
-                prog_clg_section = "Regular section";
-                break;
-            }
+              let prog_final_type;
+              switch (programme_object.prog_type) {
+                case "ug":
+                  prog_final_type = "Undergraduate Course";
+                  break;
+                case "pg":
+                  prog_final_type = "Postgraduate Course";
+                  break;
+                case "phd":
+                  prog_final_type = "PhD course";
+                  break;
+                case "gd":
+                  prog_final_type =
+                    "G.D. Kelkar Skill Developement and Finishing School Course";
+                  break;
+              }
 
-            let prog_final_type;
-            switch (programme_object.prog_type) {
-              case "ug":
-                prog_final_type = "Undergraduate Course";
-                break;
-              case "pg":
-                prog_final_type = "Postgraduate Course";
-                break;
-              case "phd":
-                prog_final_type = "PhD course";
-                break;
-              case "gd":
-                prog_final_type =
-                  "G.D. Kelkar Skill Developement and Finishing School Course";
-                break;
-            }
+              var course_card = createCourseCard(
+                programme_object.prog_id,
+                programme_object.prog_bg_image_link,
+                programme_object.prog_name,
+                prog_final_type,
+                programme_object.prog_duration,
+                prog_clg_section
+              );
+              $("#course_cards_grid_div").append(course_card);
+            });
 
-            var course_card = createCourseCard(
-              programme_object.prog_id,
-              programme_object.prog_bg_image_link,
-              programme_object.prog_name,
-              prog_final_type,
-              programme_object.prog_duration,
-              prog_clg_section
+            $("#no_of_courses_para").text(
+              `${total_fetched_programmes} course(s) available`
             );
-            $("#course_cards_grid_div").append(course_card);
-          });
+            degree_courses_loading_state = false;
+            if (
+              !document
+                .getElementById("degree_loading_animation_div")
+                .classList.contains("hidden")
+            ) {
+              document
+                .getElementById("degree_loading_animation_div")
+                .classList.add("hidden");
+            }
 
-          $("#no_of_courses_para").text(
-            `${total_fetched_programmes} course(s) available`
-          );
-          degree_courses_loading_state = false;
-          if (
-            !document
-              .getElementById("degree_loading_animation_div")
-              .classList.contains("hidden")
-          ) {
+            attachClickListenerOnCourseCards();
+          } else {
+            //alert("zero fetched results");
+            degree_courses_loading_state = false;
+            $("#no_of_courses_para").text(
+              `${total_fetched_programmes} course(s) available`
+            );
+
+            var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
+          </div>`;
+
             document
               .getElementById("degree_loading_animation_div")
-              .classList.add("hidden");
+              .classList.remove("hidden");
+            $("#degree_loading_animation_div").html(
+              no_programmes_available_div
+            );
           }
-
-          attachClickListenerOnCourseCards();
         } else {
+          console.log(response);
           //alert("zero fetched results");
           degree_courses_loading_state = false;
-          $("#no_of_courses_para").text(
-            `${total_fetched_programmes} course(s) available`
-          );
+          $("#no_of_courses_para").text(`0 course(s) available`);
 
           var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
         <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
@@ -525,13 +584,15 @@ function fetchProgrammesFromDB(
             .getElementById("degree_loading_animation_div")
             .classList.remove("hidden");
           $("#degree_loading_animation_div").html(no_programmes_available_div);
-
         }
-      } else {
-        console.log(response);
+      },
+      function (status, xhr, error) {
+        console.log(error);
         //alert("zero fetched results");
         degree_courses_loading_state = false;
-        $("#no_of_courses_para").text(`0 course(s) available`);
+        $("#no_of_courses_para").text(
+          `${total_fetched_programmes} course(s) available`
+        );
 
         var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
         <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
@@ -543,28 +604,8 @@ function fetchProgrammesFromDB(
           .classList.remove("hidden");
         $("#degree_loading_animation_div").html(no_programmes_available_div);
       }
-    },
-    function (status, xhr, error) {
-      console.log(error);
-      //alert("zero fetched results");
-      degree_courses_loading_state = false;
-      $("#no_of_courses_para").text(
-        `${total_fetched_programmes} course(s) available`
-      );
-
-      var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
-          <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
-          </div>`;
-
-      document
-        .getElementById("degree_loading_animation_div")
-        .classList.remove("hidden");
-      $("#degree_loading_animation_div").html(no_programmes_available_div);
-
-    }
-  );},5000)
- 
+    );
+  }, 5000);
 }
 
 function attachClickListenerOnCourseCards() {

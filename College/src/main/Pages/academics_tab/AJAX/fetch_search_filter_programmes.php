@@ -1,6 +1,6 @@
 <?php
 include("../../../../config/connect.php");
-$path_to_credential_file="../../../../config/openssl_encrypt_decrypt_credentials.php";
+$path_to_credential_file = "../../../../config/openssl_encrypt_decrypt_credentials.php";
 include("../../../../php/encrypt_query_params.php");
 $programmes_array = [];
 
@@ -17,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $bind_param_param_types_string = "s";
     $bind_param_params_array = [$search_query];
-
+    $level_part_of_query = "";
+    $section_part_of_query = "";
+    $faculty_part_of_query = "";
     if (strlen($level) > 0) {
         $level_array = explode(",", $level);
         //print_r($level_array);
@@ -86,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             //echo "here";
             //showAlert($row["prog_name"]);
             $temp = [];
-            $temp["prog_id"] = encryptId($row["prog_id"],$path_to_credential_file);
+            $temp["prog_id"] = encryptId($row["prog_id"], $path_to_credential_file);
             $temp["prog_name"] = $row["prog_name"];
             $temp["prog_duration"] = $row["prog_duration"];
             $temp["prog_type"] = $row["prog_type"];
@@ -106,8 +108,3 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         echo json_encode($returned_json);
     }
 }
-
-
-
-
-
