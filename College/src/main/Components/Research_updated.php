@@ -161,7 +161,7 @@
                                             Stay ahead with the latest updates and vital information from our junior college. Explore our notices to ensure you never miss out on important news and events.
                                         </p>
                                     </div> -->
-                                    <div class="space-y-6 text-center">
+                                    <!-- <div class="space-y-6 text-center">
                                         <img class="mx-auto h-64 w-64 rounded-full object-cover md:h-40 md:w-40 lg:h-64 lg:w-64" src="../../assests/profile.png" alt="woman" loading="lazy" width="640" height="805" />
                                         <div>
                                             <h4 class="text-2xl text-gray-700 dark:text-white">Dr. Prachi Jambhekar</h4>
@@ -170,7 +170,22 @@
                                         <div class="flex justify-center space-x-4 text-gray-500">
                                             <h4 class="text-xl text-gray-700 dark:text-white">OPENING ADDRESS PRESENTER</h4>
                                         </div>
-                                    </div>
+                                    </div> -->
+                                    <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+                                                <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" src="../../assests/profile.png" alt="Woman's Face">
+                                                <div class="text-center space-y-2 sm:text-left">
+                                                    <div class="space-y-0.5">
+                                                        <p class="text-lg text-black font-semibold">
+                                                        Dr. Prachi Jambhekar
+                                                        </p>
+                                                        <p class="text-slate-500 font-medium">
+                                                        DIRECTOR- PLANNING, BMC
+                                                        </p>
+                                                    </div>
+                                                    <div class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">OPENING ADDRESS PRESENTER</div>
+                                                </div>
+                                            </div>
+
                                     <!-- Academic Year for junior college section -->
                                     <section class="py-12">
                                         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
