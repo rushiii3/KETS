@@ -7,11 +7,10 @@
          <div class="text-center z-1" data-aos="fade-up">
              <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">
                  <?php
-                    if (isset($_GET['d_id']) || !empty($_GET['d_id']) || isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
-                        $encoded_id = $_GET['d_id'];
-                        $d_id = base64_decode($encoded_id);
+                    if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
+                    
                         $dept_sect_id = base64_decode($_GET['dept_sec_id']);
-                        $query = "SELECT dept_name FROM `departments` WHERE dept_id='$d_id'";
+                        $query = "SELECT d.dept_name,d.dept_link FROM `departments` as d inner join dept_belongs_to_clg_section as ds on ds.dept_id=d.dept_id where ds.dept_sect_id='$dept_sect_id'";
                         $result = $conn->query($query);
                         if ($result->num_rows > 0) {
                             // while ($row1 = $result1->fetch_assoc()) {
@@ -20,6 +19,7 @@
                             // }
                             $row = $result->fetch_assoc();
                             $d_name = $row['dept_name'];
+                            $d_link=$row['dept_link'];
                             echo $d_name;
                         }
                     } else {
@@ -257,7 +257,12 @@
      </div>
  </div>
 
-
+<?php
+$query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND P.dept_sec_id='$dept_sect_id')";
+$result3 = $conn->query($query3);
+if ($result2->num_rows){
+}
+?>
  <div class="max-w-[95dvw] rounded-2xl mb-8 bg-white mx-auto" style="" data-aos="zoom-in" data-aos-duration="1000">
      <section class="py-12 border-b">
          <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
@@ -465,6 +470,10 @@
         //echo "<H1 class=' text-center text-2xl'> NO ACTIVITY</H1>";
     }
     ?>
+    <?php 
+    
+    if(isset($d_link) || !empty($d_link)){
+    ?>
  <section class="relative overflow-hidden py-4 px-4 bg-gray-900 md:px-8 hover:text-2xl transition-all duration-600">
      <div class="w-full h-full rounded-full bg-gradient-to-r from-[#58AEF1] to-pink-500 absolute -top-12 -right-14 blur-2xl opacity-15"></div>
      <div class="max-w-xl mx-auto text-center relative">
@@ -474,11 +483,15 @@
              </h3>
          </div>
          <div class="m-5 items-center justify-center gap-3 sm:flex">
-             <a href="javascript:void()" class="block w-full mt-2 py-2.5 px-8 text-gray-700 bg-white rounded-md font-medium duration-150 hover:bg-gray-300 hover:text-gray-900 hover:scale-[110%] sm:w-auto">
+             <a href="<?php echo $d_link;?>" class="block w-full mt-2 py-2.5 px-8 text-gray-700 bg-white rounded-md font-medium duration-150 hover:bg-gray-300 hover:text-gray-900 hover:scale-[110%] sm:w-auto">
                  Visit
              </a>
          </div>
      </div>
  </section>
+ <?php
+    }
+    
+ ?>
 
  <!-- select* from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name=''); -->
