@@ -70,7 +70,7 @@
 
     <section class="py-4 mt-5 border-b max-w-[95dvw] rounded-2xl  mx-auto">
         <div class=" xl:container  m-auto text-gray-600 overflow-hidden rounded-2xl bg-white" data-aos="zoom-out-up" data-aos-offset="100">
-            <div class="grid gap-4  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  p-5" data-aos="fade-left" data-aos-duration="2000">
+            <div class=" list1 grid gap-4  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  p-5" data-aos="fade-left" data-aos-duration="2000">
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                     <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
@@ -165,5 +165,15 @@
     <script src="../../../js/showMoreItems.min.js"></script>
 </body>
 
-
 </html>
+<script>
+    $(document).ready(function() {
+
+        $('.list1').showMoreItems({
+            startNum: 6,
+            afterNum: 3,
+            moreText: 'View All',
+            original: true,
+        });
+    })
+</script>
