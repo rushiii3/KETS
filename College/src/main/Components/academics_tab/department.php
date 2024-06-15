@@ -8,7 +8,7 @@
              <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">
                  <?php
                     if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
-                    
+
                         $dept_sect_id = base64_decode($_GET['dept_sec_id']);
                         $query = "SELECT d.dept_name,d.dept_link FROM `departments` as d inner join dept_belongs_to_clg_section as ds on ds.dept_id=d.dept_id where ds.dept_sect_id='$dept_sect_id'";
                         $result = $conn->query($query);
@@ -19,7 +19,7 @@
                             // }
                             $row = $result->fetch_assoc();
                             $d_name = $row['dept_name'];
-                            $d_link=$row['dept_link'];
+                            $d_link = $row['dept_link'];
                             echo $d_name;
                         }
                     } else {
@@ -257,28 +257,50 @@
      </div>
  </div>
 
-<?php
-$query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND P.dept_sec_id='$dept_sect_id')";
-$result3 = $conn->query($query3);
-if ($result2->num_rows){
-}
-?>
+
  <div class="max-w-[95dvw] rounded-2xl mb-8 bg-white mx-auto" style="" data-aos="zoom-in" data-aos-duration="1000">
      <section class="py-12 border-b">
          <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
              <!--Undegrad syllabus-->
-             <div class="mb-12 space-y-2 text-center" data-aos="fade-left" data-aos-duration="1500">
-                 <h2 class="text-2xl font-bold text-gray-800 md:text-3xl ">
-                     Undergraduate
-                 </h2>
-                 <p class="lg:mx-auto lg:w-6/12 text-gray-600">
 
-                 </p>
-             </div>
-             <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  pb-5" data-aos="fade-left" data-aos-duration="2000">
+             <?php
+                $query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND P.dept_sec_id='$dept_sect_id')";
+                $result3 = $conn->query($query3);
+                if ($result3->num_rows) {
+
+                ?>
+                 <div class="mb-12 space-y-2 text-center" data-aos="fade-left" data-aos-duration="1500">
+                     <h2 class="text-2xl font-bold text-gray-800 md:text-3xl ">
+                         Undergraduate
+                     </h2>
+                     <p class="lg:mx-auto lg:w-6/12 text-gray-600">
+
+                     </p>
+                 </div>
+                 <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  pb-5" data-aos="fade-left" data-aos-duration="2000">
+
+                     <?php
+                        while ($row = $result3->fetch_assoc()) {
+                            $pdf_link = $row['all_pdf_pdf_link'];
+                            $title = $row['all_pdf_title'];
+                            echo '
+  <a href="' . $pdf_link . '" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
+                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
+                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">' . $title . '</h5>
+                         
+                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                         </svg>
+                     </div>
+                 </a>
 
 
-                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
+';
+                        }
+                        ?>
+
+                     <!-- <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
                      <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">FYBSCIT NEP</h5>
@@ -287,101 +309,72 @@ if ($result2->num_rows){
                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
                          </svg>
                      </div>
-                 </a>
-                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">SYBSCIT NEP</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
-
-                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">TYBSCIT NEP</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
-
-                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">FYBSCIT</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2023-2024</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
-                 <a href="#" class="flex flex-row items-center bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">SYBSCIT</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2023-2024</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
-
-                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">TYBSCIT</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2023-2024</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
+                 </a>-->
 
 
 
-             </div>
+                 </div>
+             <?php
+                } else {
+                    echo "<h1 class='text-center'>No UG Syllabus</h1>";
+                }
+                $query4 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('Part-1','Part-2') AND P.dept_sec_id='$dept_sect_id')";
+                $result4 = $conn->query($query4);
+                if ($result4->num_rows) {
 
-             <!--Masters syllabus-->
-             <div class="mb-12 space-y-2 text-center mt-12" data-aos="zoom-in">
-                 <h2 class="text-2xl font-bold text-gray-800 md:text-3xl ">
-                     Post-Graduate
-                 </h2>
-                 <p class="lg:mx-auto lg:w-6/12 text-gray-600">
+                ?>
+                 <!--Masters syllabus-->
+                 <div class="mb-12 space-y-2 text-center mt-12" data-aos="zoom-in">
+                     <h2 class="text-2xl font-bold text-gray-800 md:text-3xl ">
+                         Post-Graduate
+                     </h2>
+                     <p class="lg:mx-auto lg:w-6/12 text-gray-600">
 
-                 </p>
-             </div>
-             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 border-b pb-3 mx-auto overflow-hidden p-2" data-aos="fade-right" data-aos-duration="1000">
+                     </p>
+                 </div>
+                 <div class="grid grid-cols-1 gap-4 md:grid-cols-2 border-b pb-3 mx-auto overflow-hidden p-2" data-aos="fade-right" data-aos-duration="1000">
+
+                     <?php
+                        while ($row = $result4->fetch_assoc()) {
+                            $pdf_link = $row['all_pdf_pdf_link'];
+                            $title = $row['all_pdf_title'];
+                            echo '
+            <a href="' . $pdf_link . '" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
+                         <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                         <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
+                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">' . $title . '</h5>
+                            
+                             <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                             </svg>
+                         </div>
+                     </a>
+            
+            
+            ';
+                        }
+                        ?>
+                     <!-- <a href="#" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
+                         <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                         <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
+                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">MSCIT Part I</h5>
+                             <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
+                             <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                             </svg>
+                         </div>
+                     </a> -->
 
 
-                 <a href="#" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">MSCIT Part I</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
-                 <a href="#" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
-                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
-                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">MSCIT Part II</h5>
-                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
-                         <svg class="rtl:rotate-180 w-5.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                         </svg>
-                     </div>
-                 </a>
 
 
+                 </div>
+             <?php
 
-             </div>
+                } else {
+                    echo "<h1 class='text-center'>No MS Syllabus</h1>";
+                }
+                ?>
 
 
 
@@ -389,7 +382,6 @@ if ($result2->num_rows){
 
      </section>
  </div>
-
 
  <!-- Department acativities-->
  <?php
@@ -436,11 +428,11 @@ if ($result2->num_rows){
 
 
         ?>
-             <section class=" px-2 md:px-[50px] my-4 py-4 grid items-start justify-items-center md:grid-cols-1 gap-4 bg-grey-200 pb-6 max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto overflow-hidden" id="<?php echo "_" . $x; ?>">
+             <section class=" px-2 md:px-[50px] my-4 py-4 grid items-start justify-items-center md:grid-cols-1 gap-4 bg-grey-200 pb-6 max-w-[95dvw] rounded-2xl mb-12 bg-gradient-to-tr from-cyan-800 via-blue-500 to-sky-800 mx-auto overflow-hidden" id="<?php echo "_" . $x; ?>">
                  <?php
                     while ($row3 = $result3->fetch_assoc()) {
                         echo '
-         <div class="flex space-x-4 sm:space-x-4p-4  rounded-lg min-w-full  bg-white border border-gray-200 shadow hover:bg-gray-100 justify-start p-4" data-aos="fade-right" >
+         <div class="flex space-x-4 sm:space-x-4p-4  rounded-lg min-w-full text-gray-100  border-gray-200 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-200 border-2 hover:shadow-2xl justify-start p-4" data-aos="fade-right" >
              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 w-6 h-6">
                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
              </svg>
@@ -470,28 +462,28 @@ if ($result2->num_rows){
         //echo "<H1 class=' text-center text-2xl'> NO ACTIVITY</H1>";
     }
     ?>
-    <?php 
-    
-    if(isset($d_link) || !empty($d_link)){
+ <?php
+
+    if (isset($d_link) || !empty($d_link)) {
     ?>
- <section class="relative overflow-hidden py-4 px-4 bg-gray-900 md:px-8 hover:text-2xl transition-all duration-600">
-     <div class="w-full h-full rounded-full bg-gradient-to-r from-[#58AEF1] to-pink-500 absolute -top-12 -right-14 blur-2xl opacity-15"></div>
-     <div class="max-w-xl mx-auto text-center relative">
-         <div class="py-2">
-             <h3 class="text-3xl text-gray-200 font-bold md:text-4xl hover:scale-105 ease-linear transition-all">
-                 Departmental Website
-             </h3>
+     <section class="relative overflow-hidden py-4 px-4 bg-gray-900 md:px-8 hover:text-2xl transition-all duration-600">
+         <div class="w-full h-full rounded-full bg-gradient-to-r from-[#58AEF1] to-pink-500 absolute -top-12 -right-14 blur-2xl opacity-15"></div>
+         <div class="max-w-xl mx-auto text-center relative">
+             <div class="py-2">
+                 <h3 class="text-3xl text-gray-200 font-bold md:text-4xl hover:scale-105 ease-linear transition-all">
+                     Departmental Website
+                 </h3>
+             </div>
+             <div class="m-5 items-center justify-center gap-3 sm:flex">
+                 <a href="<?php echo $d_link; ?>" class="block w-full mt-2 py-2.5 px-8 text-gray-700 bg-white rounded-md font-medium duration-150 hover:bg-gray-300 hover:text-gray-900 hover:scale-[110%] sm:w-auto">
+                     Visit
+                 </a>
+             </div>
          </div>
-         <div class="m-5 items-center justify-center gap-3 sm:flex">
-             <a href="<?php echo $d_link;?>" class="block w-full mt-2 py-2.5 px-8 text-gray-700 bg-white rounded-md font-medium duration-150 hover:bg-gray-300 hover:text-gray-900 hover:scale-[110%] sm:w-auto">
-                 Visit
-             </a>
-         </div>
-     </div>
- </section>
+     </section>
  <?php
     }
-    
- ?>
+
+    ?>
 
  <!-- select* from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name=''); -->
