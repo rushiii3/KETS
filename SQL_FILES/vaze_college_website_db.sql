@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 05, 2024 at 11:52 AM
+-- Generation Time: Jun 16, 2024 at 05:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `test`
+-- Database: `vaze_college_website_db`
 --
 
 -- --------------------------------------------------------
@@ -234,7 +234,7 @@ CREATE TABLE `college_personnel` (
   `cp_personal_website_link` varchar(1000) DEFAULT NULL,
   `cp_image_path` varchar(1000) DEFAULT NULL,
   `cp_honourific` varchar(30) NOT NULL,
-  `cp_department_section` int(11) NOT NULL
+  `cp_department_section` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -251,7 +251,24 @@ INSERT INTO `college_personnel` (`cp_id`, `cp_name`, `cp_personal_website_link`,
 (67, 'S.S.Sanap', NULL, NULL, 'Mr.', 3),
 (68, 'Chetan V. Mohandule', NULL, NULL, 'Mr.', 3),
 (69, 'Ramesh H.Patil', NULL, NULL, 'Mr.', 3),
-(70, 'Shubhada Brahme', NULL, NULL, 'Ms.', 3);
+(70, 'Shubhada Brahme', NULL, NULL, 'Ms.', 3),
+(71, 'M.R.Kurup', NULL, 'https://vazecollege.net/wp-content/uploads/2022/06/Dr-M-R-Kurup.png', 'Dr.', NULL),
+(72, 'G.T. Paratkar', NULL, 'http://vazecollege.net/wp-content/uploads/2022/06/Dr.-G.-T.-Paradkar-225x300.jpeg', 'Dr.', NULL),
+(73, 'B.B.Sharma', NULL, 'https://vazecollege.net/wp-content/uploads/2016/01/principle.jpg', 'Dr.', NULL),
+(74, 'Preeta Nilesh', 'https://sites.google.com/view/profpreetanilesh/home', 'https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh.jpeg', 'Prof (Dr.)', 9),
+(75, 'R.T. Laul', NULL, NULL, 'Dr.', NULL),
+(76, 'S. R. Ghantwal', NULL, NULL, 'Dr.', NULL),
+(77, 'K. G. Bhole', NULL, 'https://vazecollege.net/wp-content/uploads/2022/06/Dr.-K.-G.-Bhole-768x1062.jpeg', 'Dr.', NULL),
+(78, 'Mrudula D. Dewasthale', NULL, NULL, 'Mrs.', NULL),
+(79, 'P. N. Pabrekar', NULL, NULL, 'Dr.', NULL),
+(80, 'Shubhangi P. Bhave', NULL, 'https://vazecollege.net/wp-content/uploads/2022/06/Dr.-S.-P.-Bhave.jpeg', 'Dr.', NULL),
+(81, 'Susmita B. Dey', NULL, 'https://vazecollege.net/wp-content/uploads/2022/06/Dr.-S-Dey.png', 'Dr.', NULL),
+(82, 'Anil Naik', 'https://sites.google.com/view/ca-anil-naik/home', 'https://vazecollege.net/wp-content/uploads/2022/06/CA-Anil-Naik.jpeg', 'CA', 11),
+(83, 'Vivienne Chaudhary', NULL, NULL, 'Ms.', NULL),
+(84, 'Meenaxi A. Gokhale', NULL, NULL, 'Ms.', NULL),
+(85, 'Madhuri Bajpai', NULL, NULL, 'Ms.', NULL),
+(86, 'Vidyadhar Joshi', NULL, 'https://vazecollege.net/wp-content/uploads/2022/06/CA-Vidyadhar-Joshi.jpeg', 'CA', NULL),
+(87, 'Madhuri Nagarkar', NULL, 'https://vazecollege.net/wp-content/uploads/2022/06/MS.-Madhuri-Nagarkar.jpeg', 'Ms.', 13);
 
 -- --------------------------------------------------------
 
@@ -464,8 +481,34 @@ CREATE TABLE `cp_designation` (
 CREATE TABLE `cp_has_tenure` (
   `cp_id` int(11) NOT NULL,
   `tenure_id` int(11) NOT NULL,
-  `role` varchar(3) NOT NULL
+  `role` enum('p','vpd','vpj') NOT NULL,
+  `cp_about` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cp_has_tenure`
+--
+
+INSERT INTO `cp_has_tenure` (`cp_id`, `tenure_id`, `role`, `cp_about`) VALUES
+(73, 7, 'p', 'Dr. B.B. Sharma was the third principal of Vaze College, formally known as KET\'s V.G. Vaze College of Arts, Science and Commerce, in Mulund, Mumbai. His tenure was marked by a period of significant growth and development for the college. Dr. Sharma\'s leadership saw the expansion of academic programs, enhancement of infrastructure, and strengthening of the college\'s commitment to both academic excellence and holistic student development.'),
+(74, 8, 'p', 'Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.\r\n\r\n'),
+(75, 24, 'vpd', 'Dr. R.T. Laul was the first vice principal of Vaze College, formally known as KET\'s V.G. Vaze College of Arts, Science and Commerce, in Mulund, Mumbai. He played a pivotal role in the college\'s early development, supporting the principal and helping establish strong academic and administrative frameworks. His contributions were key to laying a foundation for the college\'s reputation for excellence.'),
+(77, 26, 'vpd', 'Dr. K.G. Bhole focused on enhancing academic standards and administrative processes. His leadership played a crucial role in the college\'s development, contributing significantly to its reputation and growth as a prominent educational institution.'),
+(76, 25, 'vpd', 'Dr. S.R. Ghantwal served as a vice principal at Vaze College in Mulund, Mumbai. His tenure was characterized by a strong commitment to both academic excellence and student development. Dr. Ghantwal\'s leadership and dedication helped in furthering the college\'s mission, fostering a supportive and dynamic learning environment. His contributions were instrumental in maintaining and enhancing the high standards of education at Vaze College.'),
+(73, 27, 'vpd', 'Dr. B.B. Sharma served as the vice principal of Vaze College in Mulund, Mumbai, before becoming the thirdprincipal. As vice principal, he played a crucial role in supporting the academic and administrative functions of the college. His leadership and vision during this time set the stage for his later achievements as principal, where he oversaw significant growth and development in the institution\'s academic programs and infrastructure. '),
+(78, 28, 'vpd', 'Ms. Mrudula Dewasthale succeeded Dr. B.B. Sharma as vice principal of Vaze College in Mulund, Mumbai. Known for her dedication to academic excellence and student welfare, Ms. Dewasthale played a key role in maintaining and enhancing the college\'s educational standards. Her leadership contributed to a supportive and dynamic learning environment, ensuring that the college continued to build on its strong reputation. '),
+(79, 29, 'vpd', 'Dr. P.N. Pabrekar served as the vice principal of Vaze College in Mulund, Mumbai, following Ms. Mrudula Dewasthale. Known for his academic rigor and administrative expertise, Dr. Pabrekar played a significant role in furthering the college\'s mission of academic excellence. His tenure was marked by initiatives aimed at improving educational quality and fostering an environment conducive to learning and personal growth. '),
+(80, 30, 'vpd', 'Dr.Subhangi Bhave served as a vice principal at Vaze College in Mulund, Mumbai. She was known for her dedication to academic excellence and her commitment to student development. During her tenure, Subhangi Bhave played a crucial role in the administration of the college, contributing to the enhancement of educational programs and the overall learning environment.'),
+(81, 31, 'vpd', 'Dr. Sushmita Dey served as the vice principal at Vaze College in Mulund, Mumbai. Recognized for her academic prowess and administrative acumen, Dr. Dey played a pivotal role in the college\'s leadership team. Her tenure was marked by a focus on enhancing educational standards and fostering a conducive learning environment for students. Dr. Dey\'s contributions were instrumental in maintaining the college\'s reputation for academic excellence and its commitment to holistic student development.'),
+(74, 32, 'vpd', 'Prof. Dr. Preeta Nilesh served as the vice principal of Vaze College in Mulund, Mumbai, before assuming the role of the current principal. With a strong background in academia and leadership, Prof. Dr. Nilesh played a pivotal role in shaping the college\'s educational vision and administrative policies during her tenure as vice principal. Her commitment to academic excellence and student welfare laid a solid foundation for her transition to the position of principal. '),
+(82, 33, 'vpd', 'CA Anil Naik, the current vice principal of Vaze College, is renowned for his expertise in finance and his dedication to education. With a background in Chartered Accountancy, he brings a unique perspective to his role, inspiring students with his dynamic teaching style and guiding them towards success. Beyond his administrative duties, Mr. Naik is actively involved in community outreach, promoting financial literacy and entrepreneurship. '),
+(83, 34, 'vpj', 'Ms. Vivienne Chaudhary, as the inaugural vice principal for Vaze College\'s junior college division, played a pivotal role in shaping its early years. With a passion for education and a dedication to fostering academic excellence, she laid a strong foundation for the division\'s growth and success. Ms. Chaudhary\'s leadership was characterized by her innovative approach to curriculum development and her commitment to nurturing students\' intellectual and personal development. '),
+(84, 35, 'vpj', 'Ms.Meenaxi Gokhale assumed the role of vice principal for the junior college division at Vaze College, following Ms. Vivienne Chaudhary\'s tenure. Known for her dedication to education and student welfare, Ms. Gokhale\'s leadership contributed to the division\'s growth and development. She prioritized academic excellence and implemented innovative strategies to enhance the learning experience for students.'),
+(85, 36, 'vpj', 'Ms. Madhuri Bajpai succeeded Meenaxi Gokhale as the vice principal of the junior college division at Vaze College. With a wealth of experience in education and leadership, she brought a fresh perspective and innovative ideas to the role. Known for her dedication to student development and academic excellence, she played a crucial role in furthering the division\'s mission.'),
+(86, 37, 'vpj', 'CA Vidhyadhar Joshi succeeded Ms. Madhuri Bajpai as the vice principal of the junior college division at Vaze College. With a background in finance and education, he brought a unique blend of expertise to his role. Known for his dedication to academic excellence and student welfare, he focused on enhancing the division\'s curriculum and implementing innovative teaching methodologies.'),
+(87, 38, 'vpj', 'Ms. Madhuri Nagarkar succeeded CA Vidhyadhar Joshi as the vice principal of the junior college division at Vaze College. With a strong background in education and leadership, she brings a wealth of experience and a passion for student development to her role. Known for her innovative approaches to teaching and her commitment to academic excellence, she plays a pivotal role in enhancing the division\'s educational programs and fostering a supportive learning environment. '),
+(72, 6, 'p', 'Dr.G.T. Paratkar served as the second principal of Vaze College, formally known as KET\'s V.G. Vaze College of Arts, Science and Commerce, in Mulund, Mumbai. Following the foundational leadership of Dr.M.R. Kurup, he continued to build on the college\'s reputation for academic excellence and holistic education.'),
+(71, 5, 'p', 'Dr. M.R. Kurup was the founding principal of Vaze College, formally known as KET\'s V.G. Vaze College of Arts, Science and Commerce, in Mulund, Mumbai, established in 1984. His visionary leadership and commitment to academic excellence set high standards for the institution, fostering a holistic education approach that balanced rigorous academics with vibrant extracurricular activities. ');
 
 -- --------------------------------------------------------
 
@@ -537,40 +580,41 @@ INSERT INTO `departmental_activities_in_academic_year` (`dept_act_id`, `academic
 
 CREATE TABLE `departments` (
   `dept_id` int(11) NOT NULL,
-  `dept_name` varchar(255) NOT NULL
+  `dept_name` varchar(255) NOT NULL,
+  `dept_link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `departments`
 --
 
-INSERT INTO `departments` (`dept_id`, `dept_name`) VALUES
-(1, 'Information Technology'),
-(2, 'Biotechnology'),
-(3, 'English'),
-(4, 'Research'),
-(5, 'Economics'),
-(6, 'Hindi'),
-(7, 'History'),
-(8, 'Marathi'),
-(9, 'Psychology'),
-(10, 'Political Science'),
-(11, 'Sociology'),
-(12, 'Accounting and Finance'),
-(13, 'Banking Insurance'),
-(14, 'Management Studies'),
-(15, 'Mass Media'),
-(16, 'Business Administration'),
-(17, 'Physics'),
-(18, 'Chemistry'),
-(19, 'Mathematics'),
-(20, 'Zoology'),
-(21, 'Accountancy'),
-(22, 'Business Law'),
-(23, 'Business Economics'),
-(24, 'EVS'),
-(25, 'Commerce'),
-(26, 'Botany');
+INSERT INTO `departments` (`dept_id`, `dept_name`, `dept_link`) VALUES
+(1, 'Information Technology', NULL),
+(2, 'Biotechnology', NULL),
+(3, 'English', NULL),
+(4, 'Research', NULL),
+(5, 'Economics', NULL),
+(6, 'Hindi', NULL),
+(7, 'History', NULL),
+(8, 'Marathi', NULL),
+(9, 'Psychology', NULL),
+(10, 'Political Science', NULL),
+(11, 'Sociology', NULL),
+(12, 'Accounting and Finance', NULL),
+(13, 'Banking Insurance', NULL),
+(14, 'Management Studies', NULL),
+(15, 'Mass Media', NULL),
+(16, 'Business Administration', NULL),
+(17, 'Physics', NULL),
+(18, 'Chemistry', NULL),
+(19, 'Mathematics', NULL),
+(20, 'Zoology', NULL),
+(21, 'Accountancy', NULL),
+(22, 'Business Law', NULL),
+(23, 'Business Economics', NULL),
+(24, 'EVS', NULL),
+(25, 'Commerce', NULL),
+(26, 'Botany', NULL);
 
 -- --------------------------------------------------------
 
@@ -594,7 +638,14 @@ INSERT INTO `dept_belongs_to_clg_section` (`dept_sect_id`, `dept_id`, `college_s
 (3, 3, 'j'),
 (4, 3, 'd'),
 (5, 6, 'd'),
-(6, 6, 'j');
+(6, 6, 'j'),
+(7, 25, 'd'),
+(8, 19, 'd'),
+(9, 7, 'd'),
+(10, 7, 'j'),
+(11, 21, 'd'),
+(12, 18, 'd'),
+(13, 18, 'j');
 
 -- --------------------------------------------------------
 
@@ -878,21 +929,30 @@ CREATE TABLE `photos_of_faculty_academic_year` (
 CREATE TABLE `programmes` (
   `prog_id` int(11) NOT NULL,
   `prog_name` varchar(255) NOT NULL,
-  `prog_overview` varchar(4000) NOT NULL,
   `prog_eligibility` varchar(500) NOT NULL,
   `prog_intake_capacity` int(3) NOT NULL,
   `prog_duration` varchar(50) NOT NULL,
-  `prog_type` varchar(3) NOT NULL,
-  `prog_dept_id` int(11) NOT NULL,
-  `faculty_sec_name` varchar(1) NOT NULL
+  `prog_dept_sec_id` int(11) DEFAULT NULL,
+  `faculty_sec_name` varchar(1) DEFAULT NULL,
+  `prog_bg_image_link` varchar(500) NOT NULL,
+  `prog_type` enum('ug','pg','phd','gd') NOT NULL,
+  `prog_overview_learning_section` varchar(1000) DEFAULT NULL,
+  `prog_overview_career_section` varchar(1000) DEFAULT NULL,
+  `prog_overview_skills_section` varchar(1000) DEFAULT NULL,
+  `prog_overview_other_section` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `programmes`
 --
 
-INSERT INTO `programmes` (`prog_id`, `prog_name`, `prog_overview`, `prog_eligibility`, `prog_intake_capacity`, `prog_duration`, `prog_type`, `prog_dept_id`, `faculty_sec_name`) VALUES
-(1, 'BSCIT', 'BSc IT full form is Bachelor of Science in IT. BSc in IT is related to storage, processing, securing, and managing information. This course primarily focuses on subjects such as databases, software and networking.', '1.Candidates must have passed their 10+2 level of education from a recognised educational Board.\n2.They must have Physics, Chemistry, and Mathematics as the main subjects, and score a minimum of 50% marks.', 60, '3 years', 'UG', 1, 's');
+INSERT INTO `programmes` (`prog_id`, `prog_name`, `prog_eligibility`, `prog_intake_capacity`, `prog_duration`, `prog_dept_sec_id`, `faculty_sec_name`, `prog_bg_image_link`, `prog_type`, `prog_overview_learning_section`, `prog_overview_career_section`, `prog_overview_skills_section`, `prog_overview_other_section`) VALUES
+(1, 'Bachelor of Science (Information Technology)', '1.Candidates must have passed their 10+2 level of education from a recognised educational Board.\n2.They must have Physics, Chemistry, and Mathematics as the main subjects, and score a minimum of 50% marks.', 60, '3 years', 1, 's', 'https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'ug', 'A BScIT program covers fundamental topics like Information Technology basics, programming languages (Java, Python, C++), database management systems, web development (HTML, CSS, JavaScript), networking, operating systems, software engineering, and cybersecurity. Students also learn about mobile app development and project management methodologies.', ' BScIT graduates have various career paths, including Software Developer, Web Developer, Database Administrator, Network Administrator, Systems Analyst, IT Consultant, Cybersecurity Analyst, Mobile Application Developer, Project Manager, and IT Support Specialist.', 'Throughout the course of their studies, students develop a range of technical and soft skills. These include programming skills in languages like Java, Python, C++, or others, problem-solving abilities, critical thinking skills, communication skills, teamwork, and project management skills.', 'Many BSc IT programs includes practical projects as part of the curriculum. These experiences allow students to apply their theoretical knowledge in real-world settings, gain hands-on experience, and build professional networks.'),
+(2, 'Bachelor Of Science (Biotechnology)', 'As per Mumbai University', 60, '3 years', 2, 's', 'https://plus.unsplash.com/premium_photo-1661306499492-297866c7f2a0?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'ug', 'A BSc Biotech program typically covers a range of subjects related to biotechnology, including molecular biology, genetics, biochemistry, microbiology, cell biology, immunology, and bioprocess engineering. Students may also study topics such as bioinformatics, plant and animal biotechnology, environmental biotechnology, pharmaceutical biotechnology, and industrial biotechnology. Laboratory work is often a significant component of the curriculum, allowing students to gain hands-on experience with techniques such as DNA manipulation, protein expression, and cell culture.', 'Graduates of a BSc Biotech program have various career opportunities in industries such as pharmaceuticals, healthcare, agriculture, food processing, environmental conservation, and research. They can work as research assistants, laboratory technicians, quality control analysts, bioprocess engineers, bioinformatics specialists, regulatory affairs associates, or sales representatives for biotech companies. Additionally, they may pursue further education or advanced degrees in fields like biotechnology, biochemistry, molecular biology, or related disciplines.', 'Throughout the BSc Biotech program, students develop a diverse set of technical and transferable skills. They gain proficiency in laboratory techniques and instrumentation, including PCR, gel electrophoresis, chromatography, and spectrophotometry. They also acquire analytical and problem-solving skills, critical thinking abilities, and attention to detail through experimental design and data analysis. Communication and teamwork skills are honed through group projects and presentations, while an understanding of ethical and regulatory issues in biotechnology prepares students for responsible and ethical practice in the field. Overall, a BSc Biotech program equips students with the knowledge and skills needed to contribute to the advancement of biotechnology and address global challenges in health, agriculture, and the environment.', 'Biotechnology has led to breakthroughs like recombinant DNA technology for producing therapeutic proteins, CRISPR-Cas9 for gene editing, GM crops for agriculture, bioremediation for environmental cleanup, and personalized medicine. These innovations address global challenges and improve human well-being.'),
+(3, 'Master of Science (Information Technology)', 'As per Mumbai University', 20, '2 years', 1, 's', 'https://plus.unsplash.com/premium_photo-1683121716061-3faddf4dc504?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'pg', 'An MScIT program typically offers an advanced curriculum covering specialized areas within Information Technology. Courses may include Advanced Database Management Systems, Cloud Computing, Big Data Analytics, Artificial Intelligence, Machine Learning, Internet of Things (IoT), Cybersecurity, Software Engineering, and Advanced Networking. Additionally, students may engage in research projects or thesis work to delve deeper into specific topics of interest.', 'Graduates of an MScIT program are well-positioned for advanced roles in the IT industry. They can pursue careers such as Data Scientist, Cloud Solutions Architect, AI/Machine Learning Engineer, Cybersecurity Analyst/Consultant, Big Data Engineer, IoT Solutions Architect, Software Development Manager, IT Project Manager, Research Scientist, or IT Consultant. These roles often involve leading-edge technology implementation, strategic planning, research, and innovation.', 'Throughout the MScIT program, students acquire advanced technical skills and expertise in specialized areas of Information Technology. They develop proficiency in cutting-edge technologies such as Cloud Computing, Big Data Analytics, AI, and IoT. Additionally, they enhance their research, analytical, and problem-solving abilities through coursework and research projects. Communication, leadership, and project management skills are also emphasized to prepare students for leadership roles in the IT industry. Overall, MScIT graduates possess a unique blend of technical expertise, research capabilities, and managerial skills, making them valuable assets in various sectors, including technology, healthcare, finance, and government.', 'The field of Information Technology has witnessed remarkable projects and inventions, including self-driving cars revolutionizing transportation, VR and AR technologies transforming gaming and education, blockchain revolutionizing finance and supply chain management, deep learning and neural networks advancing AI capabilities, quantum computing promising exponential computational power, and IoT connecting everyday objects to the internet for data exchange. These innovations represent just a fraction of the groundbreaking work happening in IT, with endless possibilities for future advancements.'),
+(4, 'Bachelor of Commerce (BCom)', 'As per Mumbai University', 240, '3 years', 7, 'c', 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'ug', 'The syllabus for a BCom program typically includes core subjects such as Accounting, Economics, Business Law, Management, Marketing, Finance, and Business Communication. Students also have the opportunity to choose elective courses based on their interests or career goals, which may include subjects like Taxation, Auditing, International Business, Human Resource Management, Entrepreneurship, and Information Systems. Additionally, practical training through internships or projects may be part of the curriculum to provide real-world experience and enhance employability.', 'Graduates of a BCom program have a wide range of career opportunities across various industries. They can pursue roles such as Accountant, Financial Analyst, Investment Banker, Management Consultant, Marketing Executive, Human Resource Manager, Business Development Manager, Tax Consultant, Auditor, Entrepreneur, and Corporate Lawyer. The versatile skill set acquired during the program prepares students for positions in both the private and public sectors, as well as in nonprofit organizations.', 'Throughout the BCom program, students develop a diverse set of skills essential for success in the business world. They gain proficiency in financial analysis, budgeting, and financial reporting through accounting and finance courses. Economic principles and market analysis skills enable them to understand and respond to changes in the business environment. Communication, negotiation, and interpersonal skills are honed through business communication and management courses, preparing students to interact effectively with clients, colleagues, and stakeholders. Critical thinking, problem-solving, and decision-making skills are cultivated through case studies, group projects, and simulations, equipping students to analyze complex business situations and formulate strategic solutions.', 'The field of commerce is constantly evolving, with emerging trends such as digitalization, globalization, and sustainability shaping business practices. E-commerce and digital marketing have revolutionized the way companies conduct business and reach customers, creating new opportunities for entrepreneurs and businesses to expand their reach globally. Sustainable business practices, including corporate social responsibility and environmental sustainability, are becoming increasingly important considerations for businesses to maintain competitiveness and long-term viability. Moreover, advancements in technology, such as artificial intelligence and big data analytics, are transforming how businesses operate, offering insights for decision-making and enhancing efficiency and productivity. Keeping abreast of these trends and acquiring relevant skills will be crucial for future business professionals to thrive in the dynamic and competitive business landscape.'),
+(5, 'Bachelor of Science (Mathematics)', 'as per Mumbai University', 120, '3 years', 8, 's', 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'ug', 'A BSc Maths program typically covers a comprehensive range of mathematical topics, including Calculus, Algebra, Differential Equations, Linear Algebra, Discrete Mathematics, Probability Theory, Statistics, and Numerical Analysis. Students may also study specialized areas such as Real Analysis, Complex Analysis, Topology, Graph Theory, Mathematical Modeling, and Cryptography. The curriculum emphasizes both theoretical foundations and practical applications of mathematics, with opportunities for independent research or projects to explore advanced topics or interdisciplinary connections.', ' Graduates of a BSc Maths program have diverse career opportunities across various sectors. They can pursue roles such as Actuary, Data Analyst, Statistician, Operations Research Analyst, Financial Analyst, Software Developer, Mathematician, Teacher, Researcher, or Consultant. Industries such as finance, insurance, healthcare, technology, government, education, and research institutions actively seek individuals with strong analytical and problem-solving skills. Additionally, advanced degrees in mathematics or related fields open up further career pathways in academia, research, or specialized industries.', 'Throughout the BSc Maths program, students develop a robust set of analytical, problem-solving, and quantitative skills. They learn to analyze complex problems, formulate mathematical models, and derive solutions using logical reasoning and mathematical techniques. Proficiency in mathematical software and programming languages enhances their ability to implement algorithms, conduct simulations, and analyze data. Communication and presentation skills are honed through explaining mathematical concepts and findings effectively to both technical and non-technical audiences. Moreover, the rigorous training in abstract thinking and logical reasoning nurtures intellectual agility and adaptability, preparing students for a wide range of career paths and lifelong learning opportunities.', 'Mathematics is the foundation of many scientific and technological advancements, playing a vital role in fields such as physics, engineering, computer science, and economics. Emerging interdisciplinary areas such as data science, machine learning, and cryptography rely heavily on mathematical principles and techniques. The growing importance of data-driven decision-making in various industries underscores the relevance of mathematical skills in today\'s digital age. Furthermore, mathematics offers insights into fundamental questions about the nature of the universe, driving research in areas like theoretical physics, cosmology, and mathematical biology. The versatility and applicability of mathematics make it an indispensable tool for solving real-world problems and advancing human knowledge and innovation.'),
+(6, 'Acting and Audition Workshop', 'Open for everyone', 100, '3 months', NULL, NULL, '', 'gd', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -1046,6 +1106,31 @@ CREATE TABLE `tenure` (
   `tenure_start_date` date NOT NULL,
   `tenure_end_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tenure`
+--
+
+INSERT INTO `tenure` (`tenure_id`, `tenure_start_date`, `tenure_end_date`) VALUES
+(5, '1984-06-20', '2003-04-30'),
+(6, '2003-05-06', '2009-10-05'),
+(7, '2010-02-02', '2021-10-31'),
+(8, '2021-09-01', NULL),
+(24, '1984-06-20', '2000-07-31'),
+(25, '2000-08-01', '2003-05-05'),
+(26, '2003-05-06', '2006-05-05'),
+(27, '2006-05-06', '2009-05-05'),
+(28, '2009-05-06', '2012-05-05'),
+(29, '2012-05-20', '2015-05-19'),
+(30, '2015-06-22', '2018-06-21'),
+(31, '2018-06-22', '2020-03-31'),
+(32, '2020-04-01', '2021-10-30'),
+(33, '2021-11-01', NULL),
+(34, '1997-09-02', '2004-08-31'),
+(35, '2004-09-01', '2011-09-30'),
+(36, '2011-10-01', '2012-06-30'),
+(37, '2012-08-01', '2022-04-30'),
+(38, '2022-05-01', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1302,7 +1387,7 @@ ALTER TABLE `photos_of_faculty_academic_year`
 --
 ALTER TABLE `programmes`
   ADD PRIMARY KEY (`prog_id`),
-  ADD KEY `FK_PROG_DEPT_ID` (`prog_dept_id`),
+  ADD KEY `FK_PROG_DEPT_ID` (`prog_dept_sec_id`),
   ADD KEY `FK_PROG_FACULTY_NAME` (`faculty_sec_name`);
 
 --
@@ -1407,7 +1492,7 @@ ALTER TABLE `clg_events`
 -- AUTO_INCREMENT for table `college_personnel`
 --
 ALTER TABLE `college_personnel`
-  MODIFY `cp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `cp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `college_users`
@@ -1437,7 +1522,7 @@ ALTER TABLE `departments`
 -- AUTO_INCREMENT for table `dept_belongs_to_clg_section`
 --
 ALTER TABLE `dept_belongs_to_clg_section`
-  MODIFY `dept_sect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `dept_sect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `feedback`
@@ -1473,7 +1558,7 @@ ALTER TABLE `photos`
 -- AUTO_INCREMENT for table `programmes`
 --
 ALTER TABLE `programmes`
-  MODIFY `prog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `prog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reports`
@@ -1515,7 +1600,7 @@ ALTER TABLE `scholarships`
 -- AUTO_INCREMENT for table `tenure`
 --
 ALTER TABLE `tenure`
-  MODIFY `tenure_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `tenure_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Constraints for dumped tables
@@ -1664,7 +1749,7 @@ ALTER TABLE `photos_of_faculty_academic_year`
 -- Constraints for table `programmes`
 --
 ALTER TABLE `programmes`
-  ADD CONSTRAINT `FK_PROG_DEPT_ID` FOREIGN KEY (`prog_dept_id`) REFERENCES `dept_belongs_to_clg_section` (`dept_sect_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PROG_DEPT_ID` FOREIGN KEY (`prog_dept_sec_id`) REFERENCES `dept_belongs_to_clg_section` (`dept_sect_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_PROG_FACULTY_NAME` FOREIGN KEY (`faculty_sec_name`) REFERENCES `faculty` (`faculty_sec_name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -1704,4 +1789,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

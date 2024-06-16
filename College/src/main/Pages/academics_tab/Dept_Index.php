@@ -8,7 +8,7 @@
     <style>
         .bg:hover {
             color: rgb(242, 242, 242) !important;
-            
+
         }
     </style>
 
