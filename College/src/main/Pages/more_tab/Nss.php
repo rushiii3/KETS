@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V. G. VAZE</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <?php include('../../library/library.php'); ?>
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
+    <?php include('../../../library/library.php'); ?>
     <style>
         .head2 {
             background: linear-gradient(to right, rgb(0, 35, 177), rgb(214, 95, 69));
@@ -96,11 +96,11 @@
 
 <body class="bg-white overflow-x-hidden mx-auto">
 
-    <?php include('../Layouts/header2.php'); ?>
-    <?php include('../Components/nss.php'); ?>
-    <?php include('../Layouts/footer.php'); ?>
+    <?php include('../../Layouts/header2.php'); ?>
+    <?php include('../../Components/more_tab/nss.php'); ?>
+    <?php include('../../Layouts/footer.php'); ?>
 </body>
-<?php include('../../library/AOS.php'); ?>
+<?php include('../../../library/AOS.php'); ?>
 
 </html>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>

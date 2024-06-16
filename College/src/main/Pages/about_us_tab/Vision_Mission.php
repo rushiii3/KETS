@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V. G. VAZE</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <?php include('../../library/library.php'); ?>
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
+    <?php include('../../../library/library.php'); ?>
     <style>
         .about {
             animation: fade-out linear;
@@ -39,11 +39,11 @@
 
 <body class="bg-white overflow-x-hidden mx-auto">
 
-    <?php include('../Layouts/header2.php'); ?>
-    <?php include('../Components/vision_mission.php'); ?>
-    <?php include('../Layouts/footer.php'); ?>
+    <?php include('../../Layouts/header2.php'); ?>
+    <?php include('../../Components/about_us_tab/vision_mission.php'); ?>
+    <?php include('../../Layouts/footer.php'); ?>
 </body>
-<?php include('../../library/AOS.php'); ?>
+<?php include('../../../library/AOS.php'); ?>
 
 </html>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
