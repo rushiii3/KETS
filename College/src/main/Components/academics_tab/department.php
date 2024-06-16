@@ -272,7 +272,7 @@
 
              <?php
 
-                $query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND p.dept_sec_id='$dept_sect_id')";
+                $query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND p.prog_dept_sec_id='$dept_sect_id')";
                 
                 $result3 = $conn->query($query3);
 
@@ -329,7 +329,7 @@
                 } else {
                     echo "<h1 class='text-center'>No UG Syllabus</h1>";
                 }
-                $query4 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('Part-1','Part-2') AND p.dept_sec_id='$dept_sect_id')";
+                $query4 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('Part-1','Part-2') AND p.prog_dept_sec_id='$dept_sect_id')";
                 $result4 = $conn->query($query4);
                 if ($result4->num_rows) {
 

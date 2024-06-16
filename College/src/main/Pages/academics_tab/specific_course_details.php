@@ -1,6 +1,7 @@
 <?php
 //$json_url="./AJAX/fetch_specific_course_info.php"
 include("../../../config/connect.php");
+
 include("./AJAX/fetch_specific_course_info.php");
 
 
@@ -227,7 +228,7 @@ include("./AJAX/fetch_specific_course_info.php");
 
 
         <div class="flex flex-col mt-8 lg:mt-0 flex-wrap items-center justify-around flex-2">
-            <a href="#" class="text-[1.5rem] text-center font-bold sm:text-[2rem] hover:text-[2.05rem] transition-font duration-500 hover:underline transition-text-decoration dark:text-white">
+            <a href=<?php echo "./Department.php?dept_sec_id=".base64_encode($data["prog_dept_sec_id"]);?> class="text-[1.5rem] text-center font-bold sm:text-[2rem] hover:text-[2.05rem] transition-font duration-500 hover:underline transition-text-decoration dark:text-white">
                 <?php echo $data["dept_name"];?>
                 <span class="material-symbols-outlined">
                     open_in_new

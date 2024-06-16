@@ -483,7 +483,7 @@ function fetchProgrammesFromDB(
     $("#degree_loading_animation_div").html(loading_animation);
   }
 
-  
+
     makeAJAXRequest(
       ajax_url,
       "GET",
