@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
 
 </head>
 <?php include('../../../library/library.php'); ?>
@@ -73,7 +73,7 @@
             <div class=" list1 grid gap-4  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  p-5" data-aos="fade-left" data-aos-duration="2000">
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assests" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>

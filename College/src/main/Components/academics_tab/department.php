@@ -10,6 +10,7 @@
                     if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
 
                         $dept_sect_id = base64_decode($_GET['dept_sec_id']);
+                        //assert($dept_sect_id!=null);
                         $query = "SELECT d.dept_name,d.dept_link FROM `departments` as d inner join dept_belongs_to_clg_section as ds on ds.dept_id=d.dept_id where ds.dept_sect_id='$dept_sect_id'";
                         $result = $conn->query($query);
                         if ($result->num_rows > 0) {
@@ -20,24 +21,28 @@
                             $row = $result->fetch_assoc();
                             $d_name = $row['dept_name'];
                             $d_link = $row['dept_link'];
+
+
                             echo $d_name;
                         }
                     } else {
                         //echo '<META HTTP-EQUIV="Refresh" Content="0.5;URL=../../Pages/department/Dept_Index.php">';
                         echo "
-                     <script>
-                     alert('Select A Department');
-                     document.location.href='../../Pages/academics_tab/Dept_Index.php';
-                     </script>
-                        ";
+                            <script>
+                            alert('Select A Department');
+                            document.location.href='../../Pages/academics_tab/Dept_Index.php';
+                            </script>
+                            ";
                     }
                     ?>
+
              </h1>
          </div>
 
      </div>
 
  </div>
+
 
  <!-- Component: Flat breadcrumb with text & leading icon -->
  <nav aria-label="Breadcrumb" class="pl-3 mt-10" id="Breadcrumb" data-aos="fade-right">
@@ -79,6 +84,7 @@
  </nav>
 
 
+
  <!--Faculty-->
  <section class="py-8 mt-5 border-b max-w-[95dvw] rounded-2xl mb-12 bg-white mx-auto">
      <div class="xl:container mb-18 m-auto px-6 text-gray-600 md:px-12 xl:px-6" data-aos="zoom-out-up">
@@ -86,13 +92,14 @@
              <h2 class="text-4xl font-bold text-gray-800 md:text-5xl ">
                  Faculty
              </h2>
-             <p class="lg:mx-auto lg:w-6/12 text-gray-600 ">
+             <p class="lg:mx-auto lg:w-6/12  text-gray-600 ">
                  Our Guiding Force
              </p>
          </div>
      </div>
 
      <?php
+
         error_reporting(0);
 
         function displayPersonnelCards(&$count, &$result2, $conn, $j)
@@ -152,7 +159,7 @@
         $query2 = "SELECT * FROM `college_personnel` WHERE cp_department_section='$dept_sect_id'";
         $result2 = $conn->query($query2);
         $count = $result2->num_rows;
-        if ($result2->num_rows) {
+        if ($result2->num_rows > 0) {
 
             while ($count > 0) {
                 if ($count >= 3) {
@@ -264,11 +271,15 @@
              <!--Undegrad syllabus-->
 
              <?php
-                $query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND P.dept_sec_id='$dept_sect_id')";
+
+                $query3 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('FY','SY','TY','FY NEP','SY NEP','TY NEP') AND p.dept_sec_id='$dept_sect_id')";
+                
                 $result3 = $conn->query($query3);
+
                 if ($result3->num_rows) {
 
                 ?>
+
                  <div class="mb-12 space-y-2 text-center" data-aos="fade-left" data-aos-duration="1500">
                      <h2 class="text-2xl font-bold text-gray-800 md:text-3xl ">
                          Undergraduate
@@ -318,7 +329,7 @@
                 } else {
                     echo "<h1 class='text-center'>No UG Syllabus</h1>";
                 }
-                $query4 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('Part-1','Part-2') AND P.dept_sec_id='$dept_sect_id')";
+                $query4 = "select * from other_pdfs where all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER join syllabus_belongs_to_programmes_for_class as sy on p.prog_id=sy.prog_id where sy.class_name IN ('Part-1','Part-2') AND p.dept_sec_id='$dept_sect_id')";
                 $result4 = $conn->query($query4);
                 if ($result4->num_rows) {
 
@@ -418,9 +429,11 @@
          </div>
      </div>
 
+    
 
      <!--Activities-->
      <?php
+     
         foreach ($year as $x) {
             $query3 = "SELECT dept_act_name as act FROM departmental_activities where dept_act_id in(SELECT dc.dept_act_id FROM dept_has_dept_activities as dc INNER JOIN departmental_activities_in_academic_year as dy on dc.dept_act_id=dy.dept_act_id and dc.dept_sect_id=$dept_sect_id and dy.academic_year='$x')";
             $result3 = $conn->query($query3);

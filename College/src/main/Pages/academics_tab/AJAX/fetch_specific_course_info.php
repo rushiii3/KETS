@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     assert($id != "");
     $id = decryptId($id, $path_to_encrytion_credentail_file);
     //echo $id;
-    $stmt = "SELECT * FROM programmes JOIN dept_belongs_to_clg_section ON prog_dept_id= dept_belongs_to_clg_section.dept_sect_id JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id WHERE prog_id=?";
+    $stmt = "SELECT * FROM programmes JOIN dept_belongs_to_clg_section ON prog_dept_sec_id= dept_belongs_to_clg_section.dept_sect_id JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id WHERE prog_id=?";
 
 
     $fetch_query = $conn->prepare($stmt);
