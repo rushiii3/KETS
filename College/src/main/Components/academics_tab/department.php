@@ -296,7 +296,7 @@
                             $title = $row['all_pdf_title'];
                             echo '
   <a href="' . $pdf_link . '" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assests/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">' . $title . '</h5>
                          
@@ -351,7 +351,7 @@
                             $title = $row['all_pdf_title'];
                             echo '
             <a href="' . $pdf_link . '" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                         <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                         <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assests/pdf.webp" alt="">
                          <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">' . $title . '</h5>
                             
