@@ -1,18 +1,18 @@
 <!--Header section vision and mission-->
 
 <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../assests/college.png" alt="fallback image" class="absolute inset-0 -z-10 h-full w-full object-cover" />
-        <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
-        <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
-        <div class="text-center z-1" data-aos="fade-up">
-            <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">Vision And Mission </h1>
-        </div>
-
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
+    <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
+    <div class="text-center z-1" data-aos="fade-up">
+        <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">Vision And Mission </h1>
     </div>
 
+</div>
 
-    
-    
-</head>
+
+
+
+
 <div>
     <div class="mx-auto overflow-hidden overflow-x-hidden px-8">
         <!-- Activities Conducted -->
@@ -72,20 +72,21 @@
                     </h3>
                 </div>
             </div>
-            
+
         </section>
-     
+         <!-- Vision Section -->
+         <!-- <section class="py-5 mt-12">
+            <div class="container mx-auto space-y-10">
+                <div class="font-extrabold text-center text-5xl capitalize section-heading mt-6" data-aos="zoom-in-up">Our Vision</div>
+                <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse px-8 text-center pb-12 vision-statement" data-aos="fade-right">
+                    <h3 class="text-2xl font-medium font-mono">
+                        TO BE A TOP-RANKED INSTITUTE UNDER THE NATIONAL INSTITUTIONAL RANKING FRAMEWORK BY IMPARTING QUALITY, RESEARCH-ORIENTED AND RELEVANT HIGHER EDUCATION, WITH THE AIM OF GENERATING KNOWLEDGE TO ENRICH AND EMPOWER INDIVIDUALS TOWARDS BRINGING POSITIVE CHANGES IN SOCIETY.
+                    </h3>
+                </div>
+            </div>
+        </section> -->
+
     </div>
 
-   
+
 </div>
-
-
-
-
-
-
-
-
-
-
