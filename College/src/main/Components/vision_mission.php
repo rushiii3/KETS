@@ -22,7 +22,7 @@
 
                 <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse section-content" data-aos="fade-right">
                     <div class="image-wrapper">
-                        <img src="../../assests/vis_mis/quali_edu.jpg" alt="" class="h-80 aspect-video object-cover">
+                        <img src="../../assests/vision-mission/quali_edu.jpg" alt="" class="h-80 aspect-video object-cover">
                     </div>
                     <div class="flex flex-col justify-center flex-1 p-6 text-content">
                         <h3 class="text-3xl font-bold">Deliver Quality Education:</h3>
@@ -32,7 +32,7 @@
 
                 <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row section-content" data-aos="fade-left">
                     <div class="image-wrapper">
-                        <img src="../../assests/vis_mis/inov_leader.jpg" alt="" class="h-80 aspect-video object-cover">
+                        <img src="../../assests/vision-mission/inov_leader.jpg" alt="" class="h-80 aspect-video object-cover">
                     </div>
                     <div class="flex flex-col justify-center flex-1 p-6 text-content">
                         <h3 class="text-3xl font-bold">Promote Innovation and Leadership:</h3>
@@ -42,7 +42,7 @@
 
                 <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse section-content" data-aos="fade-right">
                     <div class="image-wrapper">
-                        <img src="../../assests/vis_mis/stud_dev.jpg" alt="" class="h-80 aspect-square object-cover">
+                        <img src="../../assests/vision-mission/stud_dev.jpg" alt="" class="h-80 aspect-square object-cover">
                     </div>
                     <div class="flex flex-col justify-center flex-1 p-6 text-content">
                         <h3 class="text-3xl font-bold">Foster Student Development:</h3>
@@ -52,7 +52,7 @@
 
                 <div class="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row section-content" data-aos="fade-left">
                     <div class="image-wrapper">
-                        <img src="../../assests/vis_mis/ind_interaction.jpg" alt="" class="h-80 aspect-video object-cover">
+                        <img src="../../assests/vision-mission/ind_interaction.jpg" alt="" class="h-80 aspect-video object-cover">
                     </div>
                     <div class="flex flex-col justify-center flex-1 p-6 text-content">
                         <h3 class="text-3xl font-bold">Enhance Industry and Academic Interaction:</h3>
@@ -62,7 +62,7 @@
             </div>
         </section>
 
-        <!-- Special Camp SECTION -->
+        <!-- Vision  SECTION -->
         <section class="py-5 mt-12">
             <div class="container mx-auto space-y-10">
                 <div class="font-extrabold text-center text-5xl capitalize section-heading mt-6" data-aos="zoom-in-up">Our Vision</div>
@@ -72,7 +72,9 @@
                     </h3>
                 </div>
             </div>
+            
         </section>
+     
     </div>
 
    
