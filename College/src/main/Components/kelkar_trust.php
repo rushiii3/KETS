@@ -1,13 +1,13 @@
     <!-- Header Section -->
-   
-    <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../assests/college.png" alt="fallback image" class="absolute inset-0 -z-10 h-full w-full object-cover" />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
-    <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
-    <div class="text-center z-1" data-aos="fade-up">
-        <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">KELKAR EDUCATION TRUST </h1>
-    </div>
 
-</div>
+    <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../assests/college.png" alt="fallback image" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
+        <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
+        <div class="text-center z-1" data-aos="fade-up">
+            <h1 class="md:text-7xl text-5xl font-bold tracking-tight text-white sm:text-6xl text-center px-[20px]">KELKAR EDUCATION TRUST </h1>
+        </div>
+
+    </div>
     <div>
         <div class="mx-auto overflow-hidden overflow-x-hidden px-8 py-8">
             <!-- Image of Bhausaheb Kelkar -->
@@ -42,19 +42,19 @@
                             <div class="objective-card">
                                 <h4 class="objective-title">Research and Development</h4>
                                 <ul class="objective-list">
-                                   
-                                        <ul>
+
+                                    <ul>
                                         <li class="list-none font-bold">Promotes Research and Development activities in various fields:</li>
-                                            <li>Plant Biotechnology in general and Aromatic and Medicinal plant biotechnology in particular</li>
-                                            <li>Field trials related research in Biotechnology</li>
-                                            <li>Developing designs and pilot plant trials for utilization of research in biotechnology</li>
-                                            <li>Microbial and enzyme transformations</li>
-                                            <li>Biotechnology based techniques for pollution control and environment Protection</li>
-                                            <li>Establishing protocols for plants of economic importance for rural development, social forestry and horticulture</li>
-                                            <li>Biotechnology, Plant Tissue culture, Biochemistry, Chemistry, Botany, Microbiology, Zoology, Chemical Engineering, Quality Management, Food Preservation and other related areas</li>
-                                            <li>Viable technologies, which are of economic and national importance</li>
-                                        </ul>
-                                    
+                                        <li>Plant Biotechnology in general and Aromatic and Medicinal plant biotechnology in particular</li>
+                                        <li>Field trials related research in Biotechnology</li>
+                                        <li>Developing designs and pilot plant trials for utilization of research in biotechnology</li>
+                                        <li>Microbial and enzyme transformations</li>
+                                        <li>Biotechnology based techniques for pollution control and environment Protection</li>
+                                        <li>Establishing protocols for plants of economic importance for rural development, social forestry and horticulture</li>
+                                        <li>Biotechnology, Plant Tissue culture, Biochemistry, Chemistry, Botany, Microbiology, Zoology, Chemical Engineering, Quality Management, Food Preservation and other related areas</li>
+                                        <li>Viable technologies, which are of economic and national importance</li>
+                                    </ul>
+
                                 </ul>
                             </div>
                             <div class="objective-card">
