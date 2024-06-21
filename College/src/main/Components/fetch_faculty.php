@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * FROM faculty WHERE 1=1";
+$sql = "SELECT * FROM college_personnel WHERE 1=1";
 
 if (!empty($name)) {
     $sql .= " AND name LIKE '%$name%'";
