@@ -1,4 +1,5 @@
 <?php
+echo '<script>alert("Welcome to Geeks for Geeks")</script>';
 $sql = "SELECT * FROM college_personnel WHERE 1=1";
 
 if (!empty($name)) {
@@ -22,6 +23,6 @@ if ($result->num_rows > 0) {
         $faculty[] = $row;
     }
 }
-
+echo "fetch_faculty page running";
 echo json_encode($faculty);
 ?>

@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../assests/college.png" alt="fallback image" class="absolute inset-0 -z-10 h-full w-full object-cover" />
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
@@ -6,10 +7,225 @@
     </div>
 
 </div>
+<!-- Component: Flat breadcrumb with text & leading icon -->
+<nav aria-label="Breadcrumb" class="pl-3 mt-10" id="Breadcrumb" data-aos="fade-right">
+    <ol class="flex items-stretch gap-2 list-none">
+        <li class="flex items-center gap-2">
+            <a href="#" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
+                    <title id="title-01">Home</title>
+                    <desc id="description-01">
+                        Home button indicating the homepage of the website.
+                    </desc>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="hidden md:block">Home</span>
+            </a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
+                <title id="title-02">Arrow</title>
+                <desc id="description-02">
+                    Arrow icon that points to the next page in big screen resolution sizes
+                    and previous page in small screen resolution sizes.
+                </desc>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+        </li>
+        <li class="flex items-center flex-1 gap-2">
+            <a href="../../Pages/academics_tab/Dept_Index.php" data-aos-duration="1000" aria-current="page" class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-600 hover:text-emerald-500 hover:scale-105 scale- transition-all ease-linear" data-aos="fade-right">About</a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
+                <title id="title-02">Arrow</title>
+                <desc id="description-02">
+                    Arrow icon that points to the next page in big screen resolution sizes
+                    and previous page in small screen resolution sizes.
+                </desc>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            <a href="#" data-aos="fade-right" data-aos-duration="1300" aria-current=" page" class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-400 ">Faculty</a>
+
+        </li>
+    </ol>
+</nav>
 
 <div class="bg-gray-100">
-    
-    <script>
+
+
+</div>
+
+<!-- Container for demo purpose -->
+<section class="bg-white dark:bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+        <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-black">Our Educators</h2>
+            <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Connect with our distinguished faculty, dedicated to pioneering quality education and groundbreaking research.</p>
+        </div>
+        <div class="container mx-auto py-8">
+
+            <div class="grid lg:grid-cols-8 grid-cols-3 mb-8">
+                <input type="text" id="searchName" placeholder="Search by Name" class="p-2 border border-gray-300 rounded-md   m-2 bg-white text-black px-2 w-full max-w-[700px] pl-4 col-span-3 lg:col-span-5">
+                <!-- Filter -->
+
+                <select id="filterCollege" class="p-2 border-0 m-2 text-center">
+                    <option value="">College</option>
+                    <!-- Add options dynamically from backend or static  
+                -->
+                    <option value="d">degree college</option>
+                    <option value="s">self-financing courses</option>
+                    <option value="j">junior college</option>
+                    <option value="m">management</option>
+                    <option value="nt">non-teaching </option>
+                </select>
+                <select id="filterDepartment" class="p-2 border-0 m-2 text-center ">
+                    <option value=""> Department</option>
+                    <!-- Add options dynamically from backend or static -->
+                </select>
+                <select id="filterCourse" class="p-2 border-0 m-2 text-center ">
+                    <option value=""> Course</option>
+                    <!-- Add options dynamically from backend or static -->
+                </select>
+            </div>
+            <div id="facultyList" class="container my-24 mx-auto md:px-6">
+
+                <div id="loading_spinner" class=" items-center justify-center mb-24  hidden">
+                    <div class="relative">
+                        <div class="h-24 w-24 rounded-full border-t-8 border-b-8 border-gray-200"></div>
+                        <div class="absolute top-0 left-0 h-24 w-24 rounded-full border-t-8 border-b-8 border-blue-500 animate-spin">
+                        </div>
+                    </div>
+                </div>
+                <!-- Faculty members will be displayed here -->
+
+                <!-- Section: Design Block -->
+                <section class="mb-32 text-center ">
+
+                    <div class="grid gap-6 grid-cols-1 lg:grid-cols-4 md:grid-cols-2 xl:gap-x-12">
+                        <div class="mb-6 lg:mb-0">
+                            <div class="relative block rounded-lg p-6 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                <div class="flex-row items-center ">
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.jpg" alt="Trendy Pants and Shoes" class="mb-6 w-full rounded-md lg:mb-0" />
+                                    </div>
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <h5 class="mb-2 text-lg font-bold">Darren Randolph</h5>
+                                        <p class="mb-4 text-neutral-500 dark:text-neutral-300">Marketing expert</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 lg:mb-0">
+                            <div class="relative block rounded-lg p-6 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                <div class="flex-row items-center ">
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/4.jpg" alt="Trendy Pants and Shoes" class="mb-6 w-full rounded-md lg:mb-0" />
+                                    </div>
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <h5 class="mb-2 text-lg font-bold">Maliha Welch</h5>
+                                        <p class="mb-4 text-neutral-500 dark:text-neutral-300">Web designer</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 lg:mb-0">
+                            <div class="relative block rounded-lg p-6 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                <div class="flex-row items-center ">
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/12.jpg" alt="Trendy Pants and Shoes" class="mb-6 w-full rounded-md lg:mb-0" />
+                                    </div>
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <h5 class="mb-2 text-lg font-bold">Avaya Hills</h5>
+                                        <p class="mb-4 text-neutral-500 dark:text-neutral-300">Copywriter</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 lg:mb-0">
+                            <div class="relative block rounded-lg p-6 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                <div class="flex-row items-center ">
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.jpg" alt="Trendy Pants and Shoes" class="mb-6 w-full rounded-md lg:mb-0" />
+                                    </div>
+                                    <div class="w-full shrink-0 grow-0 basis-auto ">
+                                        <h5 class="mb-2 text-lg font-bold">Darren Randolph</h5>
+                                        <p class="mb-4 text-neutral-500 dark:text-neutral-300">Marketing expert</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Section: Design Block -->
+            </div>
+
+
+
+        </div>
+
+    </div>
+</section>
+<script>
+    $(document).ready(function() {
+        // Search bar AJAX
+        $("#searchName").on("keyup", function() {
+            alert("search funstion called");
+            const searchName = $(this).val();
+            const filterCollege = document.getElementById('filterCollege');
+            const filterDepartment = document.getElementById('filterDepartment');
+            const filterCourse = document.getElementById('filterCourse');
+
+
+            $.ajax({
+                type: "POST",
+                url: "../Components/fetch_faculty.php", // Your PHP script for handling search
+                data: {
+                    name: searchName,
+                    college: filterCollege,
+                    department: filterDepartment,
+                    course: filterCourse
+                },
+                success: function(result) {
+                    $("#facultyList").html(result);
+                }
+            });
+        });
+
+        // Dropdown AJAX (similarly for other dropdowns)
+        $("#filterCollege, #filterDepartment, #filterCourse").on("change", function() {
+            alert("dropdown funstion called");
+            const searchName = document.getElementById('searchName');
+            const filterCollege = document.getElementById('filterCollege');
+            const filterDepartment = document.getElementById('filterDepartment');
+            const filterCourse = document.getElementById('filterCourse');
+            $.ajax({
+                type: "POST",
+                url: "fetch_faculty.php", // Your PHP script for handling dropdown selection
+                data: {
+                    name: searchName,
+                    college: filterCollege,
+                    department: filterDepartment,
+                    course: filterCourse
+                },
+                success: function(result) {
+                    $("#facultyList").html(result);
+                }
+            });
+        });
+
+        // Show/hide loading spinner
+        $(document).ajaxStart(function() {
+            $("#loading_spinner").show();
+        }).ajaxStop(function() {
+            $("#loading_spinner").hide();
+        });
+    });
+</script>
+<!-- <script>
+        
         document.addEventListener("DOMContentLoaded", function() {
             const searchName = document.getElementById('searchName');
             const filterCollege = document.getElementById('filterCollege');
@@ -57,183 +273,4 @@
             // Fetch initial faculty list
             fetchFaculty();
         });
-    </script>
-</div>
-<section class="bg-white dark:bg-white">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-black">Our Educators</h2>
-          <p class="font-light text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">Connect with our distinguished faculty, dedicated to pioneering quality education and groundbreaking research.</p>
-      </div> 
-      <div class="container mx-auto py-8">
-    
-        <div class="flex justify-between mb-8">
-            <input type="text" id="searchName" placeholder="Search by Name" class="p-2 border border-gray-300 rounded-md w-1/4">
-            <select id="filterCollege" class="p-2 border border-gray-300 rounded-md w-1/4">
-                <option value="">Filter by College</option>
-                <!-- Add options dynamically from backend or static 
-                j - junior college
-                d - regular degree college
-                s - self-financing courses (SFC) section
-                m - management
-                nt - non-teaching 
-                -->
-                <option value="d">degree college</option>
-                <option value="s">self-financing courses</option>
-                <option value="j">junior college</option>
-                <option value="m">management</option>
-                <option value="nt">non-teaching </option>
-            </select>
-            <select id="filterDepartment" class="p-2 border border-gray-300 rounded-md w-1/4">
-                <option value="">Filter by Department</option>
-                <!-- Add options dynamically from backend or static -->
-            </select>
-            <select id="filterCourse" class="p-2 border border-gray-300 rounded-md w-1/4">
-                <option value="">Filter by Course</option>
-                <!-- Add options dynamically from backend or static -->
-            </select>
-        </div>
-        <div id="facultyList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Faculty members will be displayed here -->
-        </div>
-    </div>
-      <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-          <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-200 dark:border-gray-100">
-              <a href="#">
-                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
-              </a>
-              <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a href="#">Bonnie Green</a>
-                  </h3>
-                  <span class="text-gray-500 dark:text-gray-400">CEO & Web Developer</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Bonnie drives the technical strategy of the flowbite platform and brand.</p>
-                  <!-- <ul class="flex space-x-4 sm:mt-0">
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                  </ul> -->
-              </div>
-          </div> 
-          <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a href="#">
-                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png" alt="Jese Avatar">
-              </a>
-              <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a href="#">Jese Leos</a>
-                  </h3>
-                  <span class="text-gray-500 dark:text-gray-400">CTO</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Jese drives the technical strategy of the flowbite platform and brand.</p>
-                  <!-- <ul class="flex space-x-4 sm:mt-0">
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                  </ul> -->
-              </div>
-          </div> 
-          <div class="items-center  bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a href="#">
-                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar">
-              </a>
-              <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a href="#">Michael Gough</a>
-                  </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Senior Front-end Developer</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Michael drives the technical strategy of the flowbite platform and brand.</p>
-                  <!-- <ul class="flex space-x-4 sm:mt-0">
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                  </ul> -->
-              </div>
-          </div> 
-          <div class="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
-              <a href="#">
-                  <img class="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-mcguire.png" alt="Sofia Avatar">
-              </a>
-              <div class="p-5">
-                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                      <a href="#">Lana Byrd</a>
-                  </h3>
-                  <span class="text-gray-500 dark:text-gray-400">Marketing & Sale</span>
-                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Lana drives the technical strategy of the flowbite platform and brand.</p>
-                  <ul class="flex space-x-4 sm:mt-0">
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
-                          </a>
-                      </li>
-                  </ul>
-              </div>
-          </div>  
-      </div>  
-  </div>
-</section>
+    </script> -->
