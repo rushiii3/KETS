@@ -1,4 +1,5 @@
 <?php
+include("../../config/connect.php");
 echo '<script>alert("Welcome to Geeks for Geeks")</script>';
 $sql = "SELECT * FROM college_personnel WHERE 1=1";
 
@@ -15,7 +16,7 @@ if (!empty($course)) {
     $sql .= " AND course='$course'";
 }
 
-$result = $conn->query($sql);
+$result = $con->query($sql);
 $faculty = [];
 
 if ($result->num_rows > 0) {

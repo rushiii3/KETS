@@ -168,109 +168,71 @@
 
     </div>
 </section>
+
 <script>
     $(document).ready(function() {
-        // Search bar AJAX
-        $("#searchName").on("keyup", function() {
-            alert("search funstion called");
-            const searchName = $(this).val();
-            const filterCollege = document.getElementById('filterCollege');
-            const filterDepartment = document.getElementById('filterDepartment');
-            const filterCourse = document.getElementById('filterCourse');
+    // Search bar AJAX
+    $("#searchName").on("keyup", function() {
+        alert("search function called");
+        const searchName = $(this).val();
+        const filterCollege = document.getElementById('filterCollege').value;
+        const filterDepartment = document.getElementById('filterDepartment').value;
+        const filterCourse = document.getElementById('filterCourse').value;
 
-
-            $.ajax({
-                type: "POST",
-                url: "../Components/fetch_faculty.php", // Your PHP script for handling search
-                data: {
-                    name: searchName,
-                    college: filterCollege,
-                    department: filterDepartment,
-                    course: filterCourse
-                },
-                success: function(result) {
-                    $("#facultyList").html(result);
-                }
-            });
-        });
-
-        // Dropdown AJAX (similarly for other dropdowns)
-        $("#filterCollege, #filterDepartment, #filterCourse").on("change", function() {
-            alert("dropdown funstion called");
-            const searchName = document.getElementById('searchName');
-            const filterCollege = document.getElementById('filterCollege');
-            const filterDepartment = document.getElementById('filterDepartment');
-            const filterCourse = document.getElementById('filterCourse');
-            $.ajax({
-                type: "POST",
-                url: "fetch_faculty.php", // Your PHP script for handling dropdown selection
-                data: {
-                    name: searchName,
-                    college: filterCollege,
-                    department: filterDepartment,
-                    course: filterCourse
-                },
-                success: function(result) {
-                    $("#facultyList").html(result);
-                }
-            });
-        });
-
-        // Show/hide loading spinner
-        $(document).ajaxStart(function() {
-            $("#loading_spinner").show();
-        }).ajaxStop(function() {
-            $("#loading_spinner").hide();
+        $.ajax({
+            type: "POST",
+            url: "../Components/fetch_faculty.php", // Your PHP script for handling search
+            cache: false,
+            data: {
+                name: searchName,
+                college: filterCollege,
+                department: filterDepartment,
+                course: filterCourse
+            },
+            success: function(result) {
+                $("#facultyList").html(result);
+                alert("function is running..");
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error: " + status + error);
+            }
         });
     });
-</script>
-<!-- <script>
-        
-        document.addEventListener("DOMContentLoaded", function() {
-            const searchName = document.getElementById('searchName');
-            const filterCollege = document.getElementById('filterCollege');
-            const filterDepartment = document.getElementById('filterDepartment');
-            const filterCourse = document.getElementById('filterCourse');
-            const facultyList = document.getElementById('facultyList');
 
-            const fetchFaculty = () => {
-                const name = searchName.value;
-                const college = filterCollege.value;
-                const department = filterDepartment.value;
-                const course = filterCourse.value;
+    // Dropdown change AJAX
+    $("#filterCollege, #filterDepartment, #filterCourse").on("change", function() {
+        alert("dropdown function called");
+        const searchName = document.getElementById('searchName').value;
+        const filterCollege = document.getElementById('filterCollege').value;
+        const filterDepartment = document.getElementById('filterDepartment').value;
+        const filterCourse = document.getElementById('filterCourse').value;
 
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', `fetch_faculty.php?name=${name}&college=${college}&department=${department}&course=${course}`, true);
-                xhr.onload = function() {
-                    if (this.status === 200) {
-                        const faculty = JSON.parse(this.responseText);
-                        displayFaculty(faculty);
-                    }
-                };
-                xhr.send();
-            };
-
-            const displayFaculty = (faculty) => {
-                facultyList.innerHTML = '';
-                faculty.forEach(member => {
-                    const div = document.createElement('div');
-                    div.className = 'bg-white p-6 rounded-lg shadow-md';
-                    div.innerHTML = `
-                <h2 class="text-xl font-bold mb-2">${member.cp_name}</h2>
-                <p class="text-gray-700">College: ${member.college_sec_name}</p>
-                <p class="text-gray-700">Department: ${member.cp_dept_id}</p>
-                <p class="text-gray-700">Course: ${member.cp_personal_website_kink}</p>
-            `;
-                    facultyList.appendChild(div);
-                });
-            };
-
-            searchName.addEventListener('input', fetchFaculty);
-            filterCollege.addEventListener('change', fetchFaculty);
-            filterDepartment.addEventListener('change', fetchFaculty);
-            filterCourse.addEventListener('change', fetchFaculty);
-
-            // Fetch initial faculty list
-            fetchFaculty();
+        $.ajax({
+            type: "POST",
+            url: "../Components/fetch_faculty.php", // Your PHP script for handling dropdown selection
+            cache: false,
+            data: {
+                name: searchName,
+                college: filterCollege,
+                department: filterDepartment,
+                course: filterCourse
+            },
+            success: function(result) {
+                $("#facultyList").html(result);
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error: " + status + error);
+            }
         });
-    </script> -->
+    });
+
+    // Show/hide loading spinner
+    $(document).ajaxStart(function() {
+        $("#loading_spinner").show();
+    }).ajaxStop(function() {
+        $("#loading_spinner").hide();
+    });
+});
+
+</script>
+      
