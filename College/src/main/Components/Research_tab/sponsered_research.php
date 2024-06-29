@@ -111,20 +111,49 @@
                                                      </thead>
                                                      <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">S. H. Kelkar and Co. Ltd.</td>
+                                                             <td class="px-6 py-4  text-sm font-medium text-gray-800 dark:text-neutral-200">S. H. Kelkar and Co. Ltd.</td>
                                                              <td class="px-6 py-4  text-sm text-gray-800 dark:text-neutral-200">Development of new molecules for Perfumery and cosmetic applications. Design of simplified and green procedures for production of perfumery chemicals.</td>
                                                          </tr>
+                                                         <!-- <tr>
+                                                             <div class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96">
+                                                                 <div class="p-6">
+                                                                     <h5 class="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                                                                         S. H. Kelkar and Co. Ltd.
+                                                                     </h5>
+                                                                     <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                                                                         Development of new molecules for Perfumery and cosmetic applications. Design of simplified and green procedures for production of perfumery chemicals.
+                                                                     </p>
+                                                                 </div>
+
+                                                             </div>
+                                                         </tr> -->
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
+                                                             <td class="px-6 py-4  text-sm font-medium text-gray-800 dark:text-neutral-200">Godrej Agrovet</td>
+                                                             <td class="px-6 py-4  text-sm text-gray-800 dark:text-neutral-200">Development of Neem based products.
+                                                                 Computer aided design, synthesis and evaluation of new herbicides.
+                                                                 Improvement in the synthesis of Herbicides.</td>
                                                          </tr>
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
+                                                             <td class="px-6 py-4  text-sm font-medium text-gray-800 dark:text-neutral-200">Sunmoon Chemicals</td>
+                                                             <td class="px-6 py-4  text-sm text-gray-800 dark:text-neutral-200">Asymmetric Syntheses of taxol® (antitumor agent) and taxotere® side chains.
+                                                                 Design of simplified procedures for production of these important antitumor molecules.
+                                                             </td>
                                                          </tr>
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
+                                                             <td class="px-6 py-4 text-sm font-medium text-gray-800 dark:text-neutral-200">BioAmber, USA</td>
+                                                             <td class="px-6 py-4  text-sm text-gray-800 dark:text-neutral-200">Synthesis of various esters of bio-succinic acid from BioAmber,
+                                                                 Evaluation of cosmetic properties and commercial potential of these esters
+                                                             </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td class="px-6 py-4  text-sm font-medium text-gray-800 dark:text-neutral-200">Arya Business Combine</td>
+                                                             <td class="px-6 py-4  text-sm text-gray-800 dark:text-neutral-200">Forskolin estimation in Coleus forskohlii
+                                                             </td>
+                                                         </tr>
+                                                         <tr>
+                                                             <td class="px-6 py-4  text-sm font-medium text-gray-800 dark:text-neutral-200">Prasad Organics</td>
+                                                             <td class="px-6 py-4  text-sm text-gray-800 dark:text-neutral-200">Identification of rose glycol
+                                                             </td>
                                                          </tr>
                                                      </tbody>
                                                  </table>
