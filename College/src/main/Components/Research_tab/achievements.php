@@ -31,20 +31,20 @@
          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
              <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-gray-700">
                  <li>
-                     <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Research Home</a>
+                     <a href="research_home.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Research Home</a>
                  </li>
                  <li>
-                     <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Academic Research</a>
+                     <a href="academic_research.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Academic Research</a>
                  </li>
                  <li>
-                     <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sponsored Research</a>
+                     <a href="sponsored_research.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Sponsored Research</a>
                  </li>
                  <li>
-                     <a href="#" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">Achievements</a>
+                     <a href="achievement.php" class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">Achievements</a>
                  </li>
 
                  <li>
-                     <a href="#" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Aviskar</a>
+                     <a href="aviskar.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Aviskar</a>
                  </li>
              </ul>
          </div>
@@ -94,7 +94,7 @@
                  <div class="flex w-full mx-auto text-left">
                      <div class="relative inline-flex items-center mx-auto align-middle">
                          <div class="text-center">
-                             <h1 class="max-w-5xl text-2xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
+                             <h1 class="max-w-5xl text-3xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
                                  Achievements
                              </h1>
                              <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-gray-500">Our college research section excels in innovation, securing numerous grants and publishing groundbreaking studies in top-tier journals, positioning us at the forefront of academic research.</p>
@@ -104,7 +104,7 @@
                      </div>
                  </div>
          </section>
-         <section class="py-4 overflow-hidden">
+         <section class="py-9 overflow-hidden">
              <div class="container px-4 mx-auto">
 
                  <div class="max-w-5xl mx-auto">
@@ -114,10 +114,10 @@
                                  <img class="rounded-3xl " src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?fm=jpg&w=3000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNoaWV2ZW1lbnR8ZW58MHx8MHx8fDA%3D" alt="">
                              </div>
                          </div>
-                         <div class="w-full md:w-1/2 p-8 lg:p-12">
+                         <div class="w-full md:w-1/2 p-8 lg:p-12 pl-12">
 
                              <h2 class="mb-6 text-4xl md:text-7xl dark:text-white text-gray-900 tracking-tighter">College Achievements</h2>
-                             <p class="mb-10 text-gray-500 text-opacity-60 md:max-w-xs text-justify text-base ">
+                             <p class="mb-10 text-gray-500 text-opacity-60 md:max-w-xs text-justify text-base">
                              <ul class="text-justify list-disc gap-4">
                                  <li>Inter-University Research Awards Avishkar Gold/Silver medals since it’s inception in 2007 every year till 2015.</li>
                                  <li>Collaborations with National Institutes such as National Institute of Immunology, National Chemical Laboratory, Delhi University, Cancer Research Institute.</li>
@@ -132,6 +132,306 @@
                      </div>
                  </div>
              </div>
+         </section>
+         <section>
+
+             <section class="mt-10">
+                 <div class="relative items-center w-full px-5  mx-auto lg:px-16 max-w-7xl ">
+                     <div class="flex w-full mx-auto text-left">
+                         <div class="relative inline-flex items-center mx-auto align-middle">
+                             <div class="text-center">
+                                 <h1 class="max-w-4xl text-2xl font-bold leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
+                                     Students Achievements
+                                 </h1>
+
+
+                             </div>
+                         </div>
+                     </div>
+             </section>
+             <style>
+                 .hidden-columns {
+                     display: none;
+                 }
+
+                 .visible-columns {
+                     display: table-row;
+                 }
+             </style>
+
+
+
+             <div class="overflow-x-auto m-10">
+                 <!-- <table class="min-w-full bg-white border border-gray-200">
+                     <thead> -->
+                 <table class="w-full text-sm text-center  rtl:text-right text-gray-500 dark:text-gray-400">
+                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                         <tr>
+                             <th class="py-2 px-4 border-b border-gray-200">Name</th>
+                             <th class="py-2 px-4 border-b border-gray-200">Prize</th>
+                             <th class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Event Name</th>
+                             <th class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Date</th>
+                             <th class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Place</th>
+
+
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. S. A. Singh </td>
+                             <td class="py-2 px-4 border-b border-gray-200">Gold medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival AVISHKAR</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">15th-17th Feb. 2007</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">RTM University, Nagpure</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival AVISHKAR</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> 15th-17th Feb. 2007</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span> RTM University, Nagpure</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <!-- Repeat <tr> for more rows -->
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. S. A. Singh </td>
+                             <td class="py-2 px-4 border-b border-gray-200">Gold medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival AVISHKAR</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">10th-12h Jan. 2008</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">SNDT University, Mumbai</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival AVISHKAR</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> 10th-12h Jan. 2008</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span> SNDT University, Mumbai</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. S. A. Singh </td>
+                             <td class="py-2 px-4 border-b border-gray-200">Gold medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival ANVESHAN</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">14th-16th March 2008</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">RTM University, Nagpure</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival ANVESHAN</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> 14th-16th March 2008</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span> RTM University, Nagpure</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. S. A. Singh </td>
+                             <td class="py-2 px-4 border-b border-gray-200">Gold medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival AVISHKAR</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">10th-12h Jan. 2009</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">University of Pune</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival AVISHKAR</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> 10th-12h Jan. 2009</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span> University of Pune</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button>Dr. V. Menon</td>
+                             <td class="py-2 px-4 border-b border-gray-200">Gold medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival AVISHKAR</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Jan. 2010</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Solapur</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival AVISHKAR</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> Jan. 2010</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span> Solapur</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. G. More</td>
+                             <td class="py-2 px-4 border-b border-gray-200">1st prize</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">National symposium in Emerging Trends in Life and Material Sciences</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">25th Jan, 2012</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">V. G. Vaze College, Mulund</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> National symposium in Emerging Trends in Life and Material Sciences</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> 25th Jan, 2012</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span>V. G. Vaze College, Mulund</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button>Dr. S. Vasudevan</td>
+                             <td class="py-2 px-4 border-b border-gray-200">Silver medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival AVISHKAR</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Jan. 2011</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Nasik</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival AVISHKAR</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span>Jan. 2011</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span>Nasik</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. Rohan Pawar</td>
+                             <td class="py-2 px-4 border-b border-gray-200">Silver medal</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Interuniversity Research Festival AVISHKAR</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Jan. 2014</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">-</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Interuniversity Research Festival AVISHKAR</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> Jan. 2014 </div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span> -</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button> Dr. Rohan Pawar</td>
+                             <td class="py-2 px-4 border-b border-gray-200">Young Scientist Award</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Indian Chemical Society</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Jan. 2014</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Chandigarh</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> Indian Chemical Society</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> Jan. 2014 </div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span>Chandigarh</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+                         <tr>
+
+                             <td class="py-2 px-4 border-b border-gray-200 "><button onclick="toggleColumns(this)" class="float-start  lg:hidden">
+                                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                         <path d="m606-286-33-144 111-96-146-13-58-136v312l126 77ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                                     </svg></button>Ms Manisha Gupta</td>
+                             <td class="py-2 px-4 border-b border-gray-200">Best Paper presentation award</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">
+                                 National Women Science Conference
+                             </td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">2019</td>
+                             <td class="py-2 px-4 border-b border-gray-200 hidden lg:table-cell">Mysore</td>
+
+
+
+                         </tr>
+                         <tr class="hidden-columns text-left">
+                             <td colspan="7" class="py-2 px-4 border-b border-gray-200">
+                                 <div class="lg:hidden">
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Event Name :</span> National Women Science Conference</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Date :</span> 2019</div>
+                                     <div><span class="text-xs font-bold   text-gray-700 uppercase  dark:text-gray-400">Place :</span>Mysore</div>
+
+                                 </div>
+                             </td>
+                         </tr>
+
+                     </tbody>
+                 </table>
+             </div>
+
+             <script>
+                 function toggleColumns(button) {
+                     const hiddenRow = button.closest('tr').nextElementSibling;
+                     hiddenRow.classList.toggle('visible-columns');
+                 }
+             </script>
+
          </section>
 
      </section>
