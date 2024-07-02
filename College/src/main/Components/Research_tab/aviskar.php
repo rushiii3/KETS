@@ -105,118 +105,113 @@
                  </div>
          </section>
          <!-- component -->
-         <h2 class="text-4xl m-5 ml-10 font-extrabold text-neutral-600 dark:text-white">Participants</h2>
-         <section class="grid place-items-centerp-16 m-10 ">
-             <label class="m-2">
-                 <input class="peer/showLabel absolute scale-0" type="checkbox" />
-                 <span class="block max-h-14  overflow-hidden rounded-lg bg-gray-100 px-4 py-0 text-gray-500 shadow-lg transition-all duration-300 peer-checked/showLabel:max-h-52">
-                     <h3 class="flex h-14 cursor-pointer items-center font-bold">Academic Year 2023-24 </h3>
-                     <p class="mb-2">
+         <h2 class="text-4xl  m-10 font-extrabold text-neutral-600 dark:text-white">Participants</h2>
+         <section class="grid place-items-center p-4 md:p-16 justify-center">
+  <label class="m-2 w-full  max-w-lg">
+    <input class="peer/showLabel absolute scale-0" type="checkbox" />
+    <span class="block max-h-14 overflow-hidden rounded-lg bg-gray-100 px-4 py-2 text-gray-500 shadow-lg transition-all duration-300 peer-checked/showLabel:max-h-96">
+      <h3 class="flex h-14 cursor-pointer items-center font-bold">Academic Year 2023-24</h3>
+      <p class="mb-2">
+        <table class="w-full divide-y divide-gray-200 dark:divide-neutral-700">
+          <thead>
+            <tr>
+              <th scope="col" class="px-2 py-3 text-center text-sm md:text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Category</th>
+              <th scope="col" class="px-2 py-3 text-center text-sm md:text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Participants</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
+            </tr>
+          </tbody>
+        </table>
+      </p>
+    </span>
+  </label>
+  <label class="m-2 w-full max-w-lg">
+    <input class="peer/showLabel absolute scale-0" type="checkbox" />
+    <span class="block max-h-14 overflow-hidden rounded-lg bg-gray-100 px-4 py-2 text-gray-500 shadow-lg transition-all duration-300 peer-checked/showLabel:max-h-96">
+      <h3 class="flex h-14 cursor-pointer items-center font-bold">Academic Year 2022-23</h3>
+      <p class="mb-2">
+        <table class="w-full divide-y divide-gray-200 dark:divide-neutral-700">
+          <thead>
+            <tr>
+              <th scope="col" class="px-2 py-3 text-center text-sm md:text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Category</th>
+              <th scope="col" class="px-2 py-3 text-center text-sm md:text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Participants</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
+            </tr>
+          </tbody>
+        </table>
+      </p>
+    </span>
+  </label>
+  <label class="m-2 w-full max-w-lg">
+    <input class="peer/showLabel absolute scale-0" type="checkbox" />
+    <span class="block max-h-14 overflow-hidden rounded-lg bg-gray-100 px-4 py-2 text-gray-500 shadow-lg transition-all duration-300 peer-checked/showLabel:max-h-96">
+      <h3 class="flex h-14 cursor-pointer items-center font-bold">Academic Year 2021-22</h3>
+      <p class="mb-2">
+        <table class="w-full divide-y divide-gray-200 dark:divide-neutral-700">
+          <thead>
+            <tr>
+              <th scope="col" class="px-2 py-3 text-center text-sm md:text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Category</th>
+              <th scope="col" class="px-2 py-3 text-center text-sm md:text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Participants</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
+            </tr>
+            <tr>
+              <td class="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
+              <td class="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
+            </tr>
+          </tbody>
+        </table>
+      </p>
+    </span>
+  </label>
+</section>
 
-                     <table class=" divide-y divide-gray-200 dark:divide-neutral-700">
-                         <thead>
-                             <tr>
-                                 <th scope="col" class="px-6 py-3 text-center text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Category</th>
-                                 <th scope="col" class="px-6 py-3 text-center text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Participants</th>
-                             </tr>
-                         </thead>
-                         <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
-                             </tr>
-                         </tbody>
-                     </table>
-
-                     </p>
-                 </span>
-             </label>
-             <label class="m-2">
-                 <input class="peer/showLabel absolute scale-0" type="checkbox" />
-                 <span class="block max-h-14  overflow-hidden rounded-lg bg-gray-100 px-4 py-0 text-gray-500 shadow-lg transition-all duration-300 peer-checked/showLabel:max-h-52">
-                     <h3 class="flex h-14 cursor-pointer items-center font-bold">Academic Year 2022-23 </h3>
-                     <p class="mb-2">
-
-                     <table class=" divide-y divide-gray-200 dark:divide-neutral-700">
-                         <thead>
-                             <tr>
-                                 <th scope="col" class="px-6 py-3 text-center text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Category</th>
-                                 <th scope="col" class="px-6 py-3 text-center text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Participants</th>
-                             </tr>
-                         </thead>
-                         <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
-                             </tr>
-                         </tbody>
-                     </table>
-
-                     </p>
-                 </span>
-             </label>
-             <label class="m-2">
-                 <input class="peer/showLabel absolute scale-0" type="checkbox" />
-                 <span class="block max-h-14  overflow-hidden rounded-lg bg-gray-100 px-4 py-0 text-gray-500 shadow-lg transition-all duration-300 peer-checked/showLabel:max-h-52">
-                     <h3 class="flex h-14 cursor-pointer items-center font-bold">Academic Year 2021-22 </h3>
-                     <p class="mb-2">
-
-                     <table class=" divide-y divide-gray-200 dark:divide-neutral-700">
-                         <thead>
-                             <tr>
-                                 <th scope="col" class="px-6 py-3 text-center text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Category</th>
-                                 <th scope="col" class="px-6 py-3 text-center text-xl font-medium text-gray-900 uppercase dark:text-neutral-500">Participants</th>
-                             </tr>
-                         </thead>
-                         <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
-                             </tr>
-                             <tr>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
-                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
-                             </tr>
-                         </tbody>
-                     </table>
-
-                     </p>
-                 </span>
-             </label>
-         </section>
-         <section class="py-24 2xl:pt-44 2xl:pb-52 font-medium bg-white bottom-2">
+         <section class="py-24 2xl:pt-44 2xl:pb-52 font-medium bg-gray-100 bottom-2 m-10">
              <h1 class="text-center text-5xl mb-5 ">Total Participations</h1>
              <div class="container px-4 mx-auto">
                  <div class="flex flex-wrap justify-center mx-auto max-w-7xl text-center">

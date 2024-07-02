@@ -236,12 +236,12 @@
      </div>
 
  </section>
- <section class="relative py-12 md:py-12 overflow-hidden">
+ <section class="relative py-12 md:py-12 bg-gray-100 overflow-hidden m-10">
      <img class="absolute top-0 right-0 md:mt-10 -mr-20 md:-mr-0" src="saturn-assets/images/stats/star-circle.svg" alt="">
      <img class="absolute bottom-0 left-0" src="saturn-assets/images/stats/left-blue-light.png" alt="">
      <div class="relative container px-4 mx-auto">
          <div class="max-w-5xl mx-auto">
-             <div class="flex flex-wrap -mx-4 mb-24 items-end">
+             <div class="flex flex-wrap -mx-4 mb-24 items-center ">
                  <div class="w-full lg:w-1/2 px-4 mb-8 lg:mb-0">
                      <div class="max-w-md md:max-w-lg">
 
@@ -286,7 +286,7 @@
          </div>
      </div>
  </section>
- <section class="py-12 lg:py-12 dark:bg-black  overflow-hidden">
+ <section class="m-10 py-12 lg:py-12 dark:bg-black bg-gray-100  overflow-hidden">
      <div class="container px-4 mx-auto">
          <div class="flex flex-wrap lg:items-center -m-8">
              <div class="w-full md:w-1/2 p-8">
