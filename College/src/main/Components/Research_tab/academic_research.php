@@ -17,7 +17,7 @@
      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
          <a href="" class="flex items-center space-x-3 rtl:space-x-reverse    ">
 
-             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+             <span class="self-center text-2xl font-semibold   dark:text-white"></span>
          </a>
          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
 
@@ -62,7 +62,7 @@
  <nav aria-label="Breadcrumb" class="pl-3 mt-5 dark:bg-black dark:text-white " id="Breadcrumb" data-aos="fade-right">
      <ol class="flex items-stretch gap-2 list-none">
          <li class="flex items-center gap-2">
-             <a href="#" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+             <a href="#" class="flex max-w-[20ch] items-center gap-1 truncate   text-slate-700 transition-colors hover:text-emerald-500">
                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
                      <title id="title-01">Home</title>
                      <desc id="description-01">
@@ -82,7 +82,7 @@
              </svg>
          </li>
          <li class="flex items-center flex-1 gap-2">
-             <a href="#" aria-current="page" class="pointer-events-none max-w-[20ch] truncate whitespace-nowrap text-slate-400">Academic Research</a>
+             <a href="#" aria-current="page" class="pointer-events-none max-w-[20ch] truncate   text-slate-400">Academic Research</a>
 
          </li>
      </ol>
@@ -112,20 +112,20 @@
                                                      </thead>
                                                      <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">08</td>
+                                                             <td class="px-6 py-4   text-sm font-medium text-gray-800 dark:text-neutral-200">Research Guides Science and Humanities</td>
+                                                             <td class="px-6 py-4   text-sm text-gray-800 dark:text-neutral-200">08</td>
                                                          </tr>
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">17</td>
+                                                             <td class="px-6 py-4   text-sm font-medium text-gray-800 dark:text-neutral-200">Ph D Research Students Science and Humanities</td>
+                                                             <td class="px-6 py-4   text-sm text-gray-800 dark:text-neutral-200">17</td>
                                                          </tr>
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">09</td>
+                                                             <td class="px-6 py-4   text-sm font-medium text-gray-800 dark:text-neutral-200">MSc (By Research) Awarded Science</td>
+                                                             <td class="px-6 py-4   text-sm text-gray-800 dark:text-neutral-200">09</td>
                                                          </tr>
                                                          <tr>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
-                                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">10</td>
+                                                             <td class="px-6 py-4   text-sm font-medium text-gray-800 dark:text-neutral-200">PhD Awarded</td>
+                                                             <td class="px-6 py-4   text-sm text-gray-800 dark:text-neutral-200">10</td>
                                                          </tr>
                                                      </tbody>
                                                  </table>
