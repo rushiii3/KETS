@@ -1,6 +1,6 @@
 
    
-    <div class="">
+    <!-- <div class="">
       <div id="mediaContainer" class="">
         <video id="myVideo" class="h-screen w-screen object-cover" muted>
           <source id="videoSource" type="video/mp4"> Your browser does not support the video tag.
@@ -16,7 +16,7 @@
           <p class="mt-6 text-lg leading-8 text-white"> Immerse yourself in the energy of our campus, the spirit of innovation, and the kaleidoscope of experiences that define us. </p>
         </div>
       </div>
-    </div>
+    </div> -->
 
    <!-- <div class="relative isolate">
      <div id="mediaContainer" class="relative">
@@ -430,7 +430,7 @@
        background-color: rgb(14 211 207);
      }
    </style>
-   <div class="bg-no-repeat bg-cover bg-center relative" style="background-image: url(../../assests/college.png);">
+   <!-- <div class="bg-no-repeat bg-cover bg-center relative" style="background-image: url(../../assests/college.png);">
      <div class="absolute bg-gradient-to-r from-gray-900 to-gray-900 opacity-75 inset-0 z-0"></div>
      <div>
        <div class="min-h-screen flex justify-center">
@@ -536,7 +536,7 @@
 
        </div>
      </div>
-   </div>
+   </div> -->
    <script crossorigin="anonymous" defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.3.2/swiper-bundle.min.js"></script>
    <script>
      document.addEventListener('DOMContentLoaded', function() {
