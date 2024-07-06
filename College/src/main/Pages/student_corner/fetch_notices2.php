@@ -8,7 +8,7 @@ if (isset($_POST['a_year']) && isset($_POST['clg_section']) ) {
     
 
     $query = "SELECT  n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section' and n.notice_type='e' ORDER BY all_pdf_upload_date DESC ";
-    $result = $con->query($query);
+    $result =  $conn->query($query);
     if ($result->num_rows > 0) {
         echo '
     <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">
@@ -35,7 +35,7 @@ if (isset($_POST['year']) && isset($_POST['section'])  ) {
    
 
     $query = "SELECT  n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section' and n.notice_type='e' ORDER BY all_pdf_upload_date DESC ";
-    $result = $con->query($query);
+    $result =  $conn->query($query);
     if ($result->num_rows > 0) {
         echo '
     <div class="flex w-full bg-gray-50 flex-col marquee overflow-hidden overflow-y-hidden h-96 text-left p-4 space-y-2 gap-4 " id="d_result">

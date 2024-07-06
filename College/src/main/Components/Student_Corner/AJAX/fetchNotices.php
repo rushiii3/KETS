@@ -5,10 +5,10 @@ if (isset($_POST['year']) && isset($_POST['section'])) {
     $section = $_POST['section'];
 
     $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section' AND n.all_pdf_upload_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) ORDER BY all_pdf_upload_date DESC ";
-    $result = $con->query($query);
+    $result =  $conn->query($query);
     if ($result->num_rows < 10) {
         $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$year' and ny.college_sec_name='$section'  ORDER BY all_pdf_upload_date DESC Limit 10";
-        $result = $con->query($query);
+        $result =  $conn->query($query);
     }
     
     while ($row = $result->fetch_assoc()) {
