@@ -83,7 +83,7 @@
                                         <?php
 
                                         $query = "SELECT * FROM `academic_years` ORDER BY academic_year  DESC LIMIT 5";
-                                        $result = $con->query($query);
+                                        $result = $conn->query($query);
                                         $first = true;
 
                                         if ($result->num_rows > 0) {
@@ -114,10 +114,10 @@
                                                     <?php
 
                                                     $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' AND n.all_pdf_upload_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) ORDER BY all_pdf_upload_date DESC ";
-                                                    $result = $con->query($query);
+                                                    $result = $conn->query($query);
                                                     if ($result->num_rows < 10) {
                                                         $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d'  ORDER BY all_pdf_upload_date DESC Limit 10";
-                                                        $result = $con->query($query);
+                                                        $result = $conn->query($query);
                                                     }
                                                     while ($row = $result->fetch_assoc()) {
                                                         $date = $row['all_pdf_upload_date'];
@@ -169,10 +169,10 @@
 
                                                                 <?php
                                                                 $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' AND n.all_pdf_upload_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) ORDER BY all_pdf_upload_date DESC ";
-                                                                $result = $con->query($query);
+                                                                $result = $conn->query($query);
                                                                 if ($result->num_rows < 10) {
                                                                     $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d'  ORDER BY all_pdf_upload_date DESC Limit 10";
-                                                                    $result = $con->query($query);
+                                                                    $result = $conn->query($query);
                                                                 }
                                                                 while ($row = $result->fetch_assoc()) {
                                                                     $date = $row['all_pdf_upload_date'];
@@ -298,7 +298,7 @@
                                             <?php
 
                                             $query = "SELECT * FROM `academic_years` ORDER BY academic_year  DESC LIMIT 5";
-                                            $result = $con->query($query);
+                                            $result = $conn->query($query);
                                             $first = true;
 
                                             if ($result->num_rows > 0) {
@@ -330,10 +330,10 @@
                                                         <?php
 
                                                         $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' AND n.all_pdf_upload_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) ORDER BY all_pdf_upload_date DESC ";
-                                                        $result = $con->query($query);
+                                                        $result = $conn->query($query);
                                                         if ($result->num_rows < 10) {
                                                             $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d'  ORDER BY all_pdf_upload_date DESC Limit 10";
-                                                            $result = $con->query($query);
+                                                            $result = $conn->query($query);
                                                         }
                                                         while ($row = $result->fetch_assoc()) {
                                                             $date = $row['all_pdf_upload_date'];
@@ -386,7 +386,7 @@
                                                                     echo $default_year;
                                                                     echo 'sndjnd';
                                                                     $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                                    $result = $con->query($query);
+                                                                    $result = $conn->query($query);
                                                                     if ($result->num_rows > 0) {
 
                                                                         while ($row = $result->fetch_assoc()) {
@@ -485,7 +485,7 @@
                                             <?php
 
                                             $query = "SELECT * FROM `academic_years` ORDER BY academic_year  DESC LIMIT 5";
-                                            $result = $con->query($query);
+                                            $result = $conn->query($query);
                                             $first = true;
 
                                             if ($result->num_rows > 0) {
@@ -517,10 +517,10 @@
                                                         <?php
 
                                                         $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' AND n.all_pdf_upload_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) ORDER BY all_pdf_upload_date DESC ";
-                                                        $result = $con->query($query);
+                                                        $result = $conn->query($query);
                                                         if ($result->num_rows < 10) {
                                                             $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d'  ORDER BY all_pdf_upload_date DESC Limit 10";
-                                                            $result = $con->query($query);
+                                                            $result = $conn->query($query);
                                                         }
                                                         while ($row = $result->fetch_assoc()) {
                                                             $date = $row['all_pdf_upload_date'];
@@ -573,7 +573,7 @@
                                                                     echo $default_year;
                                                                     echo 'sndjnd';
                                                                     $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                                    $result = $con->query($query);
+                                                                    $result = $conn->query($query);
                                                                     if ($result->num_rows > 0) {
 
                                                                         while ($row = $result->fetch_assoc()) {
@@ -692,7 +692,7 @@
                                 <?php
 
                                 $query = "SELECT * FROM `academic_years` ORDER BY academic_year  DESC LIMIT 5";
-                                $result = $con->query($query);
+                                $result = $conn->query($query);
                                 $first = true;
 
                                 if ($result->num_rows > 0) {
@@ -723,10 +723,10 @@
                                             <?php
 
                                             $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' AND n.all_pdf_upload_date >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH) ORDER BY all_pdf_upload_date DESC ";
-                                            $result = $con->query($query);
+                                            $result = $conn->query($query);
                                             if ($result->num_rows < 10) {
                                                 $query = "SELECT n.* FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d'  ORDER BY all_pdf_upload_date DESC Limit 10";
-                                                $result = $con->query($query);
+                                                $result = $conn->query($query);
                                             }
                                             while ($row = $result->fetch_assoc()) {
                                                 $date = $row['all_pdf_upload_date'];
@@ -779,7 +779,7 @@
                                                         echo $default_year;
                                                         echo 'sndjnd';
                                                         $query = "SELECT n.all_pdf_title,n.all_pdf_upload_date FROM `notices` as n INNER JOIN notices_are_for_clg_section_in_academic_year as ny on n.all_pdf_id=ny.notice_id where ny.academic_year='$default_year' and ny.college_sec_name='d' ORDER BY all_pdf_upload_date DESC ";
-                                                        $result = $con->query($query);
+                                                        $result = $conn->query($query);
                                                         if ($result->num_rows > 0) {
 
                                                             while ($row = $result->fetch_assoc()) {
@@ -920,7 +920,7 @@
 
                     // Fetch academic years
                     $query = "SELECT DISTINCT academic_year FROM `academic_years` ORDER BY academic_year DESC LIMIT 5";
-                    $result = $con->query($query);
+                    $result = $conn->query($query);
 
                     $academic_years = [];
                     if ($result->num_rows > 0) {
@@ -937,7 +937,7 @@
                     //here the else part will we removed and content of else goes in if part
                     else {
                         $query = "SELECT * FROM `notices` WHERE `academic_year` = ? ORDER BY `date` DESC";
-                        $stmt = $con->prepare($query);
+                        $stmt = $conn->prepare($query);
                         $stmt->bind_param("s", $default_year);
                         $stmt->execute();
                         $result = $stmt->get_result();
