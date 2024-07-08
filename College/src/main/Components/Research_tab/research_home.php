@@ -236,7 +236,7 @@
      </div>
 
  </section>
- <section class="relative py-12 md:py-12 bg-gray-100 overflow-hidden m-10">
+ <section class="relative py-12 md:py-12 bg-gray-100 dark:bg-black overflow-hidden m-10">
      <img class="absolute top-0 right-0 md:mt-10 -mr-20 md:-mr-0" src="saturn-assets/images/stats/star-circle.svg" alt="">
      <img class="absolute bottom-0 left-0" src="saturn-assets/images/stats/left-blue-light.png" alt="">
      <div class="relative container px-4 mx-auto">
