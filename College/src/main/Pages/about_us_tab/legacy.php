@@ -7,24 +7,87 @@ $fetch_query = $conn->prepare($fetch_all_stmt);
 $fetch_query->execute();
 $result = $fetch_query->get_result();
 
-$all_members = [];
-
-$all_members_tenure_years = [];
+// $all_members = [];
+$principals_array = [];
+$vice_principals_degree_array = [];
+$vice_principals_junior_array = [];
 
 if ($result) {
     while ($row = $result->fetch_assoc()) {
+        //echo $row["role"];
+        switch ($row["role"]) {
+            case "p":
+                //array_push($principals_array, $row);
 
-        //array_push($all_members, $row);
-        $start_date = new DateTime($row["tenure_start_date"]);
-        $year1 = $start_date->format('F Y');
+                $start_date = new DateTime($row["tenure_start_date"]);
+                $year1 = $start_date->format('F Y');
 
-        $all_members[$year1] ??= array();
-        array_push($all_members[$year1], $row);
+                $principals_array[$year1] ??= array();
+
+                $row["role_fullform"] = "Principal";
+                $row["bg_color"] = "bg-gradient-to-br from-blue-100 to-blue-50 ";
+                $row["title_color"] = "text-blue-800";
+                $row["card_type"] = "p_card";
+                //$role_shortform="p";
+                array_push($principals_array[$year1], $row);
+
+                break;
+            case "vpd":
+                //array_push($all_members, $row);
+                $start_date = new DateTime($row["tenure_start_date"]);
+                $year1 = $start_date->format('F Y');
+
+                $vice_principals_degree_array[$year1] ??= array();
+
+                $row["role_fullform"] = "Vice Principal (Degree College)";
+                $row["bg_color"] = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
+                $row["title_color"] =  "text-indigo-800";
+                $row["card_type"] = "vpd_card";
+                //$role_shortform = "vpd";
+                array_push($vice_principals_degree_array[$year1], $row);
+                break;
+            case "vpj":
+                //array_push($all_members, $row);
+                $start_date = new DateTime($row["tenure_start_date"]);
+                $year1 = $start_date->format('F Y');
+
+                $vice_principals_junior_array[$year1] ??= array();
+                
+                $row["role_fullform"] ="Vice Principal (Junior College)";
+                $row["bg_color"] =  "bg-gradient-to-br from-sky-100 to-sky-50 ";
+                $row["title_color"] = "text-sky-500";
+                $row["card_type"] ="vpj_card";
+                array_push($vice_principals_junior_array[$year1], $row);
+                //$role_shortform = "vpj";
+                break;
+
+
+            default:
+                // $role = "";
+                // $role_shortform = "";
+                // $bg_color = "";
+                // $title_color = "";
+                // $card_type = "";
+                break;
+        }
     }
-    // print_r($all_members);
+}
 
-    //echo count($all_members);
-} else {
+// if ($result) {
+//     while ($row = $result->fetch_assoc()) {
+
+//         //array_push($all_members, $row);
+//         $start_date = new DateTime($row["tenure_start_date"]);
+//         $year1 = $start_date->format('F Y');
+
+//         $all_members[$year1] ??= array();
+//         array_push($all_members[$year1], $row);
+//     }
+//     // print_r($all_members);
+
+//     //echo count($all_members);
+// } 
+else {
     echo "<script>console.log('fetch error'" . $conn->error . ")";
 }
 
@@ -84,7 +147,7 @@ if ($result) {
         <!--MAIN CONTENTS DIV-->
         <div class="flex flex-col w-full h-full">
 
-            <div class="font-['Playfair_Display'] px-8 text-[2rem] md:text-[4rem] lg:text-[5rem] max-w-[60%] text-white h-[100vh] div_before_timeline">
+            <div class="font-['Playfair_Display'] px-8 text-[2rem] md:text-[4rem] lg:text-[5rem] max-w-[60%] text-white h-[100vh] div_before_p_timeline">
                 A TIMELINE OF OUR COLLEGE LEADERSHIP HISTORY AND LEGACY
             </div>
 
@@ -92,7 +155,7 @@ if ($result) {
 
             <!--Display options-->
             <!--DISPLAY OPTIONS SELECTOR DIV start-->
-            <div class="flex sm:flex-row sm:flex-wrap flex-col space-y-4 sm:space-y-0 bg-white dark:bg-black p-8 div_before_timeline">
+            <div class="flex sm:flex-row sm:flex-wrap flex-col space-y-4 sm:space-y-0 bg-white dark:bg-black p-8 div_before_p_timeline">
                 <div class="flex-col flex-1">
                     <div class=" font-['Playfair_Display'] dark:text-white lg:text-[2rem]">IMPARTING EDUCATION FOR NEARLY 40 YEARS AND BEYOND</div>
                     <div class="dark:text-white mt-4 lg:text-lg">Did you know? We were the first college in entire Maharashtra to be accredited by NAAC with an "A" grade in the First Cycle. Here are the leaders that have been monumental in many more such achievements </div>
@@ -109,24 +172,25 @@ if ($result) {
                         <hr class="border-gray-600 " />
                     </ul>
                 </div>
-            
+
                 <!--DISPLAY OPTIONS SELECTOR DIV end-->
             </div>
 
             <!--div to add space-->
-            <div class=" w-full h-[10vh] lg:h-[20vh] bg-white dark:bg-black div_before_timeline" ></div>
+            <div class=" w-full h-[10vh] lg:h-[20vh] bg-white dark:bg-black div_before_p_timeline"></div>
 
             <div class="flex  items-center flex-col w-full  bg-white dark:bg-black">
                 <!--div to add space-->
                 <!-- <div class="h-[10vh] lg:h-[20vh]"></div> -->
 
-            <div class="w-[50%] font-['Playfair_Display'] text-[2rem] lg:text-[4rem] border-y-4 dark:border-white border-black dark:text-white text-center">Principals</div>
+                <div class="w-[50%] font-['Playfair_Display'] text-[2rem] lg:text-[4rem] border-y-4 dark:border-white border-black dark:text-white text-center">Principals</div>
                 <!--ALL MEMBERS DIV start-->
-                <div class="flex flex-1 flex-col mt-16 lg:mt-24 items-center relative" id="all_members_div">
+                <div class="flex flex-1 flex-col mt-16 lg:mt-24 items-center relative" id="principal_members_div">
 
                     <?php
-                    for ($index = 0; $index < count($all_members); $index++) {
-                        $year_month_key = (array_keys($all_members))[$index];
+                    for ($index = 0; $index < count($principals_array); $index++) {
+                        $year_month_key = (array_keys($principals_array))[$index];
+                        $role=$principals_array[$year_month_key][0]["role"];
 
                         if ($index % 2 == 0) {
                             $arrangement_flex_direction = "flex-row";
@@ -140,61 +204,41 @@ if ($result) {
                         if ($index == 0) {
                     ?>
                             <div class="flex w-full px-4 pt-4 gap-4 <?php echo $arrangement_flex_direction ?>">
-                                <div class="-mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] year_text_div  transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+                                <div class="-mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?>  transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
 
                                 <!-- timeline element-->
                                 <div class="flex flex-col items-center  ">
-                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center timeline_circle ">
+                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center <?php echo $role . "_timeline_circle" ?> ">
+
                                         <div class="rounded-full w-6 h-6 bg-white"></div>
                                     </div>
 
                                     <div class="flex-1  relative">
                                         <div class=" h-[100%] w-2 opacity-30 bg-black dark:bg-white ease-linear transition-all "></div>
-                                        <div class="-z-10 absolute max-h-[100%] top-0 left-0 h-[0%] timeline_line  w-2"></div>
+                                        <div class="-z-10 absolute max-h-[100%] top-0 left-0 h-[0%] w-2 <?php echo $role . "_timeline_line" ?>"></div>
                                     </div>
                                 </div>
 
                                 <!--card container div-->
-                                <div class="flex flex-col flex-1 flex-wrap gap-8 mb-12 card_container_div transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                <div class="flex flex-col flex-1 flex-wrap gap-8 mb-12 <?php echo $role. "_card_container_div" ?>  transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+
                                     <?php
 
-                                    foreach ($all_members[$year_month_key] as $member) {
+                                    foreach ($principals_array[$year_month_key] as $member) {
 
-                                        $role = "";
-                                        $bg_color = "";
-                                        $title_color = "";
-                                        $card_type="";
-                                        switch ($member["role"]) {
-                                            case "p":
-                                                $role = "Principal";
-                                                $bg_color = "bg-gradient-to-br from-blue-100 to-blue-50 ";
-                                                $title_color = "text-blue-800";
-                                                $card_type="p_card";
-                                                break;
-                                            case "vpd":
-                                                $role = "Vice Principal (Degree College)";
-                                                $bg_color = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
-                                                $title_color = "text-indigo-800";
-                                                 $card_type="vpd_card";
-                                                break;
-                                            case "vpj":
-                                                $role = "Vice Principal (Junior College)";
-                                                $bg_color = "bg-gradient-to-br from-sky-100 to-sky-50 ";
-                                                $title_color = "text-sky-500";
-                                                 $card_type="vpj_card";
-                                                break;
-                                        }
+
 
                                     ?>
                                         <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $bg_color;echo $card_type; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
                                             <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
                                                 </div>
-                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $title_color; ?>"><?php echo $role; ?>
+                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
                                                 </div>
 
                                                 <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
@@ -221,65 +265,44 @@ if ($result) {
                             </div>
 
                         <?php
-                        } else if ($index == count($all_members) - 1) {
+                        } else if ($index == count($principals_array) - 1) {
 
                         ?>
 
                             <div class="flex w-full px-4 gap-4 <?php echo $arrangement_flex_direction ?> ">
                                 <!--w-[33%]-->
-                                <div class="-mt-4 font-['Playfair_Display'] flex-1 ext-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] year_text_div opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+                                <div class="-mt-4 font-['Playfair_Display'] flex-1 ext-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?> opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
                                 <!--ending timeline element-->
                                 <div class="flex flex-col items-center ">
                                     <div class="h-10 relative">
                                         <div class="h-[100%] w-2 opacity-30  bg-black  dark:bg-white transition-all"></div>
-                                        <div class="absolute top-0 left-0 h-[0%] timeline_line w-2"></div>
+                                        <div class="absolute top-0 left-0 h-[0%] <?php echo $role . "_timeline_line" ?> w-2"></div>
                                     </div>
-                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center timeline_circle opacity-30 transition-opacity ">
+                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center <?php echo $role . "_timeline_circle" ?>  opacity-30 transition-opacity ">
                                         <div class="rounded-full w-6 h-6  bg-white ">
                                         </div>
                                     </div>
                                 </div>
 
                                 <!--card container div-->
-                                <div class="flex flex-1  flex-col space-y-4 sm:space-y-0 mb-16 flex-wrap gap-8 card_container_div opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                <div class="flex flex-1  flex-col space-y-4 sm:space-y-0 mb-16 flex-wrap gap-8 <?php echo $role. "_card_container_div" ?> opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
                                     <?php
 
-                                    foreach ($all_members[$year_month_key] as $member) {
+                                    foreach ($principals_array[$year_month_key] as $member) {
 
-                                       $role = "";
-                                        $bg_color = "";
-                                        $title_color = "";
-                                        $card_type="";
-                                        switch ($member["role"]) {
-                                            case "p":
-                                                $role = "Principal";
-                                                $bg_color = "bg-gradient-to-br from-blue-100 to-blue-50 ";
-                                                $title_color = "text-blue-800";
-                                                $card_type="p_card";
-                                                break;
-                                            case "vpd":
-                                                $role = "Vice Principal (Degree College)";
-                                                $bg_color = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
-                                                $title_color = "text-indigo-800";
-                                                 $card_type="vpd_card";
-                                                break;
-                                            case "vpj":
-                                                $role = "Vice Principal (Junior College)";
-                                                $bg_color = "bg-gradient-to-br from-sky-100 to-sky-50 ";
-                                                $title_color = "text-sky-500";
-                                                 $card_type="vpj_card";
-                                                break;
-                                        }
+
+
                                     ?>
                                         <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $bg_color;echo $card_type; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
                                             <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
                                                 </div>
-                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $title_color; ?>"><?php echo $role; ?>
+                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
                                                 </div>
 
                                                 <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
@@ -315,7 +338,7 @@ if ($result) {
                         ?>
                             <div class="flex w-full px-4 gap-4 relative <?php echo $arrangement_flex_direction ?>">
 
-                                <div class=" -mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] year_text_div opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+                                <div class=" -mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role. "_year_text_div" ?> opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
 
                                 <!--middle timeline element-->
                                 <div class="flex flex-col items-center ">
@@ -323,58 +346,36 @@ if ($result) {
                                         <div class=" w-2 opacity-30 transition-all bg-black h-[100%] dark:bg-white"></div>
                                         <div class="absolute top-0 left-0 h-[0%] timeline_line w-2 "></div>
                                     </div> -->
-                                    <div class="rounded-full opacity-30 transition-opacity timeline_circle w-8 h-8 bg-black dark:bg-white flex justify-center items-center">
+                                    <div class="rounded-full opacity-30 transition-opacity <?php echo $role. "_timeline_circle" ?>  w-8 h-8 bg-black dark:bg-white flex justify-center items-center">
                                         <div class="rounded-full w-6 h-6 bg-white ">
                                         </div>
                                     </div>
                                     <div class="flex-1  relative">
                                         <div class="h-[100%] w-2 opacity-30 bg-black dark:bg-white transition-all "></div>
-                                        <div class="absolute top-0 left-0 h-[0%] timeline_line  w-2"></div>
+                                        <div class="absolute top-0 left-0 h-[0%] <?php echo $role. "_timeline_line" ?>  w-2"></div>
                                     </div>
                                 </div>
 
                                 <!--card container div-->
-                                <div class="flex flex-1 flex-col  space-y-4 sm:space-y-0 flex-wrap mb-16 gap-8 card_container_div opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                <div class="flex flex-1 flex-col  space-y-4 sm:space-y-0 flex-wrap mb-16 gap-8 <?php echo $role. "_card_container_div" ?> opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
                                     <?php
 
-                                    foreach ($all_members[$year_month_key] as $member) {
+                                    foreach ($principals_array[$year_month_key] as $member) {
 
-                                        $role = "";
-                                        $bg_color = "";
-                                        $title_color = "";
-                                        $card_type="";
-                                        switch ($member["role"]) {
-                                            case "p":
-                                                $role = "Principal";
-                                                $bg_color = "bg-gradient-to-br from-blue-100 to-blue-50 ";
-                                                $title_color = "text-blue-800";
-                                                $card_type="p_card";
-                                                break;
-                                            case "vpd":
-                                                $role = "Vice Principal (Degree College)";
-                                                $bg_color = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
-                                                $title_color = "text-indigo-800";
-                                                 $card_type="vpd_card";
-                                                break;
-                                            case "vpj":
-                                                $role = "Vice Principal (Junior College)";
-                                                $bg_color = "bg-gradient-to-br from-sky-100 to-sky-50 ";
-                                                $title_color = "text-sky-500";
-                                                 $card_type="vpj_card";
-                                                break;
-                                        }
+
 
                                     ?>
 
                                         <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $bg_color; echo $card_type;?>" data-aos="<?php echo $data_aos_animation ?>">
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                        echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
                                             <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
                                                 </div>
-                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $title_color; ?>"><?php echo $role; ?>
+                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
                                                 </div>
 
                                                 <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
