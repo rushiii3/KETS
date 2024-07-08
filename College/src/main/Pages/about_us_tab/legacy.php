@@ -1,85 +1,33 @@
 <?php
-
-//echo "here";
 include("../../../config/connect.php");
+include("../../../php/common_functions.php");
 
-$fetch_all_stmt = "SELECT * FROM cp_has_tenure, college_personnel,tenure WHERE cp_has_tenure.cp_id=college_personnel.cp_id AND cp_has_tenure.tenure_id=tenure.tenure_id ORDER BY tenure.tenure_start_date, tenure.tenure_end_date ASC;";
-
-
+$fetch_all_stmt = "SELECT * FROM cp_has_tenure, college_personnel,tenure WHERE cp_has_tenure.cp_id=college_personnel.cp_id AND cp_has_tenure.tenure_id=tenure.tenure_id ORDER BY tenure.tenure_start_date ASC, tenure.tenure_end_date DESC;";
 $fetch_query = $conn->prepare($fetch_all_stmt);
 $fetch_query->execute();
 $result = $fetch_query->get_result();
 
-$principals_array = [];
-$vice_principals_degree_array = [];
-$vice_principals_junior_array = [];
-$principal_tenure_years = [];
+$all_members = [];
 
-$vice_principal_junior_tenure_years = [];
-$vice_principal_degree_tenure_years = [];
+$all_members_tenure_years = [];
 
 if ($result) {
     while ($row = $result->fetch_assoc()) {
-        //echo $row["role"];
-        switch ($row["role"]) {
-            case "p":
-                array_push($principals_array, $row);
-                // Create a DateTime object
-                $start_date = new DateTime($row["tenure_start_date"]);
-                $year1 = $start_date->format('Y');
-                if ($row["tenure_end_date"]) {
-                    $end_date = new DateTime($row["tenure_end_date"]);
-                    // Extract the year using format
-                    $year2 = $end_date->format('Y');
-                } else {
-                    $year2 = "today";
-                }
-                $final_year = $year1 . "-" . $year2;
-                array_push($principal_tenure_years, $final_year);
 
-                break;
-            case "vpd":
-                array_push($vice_principals_degree_array, $row);
+        //array_push($all_members, $row);
+        $start_date = new DateTime($row["tenure_start_date"]);
+        $year1 = $start_date->format('F Y');
 
-                // Create a DateTime object
-                $start_date = new DateTime($row["tenure_start_date"]);
-                $year1 = $start_date->format('Y');
-                if ($row["tenure_end_date"]) {
-                    $end_date = new DateTime($row["tenure_end_date"]);
-                    // Extract the year using format
-                    $year2 = $end_date->format('Y');
-                } else {
-                    $year2 = "today";
-                }
-                $final_year = $year1 . "-" . $year2;
-                array_push($vice_principal_degree_tenure_years, $final_year);
-
-                break;
-            case "vpj":
-                array_push($vice_principals_junior_array, $row);
-                // Create a DateTime object
-                $start_date = new DateTime($row["tenure_start_date"]);
-                $year1 = $start_date->format('Y');
-                if ($row["tenure_end_date"]) {
-                    $end_date = new DateTime($row["tenure_end_date"]);
-                    // Extract the year using format
-                    $year2 = $end_date->format('Y');
-                } else {
-                    $year2 = "today";
-                }
-                $final_year = $year1 . "-" . $year2;
-                array_push($vice_principal_junior_tenure_years, $final_year);
-
-                break;
-        }
-
-        
+        $all_members[$year1] ??= array();
+        array_push($all_members[$year1], $row);
     }
+    // print_r($all_members);
 
-    //echo count($principals_array);
+    //echo count($all_members);
 } else {
     echo "<script>console.log('fetch error'" . $conn->error . ")";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +37,11 @@ if ($result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V. G. VAZE|Legacy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <?php include('../../../library/library.php'); ?>
 
     <style>
@@ -103,16 +56,12 @@ if ($result) {
                 -webkit-text-stroke: 2px white;
                 color: transparent;
                 opacity: 0.75;
-            } 
-        }
-
-        @media (min-width: 648px){
-
+            }
         }
     </style>
 </head>
 
-<body class="bg-white dark:bg-black">
+<body class="bg-white dark:bg-black ">
     <!--
     /***************
     NAVBAR 
@@ -126,476 +75,349 @@ if ($result) {
     ****************/
     -->
 
-
-    <!--PRINCIPALS-->
-
-    <div class="flex flex-col items-center">
-
-        <!--TITLE -->
-        <section class="py-8">
-            <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                <div class="space-y-2 text-center">
-                    <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Our Pillars of Excellence</h2>
-                    <p class="lg:mx-auto  text-gray-600 dark:text-gray-300"> Our Principals throughout the years </p>
-                </div>
-            </div>
-        </section>
-
-        <!--Year slider div-->
-        <div class="flex w-full">
-            <ul class="list-none flex h-[4.3rem] justify-between items-center w-full dark:text-white  overflow-clip" id="year_ul_principals">
-
-                <li class="w-1/3 flex-none "></li>
-
-                <li class="text-xl flex-none sm:text-4xl md:text-[3rem] lg:text-[3.7rem] text-center w-1/3 font-black transition-all duration-500 "><?php echo $principal_tenure_years[0] ?></li>
-                <?php
-                for ($i = 1; $i < count($principal_tenure_years); $i++) {
-                    echo '
-                <li class="text-sm flex-none sm:text-2xl md:text-4xl font-bold lg:text-5xl text-center  w-1/3 inactive_year  dark:inactive_year transition-all duration-500">' . $principal_tenure_years[$i] . ' </li>';
-                }
-
-                ?>
-
-
-            </ul>
+    <div>
+        <!--BACKGROUND IMAGE DIV-->
+        <div class="h-[100vh] w-[100vw] fixed top-0 left-0 -z-10" id="bg_fixed_image_div">
+            <img src="https://vazecollege.net/wp-content/uploads/2016/03/independance-day-370x296.jpg" loading="lazy" class="w-full h-full  opacity-80 brightness-50">
         </div>
 
+        <!--MAIN CONTENTS DIV-->
+        <div class="flex flex-col w-full h-full">
 
-
-        <!--Principal Info div-->
-        <div class="flex mt-12 w-full relative">
-
-            <!--Previous button-->
-            <button class="bg-white w-fit p-4 absolute left-0 top-[50%] opacity-60 z-10 hover:opacity-100 dark:text-black" id="prev_button_principals">
-                <span class="material-symbols-outlined">
-                    arrow_back_ios
-                </span>
-            </button>
-
-            <div class="flex overflow-x-clip">
-                <?php
-                
-                foreach ($principals_array as $principal) {
-                    
-                ?>
-
-                    <!-- card 1-->
-                    <div class="flex-none  w-[100vw]  px-16 dark:text-white principal_info_card transition-all duration-500">
-                        <div class="flex justify-between lg:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400 ">
-                            <div class="w-[100%] flex-1 lg:flex-none lg:w-2/5 ">
-                                <img src="<?php echo $principal["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740" ?>" class="w-full h-full object-fill aspect-video lg:rounded-l-xl lg:rounded-tr-none rounded-t-xl"   />
-                            </div>
-                            <div class="lg:w-3/5 flex-1 lg:flex-none p-2 sm:p-4">
-                                <p class="text-center mt-2  text-2xl sm:text-4xl font-black"><?php echo $principal["cp_honourific"] . " " . $principal["cp_name"]; ?></p>
-                                <p class="text-sm sm:text-xl mt-4 font-bold italic text-center">
-                                    <?php 
-                                    echo (new DateTime($principal["tenure_start_date"]))->format('F j, Y') ." - " ;
-                                    if( $principal["tenure_end_date"]){
-                                        echo (new DateTime($principal["tenure_end_date"]))->format('F j, Y'); 
-                                    }
-                                    else{
-                                        echo "today";
-                                    }
-                                    
-                                    ?>
-                                </p>
-                                <p class=" lg:mt-2 line-clamp-4 md:line-clamp-none lg:text-justify  p-2 lg:p-8 ">
-                                    <?php
-                                    echo $principal["cp_about"];
-                                    ?>
-
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                <?php
-                }
-                
-                ?>
-
-                <?php /*
-                <!--card 2-->
-                <div class="flex-none  w-[100vw]  px-16 dark:text-white principal_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img srcset="https://vazecollege.net/wp-content/uploads/2022/06/Dr-M-R-Kurup.png" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">G.T Paratkar </p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-                
-                <!--card 3-->
-                <div class="flex-none w-[100vw]  px-16 py-4 dark:text-white principal_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">B.B. Sharma</p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--card 4-->
-                <div class="flex-none w-[100vw] dark:text-white px-16 principal_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">Prof. (Dr.) Preeta Nilesh</p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-                
-                */ ?>
-
+            <div class="font-['Playfair_Display'] px-8 text-[2rem] md:text-[4rem] lg:text-[5rem] max-w-[60%] text-white h-[100vh] div_before_timeline">
+                A TIMELINE OF OUR COLLEGE LEADERSHIP HISTORY AND LEGACY
             </div>
 
-            <!--Next button-->
-            <button class="bg-white w-fit p-4 absolute right-0 top-[50%] opacity-60 hover:opacity-100 dark:text-black" id="next_button_principals"><span class="material-symbols-outlined">
-                    arrow_forward_ios
-                </span>
-            </button>
+            <!--Breadcrumbs-->
+
+            <!--Display options-->
+            <!--DISPLAY OPTIONS SELECTOR DIV start-->
+            <div class="flex sm:flex-row sm:flex-wrap flex-col space-y-4 sm:space-y-0 bg-white dark:bg-black p-8 div_before_timeline">
+                <div class="flex-col flex-1">
+                    <div class=" font-['Playfair_Display'] dark:text-white lg:text-[2rem]">IMPARTING EDUCATION FOR NEARLY 40 YEARS AND BEYOND</div>
+                    <div class="dark:text-white mt-4 lg:text-lg">Did you know? We were the first college in entire Maharashtra to be accredited by NAAC with an "A" grade in the First Cycle. Here are the leaders that have been monumental in many more such achievements </div>
+                </div>
+                <div class="flex-1">
+                    <ul class="list-none w-inherit sm:w-full dark:text-white " id="display_options_ul">
+                        <li class=" sm:text-[1.5rem]  transition-[font] cursor-pointer" id="opt_1">All our Leaders</li>
+                        <hr class="border-gray-600 " />
+                        <li id="opt_2" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Principals</li>
+                        <hr class="border-gray-600 " />
+                        <li id="opt_3" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Vice-principals (Degree College )</li>
+                        <hr class="border-gray-600 " />
+                        <li id="opt_4" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Vice-principals (Junior College)</li>
+                        <hr class="border-gray-600 " />
+                    </ul>
+                </div>
+            
+                <!--DISPLAY OPTIONS SELECTOR DIV end-->
+            </div>
+
+            <!--div to add space-->
+            <div class=" w-full h-[10vh] lg:h-[20vh] bg-white dark:bg-black div_before_timeline" ></div>
+
+            <div class="flex  items-center flex-col w-full  bg-white dark:bg-black">
+                <!--div to add space-->
+                <!-- <div class="h-[10vh] lg:h-[20vh]"></div> -->
+
+            <div class="w-[50%] font-['Playfair_Display'] text-[2rem] lg:text-[4rem] border-y-4 dark:border-white border-black dark:text-white text-center">Principals</div>
+                <!--ALL MEMBERS DIV start-->
+                <div class="flex flex-1 flex-col mt-16 lg:mt-24 items-center relative" id="all_members_div">
+
+                    <?php
+                    for ($index = 0; $index < count($all_members); $index++) {
+                        $year_month_key = (array_keys($all_members))[$index];
+
+                        if ($index % 2 == 0) {
+                            $arrangement_flex_direction = "flex-row";
+                            $arrangement_justify_contents = "items-start";
+                            $data_aos_animation = "fade-left";
+                        } else {
+                            $arrangement_flex_direction = "flex-row-reverse";
+                            $arrangement_justify_contents = "items-end";
+                            $data_aos_animation = "fade-right";
+                        }
+                        if ($index == 0) {
+                    ?>
+                            <div class="flex w-full px-4 pt-4 gap-4 <?php echo $arrangement_flex_direction ?>">
+                                <div class="-mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] year_text_div  transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+
+                                <!-- timeline element-->
+                                <div class="flex flex-col items-center  ">
+                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center timeline_circle ">
+                                        <div class="rounded-full w-6 h-6 bg-white"></div>
+                                    </div>
+
+                                    <div class="flex-1  relative">
+                                        <div class=" h-[100%] w-2 opacity-30 bg-black dark:bg-white ease-linear transition-all "></div>
+                                        <div class="-z-10 absolute max-h-[100%] top-0 left-0 h-[0%] timeline_line  w-2"></div>
+                                    </div>
+                                </div>
+
+                                <!--card container div-->
+                                <div class="flex flex-col flex-1 flex-wrap gap-8 mb-12 card_container_div transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                    <?php
+
+                                    foreach ($all_members[$year_month_key] as $member) {
+
+                                        $role = "";
+                                        $bg_color = "";
+                                        $title_color = "";
+                                        $card_type="";
+                                        switch ($member["role"]) {
+                                            case "p":
+                                                $role = "Principal";
+                                                $bg_color = "bg-gradient-to-br from-blue-100 to-blue-50 ";
+                                                $title_color = "text-blue-800";
+                                                $card_type="p_card";
+                                                break;
+                                            case "vpd":
+                                                $role = "Vice Principal (Degree College)";
+                                                $bg_color = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
+                                                $title_color = "text-indigo-800";
+                                                 $card_type="vpd_card";
+                                                break;
+                                            case "vpj":
+                                                $role = "Vice Principal (Junior College)";
+                                                $bg_color = "bg-gradient-to-br from-sky-100 to-sky-50 ";
+                                                $title_color = "text-sky-500";
+                                                 $card_type="vpj_card";
+                                                break;
+                                        }
+
+                                    ?>
+                                        <!--card element-->
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $bg_color;echo $card_type; ?>" data-aos="<?php echo $data_aos_animation ?>">
+
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
+
+                                            <div class="flex w-fit flex-col mt-0 sm:mt-4">
+                                                <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                </div>
+                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $title_color; ?>"><?php echo $role; ?>
+                                                </div>
+
+                                                <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
+                                                <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
+                                                    <?php
+                                                    echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
+                                                    if ($member["tenure_end_date"]) {
+                                                        echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
+                                                    } else {
+                                                        echo "today";
+                                                    }
+
+                                                    ?>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+
+                            </div>
+
+                        <?php
+                        } else if ($index == count($all_members) - 1) {
+
+                        ?>
+
+                            <div class="flex w-full px-4 gap-4 <?php echo $arrangement_flex_direction ?> ">
+                                <!--w-[33%]-->
+                                <div class="-mt-4 font-['Playfair_Display'] flex-1 ext-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] year_text_div opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+                                <!--ending timeline element-->
+                                <div class="flex flex-col items-center ">
+                                    <div class="h-10 relative">
+                                        <div class="h-[100%] w-2 opacity-30  bg-black  dark:bg-white transition-all"></div>
+                                        <div class="absolute top-0 left-0 h-[0%] timeline_line w-2"></div>
+                                    </div>
+                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center timeline_circle opacity-30 transition-opacity ">
+                                        <div class="rounded-full w-6 h-6  bg-white ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--card container div-->
+                                <div class="flex flex-1  flex-col space-y-4 sm:space-y-0 mb-16 flex-wrap gap-8 card_container_div opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                    <?php
+
+                                    foreach ($all_members[$year_month_key] as $member) {
+
+                                       $role = "";
+                                        $bg_color = "";
+                                        $title_color = "";
+                                        $card_type="";
+                                        switch ($member["role"]) {
+                                            case "p":
+                                                $role = "Principal";
+                                                $bg_color = "bg-gradient-to-br from-blue-100 to-blue-50 ";
+                                                $title_color = "text-blue-800";
+                                                $card_type="p_card";
+                                                break;
+                                            case "vpd":
+                                                $role = "Vice Principal (Degree College)";
+                                                $bg_color = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
+                                                $title_color = "text-indigo-800";
+                                                 $card_type="vpd_card";
+                                                break;
+                                            case "vpj":
+                                                $role = "Vice Principal (Junior College)";
+                                                $bg_color = "bg-gradient-to-br from-sky-100 to-sky-50 ";
+                                                $title_color = "text-sky-500";
+                                                 $card_type="vpj_card";
+                                                break;
+                                        }
+                                    ?>
+                                        <!--card element-->
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $bg_color;echo $card_type; ?>" data-aos="<?php echo $data_aos_animation ?>">
+
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
+
+                                            <div class="flex w-fit flex-col mt-0 sm:mt-4">
+                                                <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                </div>
+                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $title_color; ?>"><?php echo $role; ?>
+                                                </div>
+
+                                                <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
+                                                <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
+                                                    <?php
+                                                    echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
+                                                    if ($member["tenure_end_date"]) {
+                                                        echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
+                                                    } else {
+                                                        echo "today";
+                                                    }
+
+                                                    ?>
+                                                </div>
+                                            </div>
+
+                                        </div>
 
 
-            <!--END OF PRINCIPAL INFO DIV-->
+
+                                    <?php
+                                    }
+                                    ?>
+
+                                </div>
+
+                            </div>
+
+                        <?php
+
+                        } else {
+                            //middle element
+                        ?>
+                            <div class="flex w-full px-4 gap-4 relative <?php echo $arrangement_flex_direction ?>">
+
+                                <div class=" -mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] year_text_div opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+
+                                <!--middle timeline element-->
+                                <div class="flex flex-col items-center ">
+                                    <!-- <div class="h-10  relative">
+                                        <div class=" w-2 opacity-30 transition-all bg-black h-[100%] dark:bg-white"></div>
+                                        <div class="absolute top-0 left-0 h-[0%] timeline_line w-2 "></div>
+                                    </div> -->
+                                    <div class="rounded-full opacity-30 transition-opacity timeline_circle w-8 h-8 bg-black dark:bg-white flex justify-center items-center">
+                                        <div class="rounded-full w-6 h-6 bg-white ">
+                                        </div>
+                                    </div>
+                                    <div class="flex-1  relative">
+                                        <div class="h-[100%] w-2 opacity-30 bg-black dark:bg-white transition-all "></div>
+                                        <div class="absolute top-0 left-0 h-[0%] timeline_line  w-2"></div>
+                                    </div>
+                                </div>
+
+                                <!--card container div-->
+                                <div class="flex flex-1 flex-col  space-y-4 sm:space-y-0 flex-wrap mb-16 gap-8 card_container_div opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                    <?php
+
+                                    foreach ($all_members[$year_month_key] as $member) {
+
+                                        $role = "";
+                                        $bg_color = "";
+                                        $title_color = "";
+                                        $card_type="";
+                                        switch ($member["role"]) {
+                                            case "p":
+                                                $role = "Principal";
+                                                $bg_color = "bg-gradient-to-br from-blue-100 to-blue-50 ";
+                                                $title_color = "text-blue-800";
+                                                $card_type="p_card";
+                                                break;
+                                            case "vpd":
+                                                $role = "Vice Principal (Degree College)";
+                                                $bg_color = "bg-gradient-to-br from-indigo-100 to-indigo-50 dark:bg-gray-800 ";
+                                                $title_color = "text-indigo-800";
+                                                 $card_type="vpd_card";
+                                                break;
+                                            case "vpj":
+                                                $role = "Vice Principal (Junior College)";
+                                                $bg_color = "bg-gradient-to-br from-sky-100 to-sky-50 ";
+                                                $title_color = "text-sky-500";
+                                                 $card_type="vpj_card";
+                                                break;
+                                        }
+
+                                    ?>
+
+                                        <!--card element-->
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $bg_color; echo $card_type;?>" data-aos="<?php echo $data_aos_animation ?>">
+
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
+
+                                            <div class="flex w-fit flex-col mt-0 sm:mt-4">
+                                                <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                </div>
+                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $title_color; ?>"><?php echo $role; ?>
+                                                </div>
+
+                                                <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
+                                                <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
+                                                    <?php
+                                                    echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
+                                                    if ($member["tenure_end_date"]) {
+                                                        echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
+                                                    } else {
+                                                        echo "today";
+                                                    }
+
+                                                    ?>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    <?php
+                                    }
+                                    ?>
+
+                                </div>
+
+                            </div>
+
+                    <?php
+                        }
+                    }
+                    ?>
+
+                </div>
+                <!-- ALL MEMBERS DIV end-->
+
+            </div>
+            <!--
+            /***************
+            FOOTER
+            ****************/
+            -->
+            <?php include('../../Layouts/footer.php'); ?>
         </div>
     </div>
-
-
-    <hr class="h-px  mx-auto w-[90%] my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-    <!--VICE PRINCIPALS DEGREE-->
-    <div class="flex flex-col items-center">
-
-        <!--TITLE -->
-        <section class="py-8">
-            <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                <div class="space-y-2 text-center">
-                    <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Our Strategic Leaders of Degree College </h2>
-                    <p class="lg:mx-auto  text-gray-600 dark:text-gray-300"> Our Degree-College Vice-Principals throughout the years </p>
-                </div>
-            </div>
-        </section>
-
-        <!--Year slider div-->
-        <div class="flex w-full">
-            <ul class="list-none flex h-[4.3rem] justify-between items-center w-full dark:text-white  overflow-clip" id="year_ul_vp_degree">
-                <li class="w-1/3 flex-none "></li>
-                <li class="text-xl  flex-none sm:text-4xl md:text-[3rem] lg:text-[3.7rem] text-center w-1/3 font-black transition-all duration-500 "><?php echo $vice_principal_degree_tenure_years[0] ?></li>
-
-                <?php
-                for ($i = 1; $i < count($vice_principal_degree_tenure_years); $i++) {
-                    echo '
-                <li class="text-sm flex-none sm:text-2xl md:text-4xl font-bold lg:text-5xl text-center  w-1/3 inactive_year  dark:inactive_year transition-all duration-500">' . $vice_principal_degree_tenure_years[$i] . '</li>';
-                }
-                ?>
-
-
-            </ul>
-        </div>
-
-
-
-        <!--Vice Principal Info div-->
-        <div class="flex mt-12 w-full relative">
-
-            <!--Previous button-->
-            <button class="bg-white w-fit p-4 absolute left-0 top-[50%] opacity-60 z-10 hover:opacity-100 dark:text-black" id="prev_button_vp_degree">
-                <span class="material-symbols-outlined">
-                    arrow_back_ios
-                </span>
-            </button>
-
-            <div class="flex overflow-x-clip">
-                <?php
-                foreach ($vice_principals_degree_array as $vpd) {
-                ?>
-
-                    <!-- card 1-->
-                    <div class="flex-none  w-[100vw]  px-16 dark:text-white vp_degree_info_card transition-all duration-500">
-                        <div class="flex justify-between lg:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                            <div class="w-[100%] flex-1 lg:flex-none lg:w-2/5">
-                                <img src="<?php echo $vpd["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740" ?>" class="w-full h-full object-fill aspect-video lg:rounded-l-xl lg:rounded-tr-none rounded-t-xl" />
-                            </div>
-                            <div class="lg:w-3/5 flex-1 lg:flex-none p-2 sm:p-4">
-                                <p class="text-center mt-2  text-2xl sm:text-4xl font-black"><?php echo $vpd["cp_honourific"] . " " . $vpd["cp_name"]; ?></p>
-                                <p class="text-xl mt-4 italic text-center">
-                                    <?php 
-                                    echo (new DateTime($vpd["tenure_start_date"]))->format('F j, Y') ." - " ;
-                                    if( $vpd["tenure_end_date"]){
-                                        echo (new DateTime($vpd["tenure_end_date"]))->format('F j, Y'); 
-                                    }
-                                    else{
-                                        echo "today";
-                                    }
-                                    
-                                    ?>
-                                </p>
-                                <p class="mt-2 text-justify p-2 lg:p-8 ">
-                                    <?php
-                                    echo $vpd["cp_about"];
-
-                                    ?>
-
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
-
-                <?php
-                /*
-                <!--card 2-->
-                <div class="flex-none  w-[100vw]  px-16 dark:text-white vp_degree_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">G.T Paratkar </p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--card 3-->
-                <div class="flex-none w-[100vw]  px-16 py-4 dark:text-white vp_degree_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">B.B. Sharma</p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--card 4-->
-                <div class="flex-none w-[100vw] dark:text-white px-16 vp_degree_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">Prof. (Dr.) Preeta Nilesh</p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-                */
-                ?>
-            </div>
-
-            <!--Next button-->
-            <button class="bg-white w-fit p-4 absolute right-0 top-[50%] opacity-60 hover:opacity-100 dark:text-black" id="next_button_vp_degree">
-                <span class="material-symbols-outlined">
-                    arrow_forward_ios
-                </span>
-            </button>
-
-
-            <!--END OF PRINCIPAL INFO DIV-->
-        </div>
-    </div>
-
-    <hr class="h-px  mx-auto w-[90%] my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-
-    <!--VICE PRINCIPALS JUNIOR-->
-    <div class="flex flex-col items-center">
-
-
-        <!--TITLE -->
-        <section class="py-8">
-            <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                <div class="space-y-2 text-center">
-                    <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Our Strategic Leaders of Junior College </h2>
-                    <p class="lg:mx-auto  text-gray-600 dark:text-gray-300"> Our Junior-College Vice-Principals throughout the years </p>
-                </div>
-            </div>
-        </section>
-
-        <!--Year slider div-->
-        <div class="flex w-full">
-            <ul class="list-none flex h-[4.3rem] justify-between items-center w-full dark:text-white  overflow-clip" id="year_ul_vp_junior">
-                <li class="w-1/3 flex-none "></li>
-                <li class="text-xl  flex-none sm:text-4xl md:text-[3rem] lg:text-[3.7rem] text-center w-1/3 font-black transition-all duration-500 "><?php echo $vice_principal_junior_tenure_years[0] ?></li>
-                <?php
-                for ($i = 1; $i < count($vice_principal_junior_tenure_years); $i++) {
-                    echo '
-                <li class="text-sm  flex-none sm:text-2xl md:text-4xl font-bold lg:text-5xl text-center  w-1/3 inactive_year  dark:inactive_year transition-all duration-500">' . $vice_principal_junior_tenure_years[$i] . '</li>';
-                }
-                ?>
-
-
-            </ul>
-        </div>
-
-
-
-        <!--Vice Principal Info div-->
-        <div class="flex mt-12 w-full relative">
-
-            <!--Previous button-->
-            <button class="bg-white w-fit p-4 absolute left-0 top-[50%] opacity-60 z-10 hover:opacity-100 dark:text-black" id="prev_button_vp_junior">
-                <span class="material-symbols-outlined">
-                    arrow_back_ios
-                </span>
-            </button>
-
-            <div class="flex overflow-x-clip">
-                <?php
-                foreach ($vice_principals_junior_array as $vpj) {
-                ?>
-
-                    <!-- card 1-->
-                    <div class="flex-none  w-[100vw]  px-16 dark:text-white vp_junior_info_card transition-all duration-500">
-                        <div class="flex justify-between lg:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400 ">
-                            <div class="w-[100%] flex-1 lg:flex-none lg:w-2/5">
-                                <img src="<?php echo $vpj["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740" ?>" class="w-full h-full object-fill aspect-video lg:rounded-l-xl lg:rounded-tr-none rounded-t-xl" />
-                            </div>
-                            <div class="lg:w-3/5 flex-1 lg:flex-none p-2 sm:p-4">
-                                <p class="text-center mt-2  text-2xl sm:text-4xl font-black"><?php echo $vpj["cp_honourific"] . " " . $vpj["cp_name"]; ?></p>
-                                <p class="text-sm sm:text-xl mt-4 font-bold italic text-center"> 
-                                    <?php 
-                                    echo (new DateTime($vpj["tenure_start_date"]))->format('F j, Y') ." - " ;
-                                    if( $vpj["tenure_end_date"]){
-                                        echo (new DateTime($vpj["tenure_end_date"]))->format('F j, Y'); 
-                                    }
-                                    else{
-                                        echo "today";
-                                    }
-                                    
-                                    ?>
-                                    </p>
-                                <p class="lg:mt-2 text-justify p-2 lg:p-8 ">
-                                    <?php
-                                    echo $vpj["cp_about"];
-
-                                    ?>
-
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
-
-                <?php
-                /*
-                <!--card 2-->
-                <div class="flex-none  w-[100vw]  px-16 dark:text-white vp_junior_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">G.T Paratkar </p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--card 3-->
-                <div class="flex-none w-[100vw]  px-16 py-4 dark:text-white vp_junior_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">B.B. Sharma</p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!--card 4-->
-                <div class="flex-none w-[100vw] dark:text-white px-16 vp_junior_info_card transition-all duration-500">
-                    <div class="sm:flex sm:justify-between sm:flex-row flex-col dark:bg-gray-700 dark:shadow-none rounded-xl shadow-2xl shadow-gray-400">
-                        <div class="w-full sm:w-2/5 ">
-                            <img src="https://vazecollege.net/wp-content/uploads/2022/08/Prof-Dr-Preeta-Nilesh-300x200.jpeg" class="w-full h-full sm:rounded-l-xl sm:rounded-tr-none rounded-t-xl" />
-                        </div>
-                        <div class="sm:w-3/5 p-4">
-                            <p class="text-center mt-2 text-4xl font-black">Prof. (Dr.) Preeta Nilesh</p>
-                            <p class="text-xl mt-4 italic text-center">“Enfold Challenges and Emerge with Opportunities”</p>
-                            <p class="mt-2 text-justify p-8 ">
-                                Prof. (Dr.) Preeta Nilesh, Principal
-                                Education drives out ignorance and emboldens us towards studied thought and action. Education empowers and energises. Education is undoubtedly, an effective medium of social transformation. It is education that helps shape careers and contributes to nation building. Vaze College, dedicated to the academic progression of students and health and safety of the community, is the dream come true of the commitment to education of its founder Chairman, Shri Bhausaheb Kelkar.</p>
-                        </div>
-
-                    </div>
-                </div>
-                */
-                ?>
-
-            </div>
-
-            <!--Next button-->
-            <button class="bg-white w-fit p-4 absolute right-0 top-[50%] opacity-60 hover:opacity-100 dark:text-black" id="next_button_vp_junior">
-                <span class="material-symbols-outlined">
-                    arrow_forward_ios
-                </span>
-            </button>
-
-
-            <!--END OF PRINCIPAL INFO DIV-->
-        </div>
-
-    </div>
-
-
-    <!--
-    /***************
-    FOOTER
-    ****************/
-    -->
-    <?php include('../../Layouts/footer.php'); ?>
 
     <script src="../../../js/about_us_tab/legacy.js"></script>
 </body>
