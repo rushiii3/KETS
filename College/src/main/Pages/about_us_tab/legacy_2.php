@@ -89,7 +89,7 @@ if ($result) {
         <!--MAIN CONTENTS DIV-->
         <div class="flex flex-col w-full h-full">
 
-            <div class="font-['Playfair_Display'] px-8 sm:text-[2rem] md:text-[4rem] lg:text-[5rem] max-w-[60%] text-white h-[100vh] div_before_timeline">
+            <div class="font-['Playfair_Display'] px-8 text-[2rem] md:text-[4rem] lg:text-[5rem] max-w-[60%] text-white h-[100vh] div_before_timeline">
                 A TIMELINE OF OUR COLLEGE LEADERSHIP HISTORY AND LEGACY
             </div>
 
