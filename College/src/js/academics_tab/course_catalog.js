@@ -387,7 +387,7 @@ function createCourseCard(
   return `<div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer course_card">
               <p class="p_hidden" hidden>${prog_id}</p>
               <div class="relative flex-1 overflow-hidden rounded-t-xl">
-                <img src="${prog_bg_image_link}" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                <img src="${prog_bg_image_link}" alt="Vaze College ${prog_name}" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
               </div>
               <div class=" flex-1 relative px-4 py-4">
                 <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -558,7 +558,7 @@ function fetchProgrammesFromDB(
             );
 
             var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -576,7 +576,7 @@ function fetchProgrammesFromDB(
           $("#no_of_courses_para").text(`0 course(s) available`);
 
           var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -595,7 +595,7 @@ function fetchProgrammesFromDB(
         );
 
         var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -694,7 +694,7 @@ function fetchCertificateCoursesFromDB(search_query) {
           certificate_courses_loading_state = false;
 
           var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -713,7 +713,7 @@ function fetchCertificateCoursesFromDB(search_query) {
         );
 
         var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -729,7 +729,7 @@ function fetchCertificateCoursesFromDB(search_query) {
       $("#cc_no_of_courses_para").text(`0 course(s) available`);
 
       var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white"/>
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
