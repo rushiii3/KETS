@@ -69,3 +69,4 @@ tailwind.config.js
 College/src/ASSETS.HTML
 College/src/main/Components/backupnss.php
 zips/
+College/src/config/connect.php

@@ -151,7 +151,7 @@ else {
     <div>
         <!--BACKGROUND IMAGE DIV-->
         <div class="h-[100vh] w-[100vw] fixed top-0 left-0 -z-10" id="bg_fixed_image_div">
-            <img src="https://vazecollege.net/wp-content/uploads/2016/03/independance-day-370x296.jpg" loading="lazy" class="w-full h-full  opacity-80 brightness-50">
+            <img src="https://vazecollege.net/wp-content/uploads/2016/03/independance-day-370x296.jpg" loading="lazy" class="w-full h-full  opacity-80 brightness-50" alt="old_independence_day_image">
         </div>
 
         <button class="fixed bottom-4 right-4 rounded-full h-10 w-10 z-10 sm:h-12 sm:w-12 lg:w-20 lg:h-20  invisible text-center bg-black dark:bg-white dark:text-black  shadow-2xl dark:shadow-none" id="scroll_to_top_btn">
@@ -277,7 +277,7 @@ else {
                                         <!--card element-->
                                         <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $member["bg_color"];echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" alt="member image" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
@@ -340,7 +340,7 @@ else {
                                         <!--card element-->
                                         <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy"alt="member image" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
@@ -410,7 +410,7 @@ else {
                                         <!--card element-->
                                         <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" />
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" alt="member image" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
