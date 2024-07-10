@@ -482,7 +482,7 @@ function fetchProgrammesFromDB(
       .classList.remove("hidden");
     $("#degree_loading_animation_div").html(loading_animation);
   }
-
+    
   //setTimeout(() => {
     makeAJAXRequest(
       ajax_url,
@@ -591,7 +591,7 @@ function fetchProgrammesFromDB(
         //alert("zero fetched results");
         degree_courses_loading_state = false;
         $("#no_of_courses_para").text(
-          `${total_fetched_programmes} course(s) available`
+          `0 course(s) available`
         );
 
         var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
@@ -605,6 +605,7 @@ function fetchProgrammesFromDB(
         $("#degree_loading_animation_div").html(no_programmes_available_div);
       }
     );
+
   //}, 10000);
 }
 

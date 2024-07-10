@@ -12,10 +12,12 @@ function encryptId($anyId,$encryption_credentials_path)
 }
 
 function decryptId($encodedId,$encryption_credentials_path){
+    //echo "here";
     include($encryption_credentials_path);
     $id = base64_decode($encodedId);
     $id = openssl_decrypt($id, $encrypt_method, $key, 0, $iv);
     //echo "\n".$id;
+
     return $id;
 
 }

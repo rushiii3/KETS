@@ -6,7 +6,7 @@ $programmes_array = [];
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
+    
     $limit = $_GET["limit"] ?? 50;
     $offset = $_GET["offset"] ?? 0;
     $search_query = mysqli_real_escape_string($conn, $_GET["search"] ?? "");
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $section = mysqli_real_escape_string($conn, $_GET["section"] ?? "");
     $faculty = mysqli_real_escape_string($conn, $_GET["faculty"] ?? "");
     //$show_certificate_courses=mysqli_real_escape_string($conn,$_GET["cc"]??0);
-
+    
     $bind_param_param_types_string = "s";
     $bind_param_params_array = [$search_query];
     $level_part_of_query = "";
@@ -24,14 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $level_array = explode(",", $level);
         //print_r($level_array);
         $question_mark_array = array_fill(0, count($level_array), '?');
-
+        
         $placeholders = implode(",", $question_mark_array);
         $level_part_of_query = " AND programmes.prog_type IN ($placeholders)";
         $string_1 = str_repeat("s", count($level_array));
         $bind_param_param_types_string .= $string_1;
         array_push($bind_param_params_array, ...$level_array);
     }
-
+    
+   // echo "here";
     if (strlen($section) > 0) {
         $section_array = explode(",", $section);
         //print_r($level_array);
