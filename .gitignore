@@ -68,3 +68,5 @@ College/src/main/Pages/NSS_Ru.php
 tailwind.config.js
 College/src/ASSETS.HTML
 College/src/main/Components/backupnss.php
+College/src/config/connect.php
+zips/

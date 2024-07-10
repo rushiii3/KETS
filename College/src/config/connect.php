@@ -1,5 +1,6 @@
 <?php
 
+
 define("DB_HOST","localhost");
 define("DB_PASSWORD","");
 define("DB_USERNAME","root");
@@ -11,4 +12,7 @@ if(mysqli_connect_errno()){
 }else{
    
 }
+?>
+
+
 
