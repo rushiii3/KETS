@@ -1,12 +1,10 @@
 <footer class="bg-white dark:bg-black">
-  <div
-    class="mx-auto max-w-screen-xl space-y-8 px-4 py-10 sm:px-6 lg:space-y-16 lg:px-8"
-  >
+  <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-10 sm:px-6 lg:space-y-16 lg:px-8">
     <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
       <div>
         <img class="h-16 w-auto" src="data:image/png;base64,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" alt="">
 
-        <div class="text-teal-600">
+        <!-- <div class="text-teal-600">
           <svg
             class="h-8"
             viewBox="0 0 118 24"
@@ -54,7 +52,7 @@
               fill="currentColor"
             />
           </svg>
-        </div>
+        </div> -->
 
         <p class="mt-4 max-w-xs text-gray-500 dark:text-white">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
@@ -75,12 +73,7 @@
           </li>
 
           <li>
-            <a
-              href="https://www.instagram.com/"
-              rel="noreferrer"
-              target="_blank"
-              class="text-gray-700 transition hover:opacity-75 dark:text-white"
-            >
+            <a href="https://www.instagram.com/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75 dark:text-white">
               <span class="sr-only dark:text-white">Instagram</span>
 
               <svg class="h-8 w-8" viewBox="0 0 3364.7 3364.7" xmlns="http://www.w3.org/2000/svg">
@@ -102,12 +95,7 @@
           </li>
 
           <li>
-            <a
-              href="https://www.linkedin.com/school/vazecollegeautonomous/"
-              rel="noreferrer"
-              target="_blank"
-              class="text-gray-700 transition hover:opacity-75 dark:text-white"
-            >
+            <a href="https://www.linkedin.com/school/vazecollegeautonomous/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75 dark:text-white">
               <span class="sr-only dark:text-white">Linkedin</span>
 
               <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -117,12 +105,7 @@
           </li>
 
           <li>
-            <a
-              href="https://www.youtube.com/channel/UC8lT0q9Defrg5pKA2-BhVPQ"
-              rel="noreferrer"
-              target="_blank"
-              class="text-gray-700 transition hover:opacity-75 dark:text-white"
-            >
+            <a href="https://www.youtube.com/channel/UC8lT0q9Defrg5pKA2-BhVPQ" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75 dark:text-white">
               <span class="sr-only dark:text-white">Youtube</span>
 
               <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -254,139 +237,7 @@
     </div>
 
     <p class="text-xs text-center text-gray-500 dark:text-white">
-      &copy; 2015.  V.G. Vaze College. All rights reserved.
+      &copy; 2015. V.G. Vaze College. All rights reserved.
     </p>
   </div>
-
-</footer> -->
-
- 
-
-
-<footer class="bg-white py-12 text-center z-30">
-
-  <div class="container mx-auto">
-    <div class="grid grid-cols-1 gap-8">
-      <table class="text-center w-screen">
-        <thead style="font-size: large; font-weight: bold;">
-          <td class="w-1/3">QUICK LINKS</td>
-          <td class="w-1/3">GET IN TOUCH</td>
-          <td class="w-1/3">INFORMATION</td>
-        </thead>
-        <tr>
-          <td>Academics</td>
-          <td>Contact Vaze</td>
-          <td>Admissions</td>
-        </tr>
-        <tr>
-          <td>NACC</td>
-          <td>Maps and Directions</td>
-          <td>Examination and Results</td>
-        </tr>
-        <tr>
-          <td>Library</td>
-          <td></td>
-          <td>Scholarships</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>VISITORS</td>
-          <td class="justify-center flex flex-row "><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.734090211629!2d72.95463617502972!3d19.163113582059452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8f2a2463a0b%3A0xf8c25abb49834fe2!2sV.G.%20Vaze%20College%20of%20Arts%2C%20Science%20and%20Commerce%20(Autonomous)!5e0!3m2!1sen!2sin!4v1715793839721!5m2!1sen!2sin" width="450" height="200" style="border:0; border-radius:10%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
-          <td>Social Media
-            <br>
-            <ul class="mt-8 flex gap-6 flex-row justify-center">
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100064226286644&ti=as" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                  <span class="sr-only">Facebook</span>
-
-                  <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <path fill="#1877F2" d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z" />
-                    <path fill="#ffffff" d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z" />
-                  </svg>
-
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.instagram.com/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                  <span class="sr-only">Instagram</span>
-
-                  <svg class="h-8 w-8" viewBox="0 0 3364.7 3364.7" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <radialGradient id="0" cx="217.76" cy="3290.99" r="4271.92" gradientUnits="userSpaceOnUse">
-                        <stop offset=".09" stop-color="#fa8f21" />
-                        <stop offset=".78" stop-color="#d82d7e" />
-                      </radialGradient>
-                      <radialGradient id="1" cx="2330.61" cy="3182.95" r="3759.33" gradientUnits="userSpaceOnUse">
-                        <stop offset=".64" stop-color="#8c3aaa" stop-opacity="0" />
-                        <stop offset="1" stop-color="#8c3aaa" />
-                      </radialGradient>
-                    </defs>
-                    <path d="M853.2,3352.8c-200.1-9.1-308.8-42.4-381.1-70.6-95.8-37.3-164.1-81.7-236-153.5S119.7,2988.6,82.6,2892.8c-28.2-72.3-61.5-181-70.6-381.1C2,2295.4,0,2230.5,0,1682.5s2.2-612.8,11.9-829.3C21,653.1,54.5,544.6,82.5,472.1,119.8,376.3,164.3,308,236,236c71.8-71.8,140.1-116.4,236-153.5C544.3,54.3,653,21,853.1,11.9,1069.5,2,1134.5,0,1682.3,0c548,0,612.8,2.2,829.3,11.9,200.1,9.1,308.6,42.6,381.1,70.6,95.8,37.1,164.1,81.7,236,153.5s116.2,140.2,153.5,236c28.2,72.3,61.5,181,70.6,381.1,9.9,216.5,11.9,281.3,11.9,829.3,0,547.8-2,612.8-11.9,829.3-9.1,200.1-42.6,308.8-70.6,381.1-37.3,95.8-81.7,164.1-153.5,235.9s-140.2,116.2-236,153.5c-72.3,28.2-181,61.5-381.1,70.6-216.3,9.9-281.3,11.9-829.3,11.9-547.8,0-612.8-1.9-829.1-11.9" fill="url(#0)" />
-                    <path d="M853.2,3352.8c-200.1-9.1-308.8-42.4-381.1-70.6-95.8-37.3-164.1-81.7-236-153.5S119.7,2988.6,82.6,2892.8c-28.2-72.3-61.5-181-70.6-381.1C2,2295.4,0,2230.5,0,1682.5s2.2-612.8,11.9-829.3C21,653.1,54.5,544.6,82.5,472.1,119.8,376.3,164.3,308,236,236c71.8-71.8,140.1-116.4,236-153.5C544.3,54.3,653,21,853.1,11.9,1069.5,2,1134.5,0,1682.3,0c548,0,612.8,2.2,829.3,11.9,200.1,9.1,308.6,42.6,381.1,70.6,95.8,37.1,164.1,81.7,236,153.5s116.2,140.2,153.5,236c28.2,72.3,61.5,181,70.6,381.1,9.9,216.5,11.9,281.3,11.9,829.3,0,547.8-2,612.8-11.9,829.3-9.1,200.1-42.6,308.8-70.6,381.1-37.3,95.8-81.7,164.1-153.5,235.9s-140.2,116.2-236,153.5c-72.3,28.2-181,61.5-381.1,70.6-216.3,9.9-281.3,11.9-829.3,11.9-547.8,0-612.8-1.9-829.1-11.9" fill="url(#1)" />
-                    <path d="M1269.25,1689.52c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7-416.6-186.59-416.6-416.7m-225.26,0c0,354.5,287.36,641.86,641.86,641.86s641.86-287.36,641.86-641.86-287.36-641.86-641.86-641.86S1044,1335,1044,1689.52m1159.13-667.31a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M1180.85,2707c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27S2059.13,666,2191,672c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M1170.5,447.09c-133.07,6.06-224,27.16-303.41,58.06-82.19,31.91-151.86,74.72-221.43,144.18S533.39,788.47,501.48,870.76c-30.9,79.46-52,170.34-58.06,303.41-6.16,133.28-7.57,175.89-7.57,515.35s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43s139.14,112.18,221.43,144.18c79.56,30.9,170.34,52,303.41,58.06,133.35,6.06,175.89,7.57,515.35,7.57s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2586.8,537.06,2504.71,505.15c-79.56-30.9-170.44-52.1-303.41-58.06C2068,441,2025.41,439.52,1686,439.52s-382.1,1.41-515.45,7.57" fill="#ffffff" />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.linkedin.com/school/vazecollegeautonomous/" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                  <span class="sr-only">Linkedin</span>
-
-                  <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <path fill="#0A66C2" d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z" />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a href="https://www.youtube.com/channel/UC8lT0q9Defrg5pKA2-BhVPQ" rel="noreferrer" target="_blank" class="text-gray-700 transition hover:opacity-75">
-                  <span class="sr-only">Youtube</span>
-
-                  <svg class="h-8 w-8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
-                    <path fill="red" d="M14.712 4.633a1.754 1.754 0 00-1.234-1.234C12.382 3.11 8 3.11 8 3.11s-4.382 0-5.478.289c-.6.161-1.072.634-1.234 1.234C1 5.728 1 8 1 8s0 2.283.288 3.367c.162.6.635 1.073 1.234 1.234C3.618 12.89 8 12.89 8 12.89s4.382 0 5.478-.289a1.754 1.754 0 001.234-1.234C15 10.272 15 8 15 8s0-2.272-.288-3.367z" />
-                    <path fill="#ffffff" d="M6.593 10.11l3.644-2.098-3.644-2.11v4.208z" />
-                  </svg>
-                </a>
-              </li>
-
-
-            </ul>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>
-            
-          </td>
-        </tr>
-      </table>
-
-    </div>
-
-   
-
-    <!-- Bottom -->
-
-    <div class="mt-8 text-sm text-gray-400 text-center">
-      <p>&copy; Copyright © 2015 V.G. Vaze College</p>
-    </div>
-  </div>
-
-</footer> 
-
+</footer>
