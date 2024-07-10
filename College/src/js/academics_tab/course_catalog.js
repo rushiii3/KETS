@@ -483,7 +483,7 @@ function fetchProgrammesFromDB(
     $("#degree_loading_animation_div").html(loading_animation);
   }
 
-  setTimeout(() => {
+  //setTimeout(() => {
     makeAJAXRequest(
       ajax_url,
       "GET",
@@ -605,7 +605,7 @@ function fetchProgrammesFromDB(
         $("#degree_loading_animation_div").html(no_programmes_available_div);
       }
     );
-  }, 5000);
+  //}, 10000);
 }
 
 function attachClickListenerOnCourseCards() {
