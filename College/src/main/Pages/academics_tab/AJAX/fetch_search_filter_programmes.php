@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     //assert($limit!=null && $offset!=null);
 
-    $stmt = "SELECT * FROM `programmes`, dept_belongs_to_clg_section WHERE dept_belongs_to_clg_section.dept_sect_id=programmes.prog_dept_id AND LOWER(programmes.prog_name) LIKE CONCAT('%',?,'%') " . $level_part_of_query ?? "";
+    $stmt = "SELECT * FROM `programmes`, dept_belongs_to_clg_section WHERE dept_belongs_to_clg_section.dept_sect_id=programmes.prog_dept_sec_id AND LOWER(programmes.prog_name) LIKE CONCAT('%',?,'%') " . $level_part_of_query ?? "";
 
     $stmt .= $section_part_of_query ?? "";
     $stmt .= $faculty_part_of_query ?? "";
