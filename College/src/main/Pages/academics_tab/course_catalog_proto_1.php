@@ -63,7 +63,9 @@ fetchProgrammesFromDB($conn, $programmes_array);
    .custom_bg_blue {
       background: #001b53;
     }
-  </style>  
+  </style>
+
+
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -552,6 +554,7 @@ fetchProgrammesFromDB($conn, $programmes_array);
     ****************/
     -->
   <?php include('../../Layouts/footer.php'); ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="../../../js/academics_tab/course_catalog.js" ></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
