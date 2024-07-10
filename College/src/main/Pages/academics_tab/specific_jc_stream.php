@@ -261,7 +261,7 @@ if (strtolower($stream) == "science") {
             </li>
 
             <li>
-                <a href="./course_catalog_proto_1.php" aria-current="page" class=" max-w-[20ch] truncate  text-slate-400 hover:text-emerald-500">Course Catalog</a>
+                <a href="./course_catalog.php" aria-current="page" class=" max-w-[20ch] truncate  text-slate-400 hover:text-emerald-500">Course Catalog</a>
             </li>
 
             <!-- Arrow 3-->

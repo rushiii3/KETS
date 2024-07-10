@@ -83,7 +83,7 @@ include("./AJAX/fetch_specific_course_info.php");
             </li>
 
             <li>
-                <a href="./course_catalog_proto_1.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500">Course Catalog</a>
+                <a href="./course_catalog.php" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-400 hover:text-emerald-500">Course Catalog</a>
             </li>
 
             <!-- Arrow 3-->
