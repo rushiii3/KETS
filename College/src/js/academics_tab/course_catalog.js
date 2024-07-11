@@ -250,6 +250,10 @@ $("#apply_filter_button").click(function (e) {
       : college_section_filter_state,
     faculty_filter_state.length == 0 ? null : faculty_filter_state
   );
+
+  //when in mobile mode close the dialog
+  dismissFilterWindowWhenInMobileMode()
+
 });
 
 $("#degree_tab").click(function () {
