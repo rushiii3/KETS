@@ -1,6 +1,6 @@
 <?php
 
-$stream = mysqli_real_escape_string($conn,$_GET["stream"]??"") ?? "";
+$stream = $_GET["stream"]??"";
 assert($stream != "");
 
 
