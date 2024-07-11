@@ -4,8 +4,6 @@ include("../../../config/connect.php");
 
 include("./AJAX/fetch_specific_course_info.php");
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

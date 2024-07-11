@@ -1,16 +1,16 @@
 <?php
 //include("../../../../config/connect.php");
 include("../../../php/encrypt_query_params.php");
-$path_to_encrytion_credentail_file = "../../../config/openssl_encrypt_decrypt_credentials.php";
+$path_to_encrytion_credential_file = "../../../config/openssl_encrypt_decrypt_credentials.php";
 $data = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    $id = $_GET["id"] ?? "";
+    $id =mysqli_real_escape_string($conn,$_GET["id"] ?? "");
     
     assert($id != "");
 
-    $id = decryptId($id, $path_to_encrytion_credentail_file);
+    $id = decryptId($id, $path_to_encrytion_credential_file);
     //echo $id;
     
     $stmt = "SELECT * FROM programmes JOIN dept_belongs_to_clg_section ON prog_dept_sec_id= dept_belongs_to_clg_section.dept_sect_id JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id WHERE prog_id=?";
