@@ -1,4 +1,5 @@
-
+import { loading_animation } from "../common/lottie_loading_animation";
+import { makeAJAXRequest } from "../common/make_ajax_request";
 
 const filter_div = document.getElementById("filter_div");
 const filter_toggle_btn = document.getElementById("filter_toggle_btn");
@@ -19,9 +20,6 @@ if (window.innerWidth >= 640) {
   is_filter_visible = true;
 }
 
-const loading_animation = `<div class="w-full h-full flex justify-center items-center"><script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-
-    <dotlottie-player src="https://lottie.host/05cd14a8-5dbd-46bf-9c8f-d53989023063/S2BPC9SDzq.json" background="transparent" speed="1" style="width: 50%; height: 50%;" loop autoplay></dotlottie-player></div>`;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 let degree_tab_search_query_state = "";
@@ -362,23 +360,23 @@ function dismissFilterWindowWhenInMobileMode() {
   document.body.style.overflow = "auto";
 }
 
-function makeAJAXRequest(
-  url,
-  request_method,
-  data_type,
-  data,
-  success_function,
-  error_function
-) {
-  $.ajax({
-    url: url,
-    method: request_method,
-    dataType: data_type,
-    data: data,
-    success: success_function,
-    error: error_function,
-  });
-}
+// function makeAJAXRequest(
+//   url,
+//   request_method,
+//   data_type,
+//   data,
+//   success_function,
+//   error_function
+// ) {
+//   $.ajax({
+//     url: url,
+//     method: request_method,
+//     dataType: data_type,
+//     data: data,
+//     success: success_function,
+//     error: error_function,
+//   });
+// }
 
 function createCourseCard(
   prog_id,

@@ -555,7 +555,8 @@ fetchProgrammesFromDB($conn, $programmes_array);
     -->
   <?php include('../../Layouts/footer.php'); ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-  <script src="../../../js/academics_tab/course_catalog.js" ></script>
+  <script src="../../../js/academics_tab/course_catalog.js" type="module" ></script>
+  t
 </body>
 <?php include('../../../library/AOS.php'); ?>
 
