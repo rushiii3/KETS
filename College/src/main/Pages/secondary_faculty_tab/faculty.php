@@ -1,3 +1,79 @@
+<?php
+include("../../../config/connect.php");
+include("../../../php/common_functions.php");
+
+$fetch_query_stmt = "SELECT * FROM departments ORDER BY dept_name ASC";
+$fetch_departments_query = $conn->prepare($fetch_query_stmt);
+$fetch_departments_query->execute();
+$fetch_departments_query_result = $fetch_departments_query->get_result();
+
+$all_departments = [];
+if ($fetch_departments_query_result) {
+  while ($row = $fetch_departments_query_result->fetch_assoc()) {
+    array_push($all_departments, $row["dept_name"]);
+  }
+}
+
+$fetch_query_stmt2 = "SELECT DISTINCT(cp_designation.cp_designation) FROM cp_designation, college_personnel WHERE college_personnel.cp_id = cp_designation.cp_id ORDER BY cp_designation.cp_designation ASC ";
+
+$fetch_designations_query = $conn->prepare($fetch_query_stmt2);
+$fetch_designations_query->execute();
+$fetch_designations_query_result = $fetch_designations_query->get_result();
+
+$all_designations = [];
+if ($fetch_designations_query_result) {
+  while ($row = $fetch_designations_query_result->fetch_assoc()) {
+    $designation = $row["cp_designation"];
+    $final_designation="";
+
+    if (str_contains($designation, ",")) {
+      if (!in_array(explode(",", $designation)[0], $all_designations)) {
+        $final_designation = trim(explode(",", $designation)[0]);
+      }
+    } else if (str_contains($designation, " of ")) {
+      if (!in_array(explode(" of ", $designation)[0], $all_designations)) {
+        $final_designation = trim(explode(" of ", $designation)[0]);
+        //print_r($final_designation.$designation);
+      }
+    } else if (str_contains($designation, "(")) {
+      if (!in_array(explode("(", $designation)[0], $all_designations)) {
+        $final_designation = trim(explode("(", $designation)[0]);
+      }
+    } else if (!in_array($designation, $all_designations)) {
+      $final_designation = trim($designation);
+    }
+
+    // if (count($designation_array) > 0 && implode("", $designation_array) != $designation) {
+    //   //print_r("here {$designation_array}");
+    // } else {
+
+    //   if (count($designation_array) > 0 && implode("", $designation_array) != $designation) {
+    //     $final_designation = $designation_array[0];
+    //   } else {
+    //     $designation_array = explode("(", $designation);
+    //     if (count($designation_array) > 0 && implode("", $designation_array) != $designation) {
+    //       $final_designation = $designation_array[0];
+    //     } else {
+    //       $final_designation = $designation_array;
+    //     }
+    //   }
+    // }
+
+    // print_r($final_designation);
+    // print_r($designation);
+    // print_r("\n"); 
+
+    if($final_designation!=""){
+    array_push($all_designations, $final_designation);
+    }     
+  }
+}
+
+
+//print_r($all_designations);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +82,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V. G. VAZE| Faculty</title>
   <?php include('../../../library/library.php'); ?>
-  
+
   <style>
     .button_gradient_border {
       border: none;
@@ -219,14 +295,21 @@
                 <div class="flex-col ">
                   <h4 class="font-bold text-lg dark:text-white">Department</h4>
 
-                  <div class="flex  mt-2">
-                    <input type="checkbox" id="ug_chkbox" name="level" value="ug" />
-                    <label for="ug_chkbox" class=" mx-2 dark:text-white ">
-                      From DB
-                    </label>
-                  </div>
+                  <?php
+                  foreach ($all_departments as $dept) {
 
-                  <div class="flex">
+                    echo '
+                    <div class="flex  mt-2">
+                      <input type="checkbox" id="' . $dept . '_chkbox" name="department" value="' . $dept . '" />
+                      <label for="' . $dept . '_chkbox" class=" mx-2 dark:text-white ">
+                        ' . $dept . '
+                      </label>
+                    </div>';
+                  }
+
+                  ?>
+
+                  <!-- <div class="flex">
                     <input type="checkbox" id="pg_chkbox" name="level" value="pg" />
                     <label for="pg_chkbox" class=" mx-2 dark:text-white ">From DB</label>
                   </div>
@@ -235,14 +318,14 @@
                     <input type="checkbox" id="phd_chkbox" name="level" value="phd" />
                     <label for="phd_chkbox" class=" mx-2 dark:text-white">From DB</label>
 
-                  </div>
+                  </div> -->
 
                 </div>
                 <!--"Level" subheading end-->
 
                 <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
 
-               
+
 
                 <!--"Faculty" subheading div -->
                 <div class="flex-col mt-2">
@@ -266,26 +349,33 @@
                 </div>
                 <!--"Faculty" section Ends here-->
 
-                 <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+                <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
 
-                 <!--"Designation" subheading div -->
+                <!--"Designation" subheading div -->
                 <div class="flex-col mt-2">
                   <h4 class="font-bold text-lg dark:text-white">Desgination</h4>
 
-                  <div class="flex mt-2">
-                    <input type="checkbox" id="sfc_chkbox" name="section" value="s" />
-                    <label for="sfc_chkbox" class=" mx-2 dark:text-white">From DB</label>
-                  </div>
+                  <?php
+                  foreach ($all_designations as $post) {
+                    if($post=="Head"){
+                      $post="Head of Department";
+                    }
+                    echo '<div class="flex mt-2">
+                    <input type="checkbox" id="' . $post . '_chkbox" name="designation" value="' . $post . '" />
+                    <label for="' . $post . '_chkbox" class=" mx-2 dark:text-white">' . $post . '</label>
+                  </div>';
+                  }
 
-                  <div class="flex">
+                  ?>
+                  <!-- <div class="flex">
                     <input type="checkbox" id=regular_chkbox" name="section" value="d" />
                     <label for="regular_chkbox" class=" mx-2 dark:text-white">From Db </label>
-                  </div>
+                  </div> -->
 
                 </div>
                 <!--"Designation" subheading end-->
 
-              
+
                 <!--Show results and clear-->
                 <div class="flex justify-between items-center flex-wrap mt-8">
 
