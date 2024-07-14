@@ -2,6 +2,7 @@
 include("../../../config/connect.php");
 include("../../../php/common_functions.php");
 
+//fetch departments
 $fetch_query_stmt = "SELECT * FROM departments ORDER BY dept_name ASC";
 $fetch_departments_query = $conn->prepare($fetch_query_stmt);
 $fetch_departments_query->execute();
@@ -14,6 +15,7 @@ if ($fetch_departments_query_result) {
   }
 }
 
+//fetch designations
 $fetch_query_stmt2 = "SELECT DISTINCT(cp_designation.cp_designation) FROM cp_designation, college_personnel WHERE college_personnel.cp_id = cp_designation.cp_id ORDER BY cp_designation.cp_designation ASC ";
 
 $fetch_designations_query = $conn->prepare($fetch_query_stmt2);
@@ -24,7 +26,7 @@ $all_designations = [];
 if ($fetch_designations_query_result) {
   while ($row = $fetch_designations_query_result->fetch_assoc()) {
     $designation = $row["cp_designation"];
-    $final_designation="";
+    $final_designation = "";
 
     if (str_contains($designation, ",")) {
       if (!in_array(explode(",", $designation)[0], $all_designations)) {
@@ -63,11 +65,21 @@ if ($fetch_designations_query_result) {
     // print_r($designation);
     // print_r("\n"); 
 
-    if($final_designation!=""){
-    array_push($all_designations, $final_designation);
-    }     
+    if ($final_designation != "") {
+      array_push($all_designations, $final_designation);
+    }
   }
 }
+
+
+//fetch the faculty
+$fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') as cp_desig FROM college_personnel JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id GROUP BY college_personnel.cp_id ORDER BY college_personnel.cp_name ASC";
+
+$fetch_faculty_query = $conn->prepare($fetch_faculty_stmt);
+$fetch_faculty_query->execute();
+$fetch_faculty_query_result = $fetch_faculty_query->get_result();
+
+
 
 
 //print_r($all_designations);
@@ -81,6 +93,7 @@ if ($fetch_designations_query_result) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V. G. VAZE| Faculty</title>
+  <link rel="stylesheet" href="../../../css/common/header_2.css" />
   <?php include('../../../library/library.php'); ?>
 
   <style>
@@ -268,11 +281,20 @@ if ($fetch_designations_query_result) {
 
         </div>
 
+        <!--Filter by name div-->
+        <div class="w-full flex overflow-x-auto justify-center">
+          <?php
+          for ($ascii = 65; $ascii < 91; $ascii++) {
+            echo '<a class="px-2 lg:text-lg dark:text-white hover:text-blue-500 dark:hover:text-emerald-500">' . chr($ascii) . '</a>';
+          }
+          ?>
+        </div>
+
         <!-- FACULTY CONTENTS-->
         <div class=" flex sm:p-4 w-full justify-between">
 
           <!-- Filter section-->
-          <div class=" -bottom-[100rem] sm:top-0 z-10 fixed sm:flex sm:relative sm:w-1/5 transition-transform transition-width duration-[750ms] ease-in-out" id="filter_div">
+          <div class=" -bottom-[100rem] sm:top-0 z-10 fixed sm:flex sm:relative sm:w-1/4 transition-transform transition-width duration-[750ms] ease-in-out" id="filter_div">
 
             <!--Sticky inner filter section-->
             <div class="sm:sticky h-fit flex flex-col items-end p-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600/10  dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black top-2">
@@ -353,12 +375,12 @@ if ($fetch_designations_query_result) {
 
                 <!--"Designation" subheading div -->
                 <div class="flex-col mt-2">
-                  <h4 class="font-bold text-lg dark:text-white">Desgination</h4>
+                  <h4 class="font-bold text-lg dark:text-white">Designation</h4>
 
                   <?php
                   foreach ($all_designations as $post) {
-                    if($post=="Head"){
-                      $post="Head of Department";
+                    if ($post == "Head") {
+                      $post = "Head of Department";
                     }
                     echo '<div class="flex mt-2">
                     <input type="checkbox" id="' . $post . '_chkbox" name="designation" value="' . $post . '" />
@@ -396,84 +418,42 @@ if ($fetch_designations_query_result) {
           <div class="flex-1 flex flex-col relative mx-4 sm:ml-4">
 
             <!-- No of courses-->
-            <p class="text-2xl text-black font-bold dark:text-white" id="no_of_courses_para">
-              <?php //echo count($programmes_array)." courses available";
+            <p class="text-2xl text-black font-bold dark:text-white" id="no_of_faculty_para">
+              <?php echo "Showing ". $fetch_faculty_query_result->num_rows." of ".$fetch_faculty_query_result->num_rows." results";
               ?>
             </p>
 
             <!--Div to show loading animation and not found-->
-            <div class="hidden flex-1" id="degree_loading_animation_div"></div>
+            <div class="hidden flex-1" id="loading_animation_div"></div>
 
             <!-- Courses-->
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 w-full" id="course_cards_grid_div">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full" id="faculty_cards_grid_div">
 
               <!--Card 1 start-->
 
               <?php
-              //foreach ($programmes_array as $programme) {
+              if ($fetch_faculty_query_result) {
+                while ($faculty_row = $fetch_faculty_query_result->fetch_assoc()) {
+                  //print_r($row);
+
               ?>
 
-
-              <!--
-            <div class="group flex-col rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10 cursor-pointer course_card">
-              <p class="p_hidden" hidden><?php //echo "course_" . $programme["prog_id"]; 
-                                          ?></p>
-              <div class="relative flex-1 overflow-hidden rounded-t-xl">
-                <img src=<?php //echo $programme["prog_bg_image_link"] 
-                          ?> alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
-              </div>
-              <div class=" flex-1 relative px-4 py-4">
-                <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
-                  <?php //echo $programme["prog_name"] 
-                  ?>
-                </h3>
-
-                <p class="text-slate-500 dark:text-white">
-                  <?php
-                  /*
-                  switch($programme["prog_type"]){
-                    case "ug":
-                      echo "Undergraduate Course";
-                      break;
-                    case "pg":
-                      echo "Postgraduate Course";
-                      break;
-                    case "phd":
-                      echo "PhD course";
-                      break;
-                    case "gd":
-                      echo "G.D. Kelkar Skill Developement and Finishing School Course";
-                      break;
-                    
-                  }
-                  */
-                  ?>
-                </p>
-
-                <ul class="list-none mt-4">
-                  <li>
-                    <p class="font-bold dark:text-white">Duration</p>
-                  </li>
-                  <li>
-                    <p class="text-slate-500 dark:text-white"><?php //echo $programme["prog_duration"] 
-                                                              ?></p>
-                  </li>
-
-                  <li class="mt-2">
-                    <p class="font-bold dark:text-white">Falls under</p>
-                  </li>
-                  <li>
-                    <p class="text-slate-500 dark:text-white truncate">Self-financing courses section</p>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-                -->
-              <!--Card 1 end-->
+                  <div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
+                    <div class="sm:w-1/3 rounded-2xl aspect-square overflow-hidden">
+                      <img src="<?php echo $faculty_row["cp_image_path"] ?? "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";?>" alt="Vaze College Faculty Image" class=" object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <div class="flex-1 flex flex-col dark:text-white">
+                      <a href="<?php echo $faculty_row["cp_personal_website_link"]??""?>"class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"]?"hover:cursor-pointer hover:text-blue-500":"hover:cursor-default"?>"><?php echo $faculty_row["cp_honourific"].$faculty_row["cp_name"]?></a>
+                      <p class="text-slate-600 text-sm  dark:text-emerald-500"><?php echo $faculty_row["cp_desig"]?></p>
+                      <p class="mt-4 font-bold">Department</p>
+                      <a href="" class="hover:cursor-pointer hover:text-blue-500">Department of <?php echo $faculty_row["dept_name"]?></a>
+                    </div>
+                  </div>
+                  <!--Card 1 end-->
 
               <?php
-              // }
+                }
+              }
               ?>
             </div>
             <!--Courses Grid end-->
@@ -502,6 +482,7 @@ if ($fetch_designations_query_result) {
     -->
   <?php include('../../Layouts/footer.php'); ?>
   <script src="../../../js/secondary_faculty_tab/faculty.js" type="module"></script>
+  <script src="../../../js/common/header_2.js"></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
 
