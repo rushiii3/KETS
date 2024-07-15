@@ -1,5 +1,6 @@
 import { loading_animation } from "../../js/common/lottie_loading_animation.js";
 import { makeAJAXRequest } from "../../js/common/make_ajax_request.js";
+import { vaze_logo } from "../common/vaze_college_logo_base_64.js";
 
 const filter_div = document.getElementById("filter_div");
 const filter_toggle_btn = document.getElementById("filter_toggle_btn");
@@ -119,14 +120,14 @@ $("#apply_filter_button").click(function () {
   $("input[name='faculty']:checked").each(function () {
     checkedFaculty.push($(this).val());
   });
-  faculty_filter_state=checkedFaculty;
+  faculty_filter_state = checkedFaculty;
 
-  $("input[name='designation']:checked").each(function(){
+  $("input[name='designation']:checked").each(function () {
     checkedDesignation.push($(this).val());
-  })
-  designation_filter_state=checkedDesignation
+  });
+  designation_filter_state = checkedDesignation;
 
-  fetchFacultyFromDB()
+  fetchFacultyFromDB();
 
   dismissFilterWindowWhenInMobileMode();
 });
@@ -305,8 +306,7 @@ function constructFacultyCard(
   return `<div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
                     <div class="sm:w-1/3 rounded-2xl aspect-square overflow-hidden">
                       <img src="${
-                        faculty_img_path ??
-                        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        faculty_img_path ?? vaze_logo
                       }" alt="Vaze College Faculty Image" class=" object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">

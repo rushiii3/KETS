@@ -1,6 +1,7 @@
 <?php
 include("../../../config/connect.php");
 include("../../../php/common_functions.php");
+include("../../Components/vaze_kelkar_logo_base64.php");
 
 //fetch departments
 $fetch_query_stmt = "SELECT * FROM departments ORDER BY dept_name ASC";
@@ -73,7 +74,13 @@ if ($fetch_designations_query_result) {
 
 
 //fetch the faculty
-$fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') as cp_desig FROM college_personnel JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id GROUP BY college_personnel.cp_id ORDER BY college_personnel.cp_name ASC";
+$fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') as cp_desig FROM college_personnel 
+JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
+JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
+JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id 
+-- WHERE LOWER(college_personnel.cp_name) LIKE ('a%')
+GROUP BY college_personnel.cp_id 
+ORDER BY college_personnel.cp_name ASC";
 
 $fetch_faculty_query = $conn->prepare($fetch_faculty_stmt);
 $fetch_faculty_query->execute();
@@ -282,10 +289,15 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
         </div>
 
         <!--Filter by name div-->
-        <div class="w-full flex overflow-x-auto justify-center">
+        <div class="w-full flex overflow-x-auto sm:justify-center">
           <?php
           for ($ascii = 65; $ascii < 91; $ascii++) {
-            echo '<a class="px-2 lg:text-lg dark:text-white hover:text-blue-500 dark:hover:text-emerald-500">' . chr($ascii) . '</a>';
+
+            if($ascii==65){
+            echo '<a class="px-2 lg:text-lg text-blue-500 dark:text-emerald-500  hover:text-blue-500 dark:hover:text-emerald-500 font-bold selected "> ' . chr($ascii) . '</a>';
+            }else{
+               echo '<a class="px-2 lg:text-lg dark:text-white hover:text-blue-500 dark:hover:text-emerald-500">' . chr($ascii) . '</a>';
+            }
           }
           ?>
         </div>
@@ -419,9 +431,29 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
             <!-- No of courses-->
             <p class="text-2xl text-black font-bold dark:text-white" id="no_of_faculty_para">
-              <?php echo "Showing ". $fetch_faculty_query_result->num_rows." of ".$fetch_faculty_query_result->num_rows." results";
+              <?php echo "Showing " . $fetch_faculty_query_result->num_rows . " of " . $fetch_faculty_query_result->num_rows . " results";
               ?>
             </p>
+
+            <!--next and previous button-->
+            <div class="flex justify-between mb-4 mt-2">
+              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center text-center previous_button">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+                  </svg>
+                </span>
+                <span class="text-center">Prev</span>
+              </button>
+              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center next_button">
+                <span class="text-center">Next</span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
 
             <!--Div to show loading animation and not found-->
             <div class="hidden flex-1" id="loading_animation_div"></div>
@@ -440,13 +472,13 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
                   <div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
                     <div class="sm:w-1/3 rounded-2xl aspect-square overflow-hidden">
-                      <img src="<?php echo $faculty_row["cp_image_path"] ?? "https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";?>" alt="Vaze College Faculty Image" class=" object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
+                      <img src="<?php echo $faculty_row["cp_image_path"] ?? $vaze_logo; ?>" alt="Vaze College Faculty Image" class=" object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                      <a href="<?php echo $faculty_row["cp_personal_website_link"]??""?>"class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"]?"hover:cursor-pointer hover:text-blue-500":"hover:cursor-default"?>"><?php echo $faculty_row["cp_honourific"].$faculty_row["cp_name"]?></a>
-                      <p class="text-slate-600 text-sm  dark:text-emerald-500"><?php echo $faculty_row["cp_desig"]?></p>
+                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-500" : "hover:cursor-default" ?>"><?php echo $faculty_row["cp_honourific"] . $faculty_row["cp_name"] ?></a>
+                      <p class="text-slate-600 text-sm  dark:text-emerald-500"><?php echo $faculty_row["cp_desig"] ?></p>
                       <p class="mt-4 font-bold">Department</p>
-                      <a href="" class="hover:cursor-pointer hover:text-blue-500">Department of <?php echo $faculty_row["dept_name"]?></a>
+                      <a href="" class="hover:cursor-pointer hover:text-blue-500">Department of <?php echo $faculty_row["dept_name"] ?></a>
                     </div>
                   </div>
                   <!--Card 1 end-->
@@ -457,6 +489,26 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
               ?>
             </div>
             <!--Courses Grid end-->
+
+            <!--next and previous button-->
+            <div class="flex justify-between mt-4 ">
+              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center text-center previous_button">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
+                    <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
+                  </svg>
+                </span>
+                <span class="text-center">Prev</span>
+              </button>
+              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center next_button">
+                <span class="text-center">Next</span>
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                    <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
 
           </div>
           <!--Main contents end-->
