@@ -27,6 +27,9 @@ External StyleSheets
 <!--Header 2 CSS-->
 <!-- <link rel="stylesheet" href="" id="header2_css" /> -->
 
+ <!--tailwind CSS-->
+ <!-- <link rel="stylesheet" href="/Vaze_College_Website/College/src/css/common/tailwind_prod.css"> -->
+
 
 <!--
 ////////////////////////////////

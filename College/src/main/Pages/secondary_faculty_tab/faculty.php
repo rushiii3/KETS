@@ -292,7 +292,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
       <div class="flex flex-col bg-white dark:bg-black ">
         <!--search bar-->
         <div class='flex items-center justify-center w-full my-4'>
-          <button class="self-center flex p-1 cursor-pointer dark:text-white" id="filter_toggle_btn" >
+          <button class="self-center flex p-1 cursor-pointer dark:text-white" id="filter_toggle_btn">
             <span class="material-symbols-outlined">
               filter_list
             </span>
@@ -406,7 +406,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                   </div>
 
                   <div class="flex">
-                    <input type="checkbox" id=commerce_chkbox" name="faculty" value="c" />
+                    <input type="checkbox" id="commerce_chkbox" name="faculty" value="c" />
                     <label for="commerce_chkbox" class=" mx-2 dark:text-white">Commerce</label>
                   </div>
 
@@ -443,6 +443,29 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
                 </div>
                 <!--"Designation" subheading end-->
+
+                <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+
+                 <!--"college section" subheading div -->
+                <div class="flex-col mt-2">
+                  <h4 class="font-bold text-lg dark:text-white">College Section</h4>
+
+                  <div class="flex">
+                    <input type="checkbox" id="junior_clg_chkbox" name="college_section" value="j" />
+                    <label for="junior_clg_chkbox" class=" mx-2 dark:text-white">Junior College</label>
+                  </div>
+
+                   <div class="flex">
+                    <input type="checkbox" id="degree_clg_chkbox" name="college_section" value="d" />
+                    <label for="degree_clg_chkbox" class=" mx-2 dark:text-white">Degree College</label>
+                  </div>
+
+                   <div class="flex">
+                    <input type="checkbox" id="sfc_section_chkbox" name="college_section" value="s" />
+                    <label for="sfc_section_chkbox" class=" mx-2 dark:text-white">SFC section</label>
+                  </div>
+                </div>
+                <!--College section div ends here-->
 
 
                 <!--Show results and clear-->
@@ -501,19 +524,62 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
               <?php
               if ($fetch_faculty_query_result) {
                 while ($faculty_row = $fetch_faculty_query_result->fetch_assoc()) {
-                  //print_r($row);
+
+                  switch ($faculty_row["dept_faculty_name"]) {
+                    case "a":
+                      $faculty_type = "Arts";
+                      break;
+                    case "s":
+                      $faculty_type = "Science";
+                      break;
+                    case "c":
+                      $faculty_type = "Commerce";
+                      break;
+                  }
+
+                  switch ($faculty_row["college_sec_name"]) {
+                    case "j":
+                      $faculty_college_sec_name = "Junior College";
+                      break;
+                    case "s":
+                      $faculty_college_sec_name = "Self-Financing Courses (SFC) section";
+                      break;
+                    case "d":
+                      $faculty_college_sec_name = "Degree College";
+                      break;
+                  }
+                  //print_r($faculty_row);
 
               ?>
 
                   <div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
-                    <div class="sm:w-1/3 rounded-2xl aspect-square overflow-hidden">
-                      <img src="<?php echo $faculty_row["cp_image_path"] ?? $vaze_logo; ?>" alt="Vaze College Faculty Image" class=" object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
+
+                    <div class="sm:w-[40%] rounded-2xl aspect-square overflow-hidden">
+                      <img src="<?php echo $faculty_row["cp_image_path"] ?? $vaze_logo; ?>" alt="Vaze College Faculty Image" class="object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-500" : "hover:cursor-default" ?>"><?php echo $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] ?></a>
-                      <p class="text-slate-600 text-sm  dark:text-emerald-500"><?php echo $faculty_row["cp_desig"] ?></p>
+                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-500" : "hover:cursor-default" ?>">
+                        <?php echo $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] ?>
+                      </a>
+
+                      <p class="text-slate-600 text-sm  dark:text-emerald-500">
+                        <?php echo $faculty_row["cp_desig"] ?>
+                      </p>
+
                       <p class="mt-4 font-bold">Department</p>
-                      <a href="" class="hover:cursor-pointer hover:text-blue-500">Department of <?php echo $faculty_row["dept_name"] ?></a>
+                      <a href="" class=" text-sm hover:cursor-pointer hover:text-blue-500">
+                        Department of <?php echo $faculty_row["dept_name"] ?>
+                      </a>
+
+                      <p class="mt-4 font-bold">Faculty Type</p>
+                      <p  class="text-sm dark:text-white">
+                        <?php echo $faculty_type ?>
+                </p>
+
+                      <p class="mt-4 font-bold">College Section</p>
+                      <p  class="text-sm dark:text-white">
+                        <?php echo $faculty_college_sec_name ?>
+                </p>
                     </div>
                   </div>
                   <!--Card 1 end-->

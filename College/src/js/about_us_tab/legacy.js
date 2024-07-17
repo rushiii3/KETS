@@ -1,5 +1,5 @@
 let navbar_height=document.getElementsByClassName("navbar")[0].offsetHeight;
-document.getElementById("main_container_div").classList.add(`mt-[${navbar_height}px]`)
+document.getElementById("main_container_div").style.marginTop=`${navbar_height}px`
 
 
 /*///////////////////////////////
@@ -140,17 +140,17 @@ window.onscroll = function () {
   redrawTimeline(
     principal_percent_scrolled > 0 ? principal_percent_scrolled : 0,
     principal_timeline_object,
-    20
+    16
   );
   redrawTimeline(
     vpd_percent_scrolled > 0 ? vpd_percent_scrolled : 0,
     vpd_timeline_object,
-    10
+    9
   );
   redrawTimeline(
     vpj_percent_scrolled > 0 ? vpj_percent_scrolled : 0,
     vpj_timeline_object,
-    20
+    16
   );
 
 
