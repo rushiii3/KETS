@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
     if(strlen($sort_letter)>0){
         $bind_param_type_string.="s";
         array_push($bind_param_array,$sort_letter);
-        $sort_part_of_query="AND college_personnel.cp_name LIKE CONCAT(?,'%')";
+        $sort_part_of_query="AND LOWER(college_personnel.cp_name) LIKE CONCAT(?,'%')";
     }
 
 
@@ -55,17 +55,17 @@ if($_SERVER["REQUEST_METHOD"]=="GET"){
         
         $bind_param_type_string.=str_repeat("s",count($designation_filter_array));
         array_push($bind_param_array,...$designation_filter_array);
-        //print_r("herer");
+       
         // $bind_param_type_string.="s";
         // array_push($bind_param_array,$designation_filter);
         
         //$question_mark_array=array(0,count($designation_filter_array),"?");
         //$placeholders=implode(",",$question_mark_array);
-        $designation_part_of_query=" AND ((SELECT GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ',') ) LIKE (CONCAT('%',?,'%'))";
+        $designation_part_of_query=" AND college_personnel.cp_id IN (SELECT cp_designation.cp_id FROM cp_designation WHERE cp_designation.cp_designation LIKE (CONCAT(?,'%'))";
         //print_r($designation_part_of_query);
 
        for($i=1;$i<count($designation_filter_array);$i++){
-            $designation_part_of_query.=" OR (SELECT GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ',')) LIKE (CONCAT('%',?,'%')) ";
+            $designation_part_of_query.=" OR cp_designation.cp_designation LIKE (CONCAT(?,'%'))";
         }
         $designation_part_of_query.=") ";
 

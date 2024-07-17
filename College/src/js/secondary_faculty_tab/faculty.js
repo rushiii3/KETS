@@ -8,6 +8,8 @@ const filter_mobile_close_btn = document.getElementById(
   "filter_mobile_close_btn"
 );
 
+const navbar_height = document.querySelector(".navbar").offsetHeight;
+
 //Search varibles
 const search_button = document.getElementById("search_button");
 const search_input_field = document.getElementById("search_input_field");
@@ -137,6 +139,77 @@ $("#filter_clear_button").click(function () {
   fetchFacultyFromDB();
 });
 
+$(".sort_selector").each(function () {
+  $(this).click(function () {
+    $(".sort_selector.selected_sort_letter").each(function () {
+      $(this).removeClass("selected_sort_letter");
+      $(this).addClass("dark:text-white");
+    });
+    $(this).removeClass("dark:text-white");
+    $(this).addClass("selected_sort_letter");
+
+    sort_state = $(this).text().trim();
+    if (sort_state == "Z") {
+      $(".next_button").each(function () {
+        $(this).addClass("invisible");
+      });
+      if ($(".previous_button").first().hasClass("invisible")) {
+        $(".previous_button").each(function () {
+          $(this).removeClass("invisible");
+        });
+      }
+    } else if (sort_state == "A") {
+      $(".previous_button").each(function () {
+        $(this).addClass("invisible");
+      });
+
+      if ($(".next_button").first().hasClass("invisible")) {
+        $(".next_button").each(function () {
+          $(this).removeClass("invisible");
+        });
+      }
+    } else {
+      if ($(".next_button").first().hasClass("invisible")) {
+        $(".next_button").each(function () {
+          $(this).removeClass("invisible");
+        });
+      } else if ($(".previous_button").first().hasClass("invisible")) {
+        $(".previous_button").each(function () {
+          $(this).removeClass("invisible");
+        });
+      }
+    }
+    //console.log(sort_state)
+    fetchFacultyFromDB();
+  });
+});
+
+$(".next_button").each(function () {
+  $(this).click(function () {
+    $(".sort_selector.selected_sort_letter").next().click();
+    //scroll to the top of the faculty filter div
+    window.scrollTo({
+      top: 0 + window.innerHeight - navbar_height,
+    });
+  });
+});
+
+$(".previous_button").each(function () {
+  $(this).click(function () {
+    $(".sort_selector.selected_sort_letter").prev().click();
+    //scroll to the top of the faculty filter div
+    window.scrollTo({
+      top: 0 + window.innerHeight - navbar_height,
+    });
+  });
+});
+
+$("#take_a_look_btn").click(function(){
+  window.scrollTo({
+    behavior:"smooth",
+    top:window.innerHeight-navbar_height
+  })
+})
 ///////////////////////////////////////////////////////////////// FUNCTIONS ////////////////////////////////////
 
 function resetFilterDivCSS() {
@@ -183,7 +256,7 @@ function dismissFilterWindowWhenInMobileMode() {
       filter_div.classList.add("translate-y-[100rem]");
     }
     is_filter_visible = false;
-    console.log(is_filter_visible);
+    //console.log(is_filter_visible);
 
     document.body.style.overflow = "auto";
   }
@@ -245,6 +318,7 @@ function fetchFacultyFromDB() {
 
   faculty_loading_state = true;
   if (faculty_loading_state) {
+    $("#faculty_cards_grid_div").html("");
     $("#loading_animation_div").removeClass("hidden");
     $("#loading_animation_div").html(loading_animation);
   }
@@ -259,8 +333,6 @@ function fetchFacultyFromDB() {
       $("#loading_animation_div").html("");
       //console.log(success_json_response);
 
-      $("#faculty_cards_grid_div").html("");
-
       if (success_json_response.length > 0) {
         $("#loading_animation_div").addClass("hidden");
         success_json_response.forEach((response) => {
@@ -268,7 +340,7 @@ function fetchFacultyFromDB() {
             constructFacultyCard(
               response.cp_image_path,
               response.cp_personal_website_link,
-              `${response.cp_honourific}${response.cp_name}`,
+              `${response.cp_honourific} ${response.cp_name}`,
               response.cp_desig,
               response.dept_name
             )
@@ -285,9 +357,7 @@ function fetchFacultyFromDB() {
     },
     function (error, xhr, status) {
       //set the count
-      $("#no_of_faculty_para").text(
-        `Showing ${success_json_response.length} of ${success_json_response.length} results`
-      );
+      $("#no_of_faculty_para").text(`Showing ${0} of ${0} results`);
       $("#loading_animation_div").html(no_results_element);
       console.log(error);
     }
@@ -303,6 +373,7 @@ function constructFacultyCard(
   faculty_designation,
   faculty_department
 ) {
+  //console.log(faculty_name_and_honourific)
   return `<div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
                     <div class="sm:w-1/3 rounded-2xl aspect-square overflow-hidden">
                       <img src="${

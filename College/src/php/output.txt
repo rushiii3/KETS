@@ -1,0 +1,63 @@
+0,0,Assistant Professor
+0,0,Associate Professor
+0,0,Associate Professor (adhoc)
+0,0,Associate Professor(PT-adhoc)
+0,10,Controller of Examination
+0,8,Convenor of Special Cell
+0,8,Convenor of Steering Committee
+0,11,Coordinator of IQAC
+19,11,Coordinator of RUSA, Autonomy Grants and CSR
+26,11,Coordinator of STAR Scheme,UGC and FIST
+0,4,Dean of Commerce
+0,4,Dean of Human Resources
+0,4,Dean of Humanities and Social Sciences
+0,4,Dean of Quality
+0,4,Dean of Research
+0,4,Dean of Science
+0,4,Dean of Self-Financing Courses
+0,8,Director of Entrepreneurship Cell
+0,8,Director of PhD Centers
+0,8,Director of Research and Development
+0,4,Head of Department (Accountancy)
+0,4,Head of Department (Banking Insurance)
+0,4,Head of Department (BioTechnology)
+0,4,Head of Department (Botany)
+0,4,Head of Department (Business Economics)
+0,4,Head of Department (Chemistry)
+0,4,Head of Department (Commerce)
+0,4,Head of Department (Economics)
+0,4,Head of Department (English)
+0,4,Head of Department (EVS)
+0,4,Head of Department (Hindi)
+0,4,Head of Department (History)
+0,4,Head of Department (Information Technology)
+0,4,Head of Department (Marathi)
+0,4,Head of Department (Mass Media)
+0,4,Head of Department (Mathematics)
+0,4,Head of Department (Physics)
+0,4,Head of Department (Political Science)
+0,4,Head of Department (Psychology)
+0,4,Head of Department (Sociology)
+0,4,Head of Department (Zoology)
+0,9,In-charge of Biology Department (Junior College)
+0,9,In-charge of Chemistry Department (Junior college)
+0,9,In-charge of Commerce Department (Junior College)
+0,9,In-charge of Economics Department (Junior College)
+0,9,In-charge of English Department (Junior college)
+0,9,In-charge of Environmental Education Department (Junior College)
+0,9,In-charge of French Department (Junior College)
+0,9,In-charge of Hindi department (Junior College)
+0,9,In-charge of History department (Junior College) 
+0,9,In-charge of Information Technology Department (Junior College)
+0,9,In-charge of Marathi Department (Junior College)
+0,9,In-charge of Mathematics Department (Junior College)
+0,9,In-charge of Physics Department (Junior College)
+0,9,In-charge of Political Science Department (Junior College)
+0,9,In-charge of Psychology Department (Junior College)
+0,9,In-charge of Sanskrit Department (Junior College)
+0,9,In-charge of Sociology Department (Junior College)
+0,13,Nodal Officer of NEP and ABC
+0,0,Principal
+0,10,Supervisor of Junior College
+0,0,Vice Principal (Degree College)
+0,0,Vice Principal(Junior College)

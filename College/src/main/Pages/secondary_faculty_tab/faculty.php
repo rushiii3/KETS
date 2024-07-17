@@ -25,21 +25,39 @@ $fetch_designations_query_result = $fetch_designations_query->get_result();
 
 $all_designations = [];
 if ($fetch_designations_query_result) {
+  //$output_file = fopen("../../../php/output.txt", "w") or print_r("unable to open");
   while ($row = $fetch_designations_query_result->fetch_assoc()) {
     $designation = $row["cp_designation"];
     $final_designation = "";
 
-    if (str_contains($designation, ",")) {
-      if (!in_array(explode(",", $designation)[0], $all_designations)) {
+    $index_of_comma = 0;
+    $index_of_word_of = 0;
+
+    // if(str_contains($designation,",")&& str_contains($designation," of ")){
+    $index_of_comma = strpos($designation, ",") ? strpos($designation, ",") : 0;
+    $index_of_word_of = strpos($designation, " of ") ? strpos($designation, " of ") : 0;
+    //}
+
+    // if(!is_writeable("../../../php")){
+    //   print_r("not writable");
+    // }
+
+    // $text = "$index_of_comma,$index_of_word_of,$designation\n";
+    // fwrite($output_file, $text);
+
+
+    if (str_contains($designation, ",") && ($index_of_word_of == 0 ? $index_of_comma >= $index_of_word_of : $index_of_comma <= $index_of_word_of)) {
+      if (!in_array(trim(explode(",", $designation)[0]), $all_designations)) {
         $final_designation = trim(explode(",", $designation)[0]);
+        //fwrite($output_file,"here\n");
       }
-    } else if (str_contains($designation, " of ")) {
+    } else if (str_contains($designation, " of ") && ($index_of_comma == 0 ? $index_of_word_of >= $index_of_word_of : $index_of_word_of <= $index_of_comma)) {
       if (!in_array(explode(" of ", $designation)[0], $all_designations)) {
         $final_designation = trim(explode(" of ", $designation)[0]);
         //print_r($final_designation.$designation);
       }
     } else if (str_contains($designation, "(")) {
-      if (!in_array(explode("(", $designation)[0], $all_designations)) {
+      if (!in_array(trim(explode("(", $designation)[0]), $all_designations)) {
         $final_designation = trim(explode("(", $designation)[0]);
       }
     } else if (!in_array($designation, $all_designations)) {
@@ -70,6 +88,7 @@ if ($fetch_designations_query_result) {
       array_push($all_designations, $final_designation);
     }
   }
+  //fclose($output_file);
 }
 
 
@@ -78,7 +97,7 @@ $fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation.cp_designation SEPAR
 JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
 JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
 JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id 
--- WHERE LOWER(college_personnel.cp_name) LIKE ('a%')
+WHERE LOWER(college_personnel.cp_name) LIKE ('a%')
 GROUP BY college_personnel.cp_id 
 ORDER BY college_personnel.cp_name ASC";
 
@@ -219,6 +238,22 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
         background: linear-gradient(360deg, #1e40af, #3b82f6);
       }
     }
+
+    .selected_sort_letter {
+
+      color: rgb(59 130 246);
+      font-weight: bold;
+    }
+
+
+    @media (prefers-color-scheme:dark) {
+      .dark\:selected_sort_letter {
+        color: rgb(16 185 129);
+        font-weight: bold;
+      }
+
+
+    }
   </style>
 </head>
 
@@ -248,7 +283,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
       <div class="flex h-[100vh] flex-col sm:flex-row items-center px-8">
         <div class="flex-1 text-white font-bold  text-[2rem] sm:text-[3rem] lg:text-[4rem] xl:text-[4.2rem]">EXPLORE OUR TALENTED FACULTY WHICH NUTURES THE NEXT GENERATION</div>
         <div class="flex-1 flex items-center justify-center">
-          <button class="button_gradient_border rounded-full  shadow-2xl px-16 py-4 font-bold text-xl bg-black  text-white">Take a look</button>
+          <button class="button_gradient_border rounded-full  shadow-2xl px-16 py-4 font-bold text-xl bg-black  text-white" id="take_a_look_btn">Take a look</button>
         </div>
       </div>
       <!--title and text end-->
@@ -257,7 +292,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
       <div class="flex flex-col bg-white dark:bg-black ">
         <!--search bar-->
         <div class='flex items-center justify-center w-full my-4'>
-          <button class="self-center flex p-1 cursor-pointer dark:text-white" id="filter_toggle_btn">
+          <button class="self-center flex p-1 cursor-pointer dark:text-white" id="filter_toggle_btn" >
             <span class="material-symbols-outlined">
               filter_list
             </span>
@@ -293,10 +328,10 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
           <?php
           for ($ascii = 65; $ascii < 91; $ascii++) {
 
-            if($ascii==65){
-            echo '<a class="px-2 lg:text-lg text-blue-500 dark:text-emerald-500  hover:text-blue-500 dark:hover:text-emerald-500 font-bold selected "> ' . chr($ascii) . '</a>';
-            }else{
-               echo '<a class="px-2 lg:text-lg dark:text-white hover:text-blue-500 dark:hover:text-emerald-500">' . chr($ascii) . '</a>';
+            if ($ascii == 65) {
+              echo '<a class="px-2 lg:text-lg   hover:text-blue-500 dark:hover:text-emerald-500 sort_selector selected_sort_letter transition-all duration-500  "> ' . chr($ascii) . '</a>';
+            } else {
+              echo '<a class="px-2 lg:text-lg dark:text-white hover:text-blue-500 dark:hover:text-emerald-500 sort_selector transition-all duration-500">' . chr($ascii) . '</a>';
             }
           }
           ?>
@@ -437,7 +472,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
             <!--next and previous button-->
             <div class="flex justify-between mb-4 mt-2">
-              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center text-center previous_button">
+              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center text-center   invisible previous_button">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                     <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
@@ -475,7 +510,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                       <img src="<?php echo $faculty_row["cp_image_path"] ?? $vaze_logo; ?>" alt="Vaze College Faculty Image" class=" object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-500" : "hover:cursor-default" ?>"><?php echo $faculty_row["cp_honourific"] . $faculty_row["cp_name"] ?></a>
+                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-500" : "hover:cursor-default" ?>"><?php echo $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] ?></a>
                       <p class="text-slate-600 text-sm  dark:text-emerald-500"><?php echo $faculty_row["cp_desig"] ?></p>
                       <p class="mt-4 font-bold">Department</p>
                       <a href="" class="hover:cursor-pointer hover:text-blue-500">Department of <?php echo $faculty_row["dept_name"] ?></a>
@@ -492,7 +527,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
             <!--next and previous button-->
             <div class="flex justify-between mt-4 ">
-              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center text-center previous_button">
+              <button class="bg-blue-500 text-white rounded-lg p-2  items-center text-center invisible flex previous_button">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                     <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
