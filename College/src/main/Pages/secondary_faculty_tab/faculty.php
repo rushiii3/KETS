@@ -329,9 +329,9 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
           for ($ascii = 65; $ascii < 91; $ascii++) {
 
             if ($ascii == 65) {
-              echo '<a class="px-2 lg:text-lg   hover:text-blue-500 dark:hover:text-emerald-500 sort_selector selected_sort_letter transition-all duration-500  "> ' . chr($ascii) . '</a>';
+              echo '<span class="px-2 lg:text-lg  hover:cursor-pointer hover:text-blue-500 dark:hover:text-emerald-500 sort_selector selected_sort_letter transition-all duration-500  "> ' . chr($ascii) . '</span>';
             } else {
-              echo '<a class="px-2 lg:text-lg dark:text-white hover:text-blue-500 dark:hover:text-emerald-500 sort_selector transition-all duration-500">' . chr($ascii) . '</a>';
+              echo '<span class="px-2 lg:text-lg hover:cursor-pointer dark:text-white hover:text-blue-500 dark:hover:text-emerald-500 sort_selector transition-all duration-500">' . chr($ascii) . '</span>';
             }
           }
           ?>
@@ -344,24 +344,23 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
           <div class=" -bottom-[100rem] sm:top-0 z-10 fixed sm:flex sm:relative sm:w-1/4 transition-transform transition-width duration-[750ms] ease-in-out" id="filter_div">
 
             <!--Sticky inner filter section-->
-            <div class="sm:sticky h-fit flex flex-col items-end p-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600/10  dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black top-2">
+            <div class="h-[85vh] sm:h-[100vh] overflow-y-scroll flex flex-col items-center pt-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600/10  dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black top-2 relative backdrop-blur-sm sm:backdrop-blur-none">
 
-              <button class="sm:hidden" id="filter_mobile_close_btn">
+            <div class="flex flex-col items-start px-4">
+              
+              <!-- Filter heading-->
+              <div class="flex justify-between w-full">
+                <h2 class="font-bold text-2xl dark:text-white">Filter</h2>
+                <button class="sm:hidden" id="filter_mobile_close_btn">
                 <span class="material-symbols-outlined dark:text-white">
                   close
                 </span>
               </button>
 
-
-              <form id="filter_form" class="w-full">
-                <!-- Filter heading-->
-                <div class="flex justify-between">
-                  <h2 class="font-bold text-2xl dark:text-white">Filter</h2>
-
-                </div>
-
+              </div>
+              <form class="w-full">
                 <!--"Department" subheading div -->
-                <div class="flex-col ">
+                <div class="flex-col h-fit ">
                   <h4 class="font-bold text-lg dark:text-white">Department</h4>
 
                   <?php
@@ -392,12 +391,10 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                 </div>
                 <!--"Level" subheading end-->
 
-                <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
-
-
+                <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
 
                 <!--"Faculty" subheading div -->
-                <div class="flex-col mt-2">
+                <div class="flex-col mt-2 h-fit">
                   <h4 class="font-bold text-lg dark:text-white">Faculty</h4>
 
                   <div class="flex mt-2">
@@ -418,10 +415,10 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                 </div>
                 <!--"Faculty" section Ends here-->
 
-                <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+                <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
 
                 <!--"Designation" subheading div -->
-                <div class="flex-col mt-2">
+                <div class="flex-col mt-2 h-fit">
                   <h4 class="font-bold text-lg dark:text-white">Designation</h4>
 
                   <?php
@@ -444,41 +441,42 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                 </div>
                 <!--"Designation" subheading end-->
 
-                <hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700">
+                <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
 
-                 <!--"college section" subheading div -->
-                <div class="flex-col mt-2">
+                <!--"college section" subheading div -->
+                <div class="flex-col mt-2 h-fit">
                   <h4 class="font-bold text-lg dark:text-white">College Section</h4>
 
-                  <div class="flex">
+                  <div class="flex mt-1">
                     <input type="checkbox" id="junior_clg_chkbox" name="college_section" value="j" />
                     <label for="junior_clg_chkbox" class=" mx-2 dark:text-white">Junior College</label>
                   </div>
 
-                   <div class="flex">
+                  <div class="flex">
                     <input type="checkbox" id="degree_clg_chkbox" name="college_section" value="d" />
                     <label for="degree_clg_chkbox" class=" mx-2 dark:text-white">Degree College</label>
                   </div>
 
-                   <div class="flex">
+                  <div class="flex">
                     <input type="checkbox" id="sfc_section_chkbox" name="college_section" value="s" />
                     <label for="sfc_section_chkbox" class=" mx-2 dark:text-white">SFC section</label>
                   </div>
                 </div>
                 <!--College section div ends here-->
-
-
-                <!--Show results and clear-->
-                <div class="flex justify-between items-center flex-wrap mt-8">
-
-                  <button id="apply_filter_button" class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white" type="button">Apply</button>
-
-
-                  <button id="filter_clear_button" class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700" type="reset">Clear</button>
-                </div>
               </form>
             </div>
-            <!--sticky inner section end-->
+
+              <!--sticky inner section end-->
+
+              <!--Show results and clear-->
+              <div class="flex justify-between items-center w-full flex-wrap  sticky py-2 backdrop-blur-sm dark:bg-gray-800 bottom-0">
+
+                <button id="apply_filter_button" class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white">Apply</button>
+
+
+                <button id="filter_clear_button" class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700">Clear</button>
+              </div>
+            </div>
 
 
           </div>
@@ -514,7 +512,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
             </div>
 
             <!--Div to show loading animation and not found-->
-            <div class="hidden flex-1" id="loading_animation_div"></div>
+            <div class=" hidden  flex-1" id="loading_animation_div" ></div>
 
             <!-- Courses-->
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full" id="faculty_cards_grid_div">
@@ -572,14 +570,14 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                       </a>
 
                       <p class="mt-4 font-bold">Faculty Type</p>
-                      <p  class="text-sm dark:text-white">
+                      <p class="text-sm dark:text-white">
                         <?php echo $faculty_type ?>
-                </p>
+                      </p>
 
                       <p class="mt-4 font-bold">College Section</p>
-                      <p  class="text-sm dark:text-white">
+                      <p class="text-sm dark:text-white">
                         <?php echo $faculty_college_sec_name ?>
-                </p>
+                      </p>
                     </div>
                   </div>
                   <!--Card 1 end-->
@@ -636,6 +634,9 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
   <?php include('../../Layouts/footer.php'); ?>
   <script src="../../../js/secondary_faculty_tab/faculty.js" type="module"></script>
   <script src="../../../js/common/header_2.js"></script>
+
+  <!--lottie animation player-->
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
 

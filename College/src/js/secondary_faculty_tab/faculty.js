@@ -16,8 +16,8 @@ const search_input_field = document.getElementById("search_input_field");
 const search_form = document.getElementById("search_form");
 
 //no search results
-const no_results_element = `<div class=" flex flex-col justify-center items-center w-full h-1/2 dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+const no_results_element = `<div class=" mt-4 flex flex-col justify-center items-center w-full h-1/2 dark:text-white text-lg">
+        <img src="../../../assests/svg/sad_emoji_svg.svg" class="sm:w-[10rem] sm:h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -44,7 +44,7 @@ let faculty_loading_state = false;
 
 /////////////////////////////// EVENTS //////////////////////////////////
 filter_toggle_btn.addEventListener("click", (e) => {
-  console.log("filter button clicked " + is_filter_visible);
+  //console.log("filter button clicked " + is_filter_visible);
 
   //for screen sizes with 640 px width and above
   if (is_filter_visible && window.innerWidth >= 640) {
@@ -53,7 +53,7 @@ filter_toggle_btn.addEventListener("click", (e) => {
     filter_div.classList.replace("sm:w-1/4", "sm:w-0");
 
     is_filter_visible = false;
-    console.log(is_filter_visible);
+    //console.log(is_filter_visible);
   } else if (!is_filter_visible && window.innerWidth >= 640) {
     if (filter_div.classList.contains("-translate-x-[100rem]")) {
       filter_div.classList.remove("-translate-x-[100rem]");
@@ -64,7 +64,7 @@ filter_toggle_btn.addEventListener("click", (e) => {
     filter_div.classList.replace("sm:w-0", "sm:w-1/4");
 
     is_filter_visible = true;
-    console.log(is_filter_visible);
+    //console.log(is_filter_visible);
   }
 
   //for mobile
@@ -110,7 +110,8 @@ $("#btn_clear_search").click(function () {
   fetchFacultyFromDB();
 });
 
-$("#apply_filter_button").click(function () {
+$("#apply_filter_button").click(function (e) {
+  e.preventDefault();
   // console.log("apply button clicked")
   let checkedDepartments = [];
   let checkedFaculty = [];
@@ -137,15 +138,34 @@ $("#apply_filter_button").click(function () {
 
   college_sec_filter_state = checkedCollegeSections;
 
-  fetchFacultyFromDB();
-
+  if (
+    checkedDepartments.length +
+      checkedFaculty.length +
+      checkedDesignation.length +
+      checkedCollegeSections.length !=
+    0
+  ) {
+    fetchFacultyFromDB();
+  }
   dismissFilterWindowWhenInMobileMode();
 });
 
-$("#filter_clear_button").click(function () {
-  console.log("clear button clicked");
+$("#filter_clear_button").click(function (e) {
+  e.preventDefault();
+  console.log(e);
+  let isAnyCheckboxChecked = false;
+  $("input[type='checkbox']").each(function () {
+    if ($(this).prop("checked")) {
+      $(this).prop("checked", false);
+      isAnyCheckboxChecked = true;
+    }
+  });
+
   resetState();
-  fetchFacultyFromDB();
+  if (isAnyCheckboxChecked) {
+    fetchFacultyFromDB();
+  }
+  dismissFilterWindowWhenInMobileMode();
 });
 
 $(".sort_selector").each(function () {
@@ -306,7 +326,7 @@ function fetchFacultyFromDB() {
   }
 
   let ajax_url = `./AJAX/fetch_faculty.php${query_params}`;
-  console.log(`ajax url is  ${ajax_url}`);
+  //console.log(`ajax url is  ${ajax_url}`);
 
   faculty_loading_state = true;
   if (faculty_loading_state) {
@@ -315,7 +335,7 @@ function fetchFacultyFromDB() {
     $("#loading_animation_div").html(loading_animation);
   }
 
-  //setTimeout(()=>{
+  setTimeout(()=>{
   makeAJAXRequest(
     ajax_url,
     "GET",
@@ -328,10 +348,11 @@ function fetchFacultyFromDB() {
 
       if (success_json_response.faculty_array.length > 0) {
         $("#loading_animation_div").addClass("hidden");
-        let first_letter_of_first_faculty = success_json_response.faculty_array[0]["cp_name"]
-          .substring(0, 1)
-          .toLowerCase()
-          .trim();
+        let first_letter_of_first_faculty =
+          success_json_response.faculty_array[0]["cp_name"]
+            .substring(0, 1)
+            .toLowerCase()
+            .trim();
         //console.log(first_letter_of_first_faculty);
         //console.log(success_json_response);
         //sort_state = first_letter_of_first_faculty;
@@ -398,12 +419,18 @@ function fetchFacultyFromDB() {
       }
 
       //set the count
-      
-      let starting_range_current_letter=0
-      let ending_range_of_current_letter=0
-      if(success_json_response.total_rows>success_json_response.count_of_previous_letters && no_of_faculty_for_first_alphabet!=0){
-        starting_range_current_letter=success_json_response.count_of_previous_letters+1
-        ending_range_of_current_letter=starting_range_current_letter-1+no_of_faculty_for_first_alphabet;
+
+      let starting_range_current_letter = 0;
+      let ending_range_of_current_letter = 0;
+      if (
+        success_json_response.total_rows >
+          success_json_response.count_of_previous_letters &&
+        no_of_faculty_for_first_alphabet != 0
+      ) {
+        starting_range_current_letter =
+          success_json_response.count_of_previous_letters + 1;
+        ending_range_of_current_letter =
+          starting_range_current_letter - 1 + no_of_faculty_for_first_alphabet;
       }
       $("#no_of_faculty_para").text(
         `Showing ${starting_range_current_letter} - ${ending_range_of_current_letter} of ${success_json_response.total_rows} results`
@@ -415,6 +442,8 @@ function fetchFacultyFromDB() {
       //If the user wants a specific letter he will have to choose it again.
       //That is the trade-off
       sort_state = "";
+
+      success_json_response = "";
     },
     function (error, xhr, status) {
       //set the count
@@ -424,7 +453,7 @@ function fetchFacultyFromDB() {
     }
   );
 
-  //},5000)
+  },2000)
 }
 
 function constructFacultyCard(
@@ -478,7 +507,7 @@ function operationsToPerformOnAlphabetClick(currentElement) {
   currentElement.addClass("selected_sort_letter");
 
   sort_state = currentElement.text().trim();
-  console.log(sort_state);
+  //console.log(sort_state);
   if (sort_state == "Z") {
     $(".next_button").each(function () {
       $(this).addClass("invisible");
