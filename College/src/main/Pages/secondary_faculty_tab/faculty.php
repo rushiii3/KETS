@@ -106,6 +106,27 @@ $fetch_faculty_query->execute();
 $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
 
+//get the count
+//fetch the faculty
+$fetch_faculty_count_stmt = "SELECT COUNT(*) AS count FROM (SELECT college_personnel.cp_id,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') as cp_desig FROM college_personnel 
+JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
+JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
+JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id 
+GROUP BY college_personnel.cp_id 
+) as count_subquery";
+
+$fetch_faculty_count_query = $conn->prepare($fetch_faculty_count_stmt);
+$fetch_faculty_count_query->execute();
+$fetch_faculty_count_query_result = $fetch_faculty_count_query->get_result();
+
+if($fetch_faculty_count_query_result){
+  while($row=$fetch_faculty_count_query_result->fetch_assoc()){
+    $total_count=$row["count"];
+  }
+}
+
+
+
 
 
 //print_r($all_designations);
@@ -141,6 +162,30 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
       background: linear-gradient(45deg, #1e40af, #10b981, #3b82f6, #16a34a);
       z-index: -1;
       animation: movegradient .5s ease-in-out infinite
+    }
+
+    #div_inside_filter_div::-webkit-scrollbar {
+      width: 4px;
+
+    }
+
+    #div_inside_filter_div::-webkit-scrollbar-thumb {
+      background-color: #1e40af;
+      border-radius: 20px;
+    }
+
+    #filter_by_name_div::-webkit-scrollbar {
+      width: 0px;
+
+    }
+
+
+    @media (prefers-color-scheme:dark) {
+      #div_inside_filter_div::-webkit-scrollbar-thumb {
+        background-color: #16a34a;
+        border-radius: 20px;
+      }
+
     }
 
     @keyframes movegradient {
@@ -241,7 +286,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
     .selected_sort_letter {
 
-      color: rgb(59 130 246);
+      color: rgb(30 58 138);
       font-weight: bold;
     }
 
@@ -283,13 +328,13 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
       <div class="flex h-[100vh] flex-col sm:flex-row items-center px-8">
         <div class="flex-1 text-white font-bold  text-[2rem] sm:text-[3rem] lg:text-[4rem] xl:text-[4.2rem]">EXPLORE OUR TALENTED FACULTY WHICH NUTURES THE NEXT GENERATION</div>
         <div class="flex-1 flex items-center justify-center">
-          <button class="button_gradient_border rounded-full  shadow-2xl px-16 py-4 font-bold text-xl bg-black  text-white" id="take_a_look_btn">Take a look</button>
+          <button class="button_gradient_border rounded-full  shadow-2xl px-16 py-4 font-bold text-xl bg-slate-900 text-white" id="take_a_look_btn">Take a look</button>
         </div>
       </div>
       <!--title and text end-->
 
       <!-- search bar onwards contents div -->
-      <div class="flex flex-col bg-white dark:bg-black ">
+      <div class="flex flex-col bg-slate-100 dark:bg-black ">
         <!--search bar-->
         <div class='flex items-center justify-center w-full my-4'>
           <button class="self-center flex p-1 cursor-pointer dark:text-white" id="filter_toggle_btn">
@@ -313,7 +358,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
 
           <!--search button-->
-          <button type="button" class="relative mx-2 p-2 custom_bg_blue rounded-full sm:rounded-xl text-white cursor-pointer dark:bg-white dark:text-[#001b53]" id="search_button">
+          <button type="button" class="relative mx-2 p-2 bg-blue-900 rounded-full sm:rounded-xl text-white cursor-pointer dark:bg-white dark:text-blue-900" id="search_button">
             <p class=" hidden sm:block font-bold  font-2xl p-2">Search</p>
             <span class="material-symbols-outlined sm:hidden">
               search
@@ -324,14 +369,14 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
         </div>
 
         <!--Filter by name div-->
-        <div class="w-full flex overflow-x-auto sm:justify-center">
+        <div class="w-full flex overflow-x-auto sm:justify-center" id="filter_by_name_div">
           <?php
           for ($ascii = 65; $ascii < 91; $ascii++) {
 
             if ($ascii == 65) {
-              echo '<span class="px-2 lg:text-lg  hover:cursor-pointer hover:text-blue-500 dark:hover:text-emerald-500 sort_selector selected_sort_letter transition-all duration-500  "> ' . chr($ascii) . '</span>';
+              echo '<span class="px-2 lg:text-lg  hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 sort_selector selected_sort_letter dark:selected_sort_letter transition-all duration-500  "> ' . chr($ascii) . '</span>';
             } else {
-              echo '<span class="px-2 lg:text-lg hover:cursor-pointer dark:text-white hover:text-blue-500 dark:hover:text-emerald-500 sort_selector transition-all duration-500">' . chr($ascii) . '</span>';
+              echo '<span class="px-2 lg:text-lg hover:cursor-pointer text-slate-500 dark:text-white hover:text-blue-900 dark:hover:text-emerald-500 sort_selector transition-all duration-500">' . chr($ascii) . '</span>';
             }
           }
           ?>
@@ -344,40 +389,40 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
           <div class=" -bottom-[100rem] sm:top-0 z-10 fixed sm:flex sm:relative sm:w-1/4 transition-transform transition-width duration-[750ms] ease-in-out" id="filter_div">
 
             <!--Sticky inner filter section-->
-            <div class="h-[85vh] sm:h-[100vh] overflow-y-scroll flex flex-col items-center pt-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600/10  dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black top-2 relative backdrop-blur-sm sm:backdrop-blur-none">
+            <div class="h-[85vh] lg:h-[80vh] sticky top-32 overflow-y-scroll flex flex-col items-start pt-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600 dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black   backdrop-blur-sm sm:backdrop-blur-none" id="div_inside_filter_div">
 
-            <div class="flex flex-col items-start px-4">
-              
-              <!-- Filter heading-->
-              <div class="flex justify-between w-full">
-                <h2 class="font-bold text-2xl dark:text-white">Filter</h2>
-                <button class="sm:hidden" id="filter_mobile_close_btn">
-                <span class="material-symbols-outlined dark:text-white">
-                  close
-                </span>
-              </button>
+              <div class="flex flex-col items-start px-8">
 
-              </div>
-              <form class="w-full">
-                <!--"Department" subheading div -->
-                <div class="flex-col h-fit ">
-                  <h4 class="font-bold text-lg dark:text-white">Department</h4>
+                <!-- Filter heading-->
+                <div class="flex justify-between w-full">
+                  <h2 class="font-bold text-2xl dark:text-white">Filter</h2>
+                  <button class="sm:hidden" id="filter_mobile_close_btn">
+                    <span class="material-symbols-outlined dark:text-white">
+                      close
+                    </span>
+                  </button>
 
-                  <?php
-                  foreach ($all_departments as $dept) {
+                </div>
+                <form class="w-full">
+                  <!--"Department" subheading div -->
+                  <div class="flex-col h-fit ">
+                    <h4 class="font-bold text-lg dark:text-white">Department</h4>
 
-                    echo '
+                    <?php
+                    foreach ($all_departments as $dept) {
+
+                      echo '
                     <div class="flex  mt-2">
                       <input type="checkbox" id="' . $dept . '_chkbox" name="department" value="' . $dept . '" />
                       <label for="' . $dept . '_chkbox" class=" mx-2 dark:text-white ">
                         ' . $dept . '
                       </label>
                     </div>';
-                  }
+                    }
 
-                  ?>
+                    ?>
 
-                  <!-- <div class="flex">
+                    <!-- <div class="flex">
                     <input type="checkbox" id="pg_chkbox" name="level" value="pg" />
                     <label for="pg_chkbox" class=" mx-2 dark:text-white ">From DB</label>
                   </div>
@@ -388,90 +433,90 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
                   </div> -->
 
-                </div>
-                <!--"Level" subheading end-->
-
-                <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
-
-                <!--"Faculty" subheading div -->
-                <div class="flex-col mt-2 h-fit">
-                  <h4 class="font-bold text-lg dark:text-white">Faculty</h4>
-
-                  <div class="flex mt-2">
-                    <input type="checkbox" id="arts_chkbox" name="faculty" value="a" />
-                    <label for="arts_chkbox" class=" mx-2 dark:text-white">Arts</label>
                   </div>
+                  <!--"Level" subheading end-->
 
-                  <div class="flex">
-                    <input type="checkbox" id="commerce_chkbox" name="faculty" value="c" />
-                    <label for="commerce_chkbox" class=" mx-2 dark:text-white">Commerce</label>
+                  <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
+
+                  <!--"Faculty" subheading div -->
+                  <div class="flex-col mt-2 h-fit">
+                    <h4 class="font-bold text-lg dark:text-white">Faculty</h4>
+
+                    <div class="flex mt-2">
+                      <input type="checkbox" id="arts_chkbox" name="faculty" value="a" />
+                      <label for="arts_chkbox" class=" mx-2 dark:text-white">Arts</label>
+                    </div>
+
+                    <div class="flex">
+                      <input type="checkbox" id="commerce_chkbox" name="faculty" value="c" />
+                      <label for="commerce_chkbox" class=" mx-2 dark:text-white">Commerce</label>
+                    </div>
+
+                    <div class="flex">
+                      <input type="checkbox" id="science_chkbox" name="faculty" value="s" />
+                      <label for="science_chkbox" class=" mx-2 dark:text-white">Science</label>
+                    </div>
+
                   </div>
+                  <!--"Faculty" section Ends here-->
 
-                  <div class="flex">
-                    <input type="checkbox" id="science_chkbox" name="faculty" value="s" />
-                    <label for="science_chkbox" class=" mx-2 dark:text-white">Science</label>
-                  </div>
+                  <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
 
-                </div>
-                <!--"Faculty" section Ends here-->
+                  <!--"Designation" subheading div -->
+                  <div class="flex-col mt-2 h-fit">
+                    <h4 class="font-bold text-lg dark:text-white">Designation</h4>
 
-                <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
-
-                <!--"Designation" subheading div -->
-                <div class="flex-col mt-2 h-fit">
-                  <h4 class="font-bold text-lg dark:text-white">Designation</h4>
-
-                  <?php
-                  foreach ($all_designations as $post) {
-                    if ($post == "Head") {
-                      $post = "Head of Department";
-                    }
-                    echo '<div class="flex mt-2">
+                    <?php
+                    foreach ($all_designations as $post) {
+                      if ($post == "Head") {
+                        $post = "Head of Department";
+                      }
+                      echo '<div class="flex mt-2">
                     <input type="checkbox" id="' . $post . '_chkbox" name="designation" value="' . $post . '" />
                     <label for="' . $post . '_chkbox" class=" mx-2 dark:text-white">' . $post . '</label>
                   </div>';
-                  }
+                    }
 
-                  ?>
-                  <!-- <div class="flex">
+                    ?>
+                    <!-- <div class="flex">
                     <input type="checkbox" id=regular_chkbox" name="section" value="d" />
                     <label for="regular_chkbox" class=" mx-2 dark:text-white">From Db </label>
                   </div> -->
 
-                </div>
-                <!--"Designation" subheading end-->
-
-                <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
-
-                <!--"college section" subheading div -->
-                <div class="flex-col mt-2 h-fit">
-                  <h4 class="font-bold text-lg dark:text-white">College Section</h4>
-
-                  <div class="flex mt-1">
-                    <input type="checkbox" id="junior_clg_chkbox" name="college_section" value="j" />
-                    <label for="junior_clg_chkbox" class=" mx-2 dark:text-white">Junior College</label>
                   </div>
+                  <!--"Designation" subheading end-->
 
-                  <div class="flex">
-                    <input type="checkbox" id="degree_clg_chkbox" name="college_section" value="d" />
-                    <label for="degree_clg_chkbox" class=" mx-2 dark:text-white">Degree College</label>
-                  </div>
+                  <hr class="h-px my-4 border-gray-200 border w-full dark:border-gray-600">
 
-                  <div class="flex">
-                    <input type="checkbox" id="sfc_section_chkbox" name="college_section" value="s" />
-                    <label for="sfc_section_chkbox" class=" mx-2 dark:text-white">SFC section</label>
+                  <!--"college section" subheading div -->
+                  <div class="flex-col mt-2 h-fit">
+                    <h4 class="font-bold text-lg dark:text-white">College Section</h4>
+
+                    <div class="flex mt-1">
+                      <input type="checkbox" id="junior_clg_chkbox" name="college_section" value="j" />
+                      <label for="junior_clg_chkbox" class=" mx-2 dark:text-white">Junior College</label>
+                    </div>
+
+                    <div class="flex">
+                      <input type="checkbox" id="degree_clg_chkbox" name="college_section" value="d" />
+                      <label for="degree_clg_chkbox" class=" mx-2 dark:text-white">Degree College</label>
+                    </div>
+
+                    <div class="flex">
+                      <input type="checkbox" id="sfc_section_chkbox" name="college_section" value="s" />
+                      <label for="sfc_section_chkbox" class=" mx-2 dark:text-white">SFC section</label>
+                    </div>
                   </div>
-                </div>
-                <!--College section div ends here-->
-              </form>
-            </div>
+                  <!--College section div ends here-->
+                </form>
+              </div>
 
               <!--sticky inner section end-->
 
               <!--Show results and clear-->
               <div class="flex justify-between items-center w-full flex-wrap  sticky py-2 backdrop-blur-sm dark:bg-gray-800 bottom-0">
 
-                <button id="apply_filter_button" class="text-[#001b53] p-1 flex-1 rounded-lg mx-1 font-bold  bg-white">Apply</button>
+                <button id="apply_filter_button" class="text-blue-900 dark:text-emerald-500 p-1 flex-1 rounded-lg mx-1 font-bold  bg-white">Apply</button>
 
 
                 <button id="filter_clear_button" class="text-white rounded-lg p-1 mt-1 mx-1 flex-1 font-bold bg-red-700">Clear</button>
@@ -487,13 +532,13 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
             <!-- No of courses-->
             <p class="text-2xl text-black font-bold dark:text-white" id="no_of_faculty_para">
-              <?php echo "Showing " . $fetch_faculty_query_result->num_rows . " of " . $fetch_faculty_query_result->num_rows . " results";
+              <?php echo "Showing 1 - " . $fetch_faculty_query_result->num_rows . " of " . $total_count . " results";
               ?>
             </p>
 
             <!--next and previous button-->
             <div class="flex justify-between mb-4 mt-2">
-              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center text-center   invisible previous_button">
+              <button class="bg-blue-900 text-white rounded-lg p-2 flex items-center text-center   invisible previous_button">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                     <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
@@ -501,7 +546,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                 </span>
                 <span class="text-center">Prev</span>
               </button>
-              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center next_button">
+              <button class="bg-blue-900 text-white rounded-lg p-2 flex items-center next_button">
                 <span class="text-center">Next</span>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
@@ -512,7 +557,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
             </div>
 
             <!--Div to show loading animation and not found-->
-            <div class=" hidden  flex-1" id="loading_animation_div" ></div>
+            <div class=" hidden  flex-1" id="loading_animation_div"></div>
 
             <!-- Courses-->
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full" id="faculty_cards_grid_div">
@@ -556,26 +601,26 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                       <img src="<?php echo $faculty_row["cp_image_path"] ?? $vaze_logo; ?>" alt="Vaze College Faculty Image" class="object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-500" : "hover:cursor-default" ?>">
+                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline" : "hover:cursor-default" ?> ">
                         <?php echo $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] ?>
                       </a>
 
-                      <p class="text-slate-600 text-sm  dark:text-emerald-500">
+                      <p class="text-sm  text-blue-800 dark:text-emerald-500">
                         <?php echo $faculty_row["cp_desig"] ?>
                       </p>
 
-                      <p class="mt-4 font-bold">Department</p>
-                      <a href="" class=" text-sm hover:cursor-pointer hover:text-blue-500">
+                      <p class="mt-4 font-medium dark:text-white  ">Department</p>
+                      <a href="" class=" text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">
                         Department of <?php echo $faculty_row["dept_name"] ?>
                       </a>
 
-                      <p class="mt-4 font-bold">Faculty Type</p>
-                      <p class="text-sm dark:text-white">
+                      <p class="mt-4 font-medium ">Faculty Type</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 ">
                         <?php echo $faculty_type ?>
                       </p>
 
-                      <p class="mt-4 font-bold">College Section</p>
-                      <p class="text-sm dark:text-white">
+                      <p class="mt-4 font-medium">College Section</p>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">
                         <?php echo $faculty_college_sec_name ?>
                       </p>
                     </div>
@@ -589,9 +634,13 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
             </div>
             <!--Courses Grid end-->
 
+            <!--just a spacer div-->
+            <div class="flex-1"></div>
+
             <!--next and previous button-->
             <div class="flex justify-between mt-4 ">
-              <button class="bg-blue-500 text-white rounded-lg p-2  items-center text-center invisible flex previous_button">
+              <button class="bg-blue-900 text-white rounded-lg p-2  items-center text-center invisible flex previous_button">
+
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                     <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
@@ -599,7 +648,7 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
                 </span>
                 <span class="text-center">Prev</span>
               </button>
-              <button class="bg-blue-500 text-white rounded-lg p-2 flex items-center next_button">
+              <button class="bg-blue-900 text-white rounded-lg p-2 flex items-center next_button">
                 <span class="text-center">Next</span>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
