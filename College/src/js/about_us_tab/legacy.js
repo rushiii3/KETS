@@ -1,3 +1,7 @@
+let navbar_height=document.getElementsByClassName("navbar")[0].offsetHeight;
+document.getElementById("main_container_div").style.marginTop=`${navbar_height}px`
+
+
 /*///////////////////////////////
 VARIABLES
 ///////////////////////////////*/
@@ -15,7 +19,7 @@ let principals_number_of_timeline_circles = $(".p_timeline_circle").length;
 let bg_fixed_image_height =
   document.getElementById("bg_fixed_image_div").offsetHeight;
 
-let height_of_divs_before_p_timeline = 0;
+let height_of_divs_before_p_timeline = navbar_height;
 
 document.querySelectorAll(".div_before_p_timeline").forEach((div) => {
   height_of_divs_before_p_timeline += div.offsetHeight;
@@ -136,17 +140,17 @@ window.onscroll = function () {
   redrawTimeline(
     principal_percent_scrolled > 0 ? principal_percent_scrolled : 0,
     principal_timeline_object,
-    20
+    16
   );
   redrawTimeline(
     vpd_percent_scrolled > 0 ? vpd_percent_scrolled : 0,
     vpd_timeline_object,
-    10
+    9
   );
   redrawTimeline(
     vpj_percent_scrolled > 0 ? vpj_percent_scrolled : 0,
     vpj_timeline_object,
-    20
+    16
   );
 
 

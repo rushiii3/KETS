@@ -1,6 +1,7 @@
 <?php
 include("../../../config/connect.php");
 include("../../../php/common_functions.php");
+include("../../Components/vaze_kelkar_logo_base64.php");
 
 $fetch_all_stmt = "SELECT * FROM cp_has_tenure, college_personnel,tenure WHERE cp_has_tenure.cp_id=college_personnel.cp_id AND cp_has_tenure.tenure_id=tenure.tenure_id ORDER BY tenure.tenure_start_date ASC, tenure.tenure_end_date DESC;";
 $fetch_query = $conn->prepare($fetch_all_stmt);
@@ -101,11 +102,10 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V. G. VAZE|Legacy</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
 
     <?php include('../../../library/library.php'); ?>
+    <link rel="stylesheet" href="../../../css/common/header_2.css" />
 
     <style>
         .inactive_year {
@@ -138,8 +138,11 @@ else {
     NAVBAR 
     ****************/
     -->
-    <?php include('../../Layouts/header2.php'); 
+
+
+    <?php include('../../Layouts/header2.php');
     ?>
+
 
     <!--
     /***************
@@ -148,7 +151,7 @@ else {
     -->
 
 
-    <div>
+    <div id="main_container_div">
         <!--BACKGROUND IMAGE DIV-->
         <div class="h-[100vh] w-[100vw] fixed top-0 left-0 -z-10" id="bg_fixed_image_div">
             <img src="https://vazecollege.net/wp-content/uploads/2016/03/independance-day-370x296.jpg" loading="lazy" class="w-full h-full  opacity-80 brightness-50" alt="old_independence_day_image">
@@ -173,7 +176,7 @@ else {
 
         <!--Display options-->
         <!--DISPLAY OPTIONS SELECTOR DIV start-->
-        
+
         <div class="flex sm:flex-row sm:flex-wrap flex-col space-y-4 sm:space-y-0 bg-white dark:bg-black p-8 div_before_p_timeline">
             <div class="flex-col flex-1">
                 <div class=" font-['Playfair_Display'] dark:text-white lg:text-[2rem]">IMPARTING EDUCATION FOR NEARLY 40 YEARS AND BEYOND</div>
@@ -191,11 +194,11 @@ else {
                     <hr class="border-gray-600 " />
                 </ul>
             </div>
-            
-            
+
+
 
         </div>
-        
+
         <!--DISPLAY OPTIONS SELECTOR DIV end-->
 
         <?php
@@ -275,9 +278,10 @@ else {
 
 
                                         <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $member["bg_color"];echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" alt="member image" />
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
@@ -338,9 +342,10 @@ else {
 
                                     ?>
                                         <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                        echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy"alt="member image" />
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
@@ -408,9 +413,10 @@ else {
                                     ?>
 
                                         <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                        echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? "https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-856.jpg?t=st=1718476592~exp=1718480192~hmac=1fd0511e34f2bf15333d89d91a629f75c1fc9d751943a2e0c7eab388a2019c11&w=740"; ?>" loading="lazy" alt="member image" />
+                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
 
                                             <div class="flex w-fit flex-col mt-0 sm:mt-4">
                                                 <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
@@ -463,12 +469,13 @@ else {
             FOOTER
             ****************/
             -->
-        <?php include('../../Layouts/footer.php'); 
+        <?php include('../../Layouts/footer.php');
         ?>
     </div>
     </div>
 
     <script src="../../../js/about_us_tab/legacy.js"></script>
+    <script src="../../../js/common/header_2.js"></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
 
