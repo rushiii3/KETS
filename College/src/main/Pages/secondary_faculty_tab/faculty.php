@@ -389,7 +389,7 @@ if($fetch_faculty_count_query_result){
           <div class=" -bottom-[100rem] sm:top-0 z-10 fixed sm:flex sm:relative sm:w-1/4 transition-transform transition-width duration-[750ms] ease-in-out" id="filter_div">
 
             <!--Sticky inner filter section-->
-            <div class="h-[85vh] lg:h-[80vh] sticky top-32 overflow-y-scroll flex flex-col items-start pt-4 w-full rounded-t-3xl sm:rounded-3xl bg-white border border-gray-100 shadow-2xl shadow-gray-600 dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black   backdrop-blur-sm sm:backdrop-blur-none" id="div_inside_filter_div">
+            <div class="h-[85vh] lg:h-[80vh] sticky top-32 overflow-y-scroll flex flex-col items-start pt-4 w-full rounded-t-3xl sm:rounded-xl bg-white border border-gray-100 shadow-2xl shadow-gray-600 dark:shadow-none dark:border-gray-700 dark:bg-gray-800  text-black   backdrop-blur-sm sm:backdrop-blur-none" id="div_inside_filter_div">
 
               <div class="flex flex-col items-start px-8">
 
@@ -538,7 +538,7 @@ if($fetch_faculty_count_query_result){
 
             <!--next and previous button-->
             <div class="flex justify-between mb-4 mt-2">
-              <button class="bg-blue-900 text-white rounded-lg p-2 flex items-center text-center   invisible previous_button">
+              <button class="bg-blue-900 dark:bg-emerald-500 text-white rounded-lg p-2 flex items-center text-center   invisible previous_button">
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
                     <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
@@ -546,7 +546,7 @@ if($fetch_faculty_count_query_result){
                 </span>
                 <span class="text-center">Prev</span>
               </button>
-              <button class="bg-blue-900 text-white rounded-lg p-2 flex items-center next_button">
+              <button class="bg-blue-900 dark:bg-emerald-500 text-white rounded-lg p-2 flex items-center next_button">
                 <span class="text-center">Next</span>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
@@ -639,7 +639,7 @@ if($fetch_faculty_count_query_result){
 
             <!--next and previous button-->
             <div class="flex justify-between mt-4 ">
-              <button class="bg-blue-900 text-white rounded-lg p-2  items-center text-center invisible flex previous_button">
+              <button class="bg-blue-900 dark:bg-emerald-500 text-white rounded-lg p-2  items-center text-center invisible flex previous_button">
 
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff">
@@ -648,7 +648,7 @@ if($fetch_faculty_count_query_result){
                 </span>
                 <span class="text-center">Prev</span>
               </button>
-              <button class="bg-blue-900 text-white rounded-lg p-2 flex items-center next_button">
+              <button class="bg-blue-900 dark:bg-emerald-500 text-white rounded-lg p-2 flex items-center next_button">
                 <span class="text-center">Next</span>
                 <span>
                   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
