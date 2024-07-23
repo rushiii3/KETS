@@ -26,11 +26,12 @@ ORDER BY cp_is_part_of_committee.role ASC, committee_belongs_to_clg_section.coll
 
     if($fetch_committee_members_query_result){
         while($row=$fetch_committee_members_query_result->fetch_assoc()){
+            $required_data=["cp_name"=>$row["cp_name"],"cp_gender"=>$row["cp_gender"],"cp_honourific"=>$row["cp_honourific"],"cp_personal_website_link"=>$row["cp_personal_website_link"],"role"=>$row["role"],"cp_image_path"=>$row["cp_image_path"]];
             if($row["college_sec_name"]=="d"){
                 array_push($degree_college_members,$row);
             }
             else if($row["college_sec_name"]=="j"){
-                array_push($junior_college_members,$row);
+                array_push($junior_college_members,$required_data);
             }
         }
     }

@@ -25,57 +25,27 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
     <?php include('../../../library/library.php'); ?>
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <style>
-        @media screen and (min-width:768px) {
-            .fixed_side_div {
-                top: 0;
-                right: 0;
+        .custom_aos_fade_right {
+            animation: fade_right 800ms ease-in both;
+        }
+
+
+
+        @keyframes fade_right {
+            from {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateX(-100%);
+
+            }
+
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateX(0);
             }
 
         }
-
-        @media screen and (min-width:100px) {
-            .fixed_side_div {
-                left: 0;
-                bottom: 0;
-            }
-
-        }
-
-        /* .card:hover::before,
-        .card:hover::after {
-           background-image: linear-gradient(skyblue,lightgreen);
-             content: '';
-            position: absolute;
-             z-index: -1;
-            inset: -0.25rem;
-            border-radius: inherit;
-            
-        } */
-
-        /* .card_inner:hover::before{
-            content:"";
-        z-index: -1; 
-            position: absolute;
-            bottom: -1px;
-            left: -1px;
-            height: 1px;
-            width:1px;
-           
-            background-color: rgb(147 197 253);
-            border-radius: inherit;
-            animation:scale 500ms linear forwards
-        }
-
-        @keyframes scale {
-            0%{
-            }
-            100%{
-                height: 120%;
-               width: 120%;
-             
-            }
-            
-        } */
     </style>
 </head>
 
@@ -106,7 +76,11 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
 
             <div class="h-[100vh] text-3xl sm:text-[4rem] sm:leading-normal text-white font-bold">
                 <p class="mt-32 px-8 w-[60%] ">
-                    EXPLORE THE VARIOUS COMMITTEES THAT KEEP THE CULTURAL TRADITION ALIVE
+                    EXPRESSION<br />
+                    BRILLANCE <br />
+                    INNOVATION <br />
+                    COLLABORATION<br />
+                    PASSION<br />
                 </p>
             </div>
             <div class="dark:bg-black bg-slate-100 pb-8">
@@ -115,7 +89,9 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
                         <p class="text-2xl dark:text-white">
                             A BRIEF ABOUT THE VARIOUS COMMITTEES IN THE COLLEGE.
                         </p>
-                        <p class="text-sm dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus praesentium corporis illum earum autem? Repudiandae laudantium fugit delectus fugiat at velit atque? Aliquid dicta deleniti consequuntur nemo quod in id?</p>
+                        <p class="text-sm dark:text-white">Discover the heartbeat of Vaze College through our dynamic committees, where students, teachers and professors collaborate, innovate, and lead initiatives that shape our campus community and beyond.
+                            Below we list all the faculty and other key figures of each committee excluding the students
+                        </p>
                     </div>
                     <!-- <div class="sm:w-[40%] w-full">
                         <ul class="list-none dark:text-white">
@@ -128,28 +104,29 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
 
 
                 <div class="flex flex-col mt-12 px-8">
-                    <h4 class="font-bold text-[2rem] text-center dark:text-white">All Committees</h4>
-                    <p class="text-slate-500 text-sm text-center">Includes all the committees and activity groups</p>
+                    <h4 class="font-bold text-[2rem] text-center dark:text-white">Committees</h4>
+                    <p class="text-slate-500 text-sm text-center">Includes all the committees and activity groups from both the degree college and junior college.Click on each card to find more</p>
 
                     <div class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6  2xl:grid-cols-8 gap-4 sm:gap-8">
                         <?php
 
                         if ($fetch_committees_query_result) {
+                            //$delay = 0;
                             while ($row = $fetch_committees_query_result->fetch_assoc()) {
 
                         ?>
                                 <!--card start-->
-                                <div class="z-10 rounded-2xl cursor-pointer  relative  hover:-translate-y-2 h-full flex flex-col  bg-slate-100 hover:bg-white dark:bg-gray-800 dark:hover:bg-blue-300 transition-all duration-500  hover:shadow-2xl card">
-                                    <!-- <div class="  "> -->
-                                    <img src="<?php echo $row["committee_symbol_file_name"] != null ?  "../../../assests/committee_icons/{$row['committee_symbol_file_name']}" : $vaze_logo ?>" class="z-10 rounded-[inherit] aspect-square h-[75%]" alt="Vaze College Committees" />
-                                    <p class="z-10 font-bold dark:text-white text-blue-800 text-center mt-2 mb-4"><?php echo $row["committee_name"] ?></p>
-                                    <p class="hidden text-transparent"><?php echo encryptId($row["committee_id"], "../../../config/openssl_encrypt_decrypt_credentials.php"); ?></p>
-                                    <!-- </div> -->
+                                <div class="z-10 rounded-2xl cursor-pointer  relative  hover:-translate-y-2 h-fit  flex flex-col  bg-slate-100 hover:bg-white dark:bg-black dark:hover:bg-blue-400 transition-all duration-500  hover:shadow-2xl card">
+                                    <div class="flex flex-col card_inner">
+                                        <img src="<?php echo $row["committee_symbol_file_name"] != null ?  "../../../assests/committee_icons/{$row['committee_symbol_file_name']}" : $vaze_logo ?>" class="z-10 p-4 rounded-[inherit] aspect-square " alt="Vaze College Committees" />
+                                        <p class="z-10 font-bold dark:text-white text-blue-800 text-center mt-2 mb-4"><?php echo $row["committee_name"] ?></p>
+                                        <p class="hidden text-transparent"><?php echo encryptId($row["committee_id"], "../../../config/openssl_encrypt_decrypt_credentials.php"); ?></p>
+                                    </div>
                                 </div>
                                 <!--card end-->
 
                         <?php
-
+                                //$delay += 60;
                             }
                         }
                         ?>
@@ -181,7 +158,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
         <div class="px-8  font-bold text-xl sm:text-[3rem] sm:leading-none text-center" id="committee_name_heading"></div>
 
         <!--Loading animation div-->
-        <div class="h-[100%]  w-[100%] -z-10 hidden " id="side_div_loading_animation_div"></div>
+        <div class=" -z-10  " id="side_div_loading_animation_div"></div>
 
         <!--degree members heading-->
         <div class="px-8 mt-8 font-medium text-blue-900 text-lg hidden" id="degree_members_heading">Degree College Members</div>

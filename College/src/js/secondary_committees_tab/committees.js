@@ -52,7 +52,7 @@ $(".card").each(function () {
 
     $("body")[0].style.overflow = "hidden";
 
-    $("#side_div_loading_animation_div").removeClass("hidden");
+   // $("#side_div_loading_animation_div").removeClass("hidden");
 
     $("#side_div_loading_animation_div").html(loading_animation);
 
@@ -66,7 +66,10 @@ $(".card").each(function () {
           //console.log(success_response);
 
           $("#side_div_loading_animation_div").html("");
-        
+
+          if(success_response.degree_members.length < 1 && success_response.junior_members.length <1 ){
+            $("#side_div_loading_animation_div").html("<div class='mt-20 h-full w-full flex justify-center items-center'><p class='text-center'> No members present</p></div>");
+          }
 
           //degree members
           if (success_response.degree_members.length > 0) {
@@ -76,6 +79,7 @@ $(".card").each(function () {
                 constructListItem(
                   member.cp_gender,
                   `${member.cp_honourific} ${member.cp_name}`,
+                    member.cp_personal_website_link,
                   `${member.role
                     .substring(0, 1)
                     .toUpperCase()}${member.role.substring(1)}`,
@@ -95,6 +99,7 @@ $(".card").each(function () {
                 constructListItem(
                   member.cp_gender,
                   `${member.cp_honourific} ${member.cp_name}`,
+                  member.cp_personal_website_link,
                   `${member.role
                     .substring(0, 1)
                     .toUpperCase()}${member.role.substring(1)}`,
@@ -104,12 +109,15 @@ $(".card").each(function () {
             });
           }
 
-            $("#side_div_loading_animation_div").addClass("hidden");
+          //$("#side_div_loading_animation_div").addClass("hidden");
         },
         function (xhr, status, error) {
           console.log(error);
           $("#side_div_loading_animation_div").html("");
-            $("#side_div_loading_animation_div").addClass("hidden");
+           
+            $("#side_div_loading_animation_div").html("<div class='mt-20 h-full w-full flex justify-center items-center'><p class='text-center'>Some Error Occurred. No members present</p></div>");
+          
+          //$("#side_div_loading_animation_div").addClass("hidden");
         }
       );
     }, 2000);
@@ -164,7 +172,13 @@ function playCarousel() {
 
 setInterval(playCarousel, 5000);
 
-function constructListItem(gender, name, role, cp_image_from_db) {
+function constructListItem(
+  gender,
+  name,
+  cp_website_link,
+  role,
+  cp_image_from_db
+) {
   let img_bg_color = "";
   let assest_path = "";
 
@@ -186,9 +200,37 @@ function constructListItem(gender, name, role, cp_image_from_db) {
     cp_image_from_db ?? assest_path
   }" alt="Vaze College Committee Member"/>
                     <div class="flex flex-1 flex-col">
-                        <p>${name}</p>
+                    ${
+                      cp_website_link != null
+                        ? "<a class='hover:text-blue-500 hover:underline' href='" +
+                          cp_website_link +
+                          "'>" +
+                          name +
+                          "</a>"
+                        : "<p>" + name + "</p>"
+                    }
+                      
                         <p class="text-sm text-slate-500">${role}</p>
                     </div>
                 </div>
             </li>`;
 }
+
+
+function animateOnScroll(){
+  const observer=new IntersectionObserver((entries)=>{
+let delay=0
+    entries.forEach((entry)=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("custom_aos_fade_right")
+        entry.target.style.animationDelay=`${delay}ms`
+        delay+=150;
+      }
+
+    })
+  })
+
+  document.querySelectorAll(".card_inner").forEach((card)=>observer.observe(card));
+}
+
+animateOnScroll();
