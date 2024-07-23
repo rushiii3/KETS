@@ -104,7 +104,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
 
         <div class="flex flex-col">
 
-            <div class="h-[100vh] text-3xl sm:text-[4rem] text-white font-bold">
+            <div class="h-[100vh] text-3xl sm:text-[4rem] sm:leading-normal text-white font-bold">
                 <p class="mt-32 px-8 w-[60%] ">
                     EXPLORE THE VARIOUS COMMITTEES THAT KEEP THE CULTURAL TRADITION ALIVE
                 </p>
