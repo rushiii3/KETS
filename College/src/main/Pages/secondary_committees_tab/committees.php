@@ -6,9 +6,7 @@ include("../../Components/vaze_kelkar_logo_base64.php");
 
 //0C186E -hex for blue-900
 
-
 $fetch_committees_stmt = "SELECT * FROM committee_and_activity_groups ORDER BY committee_name ASC";
-//print_r("here");
 $fetch_committees_query = $conn->prepare($fetch_committees_stmt);
 $fetch_committees_query->execute();
 $fetch_committees_query_result = $fetch_committees_query->get_result();
@@ -111,7 +109,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
                         <?php
 
                         if ($fetch_committees_query_result) {
-                            //$delay = 0;
+
                             while ($row = $fetch_committees_query_result->fetch_assoc()) {
 
                         ?>
@@ -126,7 +124,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
                                 <!--card end-->
 
                         <?php
-                                //$delay += 60;
+
                             }
                         }
                         ?>
