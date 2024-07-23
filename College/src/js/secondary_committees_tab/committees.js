@@ -1,22 +1,151 @@
-//////////////////////////////////////////////  VARIABLES    /////////////////////////////////////////
-let carousel_previous_translate_amt = { 0: 0, 1: 0, 2: 0 };
-let carousel_index_map = { 0: 0, 1: 1, 2: 2 };
-let translate_by = window.innerWidth;
-const carousel_container_div = document.getElementById(
-  "carousel_container_div"
-);
-let carousel_images_array = [];
+import { makeAJAXRequest } from "../../js/common/make_ajax_request.js";
+import { loading_animation } from "../../js/common/lottie_loading_animation.js";
+import { vaze_logo } from "../../js/common/vaze_college_logo_base_64.js";
 
+//////////////////////////////////////////////  VARIABLES    /////////////////////////////////////////
+let carousel_index_map = { 0: 0, 1: 1, 2: 2 };
 //////////////////////////////////////////////  EVENTS    /////////////////////////////////////////
-//1. carousel
+$(".card").each(function () {
+  $(this).click(function (e) {
+    // console.log(e)
+    let committee_id = $(this)[0].querySelector("p.hidden").innerText;
+    let committee_name = $(this)[0].querySelector("p:not(.hidden)").innerText;
+    //console.log(committee_name);
+    $("#committee_name_heading").text(`${committee_name} Committee`);
+
+    let ajax_url = `./AJAX/fetch_committee_members.php?id=${committee_id}`;
+    //console.log(ajax_url);
+
+    $("#degree_committee_members_ul").html("");
+
+    if (!$("#jc_members_heading").hasClass("hidden")) {
+      $("#jc_members_heading").addClass("hidden");
+    }
+
+    if (!$("#degree_members_heading").hasClass("hidden")) {
+      $("#degree_members_heading").addClass("hidden");
+    }
+
+    $("#jc_committee_members_ul").html("");
+
+    $("body").append(
+      `<div class="fixed z-[20] top-0 left-0 h-[100vh] w-[100vw] bg-transparent" id="helper_div"></div>`
+    );
+
+    $("#side_div").removeClass([
+      "md:translate-x-[100rem]",
+      "translate-y-[100rem]",
+    ]);
+
+    $("#side_div").addClass(["md:translate-x-0", "translate-y-0"]);
+
+    $("#main_contents").addClass("opacity-20");
+    $(".card").each(function () {
+      $(this).removeClass([
+        "cursor-pointer",
+        "hover:-translate-y-2",
+        "hover:bg-white",
+        "dark:hover:bg-blue-300",
+        "hover:shadow-2xl",
+      ]);
+    });
+
+    $("body")[0].style.overflow = "hidden";
+
+    $("#side_div_loading_animation_div").removeClass("hidden");
+
+    $("#side_div_loading_animation_div").html(loading_animation);
+
+    setTimeout(() => {
+      makeAJAXRequest(
+        ajax_url,
+        "GET",
+        "json",
+        null,
+        function (success_response) {
+          //console.log(success_response);
+
+          $("#side_div_loading_animation_div").html("");
+        
+
+          //degree members
+          if (success_response.degree_members.length > 0) {
+            $("#degree_members_heading").removeClass("hidden");
+            success_response.degree_members.forEach((member) => {
+              $("#degree_committee_members_ul").append(
+                constructListItem(
+                  member.cp_gender,
+                  `${member.cp_honourific} ${member.cp_name}`,
+                  `${member.role
+                    .substring(0, 1)
+                    .toUpperCase()}${member.role.substring(1)}`,
+                  member.cp_image_path
+                )
+              );
+            });
+          }
+
+          //junior members
+          if (success_response.junior_members.length > 0) {
+            $("#jc_members_heading").removeClass("hidden");
+            $("#jc_committee_members_ul").removeClass("hidden");
+
+            success_response.junior_members.forEach((member) => {
+              $("#jc_committee_members_ul").append(
+                constructListItem(
+                  member.cp_gender,
+                  `${member.cp_honourific} ${member.cp_name}`,
+                  `${member.role
+                    .substring(0, 1)
+                    .toUpperCase()}${member.role.substring(1)}`,
+                  member.cp_image_path
+                )
+              );
+            });
+          }
+
+            $("#side_div_loading_animation_div").addClass("hidden");
+        },
+        function (xhr, status, error) {
+          console.log(error);
+          $("#side_div_loading_animation_div").html("");
+            $("#side_div_loading_animation_div").addClass("hidden");
+        }
+      );
+    }, 2000);
+  });
+});
+
+$("#close_btn").click(function () {
+  $("#side_div").removeClass(["md:translate-x-0", "translate-y-0"]);
+
+  $("#side_div").addClass(["md:translate-x-[100rem]", "translate-y-[100rem]"]);
+
+  $("#main_contents").removeClass("opacity-20");
+  $(".card").each(function () {
+    $(this).addClass([
+      "cursor-pointer",
+      "hover:-translate-y-2",
+      "hover:bg-white",
+      "dark:hover:bg-blue-300",
+      "hover:shadow-2xl",
+    ]);
+  });
+
+  $("body")[0].style.overflow = "scroll";
+
+  $("#helper_div").remove();
+});
 
 //////////////////////////////////////////////  FUNCTIONS   /////////////////////////////////////////////
 function playCarousel() {
   document.querySelectorAll(".carousel_img").forEach((img, index) => {
     carousel_index_map[index] -= 1;
-    if((carousel_index_map[index] - index)>0 && img.classList.contains("-z-10")){
-        img.classList.remove("-z-10")
-        
+    if (
+      carousel_index_map[index] - index > 0 &&
+      img.classList.contains("-z-10")
+    ) {
+      img.classList.remove("-z-10");
     }
     img.style.transform = `translateX(${
       (carousel_index_map[index] - index) * 100
@@ -30,10 +159,36 @@ function playCarousel() {
         //img.classList.remove("invisible");
       }, 1000);
     }
-   
   });
 }
 
-
-
 setInterval(playCarousel, 5000);
+
+function constructListItem(gender, name, role, cp_image_from_db) {
+  let img_bg_color = "";
+  let assest_path = "";
+
+  switch (gender) {
+    case "m":
+      img_bg_color = "bg-blue-100";
+      assest_path = "../../../assests/svg/male_dummy_dp_1_svg.svg";
+      break;
+
+    case "f":
+    case "o":
+      img_bg_color = "bg-emerald-100";
+      assest_path = "../../../assests/svg/female_dummy_dp_1_svg.svg";
+      break;
+  }
+  return `  <li class="mt-2">
+                <div class="flex gap-x-4 ">
+                    <img class="rounded-full h-12 w-12 ${img_bg_color} object-fit" src="${
+    cp_image_from_db ?? assest_path
+  }" alt="Vaze College Committee Member"/>
+                    <div class="flex flex-1 flex-col">
+                        <p>${name}</p>
+                        <p class="text-sm text-slate-500">${role}</p>
+                    </div>
+                </div>
+            </li>`;
+}
