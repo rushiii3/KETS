@@ -18,15 +18,20 @@ $(".card").each(function () {
 
     $("#degree_committee_members_ul").html("");
 
-    if (!$("#jc_members_heading").hasClass("hidden")) {
-      $("#jc_members_heading").addClass("hidden");
-    }
-
+    
     if (!$("#degree_members_heading").hasClass("hidden")) {
       $("#degree_members_heading").addClass("hidden");
     }
-
+    
+    if (!$("#jc_members_heading").hasClass("hidden")) {
+      $("#jc_members_heading").addClass("hidden");
+    }
     $("#jc_committee_members_ul").html("");
+
+    if (!$("#members_heading").hasClass("hidden")) {
+      $("#members_heading").addClass("hidden");
+    }
+    $("#committee_members_ul").html("");
 
     $("body").append(
       `<div class="fixed z-[20] top-0 left-0 h-[100vh] w-[100vw] bg-transparent" id="helper_div"></div>`
@@ -67,7 +72,7 @@ $(".card").each(function () {
 
           $("#side_div_loading_animation_div").html("");
 
-          if(success_response.degree_members.length < 1 && success_response.junior_members.length <1 ){
+          if(success_response.degree_members.length < 1 && success_response.junior_members.length <1 && success_response.mgmt_members.length <1 ){
             $("#side_div_loading_animation_div").html("<div class='mt-20 h-full w-full flex justify-center items-center'><p class='text-center'> No members present</p></div>");
           }
 
@@ -96,6 +101,27 @@ $(".card").each(function () {
 
             success_response.junior_members.forEach((member) => {
               $("#jc_committee_members_ul").append(
+                constructListItem(
+                  member.cp_gender,
+                  `${member.cp_honourific} ${member.cp_name}`,
+                  member.cp_personal_website_link,
+                  `${member.role
+                    .substring(0, 1)
+                    .toUpperCase()}${member.role.substring(1)}`,
+                  member.cp_image_path
+                )
+              );
+            });
+          }
+
+
+           //Management members
+          if (success_response.mgmt_members.length > 0) {
+            $("#members_heading").removeClass("hidden");
+            $("#committee_members_ul").removeClass("hidden");
+
+            success_response.mgmt_members.forEach((member) => {
+              $("#committee_members_ul").append(
                 constructListItem(
                   member.cp_gender,
                   `${member.cp_honourific} ${member.cp_name}`,

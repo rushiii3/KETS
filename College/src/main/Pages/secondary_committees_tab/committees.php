@@ -116,7 +116,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
                                 <!--card start-->
                                 <div class="z-10 rounded-2xl cursor-pointer  relative  hover:-translate-y-2 h-fit  flex flex-col  bg-slate-100 hover:bg-white dark:bg-black dark:hover:bg-blue-400 transition-all duration-500  hover:shadow-2xl card">
                                     <div class="flex flex-col card_inner">
-                                        <img src="<?php echo $row["committee_symbol_file_name"] != null ?  "../../../assests/committee_icons/{$row['committee_symbol_file_name']}" : $vaze_logo ?>" class="z-10 p-4 rounded-[inherit] aspect-square " alt="Vaze College Committees" />
+                                        <img src="<?php echo $row["committee_symbol_file_name"] != null ?  "../../../assests/committee_icons/{$row['committee_symbol_file_name']}" : $vaze_logo ?>" class="z-10 p-4 rounded-[2rem] aspect-square " alt="Vaze College Committees" />
                                         <p class="z-10 font-bold dark:text-white text-blue-800 text-center mt-2 mb-4"><?php echo $row["committee_name"] ?></p>
                                         <p class="hidden text-transparent"><?php echo encryptId($row["committee_id"], "../../../config/openssl_encrypt_decrypt_credentials.php"); ?></p>
                                     </div>
@@ -143,7 +143,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
     </div>
 
     <!--Side div-->
-    <div class="flex flex-col h-[90vh] md:h-[83vh] w-[100vw] md:translate-x-[100rem] md:translate-y-0 translate-y-[100rem] translate-x-0 md:w-2/3 z-[1000] fixed right-0 bottom-0 bg-white transition-transform duration-700 overflow-y-scroll pb-8 rounded-t-2xl md:rounded-none" id="side_div">
+    <div class="flex flex-col h-[90vh] md:h-[83vh] w-[100vw] md:translate-x-[100rem] md:translate-y-0 translate-y-[100rem] translate-x-0 md:w-2/3 z-[1000] fixed right-0 bottom-0 bg-white transition-transform duration-700 overflow-y-scroll pb-8 rounded-tl-2xl rounded-tr-2xl rounded-bl-none md:rounded-tr-none md:rounded-bl-2xl" id="side_div">
 
         <!--Close button-->
         <span class="pr-4 py-4">
@@ -169,6 +169,12 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
 
         <!--Junior Members list-->
         <ul class="list-none px-8 mt-2 hidden" id="jc_committee_members_ul"></ul>
+
+         <!--Mangement members heading-->
+        <div class="px-8 mt-8 font-medium text-blue-900 text-lg hidden" id="members_heading">Members</div>
+
+        <!--Management Members list-->
+        <ul class="list-none px-8 mt-2 hidden" id="committee_members_ul"></ul>
     </div>
     <!--Side div end-->
 
