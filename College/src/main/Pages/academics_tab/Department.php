@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-
+    <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <style>
         .bg {
             background-color: whitesmoke !important;
@@ -28,6 +28,8 @@
     <?php include('../../Layouts/footer.php'); ?>
     <?php include('../../../library/AOS.php'); ?>
     <script src="../../../js/showMoreItems.min.js"></script>
+    <script src="../../../js/common/header_2.js"></script>
+
 </body>
 <?php include('../../../library/AOS.php'); ?>
 

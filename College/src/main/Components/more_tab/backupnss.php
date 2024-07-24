@@ -13,7 +13,7 @@
     </div>
 </div> -->
     <div class="relative isolate flex flex-col justify-end overflow-hidden py-8  pt-80 sm:pt-48 lg:pt-80 mx-auto w-full ">
-        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+        <img src="../../assets/jpg/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
         <div class="text-center z-1" style="margin-top:-120px; display:flex;justify-content:center;-webkit-text-fill-color:transparent;-webkit-text-stroke:4px white" data-aos="fade-up">
@@ -34,7 +34,7 @@
             </p>
         </div>
         <div class="md:order-2 mx-auto" data-aos="fade-left">
-            <image alt="NextUI hero Image with delay" class="rounded md:max-h-[200px] lg:max-h-[300px] max-h-60 " src="../../assests/NSS-symbol.jpeg" />
+            <image alt="NextUI hero Image with delay" class="rounded md:max-h-[200px] lg:max-h-[300px] max-h-60 " src="../../assets/committee_icons/nss_svg.svg" />
         </div>
     </div>
 
@@ -417,7 +417,7 @@
 
                     <!-- 1 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Yog Sadhbhavna Programme</h3>
@@ -425,7 +425,8 @@
 
                     <!-- 2 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Kargil Vijay Divas, Independence Day</h3>
@@ -433,7 +434,7 @@
 
                     <!-- 3 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Crowd Controlling in Ganpati Visarjan</h3>
@@ -441,7 +442,7 @@
 
                     <!-- 4 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80  sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Anti-Plastic Campaign </h3>
@@ -450,7 +451,7 @@
 
                     <!-- 5 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Ek Mutthi Anaj</h3>
@@ -459,7 +460,7 @@
 
                     <!-- 6 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Matadan Ek Utsav</h3>
@@ -468,7 +469,7 @@
 
                     <!-- 7 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Blood Donation Camp</h3>
@@ -477,7 +478,7 @@
 
                     <!-- 8 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Distributed 200 Sanitary Napkins to villagers</h3>
@@ -486,7 +487,7 @@
 
                     <!-- 9 blog post -->
                     <div class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 dark:bg-gray-700 px-8 py-8 pb-8 pt-80 sm:pt-48 lg:pt-80" data-aos="fade-up">
-                        <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+                        <img src="../../assets/committee_icons/nss_svg.svg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
                         <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
                         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                         <h3 class="mt-3 text-2xl font-semibold inline-block text-white">Organised Blood Donation Drive</h3>

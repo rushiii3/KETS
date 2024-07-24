@@ -59,6 +59,7 @@ fetchProgrammesFromDB($conn, $programmes_array);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V. G. VAZE| Course Catalog</title>
   <?php include('../../../library/library.php'); ?>
+   <link rel="stylesheet" href="../../../css/common/header_2.css" />
   <style>
    .custom_bg_blue {
       background: #001b53;
@@ -83,7 +84,7 @@ fetchProgrammesFromDB($conn, $programmes_array);
     -->
   <div class="relative isolate flex flex-col justify-end overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center">
     <!--
-    <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+    <img src="../../assets/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
     -->
     <div class="absolute inset-0 -z-10 h-full w-full object-cover custom_bg_blue"></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
@@ -556,7 +557,10 @@ fetchProgrammesFromDB($conn, $programmes_array);
   <?php include('../../Layouts/footer.php'); ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="../../../js/academics_tab/course_catalog.js" type="module" ></script>
-  t
+  <script src="../../../js/common/header_2.js"></script>
+  <!--lottie animation player-->
+<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>  
+  
 </body>
 <?php include('../../../library/AOS.php'); ?>
 

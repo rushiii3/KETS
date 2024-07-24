@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <style>
         .bg:hover {
             color: rgb(242, 242, 242) !important;
@@ -26,6 +27,8 @@
 
 </html>
 <script src="../../../js/showMoreItems.min.js"></script>
+<script src="../../../js/common/header_2.js"></script>
+
 <script>
     $(document).ready(function() {
 

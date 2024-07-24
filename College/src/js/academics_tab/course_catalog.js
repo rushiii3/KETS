@@ -1,9 +1,9 @@
-import { loading_animation } from "../common/lottie_loading_animation";
-import { makeAJAXRequest } from "../common/make_ajax_request";
+import { loading_animation } from "../common/lottie_loading_animation.js";
+import { makeAJAXRequest } from "../common/make_ajax_request.js";
 
 const filter_div = document.getElementById("filter_div");
 const filter_toggle_btn = document.getElementById("filter_toggle_btn");
-const filter_parent_div = document.getElementById("degree_tab_contents");
+//const filter_parent_div = document.getElementById("degree_tab_contents");
 const filter_mobile_close_btn = document.getElementById(
   "filter_mobile_close_btn"
 );
@@ -485,7 +485,7 @@ function fetchProgrammesFromDB(
     $("#degree_loading_animation_div").html(loading_animation);
   }
 
-  //setTimeout(() => {
+ // setTimeout(() => {
     makeAJAXRequest(
       ajax_url,
       "GET",
@@ -607,7 +607,7 @@ function fetchProgrammesFromDB(
         $("#degree_loading_animation_div").html(no_programmes_available_div);
       }
     );
-  //}, 10000);
+ //}, 2000);
 }
 
 function attachClickListenerOnCourseCards() {

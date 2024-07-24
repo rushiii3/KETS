@@ -116,7 +116,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
                                 <!--card start-->
                                 <div class="z-10 rounded-2xl cursor-pointer  relative  hover:-translate-y-2 h-fit  flex flex-col  bg-slate-100 hover:bg-white dark:bg-black dark:hover:bg-blue-400 transition-all duration-500  hover:shadow-2xl card">
                                     <div class="flex flex-col card_inner">
-                                        <img src="<?php echo $row["committee_symbol_file_name"] != null ?  "../../../assests/committee_icons/{$row['committee_symbol_file_name']}" : $vaze_logo ?>" class="z-10 p-4 rounded-[2rem] aspect-square " alt="Vaze College Committees" />
+                                        <img src="<?php echo $row["committee_symbol_file_name"] != null ?  "../../../assets/committee_icons/{$row['committee_symbol_file_name']}" : $vaze_logo ?>" class="z-10 p-4 rounded-[2rem] aspect-square " alt="Vaze College Committees" />
                                         <p class="z-10 font-bold dark:text-white text-blue-800 text-center mt-2 mb-4"><?php echo $row["committee_name"] ?></p>
                                         <p class="hidden text-transparent"><?php echo encryptId($row["committee_id"], "../../../config/openssl_encrypt_decrypt_credentials.php"); ?></p>
                                     </div>

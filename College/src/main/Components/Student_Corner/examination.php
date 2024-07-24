@@ -1,7 +1,7 @@
 <div class="bg-gray-100 overflow-x-hidden mx-auto dark:bg-black" style="transition: all 2s ease">
     <!-- header -->
     <div class="bg-gray-100 overflow-x-hidden mx-auto dark:bg-black" style="transition: all 2s ease">
-        <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../../assests/college.png" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../../assets/png/college.png" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
             <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
             <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
             <div class="text-center z-1" data-aos="fade-up">
@@ -919,7 +919,7 @@
 
 
                         <a href="#" class="flex flex-col w-full items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:max-w-60  md:rounded-none md:rounded-s-lg md:m-4" src="../../../assests/exam_prep.jpg" alt="">
+                            <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:max-w-60  md:rounded-none md:rounded-s-lg md:m-4" src="../../../assets/jpg/exam_prep.jpg" alt="">
                             <div class="flex flex-col justify-between p-4 leading-normal">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">IMPORTANT INFORMATION ABOUT EXAMINATION &ASSESSMENT : – (FOR FYJC)
                                 </h5>
@@ -1373,10 +1373,10 @@
                             <h2 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"> Examination Pattern </h2>
                             <div class="grid gap-8 sm:grid-cols-1  lg:grid-cols-2 mt-10 p-4">
                                 <div class="max-w-full flex flex-col items-center justify-center bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70">
-                                    <img class="h-auto  rounded-lg shadow-xl dark:shadow-gray-800" src="../../../assests/fyjc-table1.jpg" alt="image description">
+                                    <img class="h-auto  rounded-lg shadow-xl dark:shadow-gray-800" src="../../../assets/jpg/fyjc-table1.jpg" alt="image description">
                                 </div>
                                 <div class="max-w-full flex flex-col items-center justify-center bg-white border border-t-4 border-t-blue-600 shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:border-t-blue-500 dark:shadow-neutral-700/70 p-4 ">
-                                    <img class="h-auto  rounded-lg shadow-xl dark:shadow-gray-800" src="../../../assests/arts-table2.jpg" alt="image description">
+                                    <img class="h-auto  rounded-lg shadow-xl dark:shadow-gray-800" src="../../../assets/jpg/arts-table2.jpg" alt="image description">
                                 </div>
                             </div>
                         </div>
