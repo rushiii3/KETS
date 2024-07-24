@@ -27,8 +27,8 @@ External StyleSheets
 <!--Header 2 CSS-->
 <!-- <link rel="stylesheet" href="" id="header2_css" /> -->
 
- <!--tailwind CSS-->
- <!-- <link rel="stylesheet" href="/Vaze_College_Website/College/src/css/common/tailwind_prod.css"> -->
+<!--tailwind CSS-->
+<!-- <link rel="stylesheet" href="/Vaze_College_Website/College/src/css/common/tailwind_prod.css"> -->
 
 
 <!--
@@ -58,6 +58,9 @@ Javascript
 
 <!--Header 2 JS-->
 <!-- <script src="" id="header2_js"></script> -->
+
+<!--lottie animation player-->
+<!--<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> -->
 
 <!-- <script type="text/javascript" id="nada">
   let base_path = `${window.location.origin}/${window.location.href.split("/")[3]}`
