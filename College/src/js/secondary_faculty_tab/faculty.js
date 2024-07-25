@@ -17,7 +17,7 @@ const search_form = document.getElementById("search_form");
 
 //no search results
 const no_results_element = `<div class=" mt-4 flex flex-col justify-center items-center w-full h-1/2 dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="sm:w-[10rem] sm:h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="sm:w-[10rem] sm:h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 

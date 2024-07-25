@@ -119,9 +119,9 @@ $fetch_faculty_count_query = $conn->prepare($fetch_faculty_count_stmt);
 $fetch_faculty_count_query->execute();
 $fetch_faculty_count_query_result = $fetch_faculty_count_query->get_result();
 
-if($fetch_faculty_count_query_result){
-  while($row=$fetch_faculty_count_query_result->fetch_assoc()){
-    $total_count=$row["count"];
+if ($fetch_faculty_count_query_result) {
+  while ($row = $fetch_faculty_count_query_result->fetch_assoc()) {
+    $total_count = $row["count"];
   }
 }
 
@@ -141,8 +141,8 @@ if($fetch_faculty_count_query_result){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V. G. VAZE| Faculty</title>
   <link rel="stylesheet" href="../../../css/common/header_2.css" />
-  <link rel="stylesheet" href="../../../css/secondary_faculty_tab/faculty.css"/>
-  <?php include('../../../library/library.php'); ?>   
+  <link rel="stylesheet" href="../../../css/secondary_faculty_tab/faculty.css" />
+  <?php include('../../../library/library.php'); ?>
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -162,7 +162,7 @@ if($fetch_faculty_count_query_result){
 
     <!-- Background-->
     <div class="h-[100vh] w-[100vw] -z-10 fixed top-0 left-0">
-      <img class="w-full h-full opacity-80 brightness-50 blur-sm" src="../../../assests/webp/Vaze_College_Auditorium.webp" alt="Vaze College Faculty" />
+      <img class="w-full h-full opacity-80 brightness-50 blur-sm" src="../../../assets/webp/Vaze_College_Auditorium.webp" alt="Vaze College Faculty" />
     </div>
 
     <div class="flex flex-col">
