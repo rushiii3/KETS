@@ -1,6 +1,10 @@
 <?php
 
 $stream = $_GET["stream"] ?? "";
+if($stream==""){
+    echo "<script>window.location.href='./course_catalog.php'</script>";
+    exit;
+}
 assert($stream != "");
 
 

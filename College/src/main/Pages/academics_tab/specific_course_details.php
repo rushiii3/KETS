@@ -1,8 +1,12 @@
 <?php
 //$json_url="./AJAX/fetch_specific_course_info.php"
 include("../../../config/connect.php");
-
+if(!isset($_GET["id"])){
+    echo "<script>window.location.href='./course_catalog.php'</script>";
+    exit;
+}
 include("./AJAX/fetch_specific_course_info.php");
+
 
 ?>
 <!DOCTYPE html>
