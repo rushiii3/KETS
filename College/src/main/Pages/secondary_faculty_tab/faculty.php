@@ -444,16 +444,24 @@ if ($fetch_faculty_count_query_result) {
                       <img src="<?php echo $faculty_row["cp_image_path"] ?? $vaze_logo; ?>" alt="Vaze College Faculty Image" class="object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                      <a href="<?php echo $faculty_row["cp_personal_website_link"] ?? "" ?>" class="font-bold text-[1.5rem] <?php echo $faculty_row["cp_personal_website_link"] ? "hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline" : "hover:cursor-default" ?> ">
-                        <?php echo $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] ?>
-                      </a>
+
+                      <?php
+                      if ($faculty_row["cp_personal_website_link"] != "") {
+                        echo '<a target="_blank" href="' . $faculty_row["cp_personal_website_link"] . '" class="font-bold text-[1.5rem] hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline">' . $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] . '</a>';
+                      } else {
+                        echo '<p class="font-bold text-[1.5rem]">' . $faculty_row["cp_honourific"] . " " . $faculty_row["cp_name"] . '</p>';
+                      }
+                      ?>
+
+
 
                       <p class="text-sm  text-blue-800 dark:text-emerald-500">
                         <?php echo $faculty_row["cp_desig"] ?>
                       </p>
 
                       <p class="mt-4 font-medium dark:text-white  ">Department</p>
-                      <a href="" class=" text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">
+
+                      <a target="_blank" href="<?php echo "../academics_tab/Department.php?dept_sec_id=" . base64_encode($faculty_row["dept_sect_id"]); ?>" class=" text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">
                         Department of <?php echo $faculty_row["dept_name"] ?>
                       </a>
 

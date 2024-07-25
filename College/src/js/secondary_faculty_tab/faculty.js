@@ -409,7 +409,7 @@ function fetchFacultyFromDB() {
                   response.cp_desig,
                   response.dept_name,
                   dept_faculty_name,
-                  college_sec_name
+                  college_sec_name,response.dept_sect_id
                 )
               );
             }
@@ -464,7 +464,7 @@ function constructFacultyCard(
   faculty_designation,
   faculty_department,
   faculty_type,
-  faculty_college_sec_name
+  faculty_college_sec_name,department_id
 ) {
   //console.log(faculty_name_and_honourific)
   return `<div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
@@ -474,18 +474,15 @@ function constructFacultyCard(
                       }" alt="Vaze College Faculty Image" class="object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                      <a href="${
-                        faculty_personal_website_link ?? ""
-                      }" class="font-bold text-[1.5rem] ${
-    faculty_personal_website_link
-      ? "hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline"
-      : "hover:cursor-default"
-  }">${faculty_name_and_honourific}</a>
+                    ${faculty_personal_website_link!=null?'<a target="_blank" href='+
+                        faculty_personal_website_link +
+                      ' class="font-bold text-[1.5rem] hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline">'+faculty_name_and_honourific+'</a>':'<p class="font-bold text-[1.5rem]">'+faculty_name_and_honourific+'</p>'}
+                      
 
                       <p class="text-blue-800 text-sm  dark:text-emerald-500">${faculty_designation}</p>
 
                       <p class="mt-4 font-medium dark:text-white">Department</p>
-                      <a href="" class="text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">Department of ${faculty_department}</a>
+                      <a href="../academics_tab/Department.php?dept_sec_id=${department_id}" class="text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">Department of ${faculty_department}</a>
 
                       <p class="mt-4 font-medium">Faculty Type</p>
                        <p class="text-sm text-slate-600 dark:text-slate-400">

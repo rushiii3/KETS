@@ -474,7 +474,7 @@ function fetchProgrammesFromDB(
     parameter_number++;
   }
 
-  console.log(ajax_url);
+ // console.log(ajax_url);
 
   degree_courses_loading_state = true;
 
