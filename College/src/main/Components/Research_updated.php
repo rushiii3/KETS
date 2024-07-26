@@ -1,6 +1,6 @@
 <div class="bg-gray-100 overflow-x-hidden mx-auto dark:bg-black" style="transition: all 2s ease">
     <!-- header -->
-    <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../assests/college.png" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+    <div class="relative isolate flex flex-col  overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center"> <img src="../../assets/png/college.png" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
         <div class="text-center z-1" data-aos="fade-up">
@@ -75,7 +75,7 @@
                                         </p>
                                     </div> -->
                                     <div class="space-y-6 text-center">
-                                        <img class="mx-auto h-64 w-64 rounded-full object-cover md:h-40 md:w-40 lg:h-64 lg:w-64" src="../../assests/profile.png" alt="woman" loading="lazy" width="640" height="805" />
+                                        <img class="mx-auto h-64 w-64 rounded-full object-cover md:h-40 md:w-40 lg:h-64 lg:w-64" src="../../assets/png/profile.png" alt="woman" loading="lazy" width="640" height="805" />
                                         <div>
                                             <h4 class="text-2xl text-gray-700 dark:text-white">Dr. Prachi Jambhekar</h4>
                                             <span class="block text-sm text-gray-500">DIRECTOR- PLANNING, BMC</span>

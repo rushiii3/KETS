@@ -8,6 +8,8 @@
   <title>V. G. </title>
   <?php include('../../../library/library.php'); ?>
   <?php include('../../../config/connect.php'); ?>
+
+   <link rel="stylesheet" href="../../../css/common/header_2.css" />
 </head>
 
 <body class=" mx-auto overflow-x-hidden">
@@ -15,6 +17,7 @@
   <?php include('../../Components/Student_Corner/examination.php'); ?>
   <?php include('../../Layouts/footer.php'); ?>
   <script src="../../../js/Student_Corner/examination.js"></script>
+  <script src="../../../js/common/header_2.js"></script>
     
 
 

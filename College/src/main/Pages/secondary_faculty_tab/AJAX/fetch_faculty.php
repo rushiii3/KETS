@@ -1,8 +1,5 @@
 <?php
 include("../../../../config/connect.php");
-include("../../../../php/encrypt_query_params.php");
-
-
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $search_query = strtolower(mysqli_real_escape_string($conn, $_GET["search"] ?? ""));
     $sort_letter = strtolower(mysqli_real_escape_string($conn, $_GET["sort"] ?? ""));
@@ -198,7 +195,7 @@ ORDER BY college_personnel.cp_name ASC";
         $fetch_count_of_previous_letters_query->execute();
         $fetch_count_of_previous_letters_query_result = $fetch_count_of_previous_letters_query->get_result();
     } else {
-        $count_of_previous_letters=0;
+        $count_of_previous_letters = 0;
     }
 
 
@@ -209,11 +206,21 @@ ORDER BY college_personnel.cp_name ASC";
 
     if ($fetch_faculty_query_result && $fetch_faculty_count_query_result) {
         while ($row = $fetch_faculty_query_result->fetch_assoc()) {
-            //print_r($row);
-            $row["cp_id"] = encryptId($row["cp_id"], "../../../../config/openssl_encrypt_decrypt_credentials.php");
 
-            $row["dept_id"] = encryptId($row["dept_id"], "../../../../config/openssl_encrypt_decrypt_credentials.php");
-            array_push($faculty_array, $row);
+
+            $required_data = [];
+            $required_data["cp_name"]=$row["cp_name"];
+            $required_data["cp_personal_website_link"]=$row["cp_personal_website_link"];
+            $required_data["cp_image_path"] = $row["cp_image_path"];
+            $required_data["cp_honourific"] = $row["cp_honourific"];
+            $required_data["cp_desig"] = $row["cp_desig"];
+            $required_data["dept_name"] = $row["dept_name"];
+            $required_data["dept_faculty_name"] = $row["dept_faculty_name"];
+            $required_data["college_sec_name"] = $row["college_sec_name"];
+            $required_data["dept_sect_id"] = base64_encode($row["dept_sect_id"]);
+
+
+            array_push($faculty_array, $required_data);
         }
 
         while ($row = $fetch_faculty_count_query_result->fetch_assoc()) {

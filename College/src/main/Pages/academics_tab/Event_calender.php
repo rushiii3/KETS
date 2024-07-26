@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="../../../css/common/header_2.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <style>
     iframe {
@@ -24,23 +25,23 @@
     }
 
     .ok {
-     
+
       clip-path: circle(60% at 0 0);
       transition: all 2s ease;
-     
+
 
     }
-    .b1{
-      z-index: -1 ;
+
+    .b1 {
+      z-index: -1;
     }
-   
+
 
     .ifr:hover {
       .ok {
         clip-path: circle(100%);
       }
     }
-
   </style>
 </head>
 <?php include('../../../library/library.php'); ?>
@@ -163,6 +164,7 @@
   <?php include('../../Layouts/footer.php'); ?>
   <?php include('../../../library/AOS.php'); ?>
   <script src="../../../js/showMoreItems.min.js"></script>
+  <script src="../../../js/common/header_2.js"></script>
 </body>
 
 

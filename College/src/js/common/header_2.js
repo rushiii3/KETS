@@ -198,12 +198,12 @@ const navData = [
   },
   {
     name: "Faculty",
-    link: "",
+    link: `${base_path}/College/src/main/Pages/secondary_faculty_tab/faculty.php`,
     hasSub: false,
   },
   {
     name: "Committees",
-    link: "",
+    link: `${base_path}/College/src/main/Pages/secondary_committees_tab/committees.php`,
     hasSub: false,
   },
   {

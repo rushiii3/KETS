@@ -61,7 +61,7 @@ $(".card").each(function () {
 
     $("#side_div_loading_animation_div").html(loading_animation);
 
-    setTimeout(() => {
+   // setTimeout(() => {
       makeAJAXRequest(
         ajax_url,
         "GET",
@@ -146,7 +146,7 @@ $(".card").each(function () {
           //$("#side_div_loading_animation_div").addClass("hidden");
         }
       );
-    }, 2000);
+   // }, 2000);
   });
 });
 
@@ -211,13 +211,13 @@ function constructListItem(
   switch (gender) {
     case "m":
       img_bg_color = "bg-blue-100";
-      assest_path = "../../../assests/svg/male_dummy_dp_1_svg.svg";
+      assest_path = "../../../assets/svg/male_dummy_dp_1_svg.svg";
       break;
 
     case "f":
     case "o":
       img_bg_color = "bg-emerald-100";
-      assest_path = "../../../assests/svg/female_dummy_dp_1_svg.svg";
+      assest_path = "../../../assets/svg/female_dummy_dp_1_svg.svg";
       break;
   }
   return `  <li class="mt-2">

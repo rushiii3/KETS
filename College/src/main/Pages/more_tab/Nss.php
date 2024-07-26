@@ -8,6 +8,7 @@
 
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
     <?php include('../../../library/library.php'); ?>
+     <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <style>
         .head2 {
             background: linear-gradient(to right, rgb(0, 35, 177), rgb(214, 95, 69));
@@ -104,6 +105,7 @@
 
 </html>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+ <script src="../../../js/common/header_2.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const options = {

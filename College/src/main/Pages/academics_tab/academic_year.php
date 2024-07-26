@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />-->
-
+    <link rel="stylesheet" href="../../../css/common/header_2.css" />
 </head>
 <?php include('../../../library/library.php'); ?>
 <?php //include('../../../config/connect.php'); 
@@ -15,7 +15,7 @@
 <body class="bg-gray-100 overflow-x-hidden mx-auto " style="transition: all 2s ease">
     <?php include('../../Layouts/header2.php'); ?>
     <div class="relative isolate flex flex-col overflow-hidden py-2 md:h-[25rem] h-[15rem] mx-auto w-full items-center justify-center">
-        <img src="../../../assests\/department.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+        <img src="../../../assets/jpg/department.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
         <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
         <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
         <div class="text-center z-1" data-aos="fade-up">
@@ -73,7 +73,7 @@
             <div class=" list1 grid gap-4  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b  p-5" data-aos="fade-left" data-aos-duration="2000">
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assests" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
@@ -84,7 +84,7 @@
                 </a>
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
@@ -95,7 +95,7 @@
                 </a>
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
@@ -106,7 +106,7 @@
                 </a>
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
@@ -117,7 +117,7 @@
                 </a>
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
@@ -128,7 +128,7 @@
                 </a>
 
                 <a href="#" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="/College/src/assests/pdf.webp" alt="">
+                    <img class=" w-full rounded-t-lg max-h-32 lg:max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">Academic Calendar</h5>
                         <h5 class="mb-2 text-sm font-bold tracking-tight text-gray-700 text-center">2024-2025</h5>
@@ -163,6 +163,7 @@
     <?php include('../../Layouts/footer.php'); ?>
     <?php include('../../../library/AOS.php'); ?>
     <script src="../../../js/showMoreItems.min.js"></script>
+    <script src="../../../js/common/header_2.js"></script>
 </body>
 
 </html>

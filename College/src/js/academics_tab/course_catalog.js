@@ -1,9 +1,9 @@
-import { loading_animation } from "../common/lottie_loading_animation";
-import { makeAJAXRequest } from "../common/make_ajax_request";
+import { loading_animation } from "../common/lottie_loading_animation.js";
+import { makeAJAXRequest } from "../common/make_ajax_request.js";
 
 const filter_div = document.getElementById("filter_div");
 const filter_toggle_btn = document.getElementById("filter_toggle_btn");
-const filter_parent_div = document.getElementById("degree_tab_contents");
+//const filter_parent_div = document.getElementById("degree_tab_contents");
 const filter_mobile_close_btn = document.getElementById(
   "filter_mobile_close_btn"
 );
@@ -474,7 +474,7 @@ function fetchProgrammesFromDB(
     parameter_number++;
   }
 
-  console.log(ajax_url);
+ // console.log(ajax_url);
 
   degree_courses_loading_state = true;
 
@@ -485,7 +485,7 @@ function fetchProgrammesFromDB(
     $("#degree_loading_animation_div").html(loading_animation);
   }
 
-  //setTimeout(() => {
+ // setTimeout(() => {
     makeAJAXRequest(
       ajax_url,
       "GET",
@@ -560,7 +560,7 @@ function fetchProgrammesFromDB(
             );
 
             var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -578,7 +578,7 @@ function fetchProgrammesFromDB(
           $("#no_of_courses_para").text(`0 course(s) available`);
 
           var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -597,7 +597,7 @@ function fetchProgrammesFromDB(
         );
 
         var no_programmes_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -607,7 +607,7 @@ function fetchProgrammesFromDB(
         $("#degree_loading_animation_div").html(no_programmes_available_div);
       }
     );
-  //}, 10000);
+ //}, 2000);
 }
 
 function attachClickListenerOnCourseCards() {
@@ -696,7 +696,7 @@ function fetchCertificateCoursesFromDB(search_query) {
           certificate_courses_loading_state = false;
 
           var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -715,7 +715,7 @@ function fetchCertificateCoursesFromDB(search_query) {
         );
 
         var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 
@@ -731,7 +731,7 @@ function fetchCertificateCoursesFromDB(search_query) {
       $("#cc_no_of_courses_para").text(`0 course(s) available`);
 
       var no_cc_available_div = `<div class=" flex flex-col justify-center items-center w-full h-full dark:text-white text-lg">
-        <img src="../../../assests/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
+        <img src="../../../assets/svg/sad_emoji_svg.svg" class="w-[10rem] h-[10rem] dark:bg-white dark:text-white" alt="Vaze College Course Catalog"/>
           <p class="text-center ">Sorry! Couldn't find what you are looking for</p>
           </div>`;
 

@@ -5,7 +5,7 @@
         <video id="myVideo" class="h-screen w-screen object-cover" muted>
           <source id="videoSource" type="video/mp4"> Your browser does not support the video tag.
         </video>
-        <img id="fallbackImage" src="../../assests/college.png" alt="Fallback Image" class="absolute top-0 left-0  w-full h-full object-cover">
+        <img id="fallbackImage" src="../../assets/png/college.png" alt="Fallback Image" class="absolute top-0 left-0  w-full h-full object-cover">
         <button id="playButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-2 absolute bottom-0 right-0">
           <svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="5 3 19 12 5 21 5 3" />
@@ -23,7 +23,7 @@
        <video id="myVideo" class="h-screen w-screen object-cover" muted>
          <source id="videoSource" type="video/mp4"> Your browser does not support the video tag.
        </video>
-       <img id="fallbackImage" src="../../assests/college.png" alt="Fallback Image" class="absolute top-0 left-0  w-full h-full object-cover">
+       <img id="fallbackImage" src="../../assets/college.png" alt="Fallback Image" class="absolute top-0 left-0  w-full h-full object-cover">
        <button id="playButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-2 absolute bottom-0 right-0">
          <svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
            <polygon points="5 3 19 12 5 21 5 3" />
@@ -67,7 +67,7 @@
        background-color: rgb(14 211 207);
      }
    </style>
-   <div class="bg-no-repeat bg-cover bg-center relative h-5/6 " style="background-image: url(../../assests/college.png);">
+   <div class="bg-no-repeat bg-cover bg-center relative h-5/6 " style="background-image: url(../../assets/png/college.png);">
      <div class="absolute bg-gradient-to-r from-gray-900 to-gray-900 opacity-75 inset-0 z-0"></div>
      <div class="max-h-screen">
        <div class="min-h-fit flex justify-center">
@@ -93,7 +93,7 @@
                    <blockquote class="text-left ">
                      <div class="relative">
                        <div class="relative">
-                         <img src="../../assests/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" alt="aji" class="object-cover w-fit h-60 mx-auto rounded-t-2xl" />
+                         <img src="../../assets/png/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" alt="aji" class="object-cover w-fit h-60 mx-auto rounded-t-2xl" />
                          <div class="rounded-t-2xl absolute bg-gradient-to-t from-gray-800 opacity-75 inset-0 z-0"></div>
                        </div>
                      </div>
@@ -123,7 +123,7 @@
                    <blockquote class="text-left">
                      <div class="">
                        <div class="relative">
-                         <img src="../../assests/15-August-2022.png" alt="aji" class="object-cover w-fit mx-auto rounded-t-2xl h-60" />
+                         <img src="../../assets/png/15-August-2022.png" alt="aji" class="object-cover w-fit mx-auto rounded-t-2xl h-60" />
                          <div class="rounded-t-2xl absolute bg-gradient-to-t from-gray-800 opacity-75 inset-0 z-0"></div>
                        </div>
                      </div>
@@ -396,7 +396,7 @@
        <video id="myVideo" class="h-screen w-screen object-cover" muted>
          <source id="videoSource" type="video/mp4"> Your browser does not support the video tag.
        </video>
-       <img id="fallbackImage" src="../../assests/college.png" alt="Fallback Image" class="absolute top-0 left-0  w-full h-full object-cover">
+       <img id="fallbackImage" src="../../assets/college.png" alt="Fallback Image" class="absolute top-0 left-0  w-full h-full object-cover">
        <button id="playButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded z-2 absolute bottom-0 right-0">
          <svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
            <polygon points="5 3 19 12 5 21 5 3" />
@@ -430,7 +430,7 @@
        background-color: rgb(14 211 207);
      }
    </style>
-   <div class="bg-no-repeat bg-cover bg-center relative" style="background-image: url(../../assests/college.png);">
+   <div class="bg-no-repeat bg-cover bg-center relative" style="background-image: url(../../assets/college.png);">
      <div class="absolute bg-gradient-to-r from-gray-900 to-gray-900 opacity-75 inset-0 z-0"></div>
      <div>
        <div class="min-h-screen flex justify-center">
@@ -468,7 +468,7 @@
                    <blockquote class="text-left ">
                      <div class="relative">
                        <div class="relative">
-                         <img src="../../assests/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" alt="aji" class="object-cover w-full h-60 mx-auto rounded-t-2xl" />
+                         <img src="../../assets/Felicitation-br-the-Honorable-Governor-of-Maharashtra.png" alt="aji" class="object-cover w-full h-60 mx-auto rounded-t-2xl" />
                          <div class="rounded-t-2xl absolute bg-gradient-to-t from-gray-800 opacity-75 inset-0 z-0"></div>
                        </div>
                      </div>
@@ -498,7 +498,7 @@
                    <blockquote class="text-left">
                      <div class="">
                        <div class="relative">
-                         <img src="../../assests/15-August-2022.png" alt="aji" class="object-cover w-full mx-auto rounded-t-2xl h-60" />
+                         <img src="../../assets/15-August-2022.png" alt="aji" class="object-cover w-full mx-auto rounded-t-2xl h-60" />
                          <div class="rounded-t-2xl absolute bg-gradient-to-t from-gray-800 opacity-75 inset-0 z-0"></div>
                        </div>
                      </div>
@@ -775,7 +775,7 @@
            playButton.html('<svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>');
          }
        });
-       var videoUrl = "../../assests/1699694317902902.mp4";
+       var videoUrl = "../../assets/1699694317902902.mp4";
        // Check if the browser supports the video tag
        if (video.canPlayType && video.canPlayType('video/mp4').replace(/no/, '')) {
          // Set the video source and load it

@@ -1,7 +1,7 @@
  <!--Header-->
  <div>
      <div class="relative isolate flex flex-col overflow-hidden py-2 md:h-[20rem] h-[15rem] mx-auto w-full items-center justify-center">
-         <img src="../../../assests/department.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+         <img src="../../../assets/jpg/department.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
          <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
          <div class="text-center z-1" data-aos="fade-up">
@@ -114,7 +114,7 @@
                 $cp_hon = $row2['cp_honourific'];
 
                 if (!isset($cp_img) || empty($cp_img)) {
-                    $cp_img = "../../../assests/profile.png";
+                    $cp_img = "../../../assets/png/profile.png";
                 }
                 if (!isset($cp_web) || empty($cp_web)) {
                     $cp_web = "https://www.google.com/";
@@ -296,7 +296,7 @@
                             $title = $row['all_pdf_title'];
                             echo '
   <a href="' . $pdf_link . '" class="flex flex-row items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assests/pdf.webp" alt="">
+                     <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                      <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">' . $title . '</h5>
                          
@@ -351,7 +351,7 @@
                             $title = $row['all_pdf_title'];
                             echo '
             <a href="' . $pdf_link . '" class="flex flex-row bg-white  border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden w-full md:max-w-96 p-4 hover:translate-y-[-0.5rem] transition-all duration-300 hover:border-cyan-300 border-2 hover:shadow-lg">
-                         <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assests/pdf.webp" alt="">
+                         <img class=" w-full rounded-t-lg max-h-28  md:rounded-none md:rounded-s-lg object-cover basis-[30%] flex-shrink-0" src="../../../assets/webp/pdf.webp" alt="">
                          <div class="flex flex-col justify-between p-4 leading-normal basis-[70%]">
                              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-700 text-center">' . $title . '</h5>
                             

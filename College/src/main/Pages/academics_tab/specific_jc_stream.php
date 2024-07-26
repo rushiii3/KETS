@@ -1,6 +1,10 @@
 <?php
 
-$stream = $_GET["stream"]??"";
+$stream = $_GET["stream"] ?? "";
+if($stream==""){
+    echo "<script>window.location.href='./course_catalog.php'</script>";
+    exit;
+}
 assert($stream != "");
 
 
@@ -56,13 +60,11 @@ if (strtolower($stream) == "science") {
     //$other_overview_section = "";
 
     $intake_capacity = 240;
-    $second_language="Marathi/ Hindi/ Sanskrit/ French / Information Technology(IT)";
-    $subject_1="Physics";
-    $subject_2="Chemistry";
-    $subject_3="Mathematics";
-    $subject_4="Biology";
-
-   
+    $second_language = "Marathi/ Hindi/ Sanskrit/ French / Information Technology(IT)";
+    $subject_1 = "Physics";
+    $subject_2 = "Chemistry";
+    $subject_3 = "Mathematics";
+    $subject_4 = "Biology";
 } else if (strtolower($stream) == "commerce") {
     $bg_image_link = "https://plus.unsplash.com/premium_vector-1713364407288-bdef037b212c?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -111,12 +113,11 @@ if (strtolower($stream) == "science") {
 
     $intake_capacity = 240;
 
-    $second_language="Marathi/ Hindi/ Sanskrit/ French / Information Technology(IT)";
-    $subject_1="Economics";
-    $subject_2="Book Keeping (BK)";
-    $subject_3="Secretarial Practice(SP)/ Mathematics";
-    $subject_4="Organization of Commerce and Management (OCM)";
-
+    $second_language = "Marathi/ Hindi/ Sanskrit/ French / Information Technology(IT)";
+    $subject_1 = "Economics";
+    $subject_2 = "Book Keeping (BK)";
+    $subject_3 = "Secretarial Practice(SP)/ Mathematics";
+    $subject_4 = "Organization of Commerce and Management (OCM)";
 } else if (strtolower($stream) == "arts") {
     $bg_image_link = "https://plus.unsplash.com/premium_vector-1683121884518-2e8290ff0dee?bg=FFFFFF&q=80&w=1800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
@@ -166,13 +167,11 @@ if (strtolower($stream) == "science") {
 
     $intake_capacity = 240;
 
-    $second_language="Marathi / Hindi/ Sanskrit/ French";
-    $subject_1="Economics";
-    $subject_2="Political Science";
-    $subject_3="History/ Psychology";
-    $subject_4="Sociology";
-
-   
+    $second_language = "Marathi / Hindi/ Sanskrit/ French";
+    $subject_1 = "Economics";
+    $subject_2 = "Political Science";
+    $subject_3 = "History/ Psychology";
+    $subject_4 = "Sociology";
 }
 
 
@@ -187,6 +186,7 @@ if (strtolower($stream) == "science") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V. G. VAZE| HSC <?php echo $stream ?> </title>
     <?php include('../../../library/library.php'); ?>
+    <link rel="stylesheet" href="../../../css/common/header_2.css" />
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -305,7 +305,7 @@ if (strtolower($stream) == "science") {
                     <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-indigo-500 dark:text-indigo-400">
                         <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
                     </svg>-->
-                    <img src="../../../assests/webp/laptop_with_degree.webp" />
+                    <img src="../../../assets/webp/laptop_with_degree.webp" />
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-indigo-300">What will you learn?</h4>
@@ -319,7 +319,7 @@ if (strtolower($stream) == "science") {
                     <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
                         <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                     </svg>-->
-                    <img src="../../../assests/webp/career_webp.webp" />
+                    <img src="../../../assets/webp/career_webp.webp" />
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-blue-500"> Options for higher studies</h4>
@@ -335,7 +335,7 @@ if (strtolower($stream) == "science") {
                     <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
                         <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                     </svg>-->
-                    <img src="../../../assests/webp/skills_webp.webp" />
+                    <img src="../../../assets/webp/skills_webp.webp" />
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-yellow-500">Course Outcomes</h4>
@@ -353,7 +353,7 @@ if (strtolower($stream) == "science") {
                     <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto text-teal-600 dark:text-teal-400">
                         <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                     </svg>-->
-                    <img src="../../../assests/webp/learning_by_doing_webp.webp" class="h-fit" />
+                    <img src="../../../assets/webp/learning_by_doing_webp.webp" class="h-fit" />
                 </div>
                 <div class="w-5/6">
                     <h4 class="font-semibold text-lg text-gray-700 dark:text-red-500">Learn by doing</h4>
@@ -438,7 +438,7 @@ if (strtolower($stream) == "science") {
 
 
     <div id="fyjc_subject_combinations" class="w-full justify-center flex sm:px-12 px-8 mx-auto rounded-2xl mb-12  mt-12 " style="transition: all 2s ease">
-    '<!-- all content come inside this -->
+        '<!-- all content come inside this -->
         <table class="w-2/3 text-sm bordertext-lefttext-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 border dark:border-gray-500 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -470,7 +470,7 @@ if (strtolower($stream) == "science") {
 
                 <tr class="bg-white  dark:bg-gray-800 border dark:border-gray-500">
                     <td scope="row" class="px-6 py-4  font-medium border-e dark:border-gray-500 text-gray-900 sm: dark:text-white">
-                        <?php echo $second_language?>
+                        <?php echo $second_language ?>
                     </td>
                     <!--
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 sm: dark:text-white">
@@ -481,7 +481,7 @@ if (strtolower($stream) == "science") {
 
                 <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
                     <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
-                        <?php echo $subject_1?>
+                        <?php echo $subject_1 ?>
                     </td>
                     <!--
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
@@ -492,7 +492,7 @@ if (strtolower($stream) == "science") {
 
                 <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
                     <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
-                       <?php echo $subject_2?>
+                        <?php echo $subject_2 ?>
                     </td>
                     <!--
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
@@ -503,7 +503,7 @@ if (strtolower($stream) == "science") {
 
                 <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
                     <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
-                       <?php echo $subject_3?>
+                        <?php echo $subject_3 ?>
                     </td>
                     <!--
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
@@ -514,7 +514,7 @@ if (strtolower($stream) == "science") {
 
                 <tr class="bg-white border dark:bg-gray-800 border dark:border-gray-500">
                     <td scope="row" class="px-6 py-4 border-e dark:border-gray-500 font-medium text-gray-900  dark:text-white">
-                       <?php echo $subject_4?>
+                        <?php echo $subject_4 ?>
                     </td>
                     <!--
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900  dark:text-white">
@@ -548,7 +548,7 @@ if (strtolower($stream) == "science") {
             </tbody>
 
         </table>
-    ?>
+        ?>
     </div>
 
     <?php /*
@@ -662,6 +662,7 @@ if (strtolower($stream) == "science") {
         });
     </script>
     <?php include('../../Layouts/footer.php'); ?>
+    <script src="../../../js/common/header_2.js"></script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
 

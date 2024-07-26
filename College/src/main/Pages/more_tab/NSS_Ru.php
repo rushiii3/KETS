@@ -287,7 +287,7 @@
         <div>
             <div>
                 <div class="relative isolate flex flex-col justify-end overflow-hidden py-2 md:h-[30rem] h-[25rem] mx-auto w-full items-center justify-center">
-                    <img src="../../assests/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
+                    <img src="../../../assets/jpg/nss.jpg" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
                     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-800 via-gray-900/10"></div>
                     <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-white/10"></div>
                     <div class="text-center z-1" data-aos="fade-up">
@@ -405,7 +405,7 @@
                     <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
                         <div class=" dark:lg:bg-darker  rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
                             <div class="md:5/12 lg:w-1/2">
-                                <img src="../../assests/Capa 1.png" alt="image" loading="lazy" class="" />
+                                <img src="../../../assets/png/Capa 1.png" alt="image" loading="lazy" class="" />
                             </div>
                             <div class="md:7/12 lg:w-1/2">
                                 <div class="divide-y space-y-8 divide-gray-300 dark:divide-gray-800">
@@ -1195,7 +1195,7 @@
                         <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                             <div class="grid gap-12 md:gap-6 md:grid-cols-2 lg:gap-12">
                                 <div class="group space-y-6">
-                                    <img src="../../assests/nss_yogaday.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="../../../assets/jpg/nss_yogaday.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         Yoga Day
                                     </h3>
@@ -1224,7 +1224,7 @@
                                     </div>
                                 </div>
                                 <div class="group space-y-6">
-                                    <img src="../../assests/no_to_tabaco.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="../../../assets/jpg/no_to_tabaco.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         No To Tobacco
                                     </h3>
@@ -1252,7 +1252,7 @@
                                     </div>
                                 </div>
                                 <div class="group space-y-6">
-                                    <img src="../../assests/swatch_bharat.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
+                                    <img src="../../../assets/jpg/swatch_bharat.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-96 w-full rounded-3xl object-cover object-top transition-all duration-500 group-hover:rounded-xl" />
                                     <h3 class="text-3xl font-semibold text-gray-800 dark:text-white">
                                         Swachh Bharat Abhiyan
                                     </h3>
@@ -1364,7 +1364,7 @@
                         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                             <div class="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
                                 <div class="relative overflow-hidden rounded-xl">
-                                    <img src="../../assests/nss.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+                                    <img src="../../../assets/jpg/nss.jpg" alt="art cover" loading="lazy" width="1000" height="667" class="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105" />
                                 </div>
                                 <div class="mt-6 relative">
                                     <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">
@@ -1466,7 +1466,7 @@
                             <div class="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
                                 <div class="lg:bg-gray-50 dark:lg:bg-darker lg:p-16 rounded-[4rem] space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
                                     <div class="md:5/12 lg:w-1/2">
-                                        <img src="../../assests/nssspecial_camp.jpg" alt="image" loading="lazy" class="rounded-2xl h-96 w-full object-cover	" />
+                                        <img src="../../../assets/jpg/nssspecial_camp.jpg" alt="image" loading="lazy" class="rounded-2xl h-96 w-full object-cover	" />
                                     </div>
                                     <div class="md:7/12 lg:w-1/2">
                                         <h2 class="text-2xl font-bold text-gray-900 md:text-3xl dark:text-white">
@@ -1602,7 +1602,7 @@
                             <div class="relative h-80 md:h-[40rem]" data-carousel-inner>
                                 <!-- Item 1 -->
                                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                    <img src="../../assests/nss.jpg" class="object-cover w-full h-full" alt="Slide 1" />
+                                    <img src="../../../assets/jpg/nss.jpg" class="object-cover w-full h-full" alt="Slide 1" />
                                     <span class="absolute top-[80%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold opacity-[70%] text-gray-50 md:text-3xl">Group
                                         Photo</span>
                                 </div>
@@ -2263,7 +2263,7 @@
     </div>
     <!--Image section NSS-->
     <!-- <div class="relative isolate">
-    <img id="fallbackImage" src="../../assests/nss.jpg" alt="Fallback Image" class=" mx-auto top-0 left-0  w-[100vw] h-[60vh] max-h-[300px] object-cover">
+    <img id="fallbackImage" src="../../assets/nss.jpg" alt="Fallback Image" class=" mx-auto top-0 left-0  w-[100vw] h-[60vh] max-h-[300px] object-cover">
     <div class="absolute inset-0 -z-10 bg-gradient-to-t   from-gray-800 via-gray-900/10"></div>
 
     <div class="text-center z-1" style="margin-top:-120px; display:flex;justify-content:center;-webkit-text-fill-color:transparent;-webkit-text-stroke:4px white" data-aos="fade-up">
