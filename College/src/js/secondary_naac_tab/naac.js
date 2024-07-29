@@ -87,9 +87,7 @@ $(".caqar_ay").each(function () {
                 );
               });
             } else {
-              $(`#caqar_grid_${i}`).html(
-                `<p class="ms-4">No reports</p>`
-              );
+              $(`#caqar_grid_${i}`).html(`<p class="ms-4">No reports</p>`);
               //console.log("no caqar data fetched");
             }
           }
@@ -229,3 +227,22 @@ function constructCAQARPDFCard(pdf_title, pdf_link, pdf_sub_criteria) {
                                 <a href="${pdf_link}" class="flex-1"><span class="font-bold">${pdf_sub_criteria}</span> ${pdf_title}</a>
                             </div>`;
 }
+
+function animateOnScroll() {
+  const observer = new IntersectionObserver((entries) => {
+    let delay = 0;
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("custom_aos_fade_right");
+        entry.target.style.animationDelay = `${delay}ms`;
+        delay += 150;
+      }
+    });
+  });
+
+  document
+    .querySelectorAll(".pdf_card_wrapper")
+    .forEach((card) => observer.observe(card));
+}
+
+animateOnScroll()

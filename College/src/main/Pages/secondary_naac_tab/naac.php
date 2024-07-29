@@ -107,6 +107,28 @@ if ($fetch_caqar_pdfs_query_result) {
         .not_selected_caqar_ay {
             background-color: rgb(31 41 55);
         }
+
+        .custom_aos_fade_right {
+            animation: fade_right 1200ms ease-in-out both;
+        }
+
+
+
+        @keyframes fade_right {
+            from {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateX(-100%);
+
+            }
+
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateX(0);
+            }
+
+        }
     </style>
 </head>
 
@@ -127,7 +149,7 @@ if ($fetch_caqar_pdfs_query_result) {
         <!--greetings heading div-->
         <div class="flex bg-gradient-to-r from-black to-blue-800  from-25%  h-[100vh] w-[100vw] px-12" id="main_heading_div">
             <div class="   flex-1 flex items-center justify-center">
-                <p class="text-[2rem] sm:text-[4.5rem] text-white font-bold">NAAC and Other related reports
+                <p class="text-[2rem] sm:text-[4.5rem] text-white font-bold" data-aos="fade-right">NAAC and Other related reports
                 </p>
             </div>
             <div class=" flex-1 flex items-center justify-center">
@@ -144,25 +166,25 @@ if ($fetch_caqar_pdfs_query_result) {
             <!--report selector div-->
             <div class="flex flex-col md:flex-row px-8 py-12 justify-between gap-8 " id="report_selector_div">
                 <div class="flex-1 flex flex-col">
-                    <p class="text-xl font-medium">Browse through all the NAAC related reports from a number of academic years </p>
-                    <p class="">NAAC stands for National Assessment and Accrediation Council. Our College was the first college to bag the "A" grade in Maharashtra in the 1st cycle. We have maintained this standard for the next two cycles. </p>
+                    <p class="text-xl font-medium" data-aos="fade-right">Browse through all the NAAC related reports from a number of academic years </p>
+                    <p class="" data-aos="fade-right">NAAC stands for National Assessment and Accrediation Council. Our College was the first college to bag the "A" grade in Maharashtra in the 1st cycle. We have maintained this standard for the next two cycles. </p>
                 </div>
 
                 <div class="flex-1">
                     <ul class="list-none">
 
-                        <li class="hover:cursor-pointer py-4 border-b border-slate-600" id="aqar_li">AQAR reports</li>
-                        <li class="hover:cursor-pointer py-4 border-b border-slate-600" id="caqar_li">Criteria-Specific AQAR reports</li>
-                        <li class="hover:cursor-pointer py-4 border-b border-slate-600" id="iqac_li">IQAC reports</li>
-                        <li class="hover:cursor-pointer py-4" id="ssr_li">SSR reports</li>
+                        <li class="hover:cursor-pointer py-4 border-b border-slate-600" id="aqar_li" data-aos="fade-right" data-aos-delay="100">AQAR reports</li>
+                        <li class="hover:cursor-pointer py-4 border-b border-slate-600" id="caqar_li" data-aos="fade-right" data-aos-delay="200">Criteria-Specific AQAR reports</li>
+                        <li class="hover:cursor-pointer py-4 border-b border-slate-600" id="iqac_li" data-aos="fade-right" data-aos-delay="300">IQAC reports</li>
+                        <li class="hover:cursor-pointer py-4" id="ssr_li" data-aos="fade-right" data-aos-delay="400">SSR reports</li>
                     </ul>
                 </div>
             </div>
 
             <!--AQAR Reports-->
             <div class="mt-12 flex flex-col  items-start lg:items-center px-8" id="aqar_reports_div">
-                <p class="text-center font-medium text-2xl w-full">AQAR reports</p>
-                <p class="text-center text-sm text-slate-500 w-full">Annual Quality Assurance Reports
+                <p class="text-center font-medium text-2xl w-full" data-aos="fade-up">AQAR reports</p>
+                <p class="text-center text-sm text-slate-500 w-full" data-aos="fade-up">Annual Quality Assurance Reports
                 </p>
 
                 <!-- <div class="flex px-8 mt-4  justify-between max-w-[100vw] overflow-x-auto gap-8 text-white">
@@ -187,9 +209,12 @@ if ($fetch_caqar_pdfs_query_result) {
                         //if ($aq["reports_academic_year"] == $aqar_academic_years[0]) {
 
                     ?>
-                        <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer aqar_pdf_card">
-                            <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
-                            <a href="<?php echo $aq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $aq["all_pdf_title"] ?></a>
+                        <div class="pdf_card_wrapper">
+
+                            <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105  hover:cursor-pointer pdf_card  transition-transform duration-500">
+                                <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
+                                <a href="<?php echo $aq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $aq["all_pdf_title"] ?></a>
+                            </div>
                         </div>
 
 
@@ -202,8 +227,8 @@ if ($fetch_caqar_pdfs_query_result) {
 
             <!--Criteria-specific AQAR reports-->
             <div class="mt-12 flex flex-col  items-start lg:items-center" id="caqar_reports_div">
-                <p class="px-8 text-center font-medium text-2xl w-full">Criteria-specific AQAR documents</p>
-                <p class="px-8 text-center text-sm text-slate-500 w-full">Criteria-specific Annual Quality Assurance documents. These reports are also used for IQAC reports
+                <p class="px-8 text-center font-medium text-2xl w-full" data-aos="fade-up">Criteria-specific AQAR documents</p>
+                <p class="px-8 text-center text-sm text-slate-500 w-full" data-aos="fade-up">Criteria-specific Annual Quality Assurance documents. These reports are also used for IQAC reports
                 </p>
 
                 <div class="flex px-8 mt-4 max-w-[100vw] overflow-x-auto gap-8 text-white">
@@ -233,16 +258,18 @@ if ($fetch_caqar_pdfs_query_result) {
                         <p class="font-medium text-lg mt-8">Criteria <?php echo $caqar_criteria_number ?></p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4  gap-4" id="<?php echo "caqar_grid_" . $caqar_criteria_number ?>">
                             <?php
-                            
+
                             if (count($caqar_arrays[$caqar_criteria_number]) > 0) {
                                 foreach ($caqar_arrays[$caqar_criteria_number] as $caq) {
                                     if ($caq["reports_academic_year"] == $caqar_academic_years[0]) {
 
                             ?>
+                             <div class="pdf_card_wrapper">
                                         <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
                                             <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
                                             <a href="<?php echo $caq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo "<span class='font-bold '>" . $caq["aqar_sub_criteria"] . "</span>" . " " . $caq["all_pdf_title"] ?></a>
                                         </div>
+                             </div>
 
 
                             <?php
@@ -264,8 +291,8 @@ if ($fetch_caqar_pdfs_query_result) {
 
             <!--Other IQAC documents-->
             <div class="mt-12 flex flex-col  items-start lg:items-center" id="iqac_div">
-                <p class="px-8 text-center font-medium text-2xl w-full">Other IQAC documents</p>
-                <p class="px-8 text-center text-sm text-slate-500 w-full">Internal Quality Assessment Committee documents
+                <p class="px-8 text-center font-medium text-2xl w-full" data-aos="fade-up">Other IQAC documents</p>
+                <p class="px-8 text-center text-sm text-slate-500 w-full" data-aos="fade-up">Internal Quality Assessment Committee documents
                 </p>
 
                 <div class="flex mt-4 px-8 max-w-[100vw] overflow-x-auto gap-8 text-white">
@@ -291,10 +318,12 @@ if ($fetch_caqar_pdfs_query_result) {
                         if ($iq["reports_academic_year"] == $iqac_academic_years[0]) {
 
                     ?>
+                     <div class="pdf_card_wrapper">
                             <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
                                 <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
                                 <a href="<?php echo $iq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $iq["all_pdf_title"] ?></a>
                             </div>
+                     </div>
 
 
                     <?php
@@ -307,8 +336,8 @@ if ($fetch_caqar_pdfs_query_result) {
 
             <!--SSR reports-->
             <div class="mt-12 flex flex-col  items-start lg:items-center px-8" id="ssr_div">
-                <p class="text-center font-medium text-2xl w-full">SSR Reports</p>
-                <p class="text-center text-sm text-slate-500 w-full">Self-Study Reports
+                <p class="text-center font-medium text-2xl w-full" data-aos="fade-up">SSR Reports</p>
+                <p class="text-center text-sm text-slate-500 w-full" data-aos="fade-up">Self-Study Reports
                 </p>
 
                 <!-- <div class="flex mt-4  justify-between max-w-[100vw] overflow-x-auto gap-8 text-white">
@@ -321,11 +350,12 @@ if ($fetch_caqar_pdfs_query_result) {
                     foreach ($ssr as $ss) {
 
                     ?>
+                     <div class="pdf_card_wrapper">
                         <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
                             <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
                             <a href="<?php echo $ss["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $ss["all_pdf_title"] ?></a>
                         </div>
-
+                     </div>
 
                     <?php
 

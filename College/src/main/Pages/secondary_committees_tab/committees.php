@@ -24,7 +24,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <style>
         .custom_aos_fade_right {
-            animation: fade_right 800ms ease-in both;
+            animation: fade_right 1200ms ease-in-out both;
         }
 
 
