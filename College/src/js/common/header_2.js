@@ -209,7 +209,7 @@ const navData = [
   },
   {
     name: "Procedures",
-    link: "",
+    link: `${base_path}/College/src/main/Pages/secondary_procedures_tab/procedures.php`,
     hasSub: false,
   },
   {

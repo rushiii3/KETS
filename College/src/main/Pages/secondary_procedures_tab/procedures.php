@@ -44,7 +44,7 @@ $fetch_procedures_query_result = $fetch_procedures_query->get_result();
     </style>
 </head>
 
-<body class="bg-white dark:bg-black">
+<body class="bg-slate-100 dark:bg-black">
     <!--
     /***************
     NAVBAR 
@@ -57,7 +57,7 @@ $fetch_procedures_query_result = $fetch_procedures_query->get_result();
     MAIN CONTENTS 
     ****************/
     -->
-    <div class="flex flex-col mt-32 dark:text-white w-[100vw] px-8">
+    <div class="flex flex-col mt-32 mb-8 dark:text-white w-[100vw] px-8">
         <p class="font-medium text-[4rem] text-center" data-aos="fade-up">Procedures</p>
         <p class="text-sm text-slate-600 text-center" data-aos="fade-up">All the documents that can be collected from the college. Instructions on how to avail them are given in the pdf</p>
 
