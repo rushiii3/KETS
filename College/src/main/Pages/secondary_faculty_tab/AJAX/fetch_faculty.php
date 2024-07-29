@@ -237,6 +237,6 @@ ORDER BY college_personnel.cp_name ASC";
 
         $response_array = ["faculty_array" => $faculty_array, "total_rows" => $total_rows, "count_of_previous_letters" => $count_of_previous_letters];
         print_r(json_encode($response_array));
-        return json_encode($response_array);
+        //return json_encode($response_array);
     }
 }
