@@ -1,8 +1,8 @@
 //console.log("loaded header2 js")
 //base url
-let base_path = `${window.location.origin}/${
-  window.location.href.split("/")[3]
-}`;
+// let base_path = `${window.location.origin}/${
+//   window.location.href.split("/")[3]
+// }`;
 const t1 = gsap.timeline();
 const mainNavTimeline = gsap.timeline({
   paused: true,
@@ -17,12 +17,12 @@ var subnavHistory = [];
 const navData = [
   {
     name: "Home",
-    link: `${base_path}/College/src/main/Pages`,
+    link: `/College/src/main/Pages`,
     hasSub: false,
   },
   {
     name: "Contact Us",
-    link: `${base_path}/College/src/main/Pages/contact_us_tab/Contact.php`,
+    link: `/College/src/main/Pages/contact_us_tab/Contact.php`,
     hasSub: false,
   },
   {
@@ -32,7 +32,7 @@ const navData = [
     subItems: [
       {
         name: "Vision and Mission",
-        link: `${base_path}/College/src/main/Pages/about_us_tab/vision_mission.php`,
+        link: `/College/src/main/Pages/about_us_tab/vision_mission.php`,
         hasSub: false,
       },
       {
@@ -47,7 +47,7 @@ const navData = [
         subItems: [
           {
             name: "Legacy",
-            link: `${base_path}/College/src/main/Pages/about_us_tab/legacy.php`,
+            link: `/College/src/main/Pages/about_us_tab/legacy.php`,
             hasSub: false,
           },
           {
@@ -96,7 +96,7 @@ const navData = [
     subItems: [
       {
         name: "Course Catalog",
-        link: `${base_path}/College/src/main/Pages/academics_tab/course_catalog.php`,
+        link: `/College/src/main/Pages/academics_tab/course_catalog.php`,
         hasSub: false,
       },
 
@@ -149,7 +149,7 @@ const navData = [
       },
       {
         name: "Departments",
-        link: `${base_path}/College/src/main/Pages/academics_tab/Dept_Index.php`,
+        link: `/College/src/main/Pages/academics_tab/Dept_Index.php`,
         hasSub: false,
       },
     ],
@@ -183,7 +183,7 @@ const navData = [
   },
   {
     name: "Admissions",
-    link: `${base_path}/College/src/main/Pages/admissions_tab/admissions.html`,
+    link: `/College/src/main/Pages/admissions_tab/admissions.html`,
     hasSub: false,
   },
   {
@@ -198,12 +198,12 @@ const navData = [
   },
   {
     name: "Faculty",
-    link: `${base_path}/College/src/main/Pages/secondary_faculty_tab/faculty.php`,
+    link: `/College/src/main/Pages/secondary_faculty_tab/faculty.php`,
     hasSub: false,
   },
   {
     name: "Committees",
-    link: `${base_path}/College/src/main/Pages/secondary_committees_tab/committees.php`,
+    link: `/College/src/main/Pages/secondary_committees_tab/committees.php`,
     hasSub: false,
   },
   {
@@ -213,7 +213,7 @@ const navData = [
   },
   {
     name: "NAAC",
-    link: `${base_path}/College/src/main/Pages/secondary_naac_tab/naac.php`,
+    link: `/College/src/main/Pages/secondary_naac_tab/naac.php`,
     hasSub: false,
     // subItems: [
     //   {
@@ -240,7 +240,7 @@ const navData = [
     subItems: [
       {
         name: "NSS",
-        link: `${base_path}/College/src/main/Pages/more_tab/NSS_Ru.php`,
+        link: `/College/src/main/Pages/more_tab/NSS_Ru.php`,
         hasSub: false,
       },
       {
@@ -250,7 +250,7 @@ const navData = [
       },
       {
         name: "Gallery",
-        link: `${base_path}/College/src/main/Pages/more_tab/Gallery.php`,
+        link: `/College/src/main/Pages/more_tab/Gallery.php`,
         hasSub: false,
       },
       {
