@@ -43,6 +43,6 @@ ORDER BY cp_is_part_of_committee.role ASC, committee_belongs_to_clg_section.coll
     $final_json_response["junior_members"] = $junior_college_members;
     $final_json_response["mgmt_members"] = $mgmt_members;
 
-    //print_r(json_encode($final_json_response));
-    return json_encode($final_json_response);
+    print_r(json_encode($final_json_response));
+    //return json_encode($final_json_response);
 }

@@ -1,6 +1,6 @@
 <!-- ====== Contact Section Start -->
 <section
-   class="relative z-1 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]"
+   class="relative z-1 overflow-hidden bg-white dark:bg-black py-20 lg:py-[120px]"
    >
    <div class="container mx-auto">
       <div class="flex flex-wrap -mx-4 lg:justify-between">

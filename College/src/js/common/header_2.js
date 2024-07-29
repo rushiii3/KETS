@@ -2,6 +2,7 @@
 //base url
 let base_path = `${window.location.origin}/${
   window.location.href.split("/")[3]
+  //on the server change it to split by 1
 }`;
 const t1 = gsap.timeline();
 const mainNavTimeline = gsap.timeline({
@@ -17,12 +18,12 @@ var subnavHistory = [];
 const navData = [
   {
     name: "Home",
-    link: "",
+    link: `${base_path}/College/src/main/Pages`,
     hasSub: false,
   },
   {
     name: "Contact Us",
-    link: "",
+    link: `${base_path}/College/src/main/Pages/contact_us_tab/Contact.php`,
     hasSub: false,
   },
   {
@@ -32,7 +33,7 @@ const navData = [
     subItems: [
       {
         name: "Vision and Mission",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/vision_mission.php`,
         hasSub: false,
       },
       {
@@ -149,7 +150,7 @@ const navData = [
       },
       {
         name: "Departments",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/academics_tab/Dept_Index.php`,
         hasSub: false,
       },
     ],
@@ -166,24 +167,24 @@ const navData = [
       },
       {
         name: "Library",
-        link: "",
+        link: "https://vazecollegelibrary.weebly.com/",
         hasSub: false,
       },
       {
         name: "SRC",
-        link: "",
+        link: "https://kelkarresearchcentre.org/",
         hasSub: false,
       },
       {
         name: "Placement Cell",
-        link: "",
+        link: "https://sites.google.com/view/vazecgtpc",
         hasSub: false,
       },
     ],
   },
   {
     name: "Admissions",
-    link: "/admissions",
+    link: `${base_path}/College/src/main/Pages/admissions_tab/admissions.html`,
     hasSub: false,
   },
   {
@@ -213,25 +214,25 @@ const navData = [
   },
   {
     name: "NAAC",
-    link: "",
-    hasSub: true,
-    subItems: [
-      {
-        name: "AQAR",
-        link: "",
-        hasSub: false,
-      },
-      {
-        name: "SSR",
-        link: "",
-        hasSub: false,
-      },
-      {
-        name: "IQAC",
-        link: "",
-        hasSub: false,
-      },
-    ],
+    link: `${base_path}/College/src/main/Pages/secondary_naac_tab/naac.php`,
+    hasSub: false,
+    // subItems: [
+    //   {
+    //     name: "AQAR",
+    //     link: "",
+    //     hasSub: false,
+    //   },
+    //   {
+    //     name: "SSR",
+    //     link: "",
+    //     hasSub: false,
+    //   },
+    //   {
+    //     name: "IQAC",
+    //     link: "",
+    //     hasSub: false,
+    //   },
+    // ],
   },
   {
     name: "More",
@@ -240,7 +241,7 @@ const navData = [
     subItems: [
       {
         name: "NSS",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/more_tab/NSS_Ru.php`,
         hasSub: false,
       },
       {
@@ -250,7 +251,7 @@ const navData = [
       },
       {
         name: "Gallery",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/more_tab/Gallery.php`,
         hasSub: false,
       },
       {
