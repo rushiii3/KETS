@@ -114,7 +114,7 @@ const navData = [
       },
       {
         name: "Academic Calendar",
-        link: `${base_path}/College/src/main/Pages/academics_tab/pos_and_psos.php`,
+        link: `${base_path}/College/src/main/Pages/academics_tab/academic_calendar.php`,
         hasSub: false,
       },
       {

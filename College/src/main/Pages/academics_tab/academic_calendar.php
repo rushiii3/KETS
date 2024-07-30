@@ -24,7 +24,7 @@ $fetch_ac_query_result = $fetch_ac_query->get_result();
 <?php //include('../../../config/connect.php'); 
 ?>
 
-<body class="dark:bg-black dark:text-white bg-gray-100 overflow-x-hidden mx-auto " style="transition: all 2s ease">
+<body class="dark:bg-black dark:text-white bg-slate-100 overflow-x-hidden mx-auto " style="transition: all 2s ease">
     <?php include('../../Layouts/header2.php'); ?>
     <div class="relative isolate flex flex-col overflow-hidden py-2 md:h-[25rem] h-[15rem] mx-auto w-full items-center justify-center">
         <img src="../../../assets/jpg/department.jpg" alt="department_background_image" class="absolute inset-0 -z-10 h-full w-full object-cover" />
@@ -92,11 +92,11 @@ $fetch_ac_query_result = $fetch_ac_query->get_result();
 
                 ?>
                         <div class="pdf_card_wrapper">
-                            <a href="<?php echo $row["all_pdf_pdf_link"]?>" class="flex items-center bg-white border-gray-200 rounded-lg shadow hover:bg-gray-100 flex-nowrap mx-auto overflow-hidden  hover:translate-y-[-0.5rem] transition-all duration-300  border-2 hover:shadow-lg">
+                            <a href="<?php echo $row["all_pdf_pdf_link"]?>" class="flex items-center  rounded-lg shadow dark:bg-gray-800 bg-white flex-nowrap mx-auto overflow-hidden  hover:scale-105 transition-all duration-500  hover:shadow-lg">
                                 <img class="w-[20%]" src="../../../assets/webp/pdf.webp" alt="">
                                 <div class="flex flex-col justify-center items-start w-[70%] ">
-                                    <p class=" text-xl font-medium  text-gray-700 text-center">Academic Calendar</p>
-                                    <p class=" text-sm  text-gray-700 text-center"><?php echo $row["academic_year"]?></p>
+                                    <p class=" text-xl font-medium  text-white text-center">Academic Calendar</p>
+                                    <p class=" text-sm  text-gray-300 text-center"><?php echo $row["academic_year"]?></p>
                                 </div>
                                 <div class="flex flex-1 justify-end w-[10%]">
                                     <svg class="rtl:rotate-180 w-5.5 h-3.5 flex-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
