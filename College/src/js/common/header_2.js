@@ -109,17 +109,22 @@ const navData = [
 
       {
         name: "POs and PSOs",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/academics_tab/pos_and_psos.php`,
         hasSub: false,
       },
       {
         name: "Academic Calendar",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/academics_tab/academic_calendar.php`,
         hasSub: false,
       },
       {
         name: "Event Calendar",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/academics_tab/event_calendar.php`,
+        hasSub: false,
+      },
+      {
+        name: "Scholarships",
+        link: `${base_path}/College/src/main/Pages/academics_tab/scholarships.php`,
         hasSub: false,
       },
     ],

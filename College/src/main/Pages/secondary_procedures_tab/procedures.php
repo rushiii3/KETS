@@ -78,6 +78,12 @@ $fetch_procedures_query_result = $fetch_procedures_query->get_result();
         })
 
         document.querySelectorAll(".pdf_card_wrapper").forEach((card) => observer.observe(card))
+
+        $(".pdf_card_wrapper").each(function() {
+            $(this).click(function() {
+                window.location.href = $(this).find("a")[0].href;
+            })
+        })
     </script>
 </body>
 <?php include('../../../library/AOS.php'); ?>
