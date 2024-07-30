@@ -58,6 +58,16 @@ if ($fetch_scholarships_query_result) {
     <?php include('../../../library/library.php'); ?>
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <link rel="stylesheet" href="../../../css/common/custom_aos_fade_right.css" />
+    <style>
+        .vaze_logo_div::before {
+            content: "";
+            position: absolute;
+            inset: -0.1rem;
+            filter: blur(1rem);
+            z-index: -1;
+            background-color: #05d2fb;
+        }
+    </style>
 </head>
 
 <body class="bg-white dark:bg-black">
@@ -563,7 +573,7 @@ if ($fetch_scholarships_query_result) {
 
         $("#scroll_to_top_btn").click(function() {
             window.scrollTo({
-                top: document.getElementById("main_heading_div").scrollHeight-60,
+                top: document.getElementById("main_heading_div").scrollHeight - 60,
                 behavior: "smooth"
             })
         })
