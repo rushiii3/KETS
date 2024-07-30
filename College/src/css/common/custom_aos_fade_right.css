@@ -1,0 +1,21 @@
+  .custom_aos_fade_right {
+            animation: fade_right 1200ms ease-in-out both;
+        }
+
+
+
+        @keyframes fade_right {
+            from {
+                opacity: 0;
+                filter: blur(5px);
+                transform: translateX(-100%);
+
+            }
+
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateX(0);
+            }
+
+        }

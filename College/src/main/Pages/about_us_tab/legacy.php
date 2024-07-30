@@ -172,303 +172,351 @@ else {
 
         <!--Breadcrumbs-->
 
+
+
         <!--Display options-->
         <!--DISPLAY OPTIONS SELECTOR DIV start-->
+        <div class="flex flex-col bg-white dark:bg-black">
+            <!--
+        /***************
+        BREADCRUMBS - to show where the user is currently
+        ****************/
+        -->
+            <nav aria-label="Breadcrumb" class="pl-2 mt-2" id="Breadcrumb">
+                <ol class="flex items-stretch gap-2 list-none">
+                    <!--Home li-->
+                    <li class="flex items-center gap-2">
+                        <a href="/Vaze_College_Website/College/src/main/Pages" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+                            <!--Home icon-->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
 
-        <div class="flex sm:flex-row sm:flex-wrap flex-col space-y-4 sm:space-y-0 bg-white dark:bg-black p-8 div_before_p_timeline">
-            <div class="flex-col flex-1">
-                <div class=" font-['Playfair_Display'] dark:text-white lg:text-[2rem]">IMPARTING EDUCATION FOR NEARLY 40 YEARS AND BEYOND</div>
-                <div class="dark:text-white mt-4 lg:text-lg">Did you know? We were the first college in entire Maharashtra to be accredited by NAAC with an "A" grade in the First Cycle. Here are the leaders that have been monumental in many more such achievements </div>
-            </div>
-            <div class="flex-1">
-                <ul class="list-none w-inherit sm:w-full dark:text-white " id="display_options_ul">
-                    <!-- <li class=" sm:text-[1.5rem]  transition-[font] cursor-pointer" id="opt_1">All our Leaders</li>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+
+                            <span class="hidden md:block">Home</span>
+                        </a>
+
+                        <!--Arrow Icon.  svg is used because we can modify it colors and add css classes to it -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
+                            <title id="title-02">Arrow</title>
+                            <desc id="description-02"> Arrow icon that points to the next page in big screen resolution sizes and previous page in small screen resolution sizes. </desc>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </li>
+
+                    <!--No path item-->
+                    <li class="flex items-center gap-2">
+                        <p aria-current="page" class="max-w-[20ch]  truncate whitespace-nowrap text-slate-700">About Us</p>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </li>
+
+                    <!--Last item-->
+                    <li class="flex items-center gap-2">
+                        <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-700 hover:text-emerald-500">Legacy</a>
+                    </li>
+                </ol>
+            </nav>
+
+
+            <div class="flex sm:flex-row sm:flex-wrap flex-col space-y-4 sm:space-y-0 bg-white dark:bg-black p-8 div_before_p_timeline">
+                <div class="flex-col flex-1">
+                    <div class=" font-['Playfair_Display'] dark:text-white lg:text-[2rem]">IMPARTING EDUCATION FOR NEARLY 40 YEARS AND BEYOND</div>
+                    <div class="dark:text-white mt-4 lg:text-lg">Did you know? We were the first college in entire Maharashtra to be accredited by NAAC with an "A" grade in the First Cycle. Here are the leaders that have been monumental in many more such achievements </div>
+                </div>
+                <div class="flex-1">
+                    <ul class="list-none w-inherit sm:w-full dark:text-white " id="display_options_ul">
+                        <!-- <li class=" sm:text-[1.5rem]  transition-[font] cursor-pointer" id="opt_1">All our Leaders</li>
                         <hr class="border-gray-600 " /> -->
-                    <li id="opt_2" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Principals</li>
-                    <hr class="border-gray-600 " />
-                    <li id="opt_3" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Vice-principals (Degree College )</li>
-                    <hr class="border-gray-600 " />
-                    <li id="opt_4" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Vice-principals (Junior College)</li>
-                    <hr class="border-gray-600 " />
-                </ul>
+                        <li id="opt_2" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Principals</li>
+                        <hr class="border-gray-600 " />
+                        <li id="opt_3" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Vice-principals (Degree College )</li>
+                        <hr class="border-gray-600 " />
+                        <li id="opt_4" class=" sm:text-[1.5rem] transition-[font] mt-4 cursor-pointer">Vice-principals (Junior College)</li>
+                        <hr class="border-gray-600 " />
+                    </ul>
+                </div>
+
+
+
             </div>
 
+            <!--DISPLAY OPTIONS SELECTOR DIV end-->
 
+            <?php
+            $all_members_array = array($principals_array, $vice_principals_degree_array, $vice_principals_junior_array);
 
-        </div>
+            foreach ($all_members_array as $index => $current_member_array) {
+                if ($index == 0) {
+                    $section_name = "Principals";
+                    $member_div_id = "p";
+                    $next_member_div_id = "vpd";
+                } else if ($index == 1) {
+                    $section_name = "Vice Principals (Degree College)";
+                    $member_div_id = "vpd";
+                    $next_member_div_id = "vpj";
+                } else {
+                    $section_name = "Vice Principals (Junior College)";
+                    $member_div_id = "vpj";
+                    $next_member_div_id = "";
+                }
 
-        <!--DISPLAY OPTIONS SELECTOR DIV end-->
-
-        <?php
-        $all_members_array = array($principals_array, $vice_principals_degree_array, $vice_principals_junior_array);
-
-        foreach ($all_members_array as $index => $current_member_array) {
-            if ($index == 0) {
-                $section_name = "Principals";
-                $member_div_id = "p";
-                $next_member_div_id = "vpd";
-            } else if ($index == 1) {
-                $section_name = "Vice Principals (Degree College)";
-                $member_div_id = "vpd";
-                $next_member_div_id = "vpj";
-            } else {
-                $section_name = "Vice Principals (Junior College)";
-                $member_div_id = "vpj";
-                $next_member_div_id = "";
-            }
-
-        ?>
-            <!--div to add space-->
-            <div class=" w-full h-[10vh] lg:h-[20vh] bg-white dark:bg-black <?php echo "div_before_" . $member_div_id . "_timeline" ?>"></div>
-
-
-            <div class="flex  items-center flex-col w-full  bg-white dark:bg-black <?php echo "div_before_" . $next_member_div_id . "_timeline" ?>">
+            ?>
                 <!--div to add space-->
-                <!-- <div class="h-[10vh] lg:h-[20vh]"></div> -->
-
-                <div class="w-[75%] font-['Playfair_Display'] text-[2rem] lg:text-[4rem] border-y-4 dark:border-white border-black dark:text-white text-center"><?php echo $section_name ?></div>
-                <!--ALL MEMBERS DIV start-->
-                <div class="flex flex-1 flex-col mt-16 lg:mt-24 items-center relative" id="<?php echo $member_div_id . "_members_div"; ?>">
-
-                    <?php
-                    for ($index = 0; $index < count($current_member_array); $index++) {
-                        $year_month_key = (array_keys($current_member_array))[$index];
-                        $role = $current_member_array[$year_month_key][0]["role"];
-
-                        if ($index % 2 == 0) {
-                            $arrangement_flex_direction = "flex-row";
-                            $arrangement_justify_contents = "items-start";
-                            $data_aos_animation = "fade-up";
-                        } else {
-                            $arrangement_flex_direction = "flex-row-reverse";
-                            $arrangement_justify_contents = "items-end";
-                            $data_aos_animation = "fade-up";
-                        }
-                        if ($index == 0) {
-
-                    ?>
-                            <div class="flex w-full px-4 pt-4 gap-4 <?php echo $arrangement_flex_direction ?>">
-                                <div class="-mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?>  transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
-
-                                <!-- timeline element-->
-                                <div class="flex flex-col items-center  ">
-                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center <?php echo $role . "_timeline_circle" ?> ">
-
-                                        <div class="rounded-full w-6 h-6 bg-white"></div>
-                                    </div>
-
-                                    <div class="flex-1  relative">
-                                        <div class=" h-[100%] w-2 opacity-30 bg-black dark:bg-white ease-linear transition-all "></div>
-                                        <div class="-z-10 absolute max-h-[100%] top-0 left-0 h-[0%] w-2 <?php echo $role . "_timeline_line" ?>"></div>
-                                    </div>
-                                </div>
-
-                                <!--card container div-->
+                <div class=" w-full h-[10vh] lg:h-[20vh] bg-white dark:bg-black <?php echo "div_before_" . $member_div_id . "_timeline" ?>"></div>
 
 
-                                <div class="flex flex-col flex-1 gap-8 mb-12 <?php echo $role . "_card_container_div" ?>  transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                <div class="flex  items-center flex-col w-full  bg-white dark:bg-black <?php echo "div_before_" . $next_member_div_id . "_timeline" ?>">
+                    <!--div to add space-->
+                    <!-- <div class="h-[10vh] lg:h-[20vh]"></div> -->
 
-                                    <?php
-
-                                    foreach ($current_member_array[$year_month_key] as $member) {
-
-                                    ?>
-
-
-                                        <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $member["bg_color"];
-                                                                                                                                                                                                echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
-
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
-
-                                            <div class="flex w-fit flex-col mt-0 sm:mt-4">
-                                                <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
-                                                </div>
-                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
-                                                </div>
-
-                                                <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
-                                                <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
-                                                    <?php
-                                                    echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
-                                                    if ($member["tenure_end_date"]) {
-                                                        echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
-                                                    } else {
-                                                        echo "today";
-                                                    }
-
-                                                    ?>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    <?php
-                                    }
-                                    ?>
-                                </div>
-
-
-                            </div>
+                    <div class="w-[75%] font-['Playfair_Display'] text-[2rem] lg:text-[4rem] border-y-4 dark:border-white border-black dark:text-white text-center"><?php echo $section_name ?></div>
+                    <!--ALL MEMBERS DIV start-->
+                    <div class="flex flex-1 flex-col mt-16 lg:mt-24 items-center relative" id="<?php echo $member_div_id . "_members_div"; ?>">
 
                         <?php
+                        for ($index = 0; $index < count($current_member_array); $index++) {
+                            $year_month_key = (array_keys($current_member_array))[$index];
+                            $role = $current_member_array[$year_month_key][0]["role"];
 
-                        } else if ($index == count($current_member_array) - 1) {
+                            if ($index % 2 == 0) {
+                                $arrangement_flex_direction = "flex-row";
+                                $arrangement_justify_contents = "items-start";
+                                $data_aos_animation = "fade-up";
+                            } else {
+                                $arrangement_flex_direction = "flex-row-reverse";
+                                $arrangement_justify_contents = "items-end";
+                                $data_aos_animation = "fade-up";
+                            }
+                            if ($index == 0) {
 
                         ?>
+                                <div class="flex w-full px-4 pt-4 gap-4 <?php echo $arrangement_flex_direction ?>">
+                                    <div class="-mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?>  transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
 
-                            <div class="flex w-full px-4 gap-4 <?php echo $arrangement_flex_direction ?> ">
-                                <!--w-[33%]-->
-                                <div class="-mt-4 font-['Playfair_Display'] flex-1 ext-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?> opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
-                                <!--ending timeline element-->
-                                <div class="flex flex-col items-center ">
-                                    <div class="h-10 relative">
-                                        <div class="h-[100%] w-2 opacity-30  bg-black  dark:bg-white transition-all"></div>
-                                        <div class="absolute top-0 left-0 h-[0%] <?php echo $role . "_timeline_line" ?> w-2"></div>
-                                    </div>
-                                    <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center <?php echo $role . "_timeline_circle" ?>  opacity-30 transition-opacity ">
-                                        <div class="rounded-full w-6 h-6  bg-white ">
+                                    <!-- timeline element-->
+                                    <div class="flex flex-col items-center  ">
+                                        <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center <?php echo $role . "_timeline_circle" ?> ">
+
+                                            <div class="rounded-full w-6 h-6 bg-white"></div>
+                                        </div>
+
+                                        <div class="flex-1  relative">
+                                            <div class=" h-[100%] w-2 opacity-30 bg-black dark:bg-white ease-linear transition-all "></div>
+                                            <div class="-z-10 absolute max-h-[100%] top-0 left-0 h-[0%] w-2 <?php echo $role . "_timeline_line" ?>"></div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!--card container div-->
-                                <div class="flex flex-1  flex-col space-y-4 sm:space-y-0 mb-16 flex-wrap gap-8 <?php echo $role . "_card_container_div" ?> opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
-                                    <?php
+                                    <!--card container div-->
 
-                                    foreach ($current_member_array[$year_month_key] as $member) {
 
-                                    ?>
-                                        <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
-                                                                                                                                                                                                        echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                    <div class="flex flex-col flex-1 gap-8 mb-12 <?php echo $role . "_card_container_div" ?>  transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
+                                        <?php
 
-                                            <div class="flex w-fit flex-col mt-0 sm:mt-4">
-                                                <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                        foreach ($current_member_array[$year_month_key] as $member) {
+
+                                        ?>
+
+
+                                            <!--card element-->
+                                            <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border shadow-2xl  dark:shadow-none dark:bg-gray-800  dark:bg-none dark:border-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                    echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+
+                                                <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
+
+                                                <div class="flex w-fit flex-col mt-0 sm:mt-4">
+                                                    <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                    </div>
+                                                    <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
+                                                    </div>
+
+                                                    <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
+                                                    <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
+                                                        <?php
+                                                        echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
+                                                        if ($member["tenure_end_date"]) {
+                                                            echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
+                                                        } else {
+                                                            echo "today";
+                                                        }
+
+                                                        ?>
+                                                    </div>
                                                 </div>
-                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
-                                                </div>
 
-                                                <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
-                                                <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
-                                                    <?php
-                                                    echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
-                                                    if ($member["tenure_end_date"]) {
-                                                        echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
-                                                    } else {
-                                                        echo "today";
-                                                    }
-
-                                                    ?>
-                                                </div>
                                             </div>
 
-                                        </div>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
 
-
-
-                                    <?php
-                                    }
-                                    ?>
 
                                 </div>
 
-                            </div>
+                            <?php
 
-                        <?php
+                            } else if ($index == count($current_member_array) - 1) {
 
-                        } else {
-                            //middle element
-                        ?>
-                            <div class="flex w-full px-4 gap-4 relative <?php echo $arrangement_flex_direction ?>">
+                            ?>
 
-                                <div class=" -mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?> opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+                                <div class="flex w-full px-4 gap-4 <?php echo $arrangement_flex_direction ?> ">
+                                    <!--w-[33%]-->
+                                    <div class="-mt-4 font-['Playfair_Display'] flex-1 ext-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?> opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+                                    <!--ending timeline element-->
+                                    <div class="flex flex-col items-center ">
+                                        <div class="h-10 relative">
+                                            <div class="h-[100%] w-2 opacity-30  bg-black  dark:bg-white transition-all"></div>
+                                            <div class="absolute top-0 left-0 h-[0%] <?php echo $role . "_timeline_line" ?> w-2"></div>
+                                        </div>
+                                        <div class="rounded-full w-8 h-8  bg-black dark:bg-white flex justify-center items-center <?php echo $role . "_timeline_circle" ?>  opacity-30 transition-opacity ">
+                                            <div class="rounded-full w-6 h-6  bg-white ">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <!--middle timeline element-->
-                                <div class="flex flex-col items-center ">
-                                    <!-- <div class="h-10  relative">
+                                    <!--card container div-->
+                                    <div class="flex flex-1  flex-col space-y-4 sm:space-y-0 mb-16 flex-wrap gap-8 <?php echo $role . "_card_container_div" ?> opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                        <?php
+
+                                        foreach ($current_member_array[$year_month_key] as $member) {
+
+                                        ?>
+                                            <!--card element-->
+                                            <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                            echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+
+                                                <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
+
+                                                <div class="flex w-fit flex-col mt-0 sm:mt-4">
+                                                    <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                    </div>
+                                                    <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
+                                                    </div>
+
+                                                    <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
+                                                    <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
+                                                        <?php
+                                                        echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
+                                                        if ($member["tenure_end_date"]) {
+                                                            echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
+                                                        } else {
+                                                            echo "today";
+                                                        }
+
+                                                        ?>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+                                        <?php
+                                        }
+                                        ?>
+
+                                    </div>
+
+                                </div>
+
+                            <?php
+
+                            } else {
+                                //middle element
+                            ?>
+                                <div class="flex w-full px-4 gap-4 relative <?php echo $arrangement_flex_direction ?>">
+
+                                    <div class=" -mt-4 font-['Playfair_Display'] flex-1 text-[1.1rem]  md:text-[2.5rem] lg:text-[5rem] <?php echo $role . "_year_text_div" ?> opacity-30 transition-all duration-500 dark:text-white"><?php echo $year_month_key; ?></div>
+
+                                    <!--middle timeline element-->
+                                    <div class="flex flex-col items-center ">
+                                        <!-- <div class="h-10  relative">
                                         <div class=" w-2 opacity-30 transition-all bg-black h-[100%] dark:bg-white"></div>
                                         <div class="absolute top-0 left-0 h-[0%] timeline_line w-2 "></div>
                                     </div> -->
-                                    <div class="rounded-full opacity-30 transition-opacity <?php echo $role . "_timeline_circle" ?>  w-8 h-8 bg-black dark:bg-white flex justify-center items-center">
-                                        <div class="rounded-full w-6 h-6 bg-white ">
+                                        <div class="rounded-full opacity-30 transition-opacity <?php echo $role . "_timeline_circle" ?>  w-8 h-8 bg-black dark:bg-white flex justify-center items-center">
+                                            <div class="rounded-full w-6 h-6 bg-white ">
+                                            </div>
+                                        </div>
+                                        <div class="flex-1  relative">
+                                            <div class="h-[100%] w-2 opacity-30 bg-black dark:bg-white transition-all "></div>
+                                            <div class="absolute top-0 left-0 h-[0%] <?php echo $role . "_timeline_line" ?>  w-2"></div>
                                         </div>
                                     </div>
-                                    <div class="flex-1  relative">
-                                        <div class="h-[100%] w-2 opacity-30 bg-black dark:bg-white transition-all "></div>
-                                        <div class="absolute top-0 left-0 h-[0%] <?php echo $role . "_timeline_line" ?>  w-2"></div>
-                                    </div>
-                                </div>
 
-                                <!--card container div-->
-                                <div class="flex flex-1 flex-col  space-y-4 sm:space-y-0 flex-wrap mb-16 gap-8 <?php echo $role . "_card_container_div" ?> opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
-                                    <?php
+                                    <!--card container div-->
+                                    <div class="flex flex-1 flex-col  space-y-4 sm:space-y-0 flex-wrap mb-16 gap-8 <?php echo $role . "_card_container_div" ?> opacity-30 transition-opacity duration-500 <?php echo $arrangement_justify_contents; ?>">
+                                        <?php
 
-                                    foreach ($current_member_array[$year_month_key] as $member) {
+                                        foreach ($current_member_array[$year_month_key] as $member) {
 
-                                    ?>
+                                        ?>
 
-                                        <!--card element-->
-                                        <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
-                                                                                                                                                                                                        echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
+                                            <!--card element-->
+                                            <div class="flex flex-col sm:flex-row p-4 w-fit gap-4 rounded-2xl border bg-white shadow-2xl  dark:shadow-none dark:bg-gray-800 dark:border-none dark:bg-none <?php echo $member["bg_color"];
+                                                                                                                                                                                                            echo $member["card_type"]; ?>" data-aos="<?php echo $data_aos_animation ?>">
 
-                                            <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
+                                                <img class="aspect-square rounded-2xl sm:w-[40%] sm:max-w-[16rem] -z-10 " src="<?php echo $member["cp_image_path"] ?? $vaze_logo; ?>" loading="lazy" alt="member image" />
 
-                                            <div class="flex w-fit flex-col mt-0 sm:mt-4">
-                                                <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                <div class="flex w-fit flex-col mt-0 sm:mt-4">
+                                                    <div class="text-sm font-bold sm:text-xl dark:text-white text-center sm:text-left"><?php echo $member["cp_honourific"] . " " . $member["cp_name"]; ?>
+                                                    </div>
+                                                    <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
+                                                    </div>
+
+                                                    <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
+                                                    <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
+                                                        <?php
+                                                        echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
+                                                        if ($member["tenure_end_date"]) {
+                                                            echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
+                                                        } else {
+                                                            echo "today";
+                                                        }
+
+                                                        ?>
+                                                    </div>
                                                 </div>
-                                                <div class="text-blue-500 text-xs text-center sm:text-base sm:text-left dark:text-emerald-500 <?php echo $member["title_color"]; ?>"><?php echo $member["role_fullform"]; ?>
-                                                </div>
 
-                                                <div class="text-sm  mt-3  sm:mt-8 font-bold dark:text-white">Tenure</div>
-                                                <div class="text-slate-700 text-xs sm:text-sm dark:text-white">
-                                                    <?php
-                                                    echo (new DateTime($member["tenure_start_date"]))->format('F j, Y') . " - ";
-                                                    if ($member["tenure_end_date"]) {
-                                                        echo (new DateTime($member["tenure_end_date"]))->format('F j, Y');
-                                                    } else {
-                                                        echo "today";
-                                                    }
-
-                                                    ?>
-                                                </div>
                                             </div>
 
-                                        </div>
+                                        <?php
+                                        }
 
-                                    <?php
-                                    }
+                                        ?>
 
-                                    ?>
+                                    </div>
 
                                 </div>
 
-                            </div>
-
-                    <?php
+                        <?php
+                            }
                         }
-                    }
-                    ?>
+                        ?>
 
+                    </div>
                 </div>
-            </div>
-            <!-- ALL MEMBERS DIV end-->
+                <!-- ALL MEMBERS DIV end-->
 
-        <?php
-        }
-        ?>
-
+            <?php
+            }
+            ?>
 
 
-        <!--
+
+            <!--
             /***************
             FOOTER
             ****************/
             -->
-        <?php include('../../Layouts/footer.php');
-        ?>
+            <?php include('../../Layouts/footer.php');
+            ?>
+        </div>
     </div>
     </div>
 
