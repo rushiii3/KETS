@@ -122,6 +122,11 @@ const navData = [
         link: `${base_path}/College/src/main/Pages/academics_tab/event_calendar.php`,
         hasSub: false,
       },
+      {
+        name: "Scholarships",
+        link: `${base_path}/College/src/main/Pages/academics_tab/`,
+        hasSub: false,
+      },
     ],
   },
   {

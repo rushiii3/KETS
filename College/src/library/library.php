@@ -104,4 +104,15 @@ Other Custom animations and Css
   .animate-marquee2 {
     animation: marquee 15s linear infinite, marquee2 15s linear infinite;
   }
+
+  /*FOR SCROLL TO TOP BTN */
+  @media (prefers-color-scheme: dark) {
+    .dark\:fill_upward_arrow {
+      fill: black !important;
+    }
+  }
+
+  .fill_upward_arrow {
+    fill: white;
+  }
 </style>
