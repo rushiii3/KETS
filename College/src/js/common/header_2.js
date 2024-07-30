@@ -261,7 +261,7 @@ const navData = [
         subItems: [
           {
             name: "Mayur Magazine",
-            link: "",
+            link: `${base_path}/College/src/main/Pages/more_tab/mayur_magazine.php`,
             hasSub: false,
           },
         ],
