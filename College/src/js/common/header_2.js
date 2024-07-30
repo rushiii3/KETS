@@ -124,7 +124,7 @@ const navData = [
       },
       {
         name: "Scholarships",
-        link: `${base_path}/College/src/main/Pages/academics_tab/`,
+        link: `${base_path}/College/src/main/Pages/academics_tab/scholarships.php`,
         hasSub: false,
       },
     ],
