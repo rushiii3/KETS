@@ -81,6 +81,7 @@ if ($fetch_caqar_pdfs_query_result) {
     <title>V. G. VAZE| NAAC</title>
     <?php include('../../../library/library.php'); ?>
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
+    <link rel="stylesheet" href="../../../css/common/custom_aos_fade_right.css" />
     <style>
         .vaze_logo_div::before {
             content: "";
@@ -106,28 +107,6 @@ if ($fetch_caqar_pdfs_query_result) {
 
         .not_selected_caqar_ay {
             background-color: rgb(31 41 55);
-        }
-
-        .custom_aos_fade_right {
-            animation: fade_right 1200ms ease-in-out both;
-        }
-
-
-
-        @keyframes fade_right {
-            from {
-                opacity: 0;
-                filter: blur(5px);
-                transform: translateX(-100%);
-
-            }
-
-            to {
-                opacity: 1;
-                filter: blur(0);
-                transform: translateX(0);
-            }
-
         }
     </style>
 </head>
@@ -163,6 +142,41 @@ if ($fetch_caqar_pdfs_query_result) {
 
         <!--main contents-->
         <div class="flex flex-col dark:bg-black bg-slate-200 dark:text-white py-8 ">
+
+            <!--
+                /***************
+                BREADCRUMBS - to show where the user is currently
+                ****************/
+                -->
+            <nav aria-label="Breadcrumb" class="pl-2 mt-2" id="Breadcrumb">
+                <ol class="flex items-stretch gap-2 list-none">
+                    <!--Home li-->
+                    <li class="flex items-center gap-2">
+                        <a href="/Vaze_College_Website/College/src/main/Pages" class="flex max-w-[20ch] items-center gap-1 truncate whitespace-nowrap text-slate-700 transition-colors hover:text-emerald-500">
+                            <!--Home icon-->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-01 description-01" role="link">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+
+                            <span class="hidden md:block">Home</span>
+                        </a>
+
+                        <!--Arrow Icon.  svg is used because we can modify it colors and add css classes to it -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
+                            <title id="title-02">Arrow</title>
+                            <desc id="description-02"> Arrow icon that points to the next page in big screen resolution sizes and previous page in small screen resolution sizes. </desc>
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </li>
+
+                    <!--Last item-->
+                    <li class="flex items-center gap-2">
+                        <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-700 hover:text-emerald-500">NAAC</a>
+                    </li>
+                </ol>
+            </nav>
+
             <!--report selector div-->
             <div class="flex flex-col md:flex-row px-8 py-12 justify-between gap-8 " id="report_selector_div">
                 <div class="flex-1 flex flex-col">
@@ -264,12 +278,12 @@ if ($fetch_caqar_pdfs_query_result) {
                                     if ($caq["reports_academic_year"] == $caqar_academic_years[0]) {
 
                             ?>
-                             <div class="pdf_card_wrapper">
-                                        <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
-                                            <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
-                                            <a href="<?php echo $caq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo "<span class='font-bold '>" . $caq["aqar_sub_criteria"] . "</span>" . " " . $caq["all_pdf_title"] ?></a>
+                                        <div class="pdf_card_wrapper">
+                                            <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
+                                                <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
+                                                <a href="<?php echo $caq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo "<span class='font-bold '>" . $caq["aqar_sub_criteria"] . "</span>" . " " . $caq["all_pdf_title"] ?></a>
+                                            </div>
                                         </div>
-                             </div>
 
 
                             <?php
@@ -318,12 +332,12 @@ if ($fetch_caqar_pdfs_query_result) {
                         if ($iq["reports_academic_year"] == $iqac_academic_years[0]) {
 
                     ?>
-                     <div class="pdf_card_wrapper">
-                            <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
-                                <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
-                                <a href="<?php echo $iq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $iq["all_pdf_title"] ?></a>
+                            <div class="pdf_card_wrapper">
+                                <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
+                                    <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
+                                    <a href="<?php echo $iq["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $iq["all_pdf_title"] ?></a>
+                                </div>
                             </div>
-                     </div>
 
 
                     <?php
@@ -350,12 +364,12 @@ if ($fetch_caqar_pdfs_query_result) {
                     foreach ($ssr as $ss) {
 
                     ?>
-                     <div class="pdf_card_wrapper">
-                        <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
-                            <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
-                            <a href="<?php echo $ss["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $ss["all_pdf_title"] ?></a>
+                        <div class="pdf_card_wrapper">
+                            <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105 transition-transform duration-500  hover:cursor-pointer pdf_card">
+                                <img src="../../../assets/webp/pdf.webp" alt="naac_pdf" class="aspect-square w-[20%]">
+                                <a href="<?php echo $ss["all_pdf_pdf_link"] ?>" class="flex-1"><?php echo $ss["all_pdf_title"] ?></a>
+                            </div>
                         </div>
-                     </div>
 
                     <?php
 

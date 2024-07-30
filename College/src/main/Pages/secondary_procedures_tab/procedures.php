@@ -19,29 +19,7 @@ $fetch_procedures_query_result = $fetch_procedures_query->get_result();
     <title>V. G. VAZE</title>
     <?php include('../../../library/library.php'); ?>
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
-    <style>
-        .custom_aos_fade_right {
-            animation: fade_right 1200ms ease-in-out both;
-        }
-
-
-
-        @keyframes fade_right {
-            from {
-                opacity: 0;
-                filter: blur(5px);
-                transform: translateX(-100%);
-
-            }
-
-            to {
-                opacity: 1;
-                filter: blur(0);
-                transform: translateX(0);
-            }
-
-        }
-    </style>
+    <link rel="stylesheet" href="../../../css/common/custom_aos_fade_right.css" />
 </head>
 
 <body class="bg-slate-100 dark:bg-black">
