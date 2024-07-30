@@ -119,7 +119,7 @@ const navData = [
       },
       {
         name: "Event Calendar",
-        link: `${base_path}/College/src/main/Pages/academics_tab/Event_Calendar.php`,
+        link: `${base_path}/College/src/main/Pages/academics_tab/event_calendar.php`,
         hasSub: false,
       },
     ],
