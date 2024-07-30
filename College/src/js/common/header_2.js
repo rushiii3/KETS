@@ -102,6 +102,12 @@ const navData = [
       },
 
       {
+        name: "Departments",
+        link: `${base_path}/College/src/main/Pages/academics_tab/Dept_Index.php`,
+        hasSub: false,
+      },
+
+      {
         name: "POs and PSOs",
         link: "",
         hasSub: false,
@@ -148,11 +154,6 @@ const navData = [
         link: "",
         hasSub: false,
       },
-      {
-        name: "Departments",
-        link: `${base_path}/College/src/main/Pages/academics_tab/Dept_Index.php`,
-        hasSub: false,
-      },
     ],
   },
   {
@@ -171,7 +172,7 @@ const navData = [
         hasSub: false,
       },
       {
-        name: "SRC",
+        name: "Scientific Research Center",
         link: "https://kelkarresearchcentre.org/",
         hasSub: false,
       },
@@ -737,7 +738,7 @@ const animateOpenNav = () => {
     );
 };
 $("#menu-toggle-btn").on("click", function () {
-//   console.log("here");
+  //   console.log("here");
   $(this).toggleClass("active");
   if ($(this).hasClass("active")) {
     animateOpenNav();
