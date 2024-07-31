@@ -145,7 +145,7 @@
                 <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold md:text-3xl">Faculty Deans</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mt-12">
                 <!-- Loop through Faculty Deans roles -->
                 <div class="space-y-4 text-center">
                     <img class="w-64 h-64 mx-auto object-cover rounded-xl" src="https://via.placeholder.com/640x480.png" alt="placeholder image" loading="lazy">
@@ -198,7 +198,7 @@
                 <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold md:text-3xl">Specialized Committees and Directors</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mt-12">
                 <!-- Loop through Specialized Committees and Directors roles -->
                 <div class="space-y-4 text-center">
                     <img class="w-64 h-64 mx-auto object-cover rounded-xl" src="https://via.placeholder.com/640x480.png" alt="placeholder image" loading="lazy">
@@ -270,7 +270,7 @@
                 <h2 class="mb-4 text-center text-2xl text-gray-900 font-bold md:text-3xl">Department Heads</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mt-12">
                 <!-- Loop through Department Heads roles -->
                 <div class="space-y-4 text-center">
                     <img class="w-64 h-64 mx-auto object-cover rounded-xl" src="https://via.placeholder.com/640x480.png" alt="placeholder image" loading="lazy">
