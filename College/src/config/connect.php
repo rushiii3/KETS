@@ -14,7 +14,7 @@ if(mysqli_connect_errno()){
 */
 
 // Connecting to the Database
-$servername = "localhost";
+$servername = "localhost:3307";
 $username = "root";
 $password = "";
 $database = "vaze_college_website_db";

@@ -171,68 +171,151 @@
 
 <script>
     $(document).ready(function() {
-    // Search bar AJAX
-    $("#searchName").on("keyup", function() {
-        alert("search function called");
-        const searchName = $(this).val();
-        const filterCollege = document.getElementById('filterCollege').value;
-        const filterDepartment = document.getElementById('filterDepartment').value;
-        const filterCourse = document.getElementById('filterCourse').value;
+        function fetchFaculty() {
+            const searchName = $('#searchName').val();
+            const filterCollege = $('#filterCollege').val();
+            const filterDepartment = $('#filterDepartment').val();
+            const filterCourse = $('#filterCourse').val();
 
-        $.ajax({
-            type: "POST",
-            url: "../Components/fetch_faculty.php", // Your PHP script for handling search
-            cache: false,
-            data: {
-                name: searchName,
-                college: filterCollege,
-                department: filterDepartment,
-                course: filterCourse
-            },
-            success: function(result) {
-                $("#facultyList").html(result);
-                alert("function is running..");
-            },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error: " + status + error);
-            }
-        });
+            $.ajax({
+                type: "POST",
+                url: "../Components/fetch_faculty.php",
+                data: {
+                    name: searchName,
+                    college: filterCollege,
+                    department: filterDepartment,
+                    course: filterCourse
+                },
+                beforeSend: function() {
+                    $("#loading_spinner").show();
+                },
+                success: function(result) {
+                    $("#loading_spinner").hide();
+
+                    // Debugging logs
+                    console.log("Raw result: ", result);
+
+                    // Ensure result is parsed as JSON
+                    let facultyList = [];
+                    try {
+                        facultyList = typeof result === 'string' ? JSON.parse(result) : result;
+                    } catch (e) {
+                        console.error("Error parsing JSON: ", e);
+                        return;
+                    }
+
+                    console.log("Parsed faculty list: ", facultyList);
+
+                    if (!Array.isArray(facultyList)) {
+                        console.error("Expected an array but got:", facultyList);
+                        return;
+                    }
+
+                    const facultyContainer = $("#facultyList");
+                    facultyContainer.empty();
+
+                    facultyList.forEach(faculty => {
+                        const facultyDiv = `
+                            <div class="mb-6 lg:mb-0">
+                                <div class="relative block rounded-lg p-6 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                    <div class="flex-row items-center ">
+                                        <div class="w-full shrink-0 grow-0 basis-auto">
+                                            <img src="${faculty.image}" alt="${faculty.name}" class="mb-6 w-full rounded-md lg:mb-0" />
+                                        </div>
+                                        <div class="w-full shrink-0 grow-0 basis-auto">
+                                            <h5 class="mb-2 text-lg font-bold">${faculty.name}</h5>
+                                            <p class="mb-4 text-neutral-500 dark:text-neutral-300">${faculty.position}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        facultyContainer.append(facultyDiv);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error: " + status + error);
+                    $("#loading_spinner").hide();
+                }
+            });
+        }
+
+        $("#searchName").on("keyup", fetchFaculty);
+        $("#filterCollege, #filterDepartment, #filterCourse").on("change", fetchFaculty);
     });
-
-    // Dropdown change AJAX
-    $("#filterCollege, #filterDepartment, #filterCourse").on("change", function() {
-        alert("dropdown function called");
-        const searchName = document.getElementById('searchName').value;
-        const filterCollege = document.getElementById('filterCollege').value;
-        const filterDepartment = document.getElementById('filterDepartment').value;
-        const filterCourse = document.getElementById('filterCourse').value;
-
-        $.ajax({
-            type: "POST",
-            url: "../Components/fetch_faculty.php", // Your PHP script for handling dropdown selection
-            cache: false,
-            data: {
-                name: searchName,
-                college: filterCollege,
-                department: filterDepartment,
-                course: filterCourse
-            },
-            success: function(result) {
-                $("#facultyList").html(result);
-            },
-            error: function(xhr, status, error) {
-                console.error("AJAX Error: " + status + error);
-            }
-        });
-    });
-
-    // Show/hide loading spinner
-    $(document).ajaxStart(function() {
-        $("#loading_spinner").show();
-    }).ajaxStop(function() {
-        $("#loading_spinner").hide();
-    });
-});
-
 </script>
-      
+<script>
+    $(document).ready(function() {
+        function fetchFaculty() {
+            const searchName = $('#searchName').val();
+            const filterCollege = $('#filterCollege').val();
+            const filterDepartment = $('#filterDepartment').val();
+            const filterCourse = $('#filterCourse').val();
+
+            $.ajax({
+                type: "POST",
+                url: "../Components/fetch_faculty.php",
+                data: {
+                    name: searchName,
+                    college: filterCollege,
+                    department: filterDepartment,
+                    course: filterCourse
+                },
+                beforeSend: function() {
+                    $("#loading_spinner").show();
+                },
+                success: function(result) {
+                    $("#loading_spinner").hide();
+
+                    // Debugging logs
+                    console.log("Raw result: ", result);
+
+                    // Ensure result is parsed as JSON
+                    let facultyList = [];
+                    try {
+                        facultyList = typeof result === 'string' ? JSON.parse(result) : result;
+                    } catch (e) {
+                        console.error("Error parsing JSON: ", e);
+                        return;
+                    }
+
+                    console.log("Parsed faculty list: ", facultyList);
+
+                    if (!Array.isArray(facultyList)) {
+                        console.error("Expected an array but got:", facultyList);
+                        return;
+                    }
+
+                    const facultyContainer = $("#facultyList");
+                    facultyContainer.empty();
+
+                    facultyList.forEach(faculty => {
+                        const facultyDiv = `
+                            <div class="mb-6 lg:mb-0">
+                                <div class="relative block rounded-lg p-6 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                    <div class="flex-row items-center ">
+                                        <div class="w-full shrink-0 grow-0 basis-auto">
+                                            <img src="${faculty.image}" alt="${faculty.name}" class="mb-6 w-full rounded-md lg:mb-0" />
+                                        </div>
+                                        <div class="w-full shrink-0 grow-0 basis-auto">
+                                            <h5 class="mb-2 text-lg font-bold">${faculty.name}</h5>
+                                            <p class="mb-4 text-neutral-500 dark:text-neutral-300">${faculty.position}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        facultyContainer.append(facultyDiv);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error("AJAX Error: " + status + error);
+                    $("#loading_spinner").hide();
+                }
+            });
+        }
+
+        $("#searchName").on("keyup", fetchFaculty);
+        $("#filterCollege, #filterDepartment, #filterCourse").on("change", fetchFaculty);
+    });
+</script>
