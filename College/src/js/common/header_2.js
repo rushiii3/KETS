@@ -257,7 +257,7 @@ const navData = [
       },
       {
         name: "Gallery",
-        link: `${base_path}/College/src/main/Pages/more_tab/Gallery.php`,
+        link: `${base_path}/College/src/main/Pages/more_tab/gallery.php`,
         hasSub: false,
       },
       {
