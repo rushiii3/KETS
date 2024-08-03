@@ -2,7 +2,7 @@
 //base url
 let base_path = `${window.location.origin}/${
   window.location.href.split("/")[3]
-  //on the server change it to split by 1
+  
 }`;
 const t1 = gsap.timeline();
 const mainNavTimeline = gsap.timeline({
