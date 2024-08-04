@@ -1,5 +1,6 @@
   .custom_aos_fade_right {
             animation: fade_right 1200ms ease-in-out both;
+            animation-fill-mode: both;
         }
 
 

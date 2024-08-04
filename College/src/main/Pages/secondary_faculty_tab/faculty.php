@@ -93,13 +93,14 @@ if ($fetch_designations_query_result) {
 
 
 //fetch the faculty
-$fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') as cp_desig FROM college_personnel 
-JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
+$fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(DISTINCT cp_designation.cp_designation SEPARATOR ' | ') as cp_desig,GROUP_CONCAT(DISTINCT departments.dept_name  ORDER BY departments.dept_name ASC SEPARATOR ' , ') as cp_multi_dept,GROUP_CONCAT(DISTINCT dept_belongs_to_clg_section.dept_sect_id ORDER BY departments.dept_name ASC  SEPARATOR ',') as cp_multi_dept_sec_id FROM college_personnel
+JOIN cp_belongs_to_dept_sect ON college_personnel.cp_id = cp_belongs_to_dept_sect.cp_id 
+JOIN dept_belongs_to_clg_section ON cp_belongs_to_dept_sect.dept_sect_id=dept_belongs_to_clg_section.dept_sect_id 
 JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
 JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id 
 WHERE LOWER(college_personnel.cp_name) LIKE ('a%')
 GROUP BY college_personnel.cp_id 
-ORDER BY college_personnel.cp_name ASC";
+ORDER BY college_personnel.cp_name ASC;";
 
 $fetch_faculty_query = $conn->prepare($fetch_faculty_stmt);
 $fetch_faculty_query->execute();
@@ -108,16 +109,19 @@ $fetch_faculty_query_result = $fetch_faculty_query->get_result();
 
 //get the count
 //fetch the faculty
-$fetch_faculty_count_stmt = "SELECT COUNT(*) AS count FROM (SELECT college_personnel.cp_id,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') as cp_desig FROM college_personnel 
-JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
+$fetch_faculty_count_stmt = "SELECT COUNT(*) AS count FROM (SELECT college_personnel.cp_id,GROUP_CONCAT(DISTINCT cp_designation.cp_designation SEPARATOR ' | ') as cp_desig,GROUP_CONCAT(DISTINCT departments.dept_name  SEPARATOR ' , ') as cp_multi_dept ,GROUP_CONCAT(DISTINCT dept_belongs_to_clg_section.dept_sect_id SEPARATOR ',') as cp_multi_dept_sec_id FROM college_personnel
+JOIN cp_belongs_to_dept_sect ON college_personnel.cp_id = cp_belongs_to_dept_sect.cp_id 
+JOIN dept_belongs_to_clg_section ON cp_belongs_to_dept_sect.dept_sect_id=dept_belongs_to_clg_section.dept_sect_id 
 JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
 JOIN cp_designation ON cp_designation.cp_id = college_personnel.cp_id 
+WHERE LOWER(college_personnel.cp_name) LIKE ('a%')
 GROUP BY college_personnel.cp_id 
 ) as count_subquery";
 
 $fetch_faculty_count_query = $conn->prepare($fetch_faculty_count_stmt);
 $fetch_faculty_count_query->execute();
 $fetch_faculty_count_query_result = $fetch_faculty_count_query->get_result();
+//print_r("here");
 
 if ($fetch_faculty_count_query_result) {
   while ($row = $fetch_faculty_count_query_result->fetch_assoc()) {
@@ -335,6 +339,12 @@ if ($fetch_faculty_count_query_result) {
                       <label for="science_chkbox" class=" mx-2 dark:text-white">Science</label>
                     </div>
 
+
+                    <div class="flex">
+                      <input type="checkbox" id="other_chkbox" name="faculty" value="o" />
+                      <label for="other_chkbox" class=" mx-2 dark:text-white">Other</label>
+                    </div>
+
                   </div>
                   <!--"Faculty" section Ends here-->
 
@@ -456,6 +466,9 @@ if ($fetch_faculty_count_query_result) {
                     case "c":
                       $faculty_type = "Commerce";
                       break;
+                    case "o":
+                      $faculty_type = "Other";
+                      break;
                   }
 
                   switch ($faculty_row["college_sec_name"]) {
@@ -496,9 +509,20 @@ if ($fetch_faculty_count_query_result) {
 
                       <p class="mt-4 font-medium dark:text-white  ">Department</p>
 
-                      <a target="_blank" href="<?php echo "../academics_tab/Department.php?dept_sec_id=" . base64_encode($faculty_row["dept_sect_id"]); ?>" class=" text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">
-                        Department of <?php echo $faculty_row["dept_name"] ?>
-                      </a>
+                      <?php
+                      $dept_array = explode(" , ", $faculty_row["cp_multi_dept"]); //the space in " , " is important
+                      $dept_sect_id_array=explode(",",$faculty_row["cp_multi_dept_sec_id"]);
+                      //$i=0;
+                      for($i=0;$i<count($dept_array);$i++){
+                      ?>
+
+                        <a target="_blank" href="<?php echo "../academics_tab/specific_department.php?dept_sec_id=" . base64_encode($dept_sect_id_array[$i]); ?>" class=" text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">
+                          Department of <?php echo $dept_array[$i]?>
+                        </a>
+                      <?php
+                    
+                      }
+                      ?>
 
                       <p class="mt-4 font-medium ">Faculty Type</p>
                       <p class="text-sm text-slate-600 dark:text-slate-400 ">

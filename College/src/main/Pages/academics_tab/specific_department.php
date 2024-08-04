@@ -26,7 +26,9 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
 
     ///FETCH FACULTY
 
-    $fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation SEPARATOR ' | ') as cp_desig FROM `college_personnel` JOIN cp_designation on cp_designation.cp_id=college_personnel.cp_id WHERE cp_department_section=? GROUP BY college_personnel.cp_id ORDER BY college_personnel.cp_name ASC";
+    $fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation SEPARATOR ' | ') as cp_desig FROM `college_personnel` JOIN cp_designation on cp_designation.cp_id=college_personnel.cp_id 
+    JOIN cp_belongs_to_dept_sect ON cp_belongs_to_dept_sect.cp_id=college_personnel.cp_id
+    WHERE cp_belongs_to_dept_sect.dept_sect_id=? GROUP BY college_personnel.cp_id ORDER BY college_personnel.cp_name ASC";
     $fetch_faculty_query = $conn->prepare($fetch_faculty_stmt);
     //print_r("here");
     $fetch_faculty_query->bind_param("s", $dept_sect_id);
@@ -38,7 +40,7 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
     if ($fetch_faculty_query_result && $fetch_current_department_query_result->num_rows > 0) {
         $i = 1;
         while ($row = $fetch_faculty_query_result->fetch_assoc()) {
-            if (str_contains(strtolower($row["cp_desig"]), "head of department") || str_contains(strtolower($row["cp_desig"]), "in-charge")) {
+            if (str_contains(strtolower($row["cp_desig"]), "head of department") || str_contains(strtolower($row["cp_desig"]), "in-charge") || str_contains(strtolower($row["cp_desig"]), "convener")) {
                 //print_r("herer");
                 $faculty_array[0] = $row;
             } else {
@@ -47,11 +49,14 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
             }
         }
     }
-    //print_r($faculty_array);
 
+    // print_r($faculty_array[1]);
+    // exit;
+   
 
+//print_r("here");
     ////FETCH SYLLABUS
-    $fetch_ug_syllabus_stmt = "SELECT * from other_pdfs WHERE all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER JOIN syllabus_belongs_to_programmes_for_class AS sy on p.prog_id=sy.prog_id WHERE sy.class_name NOT IN (SELECT class_name FROM class WHERE class_name LIKE 'msc%') AND p.prog_dept_sec_id=?);";
+    $fetch_ug_syllabus_stmt = "SELECT * from other_pdfs WHERE all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER JOIN syllabus_belongs_to_programmes_for_class AS sy on p.prog_id=sy.prog_id WHERE sy.class_name NOT IN (SELECT class_name FROM class WHERE class_name LIKE 'msc%') AND p.prog_dept_sec_id=?) AND other_pdfs.other_pdfs_should_it_be_visible='y';";
     $fetch_ug_syllabus_query = $conn->prepare($fetch_ug_syllabus_stmt);
     $fetch_ug_syllabus_query->bind_param("s", $dept_sect_id);
     $fetch_ug_syllabus_query->execute();
@@ -59,7 +64,7 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
 
     //FETCH MASTERS
 
-    $fetch_pg_syllabus_stmt = "SELECT * from other_pdfs WHERE all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER JOIN syllabus_belongs_to_programmes_for_class AS sy on p.prog_id=sy.prog_id WHERE sy.class_name  IN (SELECT class_name FROM class WHERE class_name LIKE 'msc%') AND p.prog_dept_sec_id=?);";
+    $fetch_pg_syllabus_stmt = "SELECT * from other_pdfs WHERE all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER JOIN syllabus_belongs_to_programmes_for_class AS sy on p.prog_id=sy.prog_id WHERE sy.class_name  IN (SELECT class_name FROM class WHERE class_name LIKE 'msc%') AND p.prog_dept_sec_id=?) AND other_pdfs.other_pdfs_should_it_be_visible='y';";
     $fetch_pg_syllabus_query = $conn->prepare($fetch_pg_syllabus_stmt);
     $fetch_pg_syllabus_query->bind_param("s", $dept_sect_id);
     $fetch_pg_syllabus_query->execute();
@@ -241,7 +246,8 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
                             $hover_card_status = " hover:cursor-pointer ";
                             $underline_status = " group-hover:underline ";
                         }
-
+                       
+                        
                     ?>
                         <div class="bg-transparent flex flex-col p-4 group rounded-2xl items-center faculty_card <?php echo $hover_card_status ?>">
                             <div class="w-full rounded-full overflow-clip <?php echo $bg_color ?> ">

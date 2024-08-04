@@ -70,12 +70,12 @@ const navData = [
       },
       {
         name: "Brochure",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/brochure.php`,
         hasSub: false,
       },
       {
         name: "Prospectus",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/prospectus.php`,
         hasSub: false,
       },
       {

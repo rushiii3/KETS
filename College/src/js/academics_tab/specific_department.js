@@ -3,8 +3,8 @@ import { makeAJAXRequest } from "../common/make_ajax_request.js";
 
 $(".faculty_card").each(function () {
   $(this).click(function () {
-    if ($(this).find("a") != null) {
-      window.location.href = $(this).find("a")[0].href;
+    if ($(this)[0].querySelector("a")!=null || $(this)[0].querySelector("a")!= undefined ) {
+      window.location.href = $(this)[0].querySelector("a").href
     }
   });
 });

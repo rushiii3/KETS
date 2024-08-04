@@ -1,7 +1,7 @@
 <?php
 include("../../../config/connect.php");
 
-$fetch_pos_and_psos_stmt = "SELECT * FROM other_pdfs WHERE other_pdfs_type_name='POs_and_PSOs' ORDER BY all_pdf_title ASC";
+$fetch_pos_and_psos_stmt = "SELECT * FROM other_pdfs WHERE other_pdfs_type_name='POs_and_PSOs' AND other_pdfs.other_pdfs_should_it_be_visible='y' ORDER BY all_pdf_title ASC";
 $fetch_pos_and_psos_query = $conn->prepare($fetch_pos_and_psos_stmt);
 $fetch_pos_and_psos_query->execute();
 $fetch_pos_and_psos_query_result = $fetch_pos_and_psos_query->get_result();
