@@ -305,7 +305,7 @@ navData.forEach((element, index) => {
                 element.hasSub
                   ? `
                   <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                  <div class="flex flex-row items-center justify-between">
+                  <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                     ${element.name}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -343,7 +343,7 @@ navData.forEach((element, index) => {
                 element.hasSub
                   ? `
                   <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                  <div class="flex flex-row items-center justify-between">
+                  <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                     ${element.name}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -393,7 +393,7 @@ function OpenExtra(title) {
                 element.hasSub
                   ? `
                   <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                      <div class="flex flex-row items-center justify-between">
+                      <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                           ${element.name}
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 svg hidden">
                               <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
@@ -525,7 +525,7 @@ $(".hasExtraSub").on("click", function () {
                       element.hasSub
                         ? `
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                            <div class="flex flex-row items-center justify-between">
+                            <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                                 ${element.name}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 svg hidden">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>

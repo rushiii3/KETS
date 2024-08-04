@@ -17,7 +17,7 @@
 <?php include('../../../library/library.php'); ?>
 <?php include('../../../config/connect.php'); ?>
 
-<body class="bg-gray-100 overflow-x-hidden mx-auto " style="transition: all 2s ease">
+<body class="bg-gray-100 dark:bg-black overflow-x-hidden mx-auto " >
     <?php include('../../Layouts/header2.php'); ?>
     <?php include('../../Components/academics_tab/dept_index.php'); ?>
     <?php include('../../Layouts/footer.php'); ?>
