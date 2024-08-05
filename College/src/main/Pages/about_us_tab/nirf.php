@@ -1,11 +1,11 @@
 <?php
 include("../../../config/connect.php");
 
-$fetch_brochures_stmt = "SELECT * FROM other_pdfs JOIN other_pdf_cover_page_links on other_pdf_cover_page_links.other_pdf_id= other_pdfs.all_pdf_id WHERE other_pdfs_type_name='brochure' AND other_pdfs.other_pdfs_should_it_be_visible='y'ORDER BY all_pdf_title ASC";
+$fetch_nirf_stmt = "SELECT * FROM `reports` WHERE reports_should_it_be_visible='y' AND reports_type='nirf' ORDER BY reports_academic_year DESC;";
 
-$fetch_brochures_query = $conn->prepare($fetch_brochures_stmt);
-$fetch_brochures_query->execute();
-$fetch_brochures_query_result = $fetch_brochures_query->get_result();
+$fetch_nirf_query = $conn->prepare($fetch_nirf_stmt);
+$fetch_nirf_query->execute();
+$fetch_nirf_query_result = $fetch_nirf_query->get_result();
 
 ?>
 
@@ -15,7 +15,7 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V. G. VAZE |Brochure</title>
+    <title>V. G. VAZE | NIRF</title>
     <?php include('../../../library/library.php'); ?>
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <link rel="stylesheet" href="../../../css/common/custom_aos_fade_right.css" />
@@ -31,7 +31,7 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
     <!--
     /***************
      BREADCRUMBS - to show where the user is currently
-    ****************/
+    ****************/mt-8:
     -->
     <nav aria-label="Breadcrumb" class="pl-2 mt-32" id="Breadcrumb">
         <ol class="flex items-stretch gap-2 list-none">
@@ -69,7 +69,7 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
 
             <!--Last item-->
             <li class="flex items-center gap-2">
-                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-700 hover:text-emerald-500">Brochure</a>
+                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-700 hover:text-emerald-500">NIRF</a>
             </li>
         </ol>
     </nav>
@@ -83,27 +83,45 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
     <div class="flex flex-col mt-12 mb-8 dark:text-white w-[100vw] px-8">
 
 
-        <p class="font-medium text-[4rem] text-center" data-aos="fade-up">Brochure</p>
-        <p class="text-sm text-slate-600 text-center" data-aos="fade-up"></p>
+        <p class="font-medium text-[4rem] text-center" data-aos="fade-up">NIRF reports</p>
+        <p class="text-sm text-slate-600 text-center" data-aos="fade-up">National Institutional Ranking Framework</p>
+
+        <div class="font-medium text-lg mt-8" data-aos="fade-right">A Brief about NIRF</div>
+        <p class="text-gray-500 text-pretty" data-aos="fade-right">The National Institutional Ranking Framework (NIRF) was approved by the MHRD and launched by Honourable Minister of Human Resource Development on 29th September 2015.
+        </p>
+        <br />
+        <p class="text-gray-500 text-pretty" data-aos="fade-right">
+            This framework outlines a methodology to rank institutions across the country. The methodology draws from the overall recommendations broad understanding arrived at by a Core Committee set up by MHRD, to identify the broad parameters for ranking various universities and institutions. The parameters broadly cover “Teaching, Learning and Resources,” “Research and Professional Practices,” “Graduation Outcomes,” “Outreach and Inclusive,” and “Perception”.</p>
+        <br />
+        <p class="text-gray-500" data-aos="fade-right"> India Rankings – 2016 based on this framework were released on 4th April 2016.</p>
+        <br />
+        <p class="text-gray-500 " data-aos="fade-right">
+            For India Rankings – 2017, the main ranking parameters remain the same. However, there are a few significant changes in a few sub-parameters. Also, this year every large institution will be given a common overall rank as well as a discipline specific rank as applicable. </p>
+
+
+        <p class="mt-8" data-aos="fade-right">For further details about NIRF, Please refer the following:</p>
+
+        <a href="https://www.nirfindia.org/Docs/Ranking_Methodology_And_Metrics_2017.pdf" class="text-gray-500 hover:underline hover:text-emerald-500" data-aos="fade-right">Ranking Methodology and Metrics</a>
+
+        <a href="https://www.nirfindia.org/About" class="text-gray-500 hover:underline hover:text-emerald-500" data-aos="fade-right">Explore more about NIRF</a>
+
 
 
         <?php
-        if ($fetch_brochures_query_result && $fetch_brochures_query_result->num_rows > 0) {
+        if ($fetch_nirf_query_result && $fetch_nirf_query_result->num_rows > 0) {
         ?>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 mt-12 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 w-full">
                 <?php
-                while ($row = $fetch_brochures_query_result->fetch_assoc()) {
+                while ($row = $fetch_nirf_query_result->fetch_assoc()) {
                     //for ($i = 0; $i < 10; $i++) {
 
                 ?>
-                    <div class="pdf_card_wrapper">
-                        <div class="flex flex-col group hover:cursor-pointer pdf_card items-center">
-                            <div class=" overflow-clip h-[50%] max-w-[75%] rounded-2xl">
-                                <img src="<?php echo "../../../assets/pdf_cover_pages/" . $row["other_pdf_cover_page_link"] ?>" alt="brochure_cover_page" class="  group-hover:scale-105  transition-transform duration-500 ">
-                            </div>
-                            <a href="<?php echo $row["all_pdf_pdf_link"] ?>" class="flex-1 group-hover:underline transition-all duration-500"><?php echo $row["all_pdf_title"] ?></a>
+                    <a class="pdf_card_wrapper" href="<?php echo $row["all_pdf_pdf_link"] ?>" target="_blank">
+                        <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105  hover:cursor-pointer pdf_card  transition-transform duration-500">
+                            <img src="../../../assets/webp/pdf.webp" alt="nirf_pdf" class="aspect-square w-[20%]">
+                            <p class="flex-1"><?php echo $row["all_pdf_title"] ?></p>
                         </div>
-                    </div>
+                    </a>
 
                 <?php
                 }
@@ -111,7 +129,7 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
             </div>
         <?php
         } else {
-            echo  "<div class='mt-12 flex justify-center items-center'><p>Sorry! No Brochures present</p></div>";
+            echo  "<div class='mt-12 flex justify-center items-center' data-aos='fade-up'><p>Sorry! No NIRF reports present</p></div>";
         }
 
         ?>
@@ -126,6 +144,7 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
     <?php include('../../Layouts/footer.php'); ?>
     <script src="../../../js/common/header_2.js"></script>
     <script>
+        //let delay = 0;
         const observer = new IntersectionObserver((entries) => {
             let delay = 0;
             let times = 1;
@@ -143,9 +162,9 @@ $fetch_brochures_query_result = $fetch_brochures_query->get_result();
 
         document.querySelectorAll(".pdf_card_wrapper").forEach((card) => observer.observe(card))
 
-        $(".pdf_card").click(function() {
-            window.location.href = $(this).find("a")[0].href
-        })
+        // $(".pdf_card").click(function() {
+        //     window.location.href = $(this).find("a")[0].href
+        // })
     </script>
 
 </body>

@@ -129,7 +129,7 @@ $fetch_ay_query_result = $fetch_ay_query->get_result();
                 ?>
                     <a class="pdf_card_wrapper" href="<?php echo $row["all_pdf_pdf_link"] ?>" target="_blank">
                         <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105  hover:cursor-pointer pdf_card  transition-transform duration-500">
-                            <img src="../../../assets/webp/pdf.webp" alt="syllabus_pdf" class="aspect-square w-[20%]">
+                            <img src="../../../assets/webp/pdf.webp" alt="prospectus_pdf" class="aspect-square w-[20%]">
                             <p class="flex-1"><?php echo $row["all_pdf_title"] ?></p>
                         </div>
                     </a>
@@ -165,12 +165,18 @@ $fetch_ay_query_result = $fetch_ay_query->get_result();
             makeAJAXRequest
         } from "../../../js/common/make_ajax_request.js"
         const observer = new IntersectionObserver((entries) => {
-            let delay = 0;
+             let delay = 0;
+            let times = 1;
             entries.forEach((entry) => {
-                entry.target.classList.add("custom_aos_fade_right");
-                entry.target.style.animationDelay = `${delay}ms`;
-                delay += 150;
+                if (entry.isIntersecting && times == 1) {
+                    entry.target.classList.add("custom_aos_fade_right");
+                    entry.target.style.animationDelay = `${delay}ms`;
+                    delay += 150;
+                }
             })
+
+            delay = 0
+            times++
         })
 
         document.querySelectorAll(".pdf_card_wrapper").forEach((card) => observer.observe(card))
