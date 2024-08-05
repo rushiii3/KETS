@@ -132,7 +132,7 @@ if ($fetch_scholarships_query_result) {
 
                     <!--No path item-->
                     <li class="flex items-center gap-2">
-                        <p aria-current="page" class="  max-w-[20ch]  truncate whitespace-nowrap text-slate-700">Academics</p>
+                        <p aria-current="page" class="  max-w-[20ch]  truncate whitespace-nowrap text-slate-700">Student Corner</p>
 
                         <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
 

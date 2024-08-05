@@ -2,7 +2,6 @@
 //base url
 let base_path = `${window.location.origin}/${
   window.location.href.split("/")[3]
-  
 }`;
 const t1 = gsap.timeline();
 const mainNavTimeline = gsap.timeline({
@@ -58,7 +57,7 @@ const navData = [
           },
           {
             name: "College Management",
-            link: "",
+            link: `${base_path}/College/src/main/Pages/about_us_tab/college_management.php`,
             hasSub: false,
           },
           {
@@ -80,12 +79,12 @@ const navData = [
       },
       {
         name: "NIRF",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/nirf.php`,
         hasSub: false,
       },
       {
         name: "AISHE",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/aishe.php`,
         hasSub: false,
       },
     ],
@@ -122,11 +121,6 @@ const navData = [
         link: `${base_path}/College/src/main/Pages/academics_tab/event_calendar.php`,
         hasSub: false,
       },
-      {
-        name: "Scholarships",
-        link: `${base_path}/College/src/main/Pages/academics_tab/scholarships.php`,
-        hasSub: false,
-      },
     ],
   },
   {
@@ -156,7 +150,7 @@ const navData = [
       },
       {
         name: "Scholarships",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/academics_tab/scholarships.php`,
         hasSub: false,
       },
     ],
