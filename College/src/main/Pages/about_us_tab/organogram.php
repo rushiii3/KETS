@@ -25,7 +25,7 @@
 
 
     <div class="px-8" id="image_div">
-        <img src="https://vazecollege.net/wp-content/uploads/2022/03/Organogram-2-1024x964.jpg" alt="organogram_image" class="mt-32 h-full w-full rounded-md" id="org_img" />
+        <img src="https://vazecollege.net/wp-content/uploads/2022/03/Organogram-2.jpg" alt="organogram_image" class="mt-32 h-full w-full rounded-md" id="org_img" />
     </div>
     <div id="fixed_image_div" class=" overflow-auto hidden bg-white fixed top-0 w-[100vw] h-[100vh] z-[1000] left-0">
         <div class="w-full h-full bg-transparent relative">
@@ -37,7 +37,7 @@
 
             </div>
 
-            <img src="https://vazecollege.net/wp-content/uploads/2022/03/Organogram-2-1024x964.jpg" alt="organogram_image" class="w-auto h-auto max-w-none z-10 cursor-move" />
+            <img src="https://vazecollege.net/wp-content/uploads/2022/03/Organogram-2.jpg" alt="organogram_image" class="w-full h-ful max-w-none z-10" />
         </div>
     </div>
 
