@@ -1,37 +1,37 @@
 /* ////////////////////////////
 NAVBAR CSS - HEADER 2
   ///////////////////////////////*/
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
 
-  .navbar {
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* padding: 2em 3em; */
-    transition: all 0.3s;
-    top: 0%
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-  .site-logo {
-    color: #000;
-  }
+.navbar {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 2em 3em; */
+  transition: all 0.3s;
+  top: 0%;
+}
 
-  .nav-container {
-    transition: all 0.3s;
-    visibility: hidden;
-    z-index: 98;
-  }
+.site-logo {
+  color: #000;
+}
 
-  #menu-toggle-btn {
+.nav-container {
+  transition: all 0.3s;
+  visibility: hidden;
+  z-index: 98;
+}
+
+/* #menu-toggle-btn {
     transition: all 0.3s;
     z-index: 100000;
     cursor: pointer;
@@ -45,9 +45,9 @@ NAVBAR CSS - HEADER 2
     position: absolute;
     top: 50%;
     transition: all 0.3s;
-  }
+  } */
 
-  #menu-buttons::before {
+/* #menu-buttons::before {
     content: " ";
     position: absolute;
     display: inline-block;
@@ -69,13 +69,19 @@ NAVBAR CSS - HEADER 2
     width: 24px;
     transition: all 0.3s;
     top: -2px;
-  }
+  } */
 
-  .active #menu-buttons {
-    transform: rotate(45deg);
-    background: #fff;
-  }
-
+.active #menu_toggle_btn_1 {
+  transform: rotate(45deg);
+  top: unset;
+  background: #fff;
+}
+.active #menu_toggle_btn_2 {
+  top: unset;
+  transform: rotate(-45deg);
+  background: #fff;
+}
+/* 
   .active #menu-buttons::before {
     top: unset;
     transform: rotate(-90deg);
@@ -84,33 +90,33 @@ NAVBAR CSS - HEADER 2
 
   .active:hover #menu-buttons::before {
     top: unset;
-  }
+  }  */
 
-  .nav-item-wrapper::after {
-    content: "";
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 500px;
-    height: 60px;
-    background: #000;
-    margin: 0 auto;
-    transition: 1s;
-  }
+.nav-item-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 500px;
+  height: 60px;
+  background: #000;
+  margin: 0 auto;
+  transition: 1s;
+}
 
-  .nav-link {
-    border: 0 solid transparent;
-    /* Initial state with no visible border */
-  }
+.nav-link {
+  border: 0 solid transparent;
+  /* Initial state with no visible border */
+}
 
-  #backButton {
-    opacity: 0;
-  }
+#backButton {
+  opacity: 0;
+}
 
-  /* #extra1 {
+/* #extra1 {
       display: none;
     } */
-  /* @media (max-width:900) {
+/* @media (max-width:900) {
   .nav {
       flex-direction: column-reverse;
   }

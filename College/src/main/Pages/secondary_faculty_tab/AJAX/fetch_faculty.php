@@ -114,14 +114,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // print_r($bind_param_array);
     // print_r($bind_param_type_string);
 
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    $fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') AS cp_desig FROM college_personnel 
-    JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
+    $fetch_faculty_stmt = "SELECT *,GROUP_CONCAT( DISTINCT cp_designation.cp_designation SEPARATOR ' | ') AS cp_desig,GROUP_CONCAT(DISTINCT departments.dept_name  ORDER BY departments.dept_name ASC SEPARATOR ' , ') as cp_multi_dept,GROUP_CONCAT(DISTINCT dept_belongs_to_clg_section.dept_sect_id ORDER BY departments.dept_name ASC  SEPARATOR ',') as cp_multi_dept_sec_id  FROM college_personnel 
+    JOIN cp_belongs_to_dept_sect ON college_personnel.cp_id = cp_belongs_to_dept_sect.cp_id 
+    JOIN dept_belongs_to_clg_section ON cp_belongs_to_dept_sect.dept_sect_id=dept_belongs_to_clg_section.dept_sect_id
     JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
     JOIN cp_designation ON cp_designation.cp_id= college_personnel.cp_id 
     WHERE LOWER(college_personnel.cp_name) LIKE CONCAT(?,'%')";
-
-
 
     $fetch_faculty_stmt .= $sort_part_of_query;
     $fetch_faculty_stmt .= $dept_part_of_query;
@@ -131,6 +131,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $fetch_faculty_stmt .= " GROUP BY college_personnel.cp_id 
 ORDER BY college_personnel.cp_name ASC";
 
+    // print_r($fetch_faculty_stmt);
+
     //RESULTS FOR A PARTICULAR LETTER QUERY
     $fetch_faculty_query = $conn->prepare($fetch_faculty_stmt);
     $fetch_faculty_query->bind_param($bind_param_type_string, ...$bind_param_array);
@@ -139,8 +141,9 @@ ORDER BY college_personnel.cp_name ASC";
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    $fetch_faculty_count_stmt = "SELECT college_personnel.cp_id,GROUP_CONCAT(cp_designation.cp_designation SEPARATOR ' | ') AS cp_desig FROM college_personnel 
-    JOIN dept_belongs_to_clg_section ON college_personnel.cp_department_section=dept_belongs_to_clg_section.dept_sect_id 
+    $fetch_faculty_count_stmt = "SELECT college_personnel.cp_id,GROUP_CONCAT( DISTINCT cp_designation.cp_designation SEPARATOR ' | ') AS cp_desig,GROUP_CONCAT(DISTINCT departments.dept_name  SEPARATOR ' , ') as cp_multi_dept ,GROUP_CONCAT(DISTINCT dept_belongs_to_clg_section.dept_sect_id SEPARATOR ',') as cp_multi_dept_sec_id FROM college_personnel 
+    JOIN cp_belongs_to_dept_sect ON college_personnel.cp_id = cp_belongs_to_dept_sect.cp_id 
+    JOIN dept_belongs_to_clg_section ON cp_belongs_to_dept_sect.dept_sect_id=dept_belongs_to_clg_section.dept_sect_id 
     JOIN departments ON departments.dept_id= dept_belongs_to_clg_section.dept_id 
     JOIN cp_designation ON cp_designation.cp_id= college_personnel.cp_id 
     WHERE LOWER(college_personnel.cp_name) LIKE CONCAT(?,'%')";
@@ -209,15 +212,21 @@ ORDER BY college_personnel.cp_name ASC";
 
 
             $required_data = [];
-            $required_data["cp_name"]=$row["cp_name"];
-            $required_data["cp_personal_website_link"]=$row["cp_personal_website_link"];
+            $required_data["cp_name"] = $row["cp_name"];
+            $required_data["cp_personal_website_link"] = $row["cp_personal_website_link"];
             $required_data["cp_image_path"] = $row["cp_image_path"];
             $required_data["cp_honourific"] = $row["cp_honourific"];
             $required_data["cp_desig"] = $row["cp_desig"];
-            $required_data["dept_name"] = $row["dept_name"];
+            $required_data["cp_multi_dept"] = $row["cp_multi_dept"];
             $required_data["dept_faculty_name"] = $row["dept_faculty_name"];
             $required_data["college_sec_name"] = $row["college_sec_name"];
-            $required_data["dept_sect_id"] = base64_encode($row["dept_sect_id"]);
+
+            $dept_sec_id_array = explode(",", $row["cp_multi_dept_sec_id"]);
+           
+            for ($i = 0; $i < count($dept_sec_id_array); $i++) {
+                $dept_sec_id_array[$i]=base64_encode($dept_sec_id_array[$i]);
+            }
+            $required_data["cp_multi_dept_sec_id"] = implode(",",$dept_sec_id_array);
 
 
             array_push($faculty_array, $required_data);

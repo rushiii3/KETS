@@ -152,7 +152,7 @@ $("#apply_filter_button").click(function (e) {
 
 $("#filter_clear_button").click(function (e) {
   e.preventDefault();
-  console.log(e);
+  //console.log(e);
   let isAnyCheckboxChecked = false;
   $("input[type='checkbox']").each(function () {
     if ($(this).prop("checked")) {
@@ -335,126 +335,128 @@ function fetchFacultyFromDB() {
     $("#loading_animation_div").html(loading_animation);
   }
 
-  setTimeout(() => {
-    makeAJAXRequest(
-      ajax_url,
-      "GET",
-      "json",
-      null,
-      function (success_json_response) {
-        let no_of_faculty_for_first_alphabet = 0;
-        $("#loading_animation_div").html("");
-        //console.log(success_json_response);
+  //setTimeout(() => {
+  makeAJAXRequest(
+    ajax_url,
+    "GET",
+    "json",
+    null,
+    function (success_json_response) {
+      let no_of_faculty_for_first_alphabet = 0;
+      $("#loading_animation_div").html("");
+      //console.log(success_json_response);
 
-        if (success_json_response.faculty_array.length > 0) {
-          $("#loading_animation_div").addClass("hidden");
-          let first_letter_of_first_faculty =
-            success_json_response.faculty_array[0]["cp_name"]
-              .substring(0, 1)
-              .toLowerCase()
-              .trim();
-          //console.log(first_letter_of_first_faculty);
-          //console.log(success_json_response);
-          //sort_state = first_letter_of_first_faculty;
-          if (sort_state == "") {
-            $(".sort_selector").each(function () {
-              if (
-                $(this).text().trim().toLowerCase() ==
-                first_letter_of_first_faculty
-              ) {
-                //$(this).click();
-                //console.log("here")
-                operationsToPerformOnAlphabetClick($(this));
-              }
-            });
-          }
-          success_json_response.faculty_array.forEach((response) => {
+      if (success_json_response.faculty_array.length > 0) {
+        $("#loading_animation_div").addClass("hidden");
+        let first_letter_of_first_faculty =
+          success_json_response.faculty_array[0]["cp_name"]
+            .substring(0, 1)
+            .toLowerCase()
+            .trim();
+        //console.log(first_letter_of_first_faculty);
+        //console.log(success_json_response);
+        //sort_state = first_letter_of_first_faculty;
+        if (sort_state == "") {
+          $(".sort_selector").each(function () {
             if (
-              response.cp_name.substring(0, 1).trim().toLowerCase() ==
+              $(this).text().trim().toLowerCase() ==
               first_letter_of_first_faculty
             ) {
-              let dept_faculty_name = "";
-              let college_sec_name = "";
-
-              no_of_faculty_for_first_alphabet++;
-
-              switch (response.dept_faculty_name) {
-                case "a":
-                  dept_faculty_name = "Arts";
-                  break;
-                case "s":
-                  dept_faculty_name = "Science";
-                  break;
-                case "c":
-                  dept_faculty_name = "Commerce";
-                  break;
-              }
-
-              switch (response.college_sec_name) {
-                case "j":
-                  college_sec_name = "Junior College";
-                  break;
-                case "d":
-                  college_sec_name = "Degree College";
-                  break;
-                case "s":
-                  college_sec_name = "Self-Financing Courses (SFC) section";
-                  break;
-              }
-              $("#faculty_cards_grid_div").append(
-                constructFacultyCard(
-                  response.cp_image_path,
-                  response.cp_personal_website_link,
-                  `${response.cp_honourific} ${response.cp_name}`,
-                  response.cp_desig,
-                  response.dept_name,
-                  dept_faculty_name,
-                  college_sec_name,response.dept_sect_id
-                )
-              );
+              //$(this).click();
+              //console.log("here")
+              operationsToPerformOnAlphabetClick($(this));
             }
           });
-        } else {
-          $("#loading_animation_div").html(no_results_element);
         }
+        success_json_response.faculty_array.forEach((response) => {
+          if (
+            response.cp_name.substring(0, 1).trim().toLowerCase() ==
+            first_letter_of_first_faculty
+          ) {
+            let dept_faculty_name = "";
+            let college_sec_name = "";
 
-        //set the count
+            no_of_faculty_for_first_alphabet++;
 
-        let starting_range_current_letter = 0;
-        let ending_range_of_current_letter = 0;
-        if (
-          success_json_response.total_rows >
-            success_json_response.count_of_previous_letters &&
-          no_of_faculty_for_first_alphabet != 0
-        ) {
-          starting_range_current_letter =
-            success_json_response.count_of_previous_letters + 1;
-          ending_range_of_current_letter =
-            starting_range_current_letter -
-            1 +
-            no_of_faculty_for_first_alphabet;
-        }
-        $("#no_of_faculty_para").text(
-          `Showing ${starting_range_current_letter} - ${ending_range_of_current_letter} of ${success_json_response.total_rows} results`
-        );
+            switch (response.dept_faculty_name) {
+              case "a":
+                dept_faculty_name = "Arts";
+                break;
+              case "s":
+                dept_faculty_name = "Science";
+                break;
+              case "c":
+                dept_faculty_name = "Commerce";
+                break;
+              case "o":
+                dept_faculty_name = "Other";
+                break;
+            }
 
-        //reset the sort state
-        //the sort state should be used only when the user clicks on the letters or the "next" or "prev" button.This is because if the sort state is stored and the filter options are used, then if the corresponding letter selected doesnt have any results, it will show "no results found", but the results might start with a different letter, causing the user to believe that there are no results.
-        //Hence dont use the sort state and instead fetch the results when filters are applied and then set the selected letter to the first letter of the first result.
-        //If the user wants a specific letter he will have to choose it again.
-        //That is the trade-off
-        sort_state = "";
-
-        success_json_response = "";
-      },
-      function (error, xhr, status) {
-        //set the count
-        $("#no_of_faculty_para").text(`Showing ${0} of ${0} results`);
+            switch (response.college_sec_name) {
+              case "j":
+                college_sec_name = "Junior College";
+                break;
+              case "d":
+                college_sec_name = "Degree College";
+                break;
+              case "s":
+                college_sec_name = "Self-Financing Courses (SFC) section";
+                break;
+            }
+            $("#faculty_cards_grid_div").append(
+              constructFacultyCard(
+                response.cp_image_path,
+                response.cp_personal_website_link,
+                `${response.cp_honourific} ${response.cp_name}`,
+                response.cp_desig,
+                response.cp_multi_dept,
+                dept_faculty_name,
+                college_sec_name,
+                response.cp_multi_dept_sec_id
+              )
+            );
+          }
+        });
+      } else {
         $("#loading_animation_div").html(no_results_element);
-        console.log(error);
       }
-    );
-  }, 2000);
+
+      //set the count
+
+      let starting_range_current_letter = 0;
+      let ending_range_of_current_letter = 0;
+      if (
+        success_json_response.total_rows >
+          success_json_response.count_of_previous_letters &&
+        no_of_faculty_for_first_alphabet != 0
+      ) {
+        starting_range_current_letter =
+          success_json_response.count_of_previous_letters + 1;
+        ending_range_of_current_letter =
+          starting_range_current_letter - 1 + no_of_faculty_for_first_alphabet;
+      }
+      $("#no_of_faculty_para").text(
+        `Showing ${starting_range_current_letter} - ${ending_range_of_current_letter} of ${success_json_response.total_rows} results`
+      );
+
+      //reset the sort state
+      //the sort state should be used only when the user clicks on the letters or the "next" or "prev" button.This is because if the sort state is stored and the filter options are used, then if the corresponding letter selected doesnt have any results, it will show "no results found", but the results might start with a different letter, causing the user to believe that there are no results.
+      //Hence dont use the sort state and instead fetch the results when filters are applied and then set the selected letter to the first letter of the first result.
+      //If the user wants a specific letter he will have to choose it again.
+      //That is the trade-off
+      sort_state = "";
+
+      success_json_response = "";
+    },
+    function (error, xhr, status) {
+      //set the count
+      $("#no_of_faculty_para").text(`Showing ${0} of ${0} results`);
+      $("#loading_animation_div").html(no_results_element);
+      console.log(error);
+    }
+  );
+  //}, 2000);
 }
 
 function constructFacultyCard(
@@ -464,9 +466,20 @@ function constructFacultyCard(
   faculty_designation,
   faculty_department,
   faculty_type,
-  faculty_college_sec_name,department_id
+  faculty_college_sec_name,
+  department_id
 ) {
   //console.log(faculty_name_and_honourific)
+
+  let dept_array = faculty_department.split(" , "); //the space in " , " is important
+  let dept_value = "";
+
+  let dept_id_array=department_id.split(",");
+
+  dept_array.forEach((dept,index) => {
+    dept_value += ` <a href="../academics_tab/specific_department.php?dept_sec_id=${dept_id_array[index]}" class="text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">Department of ${dept}</a>`;
+  });
+
   return `<div class="flex flex-col gap-4 sm:flex-row p-4 rounded-2xl shadow-2xl dark:shadow-none bg-white group dark:bg-gray-800">
                     <div class="sm:w-[40%] rounded-2xl aspect-square overflow-hidden">
                       <img src="${
@@ -474,15 +487,23 @@ function constructFacultyCard(
                       }" alt="Vaze College Faculty Image" class="object-fit w-full h-full group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div class="flex-1 flex flex-col dark:text-white">
-                    ${faculty_personal_website_link!=null?'<a target="_blank" href='+
-                        faculty_personal_website_link +
-                      ' class="font-bold text-[1.5rem] hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline">'+faculty_name_and_honourific+'</a>':'<p class="font-bold text-[1.5rem]">'+faculty_name_and_honourific+'</p>'}
+                    ${
+                      faculty_personal_website_link != null
+                        ? '<a target="_blank" href=' +
+                          faculty_personal_website_link +
+                          ' class="font-bold text-[1.5rem] hover:cursor-pointer hover:text-blue-900 dark:hover:text-emerald-500 hover:underline">' +
+                          faculty_name_and_honourific +
+                          "</a>"
+                        : '<p class="font-bold text-[1.5rem]">' +
+                          faculty_name_and_honourific +
+                          "</p>"
+                    }
                       
 
                       <p class="text-blue-800 text-sm  dark:text-emerald-500">${faculty_designation}</p>
 
                       <p class="mt-4 font-medium dark:text-white">Department</p>
-                      <a href="../academics_tab/Department.php?dept_sec_id=${department_id}" class="text-sm hover:cursor-pointer text-slate-600 dark:text-slate-400 hover:text-black  dark:hover:text-emerald-500 hover:underline">Department of ${faculty_department}</a>
+                     ${dept_value}
 
                       <p class="mt-4 font-medium">Faculty Type</p>
                        <p class="text-sm text-slate-600 dark:text-slate-400">
@@ -500,10 +521,10 @@ function constructFacultyCard(
 //there are multiple places where this function is used and this is without including the "fetchFacultyFromDb()" function. The fetch function is excluded on purpose and this function is required
 function operationsToPerformOnAlphabetClick(currentElement) {
   $(".sort_selector.selected_sort_letter").each(function () {
-    $(this).removeClass(["selected_sort_letter","dark:selected_sort_letter"]);
-    $(this).addClass(["dark:text-white" ,"text-slate-500"]);
+    $(this).removeClass(["selected_sort_letter", "dark:selected_sort_letter"]);
+    $(this).addClass(["dark:text-white", "text-slate-500"]);
   });
-  currentElement.removeClass(["dark:text-white","text-slate-500"]);
+  currentElement.removeClass(["dark:text-white", "text-slate-500"]);
   currentElement.addClass("selected_sort_letter dark:selected_sort_letter");
 
   sort_state = currentElement.text().trim();

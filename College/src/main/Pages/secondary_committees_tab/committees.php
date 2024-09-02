@@ -157,7 +157,7 @@ $fetch_committees_query_result = $fetch_committees_query->get_result();
     </div>
 
     <!--Side div-->
-    <div class="flex flex-col h-[90vh] md:h-[83vh] w-[100vw] md:translate-x-[100rem] md:translate-y-0 translate-y-[100rem] translate-x-0 md:w-2/3 z-[1000] fixed right-0 bottom-0 bg-white transition-transform duration-700 overflow-y-scroll pb-8 rounded-tl-2xl rounded-tr-2xl rounded-bl-none md:rounded-tr-none md:rounded-bl-2xl" id="side_div">
+    <div class="flex flex-col h-[90vh] md:h-[83vh] w-[100vw] md:translate-x-[100rem] md:translate-y-0 translate-y-[100rem] translate-x-0 md:w-2/3 z-[1000] fixed right-0 bottom-0 bg-slate-50 shadow-2xl transition-transform duration-700 overflow-y-scroll pb-8 rounded-tl-2xl rounded-tr-2xl rounded-bl-none md:rounded-tr-none md:rounded-bl-2xl" id="side_div">
 
         <!--Close button-->
         <span class="pr-4 py-4">

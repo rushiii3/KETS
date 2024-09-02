@@ -3,7 +3,7 @@ include("../../../config/connect.php");
 
 $fetch_ac_stmt = "SELECT * FROM other_pdfs
 JOIN other_pdf_belongs_to_academic_year ON other_pdf_belongs_to_academic_year.other_pdf_id= other_pdfs.all_pdf_id
-WHERE other_pdfs.other_pdfs_type_name='academic_calendar' ORDER BY other_pdfs.all_pdf_title DESC";
+WHERE other_pdfs.other_pdfs_type_name='academic_calendar' AND other_pdfs.other_pdfs_should_it_be_visible='y'  ORDER BY other_pdfs.all_pdf_title DESC";
 $fetch_ac_query = $conn->prepare($fetch_ac_stmt);
 $fetch_ac_query->execute();
 $fetch_ac_query_result = $fetch_ac_query->get_result();

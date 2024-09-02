@@ -2,7 +2,6 @@
 //base url
 let base_path = `${window.location.origin}/${
   window.location.href.split("/")[3]
-  //on the server change it to split by 1
 }`;
 const t1 = gsap.timeline();
 const mainNavTimeline = gsap.timeline({
@@ -58,7 +57,7 @@ const navData = [
           },
           {
             name: "College Management",
-            link: "",
+            link: `${base_path}/College/src/main/Pages/about_us_tab/college_management.php`,
             hasSub: false,
           },
           {
@@ -70,22 +69,22 @@ const navData = [
       },
       {
         name: "Brochure",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/brochure.php`,
         hasSub: false,
       },
       {
         name: "Prospectus",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/prospectus.php`,
         hasSub: false,
       },
       {
         name: "NIRF",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/nirf.php`,
         hasSub: false,
       },
       {
         name: "AISHE",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/about_us_tab/aishe.php`,
         hasSub: false,
       },
     ],
@@ -122,11 +121,6 @@ const navData = [
         link: `${base_path}/College/src/main/Pages/academics_tab/event_calendar.php`,
         hasSub: false,
       },
-      {
-        name: "Scholarships",
-        link: `${base_path}/College/src/main/Pages/academics_tab/scholarships.php`,
-        hasSub: false,
-      },
     ],
   },
   {
@@ -156,7 +150,7 @@ const navData = [
       },
       {
         name: "Scholarships",
-        link: "",
+        link: `${base_path}/College/src/main/Pages/academics_tab/scholarships.php`,
         hasSub: false,
       },
     ],
@@ -257,7 +251,7 @@ const navData = [
       },
       {
         name: "Gallery",
-        link: `${base_path}/College/src/main/Pages/more_tab/Gallery.php`,
+        link: `${base_path}/College/src/main/Pages/more_tab/gallery.php`,
         hasSub: false,
       },
       {
@@ -305,7 +299,7 @@ navData.forEach((element, index) => {
                 element.hasSub
                   ? `
                   <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                  <div class="flex flex-row items-center justify-between">
+                  <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                     ${element.name}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -343,7 +337,7 @@ navData.forEach((element, index) => {
                 element.hasSub
                   ? `
                   <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                  <div class="flex flex-row items-center justify-between">
+                  <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                     ${element.name}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -393,7 +387,7 @@ function OpenExtra(title) {
                 element.hasSub
                   ? `
                   <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                      <div class="flex flex-row items-center justify-between">
+                      <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                           ${element.name}
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 svg hidden">
                               <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
@@ -525,7 +519,7 @@ $(".hasExtraSub").on("click", function () {
                       element.hasSub
                         ? `
                         <a class="relative top-[60px] md:text-3xl text-xl font-light hover:text-slate-400">
-                            <div class="flex flex-row items-center justify-between">
+                            <div class="flex flex-row items-center justify-between hover:cursor-pointer">
                                 ${element.name}
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 svg hidden">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"/>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../css/common/header_2.css"/>
   </head>
   <body class="bg-white dark:bg-black"> 
-     <!--
+    <!--
     /***************
     NAVBAR 
     ****************/
@@ -22,7 +22,7 @@
     -->
     <?php include('../Components/'); ?>
 
-     <!--
+    <!--
     /***************
     FOOTER
     ****************/

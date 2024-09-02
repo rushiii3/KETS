@@ -1,11 +1,11 @@
 <?php
 include("../../../config/connect.php");
 
-$fetch_magazines_stmt = "SELECT * FROM other_pdfs JOIN other_pdf_cover_page_links on other_pdf_cover_page_links.other_pdf_id= other_pdfs.all_pdf_id WHERE other_pdfs_type_name='magazine' AND other_pdfs.other_pdfs_should_it_be_visible='y' ORDER BY all_pdf_title ASC";
+$fetch_aishe_stmt = "SELECT * FROM `reports` WHERE reports_should_it_be_visible='y' AND reports_type='aishe' ORDER BY reports_academic_year DESC;";
 
-$fetch_magazines_query = $conn->prepare($fetch_magazines_stmt);
-$fetch_magazines_query->execute();
-$fetch_magazines_query_result = $fetch_magazines_query->get_result();
+$fetch_aishe_query = $conn->prepare($fetch_aishe_stmt);
+$fetch_aishe_query->execute();
+$fetch_aishe_query_result = $fetch_aishe_query->get_result();
 
 ?>
 
@@ -15,24 +15,23 @@ $fetch_magazines_query_result = $fetch_magazines_query->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V. G. VAZE | Mayur Magazine</title>
-    <?php include('../../../library/library.php'); ?>
+    <title>V. G. VAZE | AISHE</title>
+     <?php include('../../../library/library.php'); ?>
     <link rel="stylesheet" href="../../../css/common/header_2.css" />
     <link rel="stylesheet" href="../../../css/common/custom_aos_fade_right.css" />
 </head>
 
-<body class="bg-white dark:bg-black">
+<body class="bg-white dark:bg-black dark:text-white">
     <!--
     /***************
     NAVBAR 
     ****************/
     -->
     <?php include('../../Layouts/header2.php'); ?>
-
     <!--
     /***************
      BREADCRUMBS - to show where the user is currently
-    ****************/
+    ****************/mt-8:
     -->
     <nav aria-label="Breadcrumb" class="pl-2 mt-32" id="Breadcrumb">
         <ol class="flex items-stretch gap-2 list-none">
@@ -56,19 +55,11 @@ $fetch_magazines_query_result = $fetch_magazines_query->get_result();
                 </svg>
             </li>
 
-            <!--No path item-->
-            <li class="flex items-center gap-2">
-                <p aria-current="page" class="  max-w-[20ch]  truncate whitespace-nowrap text-slate-700">More</p>
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
-
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-            </li>
 
             <!--No path item-->
             <li class="flex items-center gap-2">
-                <p aria-current="page" class="  max-w-[20ch]  truncate whitespace-nowrap text-slate-700">Magazine</p>
+                <p aria-current="page" class="  max-w-[20ch]  truncate whitespace-nowrap text-slate-700">About Us</p>
 
                 <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-4 h-4 transition-transform stroke-slate-700 md:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" aria-labelledby="title-02 description-02" role="graphics-symbol">
 
@@ -78,7 +69,7 @@ $fetch_magazines_query_result = $fetch_magazines_query->get_result();
 
             <!--Last item-->
             <li class="flex items-center gap-2">
-                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-700 hover:text-emerald-500">Mayur Magazine</a>
+                <a href="#" aria-current="page" class=" max-w-[20ch] truncate whitespace-nowrap text-slate-700 hover:text-emerald-500">AISHE</a>
             </li>
         </ol>
     </nav>
@@ -92,39 +83,36 @@ $fetch_magazines_query_result = $fetch_magazines_query->get_result();
     <div class="flex flex-col mt-12 mb-8 dark:text-white w-[100vw] px-8">
 
 
-        <p class="font-medium text-[4rem] text-center" data-aos="fade-up">Mayur Magazine</p>
-        <p class="text-sm text-slate-600 text-center" data-aos="fade-up"></p>
-
+        <p class="font-medium text-[4rem] text-center" data-aos="fade-up">AISHE reports</p>
+        <p class="text-sm text-slate-600 text-center" data-aos="fade-up">All India Survey on Higher Education</p>
 
         <?php
-        if ($fetch_magazines_query_result && $fetch_magazines_query_result->num_rows > 0) {
+        if ($fetch_aishe_query_result && $fetch_aishe_query_result->num_rows > 0) {
         ?>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 mt-12 w-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12 w-full">
                 <?php
-                while ($row = $fetch_magazines_query_result->fetch_assoc()) {
+                while ($row = $fetch_aishe_query_result->fetch_assoc()) {
                     //for ($i = 0; $i < 10; $i++) {
 
                 ?>
-                    <div class="pdf_card_wrapper">
-                        <div class="flex flex-col group hover:cursor-pointer pdf_card items-center">
-                            <div class=" overflow-clip h-[95%] max-w-[75%] rounded-2xl">
-                                <img src="<?php echo "../../../assets/pdf_cover_pages/" . $row["other_pdf_cover_page_link"] ?>" alt="mayur_magazine_cover_page" class="  group-hover:scale-105  transition-transform duration-500 ">
-                            </div>
-                            <a href="<?php echo $row["all_pdf_pdf_link"] ?>" class="flex-1 group-hover:underline transition-all duration-500"><?php echo $row["all_pdf_title"] ?></a>
+                    <a class="pdf_card_wrapper" href="<?php echo $row["all_pdf_pdf_link"] ?>" target="_blank">
+                        <div class="flex p-2 items-center rounded-xl dark:bg-gray-800 dark:shadow-none shadow-2xl bg-white hover:scale-105  hover:cursor-pointer pdf_card  transition-transform duration-500">
+                            <img src="../../../assets/webp/pdf.webp" alt="aishe_pdf" class="aspect-square w-[20%]">
+                            <p class="flex-1"><?php echo $row["all_pdf_title"] ?></p>
                         </div>
-                    </div>
+                    </a>
 
                 <?php
                 }
                 ?>
             </div>
-
         <?php
         } else {
-            echo "<div class='mt-12 flex justify-center items-center' data-aos='fade-up'> <p> Sorry ! No magazines found</p></div>";
+            echo  "<div class='mt-12 flex justify-center items-center' data-aos='fade-up'><p>Sorry! No reports present</p></div>";
         }
-        //}
+
         ?>
+
     </div>
 
     <!--
@@ -135,20 +123,27 @@ $fetch_magazines_query_result = $fetch_magazines_query->get_result();
     <?php include('../../Layouts/footer.php'); ?>
     <script src="../../../js/common/header_2.js"></script>
     <script>
+        //let delay = 0;
         const observer = new IntersectionObserver((entries) => {
             let delay = 0;
+            let times = 1;
             entries.forEach((entry) => {
-                entry.target.classList.add("custom_aos_fade_right");
-                entry.target.style.animationDelay = `${delay}ms`;
-                delay += 150;
+                if (entry.isIntersecting && times == 1) {
+                    entry.target.classList.add("custom_aos_fade_right");
+                    entry.target.style.animationDelay = `${delay}ms`;
+                    delay += 150;
+                }
             })
+
+            delay = 0
+            times++
         })
 
         document.querySelectorAll(".pdf_card_wrapper").forEach((card) => observer.observe(card))
 
-        $(".pdf_card").click(function() {
-            window.location.href = $(this).find("a")[0].href
-        })
+        // $(".pdf_card").click(function() {
+        //     window.location.href = $(this).find("a")[0].href
+        // })
     </script>
 
 </body>
