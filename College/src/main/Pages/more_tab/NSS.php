@@ -2,14 +2,14 @@
 
 include("../../../config/connect.php");
 
-$fetch_degree_achievements_stmt = "SELECT * FROM achievements WHERE achievement_committee_sec_id=(SELECT committee_belongs_to_clg_section.committee_clg_section_id from committee_belongs_to_clg_section join committee_and_activity_groups ON committee_belongs_to_clg_section.committee_id=committee_and_activity_groups.committee_id WHERE committee_and_activity_groups.committee_name= 'National Service Scheme' AND committee_belongs_to_clg_section.college_sec_name='d');";
+$fetch_degree_achievements_stmt = "SELECT * FROM achievements WHERE achievement_committee_sect_id=(SELECT committee_belongs_to_clg_section.committee_clg_section_id from committee_belongs_to_clg_section join committee_and_activity_groups ON committee_belongs_to_clg_section.committee_id=committee_and_activity_groups.committee_id WHERE committee_and_activity_groups.committee_name= 'National Service Scheme' AND committee_belongs_to_clg_section.college_sec_name='d');";
 
 $fetch_degree_achievements_query = $conn->prepare($fetch_degree_achievements_stmt);
 
 $fetch_degree_achievements_query->execute();
 $fetch_degree_achievements_query_result = $fetch_degree_achievements_query->get_result();
 
-$fetch_junior_achievements_stmt = "SELECT * FROM achievements WHERE achievement_committee_sec_id=(SELECT committee_belongs_to_clg_section.committee_clg_section_id from committee_belongs_to_clg_section join committee_and_activity_groups ON committee_belongs_to_clg_section.committee_id=committee_and_activity_groups.committee_id WHERE committee_and_activity_groups.committee_name= 'National Service Scheme' AND committee_belongs_to_clg_section.college_sec_name='j');";
+$fetch_junior_achievements_stmt = "SELECT * FROM achievements WHERE achievement_committee_sect_id=(SELECT committee_belongs_to_clg_section.committee_clg_section_id from committee_belongs_to_clg_section join committee_and_activity_groups ON committee_belongs_to_clg_section.committee_id=committee_and_activity_groups.committee_id WHERE committee_and_activity_groups.committee_name= 'National Service Scheme' AND committee_belongs_to_clg_section.college_sec_name='j');";
 
 $fetch_junior_achievements_query = $conn->prepare($fetch_junior_achievements_stmt);
 
@@ -50,14 +50,13 @@ class JuniorParticipation
         $this->desc = $desc;
     }
 }
-
 //add junior participation here
 $JuniorParticipationArray = [];
 
-$fetch_nss_activities_stmt = "SELECT * FROM `committee_has_committee_activities` join committee_belongs_to_clg_section on committee_belongs_to_clg_section.committee_clg_section_id=committee_has_committee_activities.committee_sec_id
+$fetch_nss_activities_stmt = "SELECT * FROM `committee_has_committee_activities` join committee_belongs_to_clg_section on committee_belongs_to_clg_section.committee_clg_section_id=committee_has_committee_activities.committee_sect_id
 join committee_and_activity_groups on committee_belongs_to_clg_section.committee_id=committee_and_activity_groups.committee_id 
-join committee_activities on committee_activities.committee_act_id=committee_has_committee_activities.committee_act_id
-where committee_sec_id in (select committee_belongs_to_clg_section.committee_clg_section_id where committee_belongs_to_clg_section.committee_id=(SELECT committee_and_activity_groups.committee_id where committee_and_activity_groups.committee_name like '%national service scheme%'));";
+
+where committee_sect_id in (select committee_belongs_to_clg_section.committee_clg_section_id where committee_belongs_to_clg_section.committee_id=(SELECT committee_and_activity_groups.committee_id where committee_and_activity_groups.committee_name like '%national service scheme%'));";
 
 $fetch_nss_activities_query = $conn->prepare($fetch_nss_activities_stmt);
 $fetch_nss_activities_query->execute();

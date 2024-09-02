@@ -140,7 +140,7 @@ $fetch_ay_query_result = $fetch_ay_query->get_result();
             </div>
         <?php
         } else {
-            echo  "<div class='mt-12 flex justify-center items-center'><p>Sorry! No Brochures present</p></div>";
+            echo  "<div class='mt-12 flex justify-center items-center'><p>Sorry! No Prospectus present</p></div>";
         }
 
         ?>
@@ -187,8 +187,10 @@ $fetch_ay_query_result = $fetch_ay_query->get_result();
 
 
         //year btn click
-        $(".ay_btn:not(.selected)").each(function() {
+        $(".ay_btn").each(function() {
             $(this).click(function() {
+                
+            if(!$(this).hasClass("selected")){
                 $(".ay_btn.selected").addClass(["bg-gray-200", "dark:bg-gray-800"]);
                 $(".ay_btn.selected").removeClass([
                     "selected",
@@ -264,6 +266,7 @@ $fetch_ay_query_result = $fetch_ay_query->get_result();
                         }
                     );
                 }, 2000);
+            }   
             });
         });
 

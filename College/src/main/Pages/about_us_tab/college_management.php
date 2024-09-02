@@ -40,7 +40,6 @@ if ($fetch_college_committees_query_result) {
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>

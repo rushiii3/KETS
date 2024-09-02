@@ -418,9 +418,14 @@ if ($fetch_faculty_count_query_result) {
           <!-- Main contents-->
           <div class="flex-1 flex flex-col relative mx-4 sm:ml-4">
 
-            <!-- No of courses-->
+            <!-- No of faculty-->
             <p class="text-2xl text-black font-bold dark:text-white" id="no_of_faculty_para">
-              <?php echo "Showing 1 - " . $fetch_faculty_query_result->num_rows . " of " . $total_count . " results";
+<?php 
+                        $starting_part="Showing 0 -";
+                        if($fetch_faculty_query_result->nums_rows >0){
+                            $starting_part="Showing 1 - ";
+                        } 
+                        echo $starting_part. $fetch_faculty_query_result->num_rows . " of " . $total_count . " results";
               ?>
             </p>
 
@@ -448,12 +453,12 @@ if ($fetch_faculty_count_query_result) {
             <div class=" hidden  flex-1" id="loading_animation_div"></div>
 
             <!-- Courses-->
-            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full" id="faculty_cards_grid_div">
+            <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full relative" id="faculty_cards_grid_div">
 
               <!--Card 1 start-->
 
               <?php
-              if ($fetch_faculty_query_result) {
+              if ($fetch_faculty_query_result && $fetch_faculty_query_result->num_rows >0) {
                 while ($faculty_row = $fetch_faculty_query_result->fetch_assoc()) {
 
                   switch ($faculty_row["dept_faculty_name"]) {
@@ -482,7 +487,7 @@ if ($fetch_faculty_count_query_result) {
                       $faculty_college_sec_name = "Degree College";
                       break;
                   }
-                  //print_r($faculty_row);
+                 //print_r($faculty_row);
 
               ?>
 
@@ -539,6 +544,8 @@ if ($fetch_faculty_count_query_result) {
 
               <?php
                 }
+              }else{
+echo "<p class='dark:text-white absolute top-0 left-0 flex justify-center w-full'>No faculty present</p>";
               }
               ?>
             </div>

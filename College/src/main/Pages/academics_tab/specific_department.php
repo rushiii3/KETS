@@ -14,6 +14,7 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
     $fetch_current_department_query->bind_param("s", $dept_sect_id);
     $fetch_current_department_query->execute();
     $fetch_current_department_query_result = $fetch_current_department_query->get_result();
+    
     if ($fetch_current_department_query_result) {
         if ($fetch_current_department_query_result->num_rows > 0) {
 
@@ -29,6 +30,7 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
     $fetch_faculty_stmt = "SELECT *,GROUP_CONCAT(cp_designation SEPARATOR ' | ') as cp_desig FROM `college_personnel` JOIN cp_designation on cp_designation.cp_id=college_personnel.cp_id 
     JOIN cp_belongs_to_dept_sect ON cp_belongs_to_dept_sect.cp_id=college_personnel.cp_id
     WHERE cp_belongs_to_dept_sect.dept_sect_id=? GROUP BY college_personnel.cp_id ORDER BY college_personnel.cp_name ASC";
+
     $fetch_faculty_query = $conn->prepare($fetch_faculty_stmt);
     //print_r("here");
     $fetch_faculty_query->bind_param("s", $dept_sect_id);
@@ -54,23 +56,26 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
     // exit;
    
 
-//print_r("here");
     ////FETCH SYLLABUS
-    $fetch_ug_syllabus_stmt = "SELECT * from other_pdfs WHERE all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER JOIN syllabus_belongs_to_programmes_for_class AS sy on p.prog_id=sy.prog_id WHERE sy.class_name NOT IN (SELECT class_name FROM class WHERE class_name LIKE 'msc%') AND p.prog_dept_sec_id=?) AND other_pdfs.other_pdfs_should_it_be_visible='y';";
+    $fetch_ug_syllabus_stmt = "SELECT * FROM `syllabus_belongs_to_programmes_for_class` join other_pdfs on other_pdfs.all_pdf_id=syllabus_belongs_to_programmes_for_class.other_pdf_id 
+JOIN programmes on programmes.prog_id=syllabus_belongs_to_programmes_for_class.prog_id
+Where programmes.prog_dept_sec_id=? and class_name not in ('Part-1','Part-2')
+order by class_name ASC;";
     $fetch_ug_syllabus_query = $conn->prepare($fetch_ug_syllabus_stmt);
     $fetch_ug_syllabus_query->bind_param("s", $dept_sect_id);
     $fetch_ug_syllabus_query->execute();
     $fetch_ug_syllabus_query_result = $fetch_ug_syllabus_query->get_result();
-
     //FETCH MASTERS
 
-    $fetch_pg_syllabus_stmt = "SELECT * from other_pdfs WHERE all_pdf_id IN (SELECT sy.other_pdf_id FROM programmes as p INNER JOIN syllabus_belongs_to_programmes_for_class AS sy on p.prog_id=sy.prog_id WHERE sy.class_name  IN (SELECT class_name FROM class WHERE class_name LIKE 'msc%') AND p.prog_dept_sec_id=?) AND other_pdfs.other_pdfs_should_it_be_visible='y';";
+    $fetch_pg_syllabus_stmt = "SELECT * FROM `syllabus_belongs_to_programmes_for_class` 
+JOIN other_pdfs on other_pdfs.all_pdf_id=syllabus_belongs_to_programmes_for_class.other_pdf_id 
+JOIN programmes on programmes.prog_id=syllabus_belongs_to_programmes_for_class.prog_id     
+WHERE programmes.prog_dept_sec_id=? and class_name not in (SELECT class_name from class where class.class_name LIKE '%fy%' OR class.class_name LIKE '%sy%' or class.class_name like '%ty%') 
+ORDER BY class_name ASC;";
     $fetch_pg_syllabus_query = $conn->prepare($fetch_pg_syllabus_stmt);
     $fetch_pg_syllabus_query->bind_param("s", $dept_sect_id);
     $fetch_pg_syllabus_query->execute();
     $fetch_pg_syllabus_query_result = $fetch_pg_syllabus_query->get_result();
-
-
 
     //FETCH ACADEMIC YEARS for departmental activities
     $fetch_ay_stmt = "SELECT DISTINCT dy.dept_act_academic_year FROM dept_has_dept_activities as dc INNER JOIN departmental_activities as dy on dc.dept_act_id=dy.dept_act_id and dc.dept_sect_id=? ORDER by dy.dept_act_academic_year desc";
@@ -306,11 +311,12 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
 
         <section class="py-12 ">
             <!--UG syllabus Grid -->
+<div id="ug_syllabus_grid">
             <?php
 
             if ($fetch_ug_syllabus_query_result && $fetch_ug_syllabus_query_result->num_rows > 0) {
             ?>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-8 " id="ug_syllabus_grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-8 ">
                     <?php
                     while ($row = $fetch_ug_syllabus_query_result->fetch_assoc()) {
 
@@ -332,12 +338,16 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
             } else {
                 "<div class='flex justify-center items-center' data-aos='fade-up'><p> No syllabus present.</p></div>";
             }
+?>
+</div>
+<div id="pg_syllabus_grid" class="hidden">
+<?php
             if ($fetch_pg_syllabus_query_result && $fetch_pg_syllabus_query_result->num_rows > 0) {
 
             ?>
 
                 <!--Masters syllabus grid-->
-                <div class="hidden grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3  px-8 " id="pg_syllabus_grid">
+                <div class=" grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3  px-8 ">
 
                     <?php
                     while ($row = $fetch_pg_syllabus_query_result->fetch_assoc()) {
@@ -359,10 +369,10 @@ if (isset($_GET['dept_sec_id']) || !empty($_GET['dept_sec_id'])) {
                 </div>
             <?php
             } else {
-                echo "<div class='flex justify-center items-center' data-aos='fade-up'><p> No syllabus present.</p></div>";
+                echo "<div class='flex justify-center items-center' data-aos='fade-up'><p> No masters syllabus present.</p></div>";
             }
             ?>
-
+</div>
         </section>
 
         <!-- Department activities-->
